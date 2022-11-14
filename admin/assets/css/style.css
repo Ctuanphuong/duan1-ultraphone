@@ -11712,3 +11712,28 @@ body {
   padding-bottom: 70px;
 }
 
+.sel-filter { 
+  width: 120px;
+  padding: 4px 0px;
+margin-bottom: 17px;
+border: 1px solid #ced4da;
+border-radius: 0.25rem;
+color: #212529;
+}
+.btn-filter { 
+  width: 50px;
+  background-color: #012b4a;
+  color: #ffff;
+  border-radius: 0.25rem;
+  padding: 4px 0px;
+  border: 1px solid #ced4da;
+}
+.btn-filter:hover { 
+  width: 50px;
+  background-color: #011e33;
+  color: #ffff;
+  border-radius: 0.25rem;
+  padding: 4px 0px;
+  transition: .4s ease;
+  
+}

@@ -5,5 +5,5 @@
           </h1>
         </div>
         <div class="img-index text-center mt-5 mb-5">
-          <img src="./assets/image/adminindex.png" alt="ảnh admin" />
+          <img src="./assets/image/admin/adminindex.png" alt="ảnh admin" />
         </div>

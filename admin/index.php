@@ -4,6 +4,7 @@ include 'view/header.php';
 //include dao để dùng các functione: 
 include "model/pdo.php";
 include "model/loai.php";
+include "model/sanpham.php";
 // controller
 if (isset($_GET['act'])) {
     $act = $_GET['act'];
@@ -45,13 +46,70 @@ if (isset($_GET['act'])) {
                     $ds_loai = loadall_loai();
                     include "view/loai/list.php";
                     break;
+    
             // CONTROLLER SẢN PHẨM:
-        case "addsp":
-            include "view/sanpham/add.php";
-            break;
-        case "listsp":
-            include "view/sanpham/list.php";
-            break;
+            case "addpro":
+                if (isset($_POST['btn_add']) && ($_POST['btn_add'])) {
+                    // $id_pro = $_POST['id_pro'];
+                    $name_pro = $_POST['name_pro'];
+                    $price = $_POST['price'];
+                    $description = $_POST['description'];
+                    $idcate = $_POST['idcate'];
+                    $img_pro = $_FILES['img_pro']['name'];
+                    $target_dir = "./uploads/";
+                    $target_file = $target_dir . basename($_FILES["img_pro"]["name"]);
+                    (move_uploaded_file($_FILES["img_pro"]["tmp_name"], $target_file));
+                    add_pro($name_pro, $price, $img_pro, $description, $idcate);
+                    $noticepro = "Thêm sản phẩm thành công!";
+                }
+                $ds_loai = loadall_loai();
+                include "view/sanpham/add.php";
+                break;
+            case "listpro":
+                if (isset($_POST['btn_filter']) && ($_POST['btn_filter'])) {
+                    $idcate = $_POST['idcate'];
+                } else {
+                    $idcate = 0;
+                }
+                $ds_loai = loadall_loai();
+                $listpro = loadall_pro($idcate);
+                include "view/sanpham/list.php";
+                break;
+            case "editpro":
+                if (isset($_GET['id_pro']) && $_GET['id_pro'] > 0) {
+                    $id_pro = $_GET['id_pro'];
+                    $pro = loadone_pro($id_pro);
+                }
+    
+                $ds_loai = loadall_loai();
+                include "view/sanpham/update.php";
+                break;
+            case "updatepro":
+                if (isset($_POST['btn_update']) && $_POST['btn_update'] > 0) {
+                    $id_pro = $_POST['id_pro'];
+                    $idcate = $_POST['idcate'];
+                    $name_pro = $_POST['name_pro'];
+                    $price = $_POST['price'];
+                    $description = $_POST['description'];
+                    $img_pro = $_FILES['img_pro']['name'];
+                    $target_dir = "./uploads/";
+                    $target_file = $target_dir . basename($_FILES["img_pro"]["name"]);
+                    (move_uploaded_file($_FILES["img_pro"]["tmp_name"], $target_file));
+                    update_pro($id_pro, $name_pro, $price, $description, $img_pro, $idcate);
+                }
+                $ds_loai = loadall_loai();
+                $listpro = loadall_pro();
+                include "view/sanpham/list.php";
+                break;
+            case "removepro":
+                if (isset($_GET['id_pro']) && ($_GET['id_pro']) > 0) {
+                    $id_pro = $_GET['id_pro'];
+                    remove_pro($id_pro);
+                }
+                $ds_loai = loadall_loai();
+                $listpro = loadall_pro();
+                include "view/sanpham/list.php";
+                break;
         default:
             include "view/content.php";
             break;

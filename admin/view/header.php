@@ -7,17 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Quản trị</title>
+    <title>Quản trị - UltraPhone</title>
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/image/admin/logo-url.png" />
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
 </head>
 
 <body class="sb-nav-fixed">
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
         <!-- Navbar Brand-->
-        <a class="navbar-brand ps-3" href="index.html">
-            <img src="assets/image/logo.png" alt="" style="width: 130px; padding: 10px 0px" />
+        <a class="navbar-brand ps-3" href="index.php">
+            <img src="./assets/image/admin/logo.png" alt="" style="width: 130px; padding: 10px 0px" />
         </a>
         <!-- Sidebar Toggle-->
         <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!">
@@ -28,12 +29,13 @@
         <!-- Navbar-->
         <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-<img src="./assets/image/logo-admin.png" alt="" style="width: 19px;">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    <img src="./assets/image/admin/logo-admin.png" alt="" style="width: 19px;">
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                     <li>
-                        <a class="dropdown-item" href="login.html">Logout</a>
+                        <a class="dropdown-item" href="login.php">Logout</a>
                     </li>
                 </ul>
             </li>
@@ -46,14 +48,17 @@
                     <div class="nav">
                         <div class="sb-sidenav-menu-heading">Chức năng</div>
                         <div class="cate">
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#cateCollapseAuth" aria-expanded="false" aria-controls="cateCollapseAuth">
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+                                data-bs-target="#cateCollapseAuth" aria-expanded="false"
+                                aria-controls="cateCollapseAuth">
                                 <div class="sb-nav-link-icon"><i class="fas fa-bars"></i></div>
                                 Loại
                                 <div class="sb-sidenav-collapse-arrow">
                                     <i class="fas fa-angle-down"></i>
                                 </div>
                             </a>
-                            <div class="collapse" id="cateCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
+                            <div class="collapse" id="cateCollapseAuth" aria-labelledby="headingOne"
+                                data-bs-parent="#sidenavAccordionPages">
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="index.php?act=listl">Danh sách loại</a>
                                     <a class="nav-link" href="index.php?act=addl">Thêm loại</a>
@@ -62,17 +67,19 @@
                         </div>
 
                         <div class="product">
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#proCollapseAuth" aria-expanded="false" aria-controls="proCollapseAuth">
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+                                data-bs-target="#proCollapseAuth" aria-expanded="false" aria-controls="proCollapseAuth">
                                 <div class="sb-nav-link-icon"> <i class="fa-solid fa-mobile-screen-button"></i></div>
                                 Sản phẩm
                                 <div class="sb-sidenav-collapse-arrow">
                                     <i class="fas fa-angle-down"></i>
                                 </div>
                             </a>
-                            <div class="collapse" id="proCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
+                            <div class="collapse" id="proCollapseAuth" aria-labelledby="headingOne"
+                                data-bs-parent="#sidenavAccordionPages">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="index.php?act=listsp">Danh sách sản phẩm</a>
-                                    <a class="nav-link" href="index.php?act=addsp">Thêm sản phẩm</a>
+                                    <a class="nav-link" href="index.php?act=listpro">Danh sách sản phẩm</a>
+                                    <a class="nav-link" href="index.php?act=addpro">Thêm sản phẩm</a>
                                 </nav>
                             </div>
                         </div>
