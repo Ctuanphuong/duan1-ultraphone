@@ -7330,4 +7330,8 @@ body {
     color: #ffffff !important;
   }
   /*# sourceMappingURL=maps/main.css.map */
-  
+  .price-home { 
+  font-size: 17px;
+  font-weight: 600;
+  color: #ea3a3c;
+  }
