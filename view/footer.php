@@ -17,7 +17,7 @@
                 <form action="http://devitems.us11.list-manage.com/subscribe/post?u=6bbb9b6f5827bd842d9640c82&amp;id=05d85f18ef" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="newsletters-form validate" target="_blank" novalidate>
                   <div id="mc_embed_signup_scroll">
                     <div id="mc-form" class="mc-form subscribe-form pt--15">
-                      <input id="mc-email" type="email" autocomplete="off" placeholder="Enter your email address" />
+                      <input id="mc-email" type="email" autocomplete="off" placeholder="Nhập địa chỉ email của bạn" />
                       <button class="newsletter-btn" id="mc-submit">
                         <i class="fas fa-paper-plane" aria-hidden="true"></i>
                       </button>

@@ -22,8 +22,12 @@
                 <input type="file" name="img_pro" class="form-control" placeholder="Hình ảnh sản phẩm">
               </div>
               <div class="form-group mt-3">
-          <label for="comment" class="font-lb">Mô tả</label>
-          <textarea class="form-control" rows="5" name="description" id="description" placeholder="Mô tả chi tiết sản phẩm"></textarea>
+                <label for="formGroupExampleInput" class="font-lb">Mô tả ngắn</label>
+                <input type="text" name="short_des" class="form-control" placeholder="Mô tả tóm tắt sản phẩm">
+              </div>
+          <div class="form-group mt-3">
+          <label for="comment" class="font-lb">Mô tả chi tiết</label>
+          <textarea class="form-control" rows="5" name="detail_des" id="detail_des" placeholder="Mô tả đầy đủ chi tiết sản phẩm"></textarea>
         </div>
         <div class="form-group mt-3">
           <label for="exampleFormControlSelect1" class="font-lb">Loại điện thoại</label>

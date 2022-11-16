@@ -33,7 +33,8 @@
                             <th>Tên sản phẩm</th>
                             <th>Giá</th>
                             <th>Hình ảnh</th>
-                            <th>Mô tả</th>
+                            <th>Mô tả ngắn</th>
+                            <th>Mô tả chi tiết</th>
                             <th>Lượt xem</th>
                             <th>Thao Tác</th>
                         </tr>
@@ -44,7 +45,8 @@
                             <th>Tên sản phẩm</th>
                             <th>Giá</th>
                             <th>Hình ảnh</th>
-                            <th>Mô tả</th>
+                            <th>Mô tả ngắn</th>
+                            <th>Mô tả chi tiết</th>
                             <th>Lượt xem</th>
                             <th>Thao Tác</th>
                         </tr>
@@ -66,7 +68,8 @@
                                     <td>' . $name_pro . '</td>
                                     <td>' . $price . '</td>
                                     <td>' . $img_pro . '</td>
-                                    <td>' . $description . '</td>
+                                    <td>' . $short_des . '</td>
+                                    <td>' . $detail_des . '</td>
                                     <td>' . $view . '</td>
                                     <td class="text-center">
                                         <a href="' . $editpro . '" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i> Sửa</a>

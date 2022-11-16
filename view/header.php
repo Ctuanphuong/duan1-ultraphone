@@ -17,7 +17,7 @@
                         <div class="ht-menu">
                             <ul>
                                 <li>
-                                    <a href="my-account.html"><i class="fa-solid fa-user"></i>Tài khoản</a>
+                                    <a href="#"><i class="fa-solid fa-user"></i>Tài khoản</a>
                                 </li>
                                 <!-- Begin Currency Area -->
 
@@ -42,7 +42,7 @@
                 <div class="col-lg-4 col-md-4 col-sm-6 col-6 order-1 order-lg-1 order-sm-1">
                     <div class="hm-logo">
                         <a href="index.php">
-                            <img src="./src/image/menu/logo/logo.png" alt="UltraPhone's Header Logo" />
+                            <img src="./src/image/menu/logo/logo.png" alt="Logo Ultraphone" />
                         </a>
                     </div>
                 </div>
@@ -59,7 +59,7 @@
                                     <!-- Header Middle Dropdwon Area End Here -->
                                 </li>
                                 <li>
-                                    <a href="blog-left-sidebar.html">Sản phẩm<i
+                                    <a href="index.php?act=product">Sản phẩm<i
                                             class="fa-solid fa-chevron-down"></i></a>
                                     <!-- Begin Header Middle Dropdwon Area -->
                                     <ul class="hm-dropdown">
@@ -67,7 +67,6 @@
                                         foreach ($listcate as $cate) {
                                             extract($cate);
                                             $linkcate = "index.php?act=product&idcate=" . $id_cate;
-
                                             echo ' <li>
                                                     <a href="' . $linkcate . '">' . $name_cate . '<i class="fa fa-chevron-down"></i></a>
                                                    </li>';
@@ -219,9 +218,9 @@
                 <!-- Begin Header Search Area -->
                 <div class="col-xl-7 col-lg-6 col-md-5">
                     <div class="header-search_area">
-                        <form action="#" class="header-search_box">
-                            <input class="jb-search_input" type="text" placeholder="Nhập từ khóa tìm kiếm ..." />
-                            <button class="jb-search_btn" type="submit">
+                        <form action="index.php?act=product" method="post" class="header-search_box">
+                            <input class="jb-search_input" name="kyw" type="text" placeholder="Nhập từ khóa tìm kiếm ..." />
+                            <button class="jb-search_btn" name="btn_search" type="submit">
                                 <i class="fa fa-search"></i>
                             </button>
                         </form>

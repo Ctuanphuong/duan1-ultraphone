@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 14, 2022 lúc 03:06 PM
+-- Thời gian đã tạo: Th10 16, 2022 lúc 06:20 AM
 -- Phiên bản máy phục vụ: 10.4.24-MariaDB
 -- Phiên bản PHP: 8.1.6
 
@@ -122,7 +122,8 @@ CREATE TABLE `product` (
   `name_pro` varchar(255) NOT NULL,
   `price` int(11) NOT NULL,
   `img_pro` varchar(255) NOT NULL,
-  `description` text NOT NULL,
+  `short_des` text NOT NULL,
+  `detail_des` text NOT NULL,
   `view` int(11) NOT NULL DEFAULT 0,
   `idcate` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -131,11 +132,11 @@ CREATE TABLE `product` (
 -- Đang đổ dữ liệu cho bảng `product`
 --
 
-INSERT INTO `product` (`id_pro`, `name_pro`, `price`, `img_pro`, `description`, `view`, `idcate`) VALUES
-(7, 'iPhone 14 Pro Max 256GB', 36999000, 'iPhone_14_Pro_Max-Pur1.jpg', 'iPhone 14 Pro Max đem đến những trải nghiệm không thể tìm thấy trên mọi thế hệ iPhone trước đó với màu Tím Deep Purple sang trọng, camera 48MP lần đầu xuất hiện, chip A16 Bionic và màn hình “viên thuốc” Dynamic Island linh hoạt, nịnh mắt.', 0, 8),
-(8, 'Điện thoại di động OPPO Reno6 5G', 9850000, 'oppo_reno4g.jpg', 'Nối tiếp sự thành công của dòng Reno5, OPPO mới đây đã trình làng bộ đôi siêu phẩm thuộc dòng OPPO Reno6 series có cấu hình mạnh mẽ, thiết kế ấn tượng. Trong đó, chiếc OPPO Reno6 5G với những cải tiến mới mẻ hơn thế hệ tiền nhiệm chắc chắn sẽ là một siêu phẩm trên thị trường smartphone hiện nay mà bạn không nên bỏ lỡ!', 0, 7),
-(9, 'Galaxy S22 Ultra 8/128GB', 1799999, 'Galaxy-S22-Ultra-Black-600x600.jpg', 'Những nâng cấp lớn về hiệu năng, dung lượng pin, và trên hết là camera sau chính là những điểm khiến nó trở thành siêu phẩm trong phân khúc cao cấp. Dưới đây là những thông tin cần biết về dòng điện thoại vừa ra mắt của Samsung. Dưới đây là thông số cấu hình của Samsung S22 Ultra vừa được gã khổng lồ Hàn Quốc giới thiệu.', 0, 1),
-(11, ' Realme C35 128GB', 4690000, 'realme-c35-thumb-new-600x600.jpg', 'Realme C35 sở hữu màu sắc như xanh ngọc sang trọng, đen tuyền huyền bí cùng các đường nét thiết kế tỉ mỉ, điện thoại này được thiết kế với khung bo góc làm bằng vật liệu 2D phát sáng linh động, làm cho tổng thể vẻ ngoài của máy trở nên phong cách hơn.', 0, 10);
+INSERT INTO `product` (`id_pro`, `name_pro`, `price`, `img_pro`, `short_des`, `detail_des`, `view`, `idcate`) VALUES
+(7, 'iPhone 14 Pro Max 256GB', 36999000, 'iPhone_14_Pro_Max-Pur1.jpg', 'iPhone 14 Pro Max đem đến những trải nghiệm không thể tìm thấy trên mọi thế hệ iPhone trước đó với màu Tím Deep Purple sang trọng, camera 48MP lần đầu xuất hiện, chip A16 Bionic và màn hình “viên thuốc” Dynamic Island linh hoạt, nịnh mắt.', '', 123, 8),
+(8, 'OPPO Reno6 5G', 9850000, 'oppo_reno4g.jpg', 'Nối tiếp sự thành công của dòng Reno5, OPPO mới đây đã trình làng bộ đôi siêu phẩm thuộc dòng OPPO Reno6 series có cấu hình mạnh mẽ, thiết kế ấn tượng. Trong đó, chiếc OPPO Reno6 5G với những cải tiến mới mẻ hơn thế hệ tiền nhiệm chắc chắn sẽ là một siêu phẩm trên thị trường smartphone hiện nay mà bạn không nên bỏ lỡ!', '', 41, 7),
+(9, 'Galaxy S22 Ultra 8/128GB', 1799999, 'Galaxy-S22-Ultra-Black-600x600.jpg', 'Những nâng cấp lớn về hiệu năng, dung lượng pin, và trên hết là camera sau chính là những điểm khiến nó trở thành siêu phẩm trong phân khúc cao cấp. Dưới đây là những thông tin cần biết về dòng điện thoại vừa ra mắt của Samsung. Dưới đây là thông số cấu hình của Samsung S22 Ultra vừa được gã khổng lồ Hàn Quốc giới thiệu.', '', 0, 1),
+(11, ' Realme C35 128GB', 4690000, 'realme-c35-thumb-new-600x600.jpg', 'Realme C35 sở hữu màu sắc như xanh ngọc sang trọng, đen tuyền huyền bí cùng các đường nét thiết kế tỉ mỉ, điện thoại này được thiết kế với khung bo góc làm bằng vật liệu 2D phát sáng linh động, làm cho tổng thể vẻ ngoài của máy trở nên phong cách hơn.', '', 23, 10);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -221,7 +222,7 @@ ALTER TABLE `customer`
 -- AUTO_INCREMENT cho bảng `product`
 --
 ALTER TABLE `product`
-  MODIFY `id_pro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_pro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- Các ràng buộc cho các bảng đã đổ

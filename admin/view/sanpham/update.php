@@ -30,9 +30,13 @@ if (is_file($img_path)) {
                     <input type="text" name="price" class="form-control" value="<?= $price ?>">
                 </div>
                 <div class="form-group mt-3">
-                    <label for="comment" class="font-lb">Mô tả</label>
-                    <textarea class="form-control" rows="5" name="description"
-                        id="description"><?= $description ?></textarea>
+                <label for="formGroupExampleInput" class="font-lb">Mô tả ngắn</label>
+                <input type="text" name="short_des" class="form-control" value="<?= $short_des ?>">
+              </div>
+                <div class="form-group mt-3">
+                    <label for="comment" class="font-lb">Mô tả chi tiết</label>
+                    <textarea class="form-control" rows="5" name="detail_des"
+                        id="detail_des"><?= $detail_des ?></textarea>
                 </div>
                 <div class="form-group mt-3 ">
                     <label for="formGroupExampleInput" class="font-lb">Hình ảnh</label> <br>
