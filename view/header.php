@@ -66,9 +66,9 @@
                                         <?php
                                         foreach ($listcate as $cate) {
                                             extract($cate);
-                                            $linkcate = "index.php?act=product&idcate=" . $id_cate;
+                                            $linkpro = "index.php?act=product&idcate=" . $id_cate;
                                             echo ' <li>
-                                                    <a href="' . $linkcate . '">' . $name_cate . '<i class="fa fa-chevron-down"></i></a>
+                                                    <a href="' . $linkpro . '">' . $name_cate . '<i class="fa fa-chevron-down"></i></a>
                                                    </li>';
                                         }
                                         ?>
@@ -109,7 +109,7 @@
                                             <div class="minicart-img">
                                                 <a href="single-product.html">
                                                     <img src="./src/image/product/small-size/1.jpg"
-                                                        alt="JB's Product Image" />
+                                                        alt="UltraPhone Product" />
                                                 </a>
                                                 <span class="product-quantity">1x</span>
                                             </div>
@@ -135,7 +135,7 @@
                                             <div class="minicart-img">
                                                 <a href="single-product.html">
                                                     <img src="./src/image/product/small-size/2.jpg"
-                                                        alt="JB's Product Image" />
+                                                        alt="UltraPhone Product" />
                                                 </a>
                                                 <span class="product-quantity">1x</span>
                                             </div>
@@ -204,9 +204,9 @@
                                 <?php
                                 foreach ($listcate as $cate) {
                                     extract($cate);
-                                    $linkcate = "index.php?act=product&idcate=" . $id_cate;
+                                    $linkpro = "index.php?act=product&idcate=" . $id_cate;
                                     echo '<li class="right-menu">
-                       <a href="' . $linkcate . '">' . $name_cate . '</a>
+                       <a href="' . $linkpro . '">' . $name_cate . '</a>
                    </li>';
                                 }
                                 ?>

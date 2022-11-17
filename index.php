@@ -33,6 +33,9 @@ if(isset($_GET['act']) && ($_GET['act'] != "")) {
             $cate_name = load_name_cate($idcate);
             include "view/sanpham/sanpham.php";
             break;
+        case 'prodetail':
+            include "view/sanpham/sanphamct.php";
+            break;
             default: 
             include "view/content.php";
             break;

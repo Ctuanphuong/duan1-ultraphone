@@ -96,6 +96,104 @@
 
 </div>
 <!-- End of .container -->
+  <!-- Phần show nhanh chi tiết ngắn sản phẩm-->
+  <div class="modal fade modal-wrapper" id="exampleModalCenter">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <div class="modal-inner-area sp-area row">
+                            <div class="col-lg-5 col-md-6 col-sm-6">
+                                <div class="sp-images">
+                                    <div class="sp-largeimages">
+                                        <div class="sp-singleimage">
+                                            <img src="./src/image/product/large-size/5.jpg" alt="Ultraphone Product">
+                                        </div>
+                                    </div>
+                                    <div class="sp-thumbs">
+                                        <div class="sp-singlethumb">
+                                            <img src="./src/image/product/small-size/5.jpg" alt="Ảnh sản phẩm">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-7 col-md-6 col-sm-6">
+                                <div class="sp-content">
+                                    <div class="sp-heading">
+                                        <h5><a href="#">Tên sản phẩm</a></h5>
+                                    </div>
+                                    <span class="reference">Danh mục: iPhone</span>
+                                    <div class="rating-box">
+                                        <ul>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                        </ul>
+                                    </div>
+                                    <div class="price-box">
+                                        <span class="new-price">$23.90</span>
+                                        <span class="old-price">$21.51</span>
+                                    </div>
+                                    <div class="short-desc">
+                                        <p>Mô tả ngắn</p>
+                                    </div>
+                                    <div class="quantity">
+                                        <label>Số lượng</label>
+                                        <div class="cart-plus-minus">
+                                            <input class="cart-plus-minus-box" value="1" type="text">
+                                            <div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>
+                                            <div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>
+                                        </div>
+                                        <div class="jb-quantity-btn_area">
+                                            <a class="jb-quantity_btn" href="cart.html">Thêm giỏ hàng</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="jb-social_link jb-link_share">
+                        <span>Chia sẻ</span>
+                        <ul>
+                            <li class="facebook">
+                                <a href="https://www.facebook.com/" data-bs-toggle="tooltip" target="_blank"
+                                    title="Facebook">
+                                    <i class="fab fa-facebook"></i>
+                                </a>
+                            </li>
+                            <li class="twitter">
+                                <a href="https://twitter.com/" data-bs-toggle="tooltip" target="_blank" title="Twitter">
+                                    <i class="fab fa-twitter-square"></i>
+                                </a>
+                            </li>
+                            <li class="youtube">
+                                <a href="https://www.youtube.com/" data-bs-toggle="tooltip" target="_blank"
+                                    title="Youtube">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                            </li>
+                            <li class="google-plus">
+                                <a href="https://www.plus.google.com/discover" data-bs-toggle="tooltip" target="_blank"
+                                    title="Google Plus">
+                                    <i class="fab fa-google-plus"></i>
+                                </a>
+                            </li>
+                            <li class="instagram">
+                                <a href="https://rss.com/" data-bs-toggle="tooltip" target="_blank" title="Instagram">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="wishlist-link_share"><a href="#"><i class="fa fa-heart"></i> Thêm vào danh sách yêu thích</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End -->
 </div>
 <!-- end footer -->
 <script src="./src/js/plugins.min.js"></script>

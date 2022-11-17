@@ -26,9 +26,9 @@
                             <?php
                             foreach ($listcate as $cate) {
                                 extract($cate);
-                                $linkcate = "index.php?act=product&idcate=" . $id_cate;
+                                $linkdetail = "index.php?act=product&idcate=" . $id_cate;
                                 echo ' <li>
-                                        <a href="' . $linkcate . '"><i class="fa-sharp fa-solid fa-angles-right"></i> ' . $name_cate . '</a>
+                                        <a href="' . $linkdetail . '"><i class="fa-sharp fa-solid fa-angles-right"></i> ' . $name_cate . '</a>
                                       </li>';
                             }
                             ?>
@@ -55,12 +55,12 @@
                                 <?php
                                 foreach ($list_topsp as $topsp) {
                                     extract($topsp);
-                                    $linkpro = "./index.php?act=prodetail&idpro=" . $id_pro;
+                                    $linkdetail = "./index.php?act=prodetail&idpro=" . $id_pro;
                                     $img_home = "./admin/uploads/" . $img_pro;
                                     echo '<div class="jb-slide-item">
                                             <div class="jb-single_product">
                                                 <div class="product-img">
-                                                    <a href="' . $linkpro . '">
+                                                    <a href="' . $linkdetail . '">
                                                         <img src="' . $img_home . '" alt="Ảnh sản phẩm">
                                                     </a>
                                                 </div>
@@ -68,8 +68,9 @@
                                                     <div class="product-desc_info">
                                                         <div class="product-name">
                                                             <h6>
-                                                                <a href="' . $linkpro . '">' . $name_pro . '</a>
+                                                                <a href="' . $linkdetail . '">' . $name_pro . '</a>
                                                             </h6>
+                                                            
                                                         </div>
                                                         <div class="price-pro">
                                                             <span class="price-17">' . number_format($price) . ' VNĐ</span>
@@ -140,7 +141,7 @@
                                     }
                                     foreach ($listpro as $pro) { ?>
                                         <!-- extract($pro);
-                                        $linkpro = "./index.php?act=prodetail&idpro=" . $id_pro;
+                                        $linkdetail = "./index.php?act=prodetail&idpro=" . $id_pro;
                                         $img_home = "./admin/uploads/" . $img_pro; -->
                                         <div class="col-lg-4 col-md-4 col-sm-6">
                                             <div class="jb-slide-item">
@@ -156,6 +157,16 @@
                                                         <div class="product-desc_info">
                                                             <h6><a class="product-name" href="index.php?act=prodetail&idpro=<?php echo $pro['id_pro'] ?>"><?php echo $pro['name_pro'] ?></a>
                                                             </h6>
+                                                            
+                                                            <div class="rating-box">
+                                        <ul>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                        </ul>
+                                    </div>
                                                             <div class="price-box">
                                                                 <span class="new-price"><?php echo number_format($pro['price']) ?>
                                                                     VNĐ</span>
@@ -220,22 +231,31 @@
                                         <?php
                                         foreach ($listpro as $pro) {
                                             extract($pro);
-                                            $linkpro = "./index.php?act=prodetail&idpro=" . $id_pro;
+                                            $linkdetail = "./index.php?act=prodetail&idpro=" . $id_pro;
                                             $img_home = "admin/uploads/" . $img_pro;
                                             echo '<div class="row g-0 jb-slide-item">
                                                     <div class="col-lg-4 col-md-4 jb-single_product">
                                                         <div class="product-img">
-                                                            <a href="' . $linkpro . '">
+                                                            <a href="' . $linkdetail . '">
                                                                 <img src="' . $img_home . '" alt="Ảnh sản phẩm">
                                                             </a>
-                                                            <div><a href="' . $linkpro . '" title="Quick View" class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><i
+                                                            <div><a href="' . $linkdetail . '" title="Quick View" class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><i
                                                                         class="fa fa-search"></i></a></div>
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-8 col-md-8">
                                                         <div class="jb-product_content">
                                                             <div class="product-desc_info">
-                                                                <h6><a class="product-name" href="' . $linkpro . '">' . $name_pro . '</a></h6>
+                                                                <h6><a class="product-name" href="' . $linkdetail . '">' . $name_pro . '</a></h6>
+                                                                <div class="rating-box">
+                                                                <ul>
+                                                                    <li><i class="fa fa-star"></i></li>
+                                                                    <li><i class="fa fa-star"></i></li>
+                                                                    <li><i class="fa fa-star"></i></li>
+                                                                    <li><i class="fa fa-star"></i></li>
+                                                                    <li><i class="fa fa-star"></i></li>
+                                                                </ul>
+                                                            </div>
                                                                 <div class="product-desc">
                                                                     <p>' . $short_des . '</p>
                                                                 </div>

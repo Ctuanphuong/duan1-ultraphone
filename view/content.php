@@ -171,6 +171,15 @@
                                                 <h6>
                                                     <a class="product-name" href="index.php?act=prodetail&idpro=<?php echo $pro['id_pro'] ?>"><?php echo $pro['name_pro'] ?></a>
                                                 </h6>
+                                                <div class="rating-box">
+                                        <ul>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                        </ul>
+                                    </div>
                                                 <div class="price-box">
                                                     <span class="price-home"><?php echo number_format($pro['price']) ?> VNĐ</span>
                                                 </div>
@@ -825,7 +834,7 @@
                             <?php
                             foreach ($list_topsp as $pro) {
                                 extract($pro);
-                                $linkpro = "./index.php?act=prodetail&idpro=" . $id_pro;
+                                $linkdetail = "./index.php?act=prodetail&idpro=" . $id_pro;
                                 $img_home = "./admin/uploads/" . $img_pro;
                                 echo '
                         <div class="jb-slide-item">
@@ -835,7 +844,7 @@
                             </a>
                             <span class="sticker">Nổi bật</span>
                         <div>
-                          <a href="' . $linkpro . '" title="Quick View" class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><i class="fa fa-search"></i></a>
+                          <a href="' . $linkdetail . '" title="Quick View" class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><i class="fa fa-search"></i></a>
                         </div>
                       </div>
                       <div class="jb-product_content">
@@ -843,6 +852,15 @@
                           <h6>
                             <a class="product-name" href="#">' . $name_pro . '</a>
                           </h6>
+                          <div class="rating-box">
+                          <ul>
+                              <li><i class="fa fa-star"></i></li>
+                              <li><i class="fa fa-star"></i></li>
+                              <li><i class="fa fa-star"></i></li>
+                              <li><i class="fa fa-star"></i></li>
+                              <li><i class="fa fa-star"></i></li>
+                          </ul>
+                      </div>
                           <div class="price-box">
                             <span class="price-home">' . number_format($price) . ' VNĐ</span>
                           </div>
