@@ -11737,3 +11737,27 @@ color: #212529;
   transition: .4s ease;
   
 }
+.filter { 
+  display: flex;
+  justify-content: space-between;
+}
+.list-des {
+  width: 206px;
+padding: 4px 0px;
+margin-bottom: 17px;
+border: 1px solid #ced4da;
+border-radius: 0.25rem;
+color: #212529;
+text-align: center;
+background: #08a0a3;
+transition: all .4s ease-in-out;
+}
+.list-des:hover { 
+  background: #057375;
+}
+.list-des a {
+  text-decoration: none;
+  font-size: 13px;
+ color: #ffff;
+ font-weight: 600;
+}

@@ -66,7 +66,7 @@
                             echo ' <tr>
                                     <td>' . $id_pro . '</td>
                                     <td>' . $name_pro . '</td>
-                                    <td>' . $price . '</td>
+                                    <td>' . number_format($price) . '</td>
                                     <td>' . $img_pro . '</td>
                                     <td>' . $short_des . '</td>
                                     <td>' . $detail_des . '</td>

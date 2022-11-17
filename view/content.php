@@ -5,10 +5,10 @@
         <div class="single-slide animation-style-01 bg-1">
             <div class="container">
                 <div class="slider-content">
-                    <span>Premium eCommerce Html Template</span>
-                    <h2>Hurry Up!</h2>
-                    <h3>2022 Xail Gear VR</h3>
-                    <h5>Starting At $19.00</h5>
+                    <span>Chức thức phát hành tại Việt Nam</span>
+                    <h2>Xiaomi 5G</h2>
+                    <h3>Độc quyền chính hãng</h3>
+                    <h5>Giá chỉ từ 4 triệu đồng</h5>
                     <div class="jb-btn-ps_center slide-btn">
                         <a class="jb-btn" href="#">Mua ngay</a>
                     </div>
@@ -21,10 +21,10 @@
         <div class="single-slide animation-style-02 bg-2">
             <div class="container">
                 <div class="slider-content">
-                    <span>Premium eCommerce Html Template</span>
-                    <h2>Xail D40</h2>
-                    <h3>20% Off Digital Camera</h3>
-                    <h5>Starting At $19.00</h5>
+                    <span>Realme trên tay, World Cup mê say</span>
+                    <h2>Realme 5</h2>
+                    <h3>Sale off 20%</h3>
+                    <h5>Chính hãng, giá rẻ, có trả  góp</h5>
                     <div class="jb-btn-ps_center slide-btn">
                         <a class="jb-btn" href="#">Mua ngay</a>
                     </div>
@@ -43,28 +43,28 @@
         <div class="col-lg-3 col-md-6 col-sm-6">
             <div class="banner-item">
                 <a href="#">
-                    <img src="./src/image/banner/1-1.jpg" alt="JB's Banner" />
+                    <img src="./src/image/banner/oppo.png" alt="JB's Banner" />
                 </a>
             </div>
         </div>
         <div class="col-lg-3 col-md-6 col-sm-6">
             <div class="banner-item">
                 <a href="#">
-                    <img src="./src/image/banner/1-2.jpg" alt="JB's Banner" />
+                    <img src="./src/image/banner/realme.jpg" alt="JB's Banner" />
                 </a>
             </div>
         </div>
         <div class="col-lg-3 col-md-6 col-sm-6">
             <div class="banner-item">
                 <a href="#">
-                    <img src="./src/image/banner/1-3.jpg" alt="JB's Banner" />
+                    <img src="./src/image/banner/samsung.jpg" alt="JB's Banner" />
                 </a>
             </div>
         </div>
         <div class="col-lg-3 col-md-6 col-sm-6">
             <div class="banner-item">
                 <a href="#">
-                    <img src="./src/image/banner/1-4.jpg" alt="JB's Banner" />
+                    <img src="./src/image/banner/xiaomi.png" alt="JB's Banner" />
                 </a>
             </div>
         </div>
@@ -155,48 +155,44 @@
                         <div class="jb-product-tab_slider">
                             <!-- Phần show sản phẩm mới nhất -->
                             <?php
-                            foreach ($prohome as $pro) {
-                                extract($pro);
-                                $linkpro = "./index.php?act=prodetail&idpro=" . $id_pro;
-                                $img_home = "./admin/uploads/" . $img_pro;
-                                echo '
-                        <div class="jb-slide-item">
-                        <div class="jb-single_product">
-                        <div class="product-img">
-                        <a href="#"><img src="' . $img_home . '" alt="Ảnh sản phẩm" />
-                        </a>
-                        <span class="sticker">New</span>
-                        <div>
-                          <a href="' . $linkpro . '" title="Quick View" class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><i class="fa fa-search"></i></a>
-                        </div>
-                      </div>
-                      <div class="jb-product_content">
-                        <div class="product-desc_info">
-                          <h6>
-                            <a class="product-name" href="#">' . $name_pro . '</a>
-                          </h6>
-                          <div class="price-box">
-                            <span class="price-home">' . $price . ' VNĐ</span>
-                          </div>
-                        </div>
-                        <div class="add-actions">
-                          <ul>
-                            <li>
-                              <a class="jb-wishlist_link" href="#"><i class="fa fa-heart"></i></a>
-                            </li>
-                            <li>
-                              <a class="jb-add_cart">Thêm giỏ hàng</a>
-                            </li>
-                            <li>
-                              <a class="jb-sp_link" href="#"><i class="fa fa-copy"></i></a>
-                            </li>
-                          </ul>
-                        </div>
-                      </div> 
-                      </div>
-                      </div>';
-                            }
-                            ?>
+                            foreach ($prohome as $pro) { ?>
+                                <div class="jb-slide-item">
+                                    <div class="jb-single_product">
+                                        <div class="product-img">
+                                            <a href="index.php?act=prodetail&idpro=<?php echo $pro['id_pro'] ?>"><img src="admin/uploads/<?php echo $pro['img_pro'] ?>" alt="Ảnh sản phẩm" />
+                                            </a>
+                                            <span class="sticker">New</span>
+                                            <div>
+                                                <a href="index.php?act=prodetail&idpro=<?php echo $pro['id_pro'] ?>" title="Quick View" class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><i class="fa fa-search"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="jb-product_content">
+                                            <div class="product-desc_info">
+                                                <h6>
+                                                    <a class="product-name" href="index.php?act=prodetail&idpro=<?php echo $pro['id_pro'] ?>"><?php echo $pro['name_pro'] ?></a>
+                                                </h6>
+                                                <div class="price-box">
+                                                    <span class="price-home"><?php echo number_format($pro['price']) ?> VNĐ</span>
+                                                </div>
+                                            </div>
+                                            <div class="add-actions">
+                                                <ul>
+                                                    <li>
+                                                        <a class="jb-wishlist_link" href="#"><i class="fa fa-heart"></i></a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="jb-add_cart">Thêm giỏ hàng</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="jb-sp_link" href="#"><i class="fa fa-copy"></i></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php   } ?>
+
                             <!-- end phần show sản sản phẩm mới nhất -->
                         </div>
                     </div>
@@ -848,7 +844,7 @@
                             <a class="product-name" href="#">' . $name_pro . '</a>
                           </h6>
                           <div class="price-box">
-                            <span class="price-home">' . $price . ' VNĐ</span>
+                            <span class="price-home">' . number_format($price) . ' VNĐ</span>
                           </div>
                         </div>
                         <div class="add-actions">
@@ -888,7 +884,7 @@
             <div class="col-lg-6">
                 <div class="banner-item">
                     <a href="#">
-                        <img src="./src/image/banner/1-5.jpg" alt="JB's Banner" />
+                        <img src="./src/image/banner/poco.jpg" alt="JB's Banner" />
                     </a>
                 </div>
             </div>
@@ -897,7 +893,7 @@
                     <div class="col-lg-6 col-md-6">
                         <div class="banner-item">
                             <a href="#">
-                                <img src="./src/image/banner/1-6.jpg" alt="JB's Banner" />
+                                <img src="./src/image/banner/ipx.jpg" alt="JB's Banner" />
                             </a>
                         </div>
                     </div>
@@ -906,14 +902,14 @@
                             <div class="col-lg-12">
                                 <div class="banner-item">
                                     <a href="#">
-                                        <img src="./src/image/banner/1-7.jpg" alt="JB's Banner" />
+                                        <img src="./src/image/banner/sony.jpg" alt="JB's Banner" />
                                     </a>
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="banner-item">
                                     <a href="#">
-                                        <img src="./src/image/banner/1-8.jpg" alt="JB's Banner" />
+                                        <img src="./src/image/banner/blue.jpg" alt="JB's Banner" />
                                     </a>
                                 </div>
                             </div>
@@ -931,20 +927,18 @@
     <!-- Begin JB's Banner Content Area -->
     <div class="jb-banner_content">
         <div class="product-discount">
-            <span>Sale Up To 20% Off</span>
+            <span>Giảm giá lên tới 20%</span>
         </div>
         <div class="product-facility">
-            <h2>Next Level Of Sounds</h2>
+            <h2>iPhone 14 Promax</h2>
         </div>
-        <div class="product-desc">
+        <div class="product-desc" style="margin-top: 5px;">
             <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam ex
-                hic ab enim nemo laboriosam nesciunt fuga, possimus labore, ea
-                doloribus quas voluptatum ipsam?
+            Mua điện thoại iPhone 14, 14 Plus, 14 Pro, 14 Pro Max tại UltraPhone. Trả Góp 0%. Thu cũ đổi mới giá tốt. Nhiều ưu đãi khủng. Chần chừ gì nữa mà không nhấc máy đặt hàng ngay?
             </p>
         </div>
         <div class="jb-btn-ps_left slide-btn">
-            <a class="jb-btn-bondi_blue" href="#">Shop Now</a>
+            <a class="jb-btn-bondi_blue" href="#">Mua ngay</a>
         </div>
     </div>
     <!-- JB's Banner Content Area End Here -->
@@ -959,14 +953,14 @@
             <div class="col-lg-6">
                 <div class="banner-item">
                     <a href="#">
-                        <img src="./src/image/banner/1-10.jpg" alt="JB's Banner" />
+                        <img src="./src/image/banner/banner-vsm.jpg" alt="JB's Banner" />
                     </a>
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="banner-item">
                     <a href="#">
-                        <img src="./src/image/banner/1-11.jpg" alt="JB's Banner" />
+                        <img src="./src/image/banner/banner-xiaomi.jpg" alt="JB's Banner" />
                     </a>
                 </div>
             </div>
@@ -977,52 +971,3 @@
 
 
 
-<!-- Brand hợp tác  -->
-<div class="jb-brand_area">
-    <div class="container">
-        <div class="row">
-            <!-- Begin JB's Brand Slider Area -->
-            <div class="col-lg-12">
-                <div class="jb-brand_slider">
-                    <div class="slide-item">
-                        <a href="#">
-                            <img src="./src/image/brand//1.jpg" alt="JB's Brand Image" />
-                        </a>
-                    </div>
-                    <div class="slide-item">
-                        <a href="#">
-                            <img src="./src/image/brand//2.jpg" alt="JB's Brand Image" />
-                        </a>
-                    </div>
-                    <div class="slide-item">
-                        <a href="#">
-                            <img src="./src/image/brand//3.jpg" alt="JB's Brand Image" />
-                        </a>
-                    </div>
-                    <div class="slide-item">
-                        <a href="#">
-                            <img src="./src/image/brand//4.jpg" alt="JB's Brand Image" />
-                        </a>
-                    </div>
-                    <div class="slide-item">
-                        <a href="#">
-                            <img src="./src/image/brand//5.jpg" alt="JB's Brand Image" />
-                        </a>
-                    </div>
-                    <div class="slide-item">
-                        <a href="#">
-                            <img src="./src/image/brand//6.jpg" alt="JB's Brand Image" />
-                        </a>
-                    </div>
-                    <div class="slide-item">
-                        <a href="#">
-                            <img src="./src/image/brand//1.jpg" alt="JB's Brand Image" />
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <!-- JB's Brand Slider Area End Here -->
-        </div>
-    </div>
-</div>
-<!-- JB's Brand Area End Here -->

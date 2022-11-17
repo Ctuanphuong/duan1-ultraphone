@@ -937,7 +937,7 @@ button {
 /* --Slider Background Image-- */
 .bg-1,
 .bg-2 {
-  background-image: url("../image/slider/1.jpg");
+  background-image: url("../image/slider/xiaomi.jpg");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -962,7 +962,7 @@ button {
 }
 
 .bg-2 {
-  background-image: url("../image/slider/2.jpg");
+  background-image: url("../image/slider/realme.jpg");
 }
 
 .bg-3,
@@ -1608,7 +1608,7 @@ button {
 
 /* ---Banner Two Columns--- */
 .banner-two_columns {
-  padding-top: 60px;
+  padding-top: 30px;
 }
 
 @media (max-width: 991px) {
@@ -1620,13 +1620,13 @@ button {
 /* ---Banner With Content--- */
 .banner-with-content_area,
 .banner-with-content_area-2 {
-  background-image: url("../image/banner/1-9.jpg");
+  background-image: url("../image/banner/banner-iphone.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 485px;
   position: relative;
-  margin-top: -1px;
+  margin-top: 15px;
 }
 
 @media (max-width: 479px) {
@@ -8505,4 +8505,23 @@ li.right-menu .cat-mega-menu-3>li {
 .btn-search:hover {
   background-color: #0084c5;
 
+}
+.no-found{
+  margin-top: 30px;
+ padding-bottom: 40px;
+}
+.noresult { 
+  font-size: 20px;
+  color: red;
+  text-align: justify;
+  line-height: 1.5;
+
+}
+.img-no-found {
+  text-align: center;
+ 
+}
+.img-no-found img { 
+  width: 300px;
+  margin-bottom: 30px;  
 }
