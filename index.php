@@ -34,7 +34,14 @@ if(isset($_GET['act']) && ($_GET['act'] != "")) {
             include "view/sanpham/sanpham.php";
             break;
         case 'prodetail':
-            include "view/sanpham/sanphamct.php";
+            if (isset($_GET['idpro']) && $_GET['idpro'] > 0) {
+                $id_pro = $_GET['idpro'];
+                $one_pro = loadone_pro($id_pro);
+                
+                include "view/sanpham/sanphamct.php";
+            }else{
+                include "view/sanpham/sanpham.php";
+            }
             break;
             default: 
             include "view/content.php";

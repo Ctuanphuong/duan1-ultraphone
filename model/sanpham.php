@@ -6,6 +6,14 @@ function loadall_pro_home()
     $listpro= pdo_query($sql);
     return $listpro;
 }
+function loadone_pro($id_pro)
+{
+    $sql = "SELECT * FROM product WHERE id_pro=" . $id_pro;
+    $onepro = pdo_query_one($sql);
+    return $onepro;
+}
+
+
 // show toàn bộ sản phẩm theo keyword được tìm kiếm và theo danh mục sản phẩm
 function loadall_pro($kyw = "", $idcate = 0)
 {

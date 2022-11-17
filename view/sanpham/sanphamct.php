@@ -16,16 +16,19 @@
             <div class="container">
                 <div class="sp-nav">
                     <div class="row">
-                        <div class="col-lg-5 col-md-5">
+                        <?php
+                            extract($one_pro);
+                            $img = "admin/uploads/" . $img_pro;
+                            echo '<div class="col-lg-5 col-md-5">
                             <div class="sp-images">
                                 <div class="sp-largeimages sp-imagezoom">
                                     <div class="sp-singleimage" data-src="image/product/large-size/5.jpg">
-                                        <img src="./src/image/product/large-size/5.jpg" alt="UltraPhone Product">
+                                        <img src="'.$img.'" alt="UltraPhone Product">
                                     </div>
                                 </div>
                                 <div class="sp-thumbs">
                                     <div class="sp-singlethumb">
-                                        <img src="./src/image/product/small-size/5.jpg" alt="Ảnh sản phẩm">
+                                        <img src="'.$img.'" alt="Ảnh sản phẩm">
                                     </div>
                                 </div>
                             </div>
@@ -33,9 +36,9 @@
                         <div class="col-lg-7 col-md-7">
                             <div class="sp-content">
                                 <div class="sp-heading">
-                                    <h5><a href="#">Tên sản phẩm</a></h5>
+                                    <h5><a href="#">'.$name_pro.'</a></h5>
                                 </div>
-                                <span class="reference">Danh mục: iPhone</span>
+                            
                                 <div class="rating-box">
                                     <ul>
                                         <li><i class="fa fa-star"></i></li>
@@ -46,11 +49,11 @@
                                     </ul>
                                 </div>
                                 <div class="price-box">
-                                    <span class="new-price">$23.90</span>
-                                    <span class="old-price">$21.51</span>
+                                    <span class="new-price">'.$price.' VNĐ</span>
+                                    <!-- <span class="old-price">$21.51</span> -->
                                 </div>
                                 <div class="short-desc">
-                                    <p>Mô tả ngắn</p>
+                                    <p>'.$short_des.'</p>
                                 </div>
                                 <div class="quantity">
                                     <label>Số lượng</label>
@@ -134,10 +137,12 @@
                             <div id="description" class="tab-pane active show" role="tabpanel">
                                 <div class="product-description">
                                     <p class="short-desc">
-                                        Mô tả chi tiết
+                                        '.$detail_des.'
                                     </p>
                                 </div>
-                            </div>
+                            </div>';
+                        
+                            ?>
                             <!-- End phần mô tả chỉ tiết -->
                             
                             <!-- Phần đánh giá, bình luận -->
