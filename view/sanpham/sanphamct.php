@@ -49,7 +49,7 @@
                                     </ul>
                                 </div>
                                 <div class="price-box">
-                                    <span class="new-price">'.$price.' VNĐ</span>
+                                    <span class="new-price">'.number_format($price).' VNĐ</span>
                                     <!-- <span class="old-price">$21.51</span> -->
                                 </div>
                                 <div class="short-desc">
