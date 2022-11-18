@@ -54,34 +54,35 @@
                             <div class="jb-list-product_slider">
                                 <!-- Begin JB's Slide Item Area -->
                                 <?php
-                                foreach ($list_topsp as $topsp) {
-                                    extract($topsp);
-                                    $linkdetail = "./index.php?act=prodetail&idpro=" . $id_pro;
-                                    $img_home = "./admin/uploads/" . $img_pro;
-                                    echo '<div class="jb-slide-item">
-                                            <div class="jb-single_product">
-                                                <div class="product-img">
-                                                    <a href="' . $linkdetail . '">
-                                                        <img src="' . $img_home . '" alt="Ảnh sản phẩm">
-                                                    </a>
-                                                </div>
-                                                <div class="jb-product_content">
-                                                    <div class="product-desc_info">
-                                                        <div class="product-name">
-                                                            <h6>
-                                                                <a href="' . $linkdetail . '">' . $name_pro . '</a>
-                                                            </h6>
-                                                            
-                                                        </div>
-                                                        <div class="price-pro">
-                                                            <span class="price-17">' . number_format($price) . '₫</span>
-                                                        </div>
+                                foreach ($list_topsp as $topsp) { ?>
+                                    <div class="jb-slide-item">
+                                        <div class="jb-single_product">
+                                            <div class="product-img">
+                                                <a href="index.php?act=prodetail&idpro=<?= $topsp['id_pro'] ?>">
+                                                    <img src="admin/uploads/<?= $topsp['img_pro'] ?>" alt="Ảnh sản phẩm">
+                                                </a>
+                                            </div>
+                                            <div class="jb-product_content">
+                                                <div class="product-desc_info">
+                                                    <div class="product-name">
+                                                        <h6>
+                                                            <a href="index.php?act=prodetail&idpro=<?= $topsp['id_pro'] ?>"><?= $topsp['name_pro'] ?></a>
+                                                        </h6>
+
+                                                    </div>
+                                                    <div class="price-box">
+                                                        <?php if ($topsp['discount'] <= 0) { ?>
+                                                            <span class="new-price"><?= number_format($topsp['price']) ?>₫</span>
+                                                        <?php } else { ?>
+                                                            <span class="new-price"><?= number_format(($topsp['price']) - (($topsp['price']) * ($topsp['discount']) / 100)) ?>₫</span>
+                                                            <span class="old-price"><?= number_format($topsp['price']) ?>₫</span>
+                                                        <?php } ?>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>';
-                                }
-                                ?>
+                                        </div>
+                                    </div>';
+                                <?php } ?>
 
                                 <!-- JB's Slide Item Area End Here -->
                             </div>
