@@ -3,8 +3,8 @@
     <div class="container">
         <div class="breadcrumb-content">
             <ul>
-                <li><a href="index.html">Trang chủ</a></li>
-                <li class="active">Sản phẩm</li>
+                <li><a href="index.php">Trang chủ</a></li>
+                <li><a href="index.php?act=product" style="color: #0d6efd;">Sản phẩm</a></li>
             </ul>
         </div>
     </div>
@@ -26,9 +26,10 @@
                             <?php
                             foreach ($listcate as $cate) {
                                 extract($cate);
+                                $color = (isset($_GET['idcate']) && ($_GET['idcate']) == $id_cate) ? '#0d6efd' : '';
                                 $linkpro = "index.php?act=product&idcate=" . $id_cate;
                                 echo ' <li>
-                                        <a href="' . $linkpro . '"><i class="fa-sharp fa-solid fa-angles-right"></i> ' . $name_cate . '</a>
+                                        <a href="' . $linkpro . '" style="color:' . $color . ';"><i class="fa-sharp fa-solid fa-angles-right"></i> ' . $name_cate . '</a>
                                       </li>';
                             }
                             ?>
@@ -109,11 +110,13 @@
                                     <li role="presentation"><a data-bs-toggle="tab" role="tab" aria-controls="list-view" href="#list-view"><i class="fa fa-th-list"></i></a></li>
                                 </ul>
                             </div>
-                          
+
                             <div class="toolbar-amount">
-                             <span>Hiện có <?php echo count($listpro); ?> sản phẩm.</span>
+                                <span>Hiện có
+                                    <?php echo count($listpro); ?> sản phẩm.
+                                </span>
                             </div>
-                          
+
                         </div>
                         <div class="product-select-box">
                             <div class="product-short">
@@ -130,18 +133,18 @@
                         <div class="tab-content">
                             <div id="grid-view" class="tab-pane fade active show shop-products_grid" role="tabpanel">
                                 <div class="row">
-                                    <?php
-                                    if (empty($listpro)) {
-                                        echo '<div class="no-found">
-                                        <div class="img-no-found">
-                                            <img src="./src/image/error/no-product.png" alt="Ảnh báo lỗi">
-                                        </div>
-                                        <h1 class="noresult">Oops...không tồn tại sản phẩm trùng khớp với từ khóa bạn nhập, vui
-                                            lòng tìm kiếm sản phẩm khác <i class="fa-solid fa-face-sad-tear"></i></h1>
+                                    <?php if (empty($listpro)) { ?>
+                                        <div class="no-found">
+                                            <div class="img-no-found">
+                                                <img src="./src/image/error/no-product.png" alt="Ảnh báo lỗi">
+                                            </div>
+                                            <h1 class="noresult">Oops...không tồn tại sản phẩm trùng khớp với từ khóa bạn
+                                                nhập, vui
+                                                lòng tìm kiếm sản phẩm khác <i class="fa-solid fa-face-sad-tear"></i></h1>
 
-                                    </div>';
-                                    }
-                                    foreach ($listpro as $pro) { ?>
+                                        </div>
+                                    <?php } ?>
+                                    <?php foreach ($listpro as $pro) { ?>
                                         <!-- extract($pro);
                                         $linkdetail = "./index.php?act=prodetail&idpro=" . $id_pro;
                                         $img_home = "./admin/uploads/" . $img_pro; -->
@@ -153,24 +156,45 @@
                                                             <img src="admin/uploads/<?php echo $pro['img_pro'] ?>" alt="Ảnh sản phẩm">
                                                         </a>
                                                         <span class="sticker">Mới</span>
+                                                        <?php if ($pro['discount'] <= 0) { ?>
+                                                            <span></span>
+                                                        <?php } else { ?>
+                                                            <span class="sticker-2">-<?= $pro['discount'] ?>%</span>
+                                                        <?php } ?>
                                                         <div><a href="index.php?act=prodetail&idpro=<?php echo $pro['id_pro'] ?>" title="Quick View" class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><i class="fa fa-search"></i></a></div>
                                                     </div>
                                                     <div class="jb-product_content">
                                                         <div class="product-desc_info">
-                                                            <h6><a class="product-name" href="index.php?act=prodetail&idpro=<?php echo $pro['id_pro'] ?>"><?php echo $pro['name_pro'] ?></a>
+                                                            <h6><a class="product-name" href="index.php?act=prodetail&idpro=<?php echo $pro['id_pro'] ?>">
+                                                                    <?php echo $pro['name_pro'] ?>
+                                                                </a>
                                                             </h6>
-                                                            
+
                                                             <div class="rating-box">
-                                        <ul>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                        </ul>
-                                    </div>
+                                                                <ul>
+                                                                    <li><i class="fa fa-star"></i></li>
+                                                                    <li><i class="fa fa-star"></i></li>
+                                                                    <li><i class="fa fa-star"></i></li>
+                                                                    <li><i class="fa fa-star"></i></li>
+                                                                    <li><i class="fa fa-star"></i></li>
+                                                                </ul>
+                                                            </div>
                                                             <div class="price-box">
-                                                                <span class="new-price"><?php echo number_format($pro['price']) ?>₫</span>
+                                                                <?php if ($pro['discount'] <= 0) { ?>
+                                                                    <span class="new-price">
+                                                                        <?= number_format($pro['price']) ?>₫
+                                                                    </span>
+                                                                <?php } else { ?>
+                                                                    <span class="new-price">
+                                                                        <?= number_format(($pro['price']) - (($pro['price']) * ($pro['discount']) / 100))
+                                                                        ?>₫
+                                                                    </span>
+                                                                    <span class="old-price">
+                                                                        <?= number_format($pro['price']) ?>₫
+                                                                    </span>
+                                                                <?php } ?>
+
+
                                                             </div>
                                                         </div>
                                                         <div class="add-actions">
@@ -184,7 +208,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    <?php   } ?>
+                                    <?php } ?>
 
 
                                     <!-- JB's Slide Item Area End Here -->
@@ -230,25 +254,21 @@
                                 <div class="row g-0">
                                     <div class="col-lg-12">
                                         <?php
-                                        foreach ($listpro as $pro) {
-                                            extract($pro);
-                                            $linkdetail = "./index.php?act=prodetail&idpro=" . $id_pro;
-                                            $img_home = "admin/uploads/" . $img_pro;
-                                            echo '<div class="row g-0 jb-slide-item">
-                                                    <div class="col-lg-4 col-md-4 jb-single_product">
-                                                        <div class="product-img">
-                                                            <a href="' . $linkdetail . '">
-                                                                <img src="' . $img_home . '" alt="Ảnh sản phẩm">
-                                                            </a>
-                                                            <div><a href="' . $linkdetail . '" title="Quick View" class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><i
-                                                                        class="fa fa-search"></i></a></div>
-                                                        </div>
+                                        foreach ($listpro as $pro) { ?>
+                                            <div class="row g-0 jb-slide-item">
+                                                <div class="col-lg-4 col-md-4 jb-single_product">
+                                                    <div class="product-img">
+                                                        <a href="index.php?act=prodetail&idpro=<?= $pro['id_pro'] ?>">
+                                                            <img src="admin/uploads/<?= $pro['img_pro'] ?>" alt="Ảnh sản phẩm">
+                                                        </a>
+                                                        <div><a href="index.php?act=prodetail&idpro=<?= $pro['id_pro'] ?>" title="Quick View" class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><i class="fa fa-search"></i></a></div>
                                                     </div>
-                                                    <div class="col-lg-8 col-md-8">
-                                                        <div class="jb-product_content">
-                                                            <div class="product-desc_info">
-                                                                <h6><a class="product-name" href="' . $linkdetail . '">' . $name_pro . '</a></h6>
-                                                                <div class="rating-box">
+                                                </div>
+                                                <div class="col-lg-8 col-md-8">
+                                                    <div class="jb-product_content">
+                                                        <div class="product-desc_info">
+                                                            <h6><a class="product-name" href="index.php?act=prodetail&idpro=<?= $pro['id_pro'] ?>"><?= $pro['name_pro'] ?></a></h6>
+                                                            <div class="rating-box">
                                                                 <ul>
                                                                     <li><i class="fa fa-star"></i></li>
                                                                     <li><i class="fa fa-star"></i></li>
@@ -257,26 +277,29 @@
                                                                     <li><i class="fa fa-star"></i></li>
                                                                 </ul>
                                                             </div>
-                                                                <div class="product-desc">
-                                                                    <p>' . $short_des . '</p>
-                                                                </div>
-                                                                <div class="price-box">
-                                                                    <span class="old-price">50,000,000₫</span>
-                                                                    <span class="new-price">' . number_format($price) . '₫</span>
-                                                                </div>
+                                                            <div class="product-desc">
+                                                                <p><?= $pro['short_des'] ?></p>
                                                             </div>
-                                                            <div class="add-actions">
-                                                                <ul>
-                                                                    <li><a class="jb-wishlist_link" href="#"><i class="fa fa-heart"></i></a></li>
-                                                                    <li><a class="jb-add_cart" href="#"><i class="icon_cart_alt"></i>Thêm giỏ hàng</a></li>
-                                                                    <li><a class="jb-sp_link" href="#"><i class="fa fa-copy"></i></a></li>
-                                                                </ul>
+                                                            <div class="price-box">
+                                                                <?php if ($pro['discount'] <= 0) { ?>
+                                                                    <span class="new-price"><?= number_format($pro['price']) ?>₫</span>
+                                                                <?php } else { ?>
+                                                                    <span class="new-price"><?= number_format(($pro['price']) - (($pro['price']) * ($pro['discount']) / 100)) ?>₫</span>
+                                                                    <span class="old-price"><?= number_format($pro['price']) ?>₫</span>
+                                                                <?php } ?>
                                                             </div>
                                                         </div>
+                                                        <div class="add-actions">
+                                                            <ul>
+                                                                <li><a class="jb-wishlist_link" href="#"><i class="fa fa-heart"></i></a></li>
+                                                                <li><a class="jb-add_cart" href="#"><i class="icon_cart_alt"></i>Thêm giỏ hàng</a></li>
+                                                                <li><a class="jb-sp_link" href="#"><i class="fa fa-copy"></i></a></li>
+                                                            </ul>
+                                                        </div>
                                                     </div>
-                                                </div>';
-                                        }
-                                        ?>
+                                                </div>
+                                            </div>
+                                        <?php } ?>
 
                                     </div>
                                     <div class="col-lg-12">

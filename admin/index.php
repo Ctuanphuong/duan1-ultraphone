@@ -54,6 +54,7 @@ if (isset($_GET['act'])) {
                     // $id_pro = $_POST['id_pro'];
                     $name_pro = $_POST['name_pro'];
                     $price = $_POST['price'];
+                    $discount = $_POST['discount'];
                     $short_des = $_POST['short_des'];
                     $detail_des = $_POST['detail_des'];	
                     $idcate = $_POST['idcate'];
@@ -61,7 +62,7 @@ if (isset($_GET['act'])) {
                     $target_dir = "./uploads/";
                     $target_file = $target_dir . basename($_FILES["img_pro"]["name"]);
                     (move_uploaded_file($_FILES["img_pro"]["tmp_name"], $target_file));
-                    add_pro($name_pro, $price, $img_pro, $short_des,$detail_des, $idcate);
+                    add_pro($name_pro, $price, $discount, $img_pro, $short_des,$detail_des, $idcate);
                     echo '<script>alert("Thêm sản phẩm thành công!")</script>';
                 }
                 $ds_loai = loadall_loai();
@@ -92,13 +93,14 @@ if (isset($_GET['act'])) {
                     $idcate = $_POST['idcate'];
                     $name_pro = $_POST['name_pro'];
                     $price = $_POST['price'];
+                    $discount = $_POST['discount'];
                     $short_des = $_POST['short_des'];
                     $detail_des = $_POST['detail_des'];
                     $img_pro = $_FILES['img_pro']['name'];
                     $target_dir = "./uploads/";
                     $target_file = $target_dir . basename($_FILES["img_pro"]["name"]);
                     (move_uploaded_file($_FILES["img_pro"]["tmp_name"], $target_file));
-                    update_pro($id_pro, $name_pro, $price, $short_des, $detail_des, $img_pro, $idcate);
+                    update_pro($id_pro, $name_pro, $price, $discount, $short_des, $detail_des, $img_pro, $idcate);
                     echo '<script>alert("Cập nhật sản phẩm thành công!")</script>';
                 }
                

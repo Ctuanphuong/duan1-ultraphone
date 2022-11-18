@@ -24,7 +24,7 @@
                     <span>Realme trên tay, World Cup mê say</span>
                     <h2>Realme 5</h2>
                     <h3>Sale off 20%</h3>
-                    <h5>Chính hãng, giá rẻ, có trả  góp</h5>
+                    <h5>Chính hãng, giá rẻ, có trả góp</h5>
                     <div class="jb-btn-ps_center slide-btn">
                         <a class="jb-btn" href="index.php?act=product&idcate=10">Mua ngay</a>
                     </div>
@@ -161,7 +161,12 @@
                                         <div class="product-img">
                                             <a href="index.php?act=prodetail&idpro=<?php echo $pro['id_pro'] ?>"><img src="admin/uploads/<?php echo $pro['img_pro'] ?>" alt="Ảnh sản phẩm" />
                                             </a>
-                                            <span class="sticker">New</span>
+                                            <span class="sticker">Mới</span>
+                                            <?php if ($pro['discount'] <= 0) { ?>
+                                                <span></span>
+                                            <?php } else { ?>
+                                                <span class="sticker-2">-<?= $pro['discount'] ?>%</span>
+                                            <?php } ?>
                                             <div>
                                                 <a href="index.php?act=prodetail&idpro=<?php echo $pro['id_pro'] ?>" title="Quick View" class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><i class="fa fa-search"></i></a>
                                             </div>
@@ -172,16 +177,23 @@
                                                     <a class="product-name" href="index.php?act=prodetail&idpro=<?php echo $pro['id_pro'] ?>"><?php echo $pro['name_pro'] ?></a>
                                                 </h6>
                                                 <div class="rating-box">
-                                        <ul>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                        </ul>
-                                    </div>
+                                                    <ul>
+                                                        <li><i class="fa fa-star"></i></li>
+                                                        <li><i class="fa fa-star"></i></li>
+                                                        <li><i class="fa fa-star"></i></li>
+                                                        <li><i class="fa fa-star"></i></li>
+                                                        <li><i class="fa fa-star"></i></li>
+                                                    </ul>
+                                                </div>
                                                 <div class="price-box">
-                                                    <span class="price-home"><?php echo number_format($pro['price']) ?>₫</span>
+                                                    <?php if ($pro['discount'] <= 0) { ?>
+                                                        <span class="new-price"><?= number_format($pro['price']) ?>₫</span>
+                                                    <?php } else { ?>
+                                                        <span class="new-price"><?= number_format(($pro['price']) - (($pro['price']) * ($pro['discount']) / 100)) ?>₫</span>
+                                                        <span class="old-price"><?= number_format($pro['price']) ?>₫</span>
+                                                    <?php } ?>
+
+
                                                 </div>
                                             </div>
                                             <div class="add-actions">
@@ -832,57 +844,62 @@
                         <div class="jb-product-tab_slider">
                             <!-- Phần show sản phẩm nổi bật -->
                             <?php
-                            foreach ($list_topsp as $pro) {
-                                extract($pro);
-                                $linkdetail = "./index.php?act=prodetail&idpro=" . $id_pro;
-                                $img_home = "./admin/uploads/" . $img_pro;
-                                echo '
-                        <div class="jb-slide-item">
-                        <div class="jb-single_product">
-                        <div class="product-img">
-                            <a href="#"><img src="' . $img_home . '" alt="Ảnh sản phẩm" />
-                            </a>
-                            <span class="sticker">Nổi bật</span>
-                        <div>
-                          <a href="' . $linkdetail . '" title="Quick View" class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><i class="fa fa-search"></i></a>
-                        </div>
-                      </div>
-                      <div class="jb-product_content">
-                        <div class="product-desc_info">
-                          <h6>
-                            <a class="product-name" href="#">' . $name_pro . '</a>
-                          </h6>
-                          <div class="rating-box">
-                          <ul>
-                              <li><i class="fa fa-star"></i></li>
-                              <li><i class="fa fa-star"></i></li>
-                              <li><i class="fa fa-star"></i></li>
-                              <li><i class="fa fa-star"></i></li>
-                              <li><i class="fa fa-star"></i></li>
-                          </ul>
-                      </div>
-                          <div class="price-box">
-                            <span class="price-home">' . number_format($price) . '₫</span>
-                          </div>
-                        </div>
-                        <div class="add-actions">
-                          <ul>
-                            <li>
-                              <a class="jb-wishlist_link" href="#"><i class="fa fa-heart"></i></a>
-                            </li>
-                            <li>
-                              <a class="jb-add_cart">Thêm giỏ hàng</a>
-                            </li>
-                            <li>
-                              <a class="jb-sp_link" href="#"><i class="fa fa-copy"></i></a>
-                            </li>
-                          </ul>
-                        </div>
-                      </div> 
-                      </div>
-                      </div>';
-                            }
-                            ?>
+                            foreach ($list_topsp as $pro) { ?>
+                                <div class="jb-slide-item">
+                                    <div class="jb-single_product">
+                                        <div class="product-img">
+                                            <a href="index.php?act=prodetail&idpro=<?= $pro['id_pro'] ?>"><img src="admin/uploads/<?= $pro['img_pro'] ?>" alt="Ảnh sản phẩm" />
+                                            </a>
+                                            <span class="sticker">Nổi bật</span>
+                                            <?php if ($pro['discount'] <= 0) { ?>
+                                                <span></span>
+                                            <?php } else { ?>
+                                                <span class="sticker-2">-<?= $pro['discount'] ?>%</span>
+                                            <?php } ?>
+                                            <div>
+                                                <a href="index.php?act=prodetail&idpro=<?= $pro['id_pro'] ?>" title="Quick View" class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><i class="fa fa-search"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="jb-product_content">
+                                            <div class="product-desc_info">
+                                                <h6>
+                                                    <a class="product-name" href="index.php?act=prodetail&idpro=<?= $pro['id_pro'] ?>"><?= $pro['name_pro'] ?></a>
+                                                </h6>
+                                                <div class="rating-box">
+                                                    <ul>
+                                                        <li><i class="fa fa-star"></i></li>
+                                                        <li><i class="fa fa-star"></i></li>
+                                                        <li><i class="fa fa-star"></i></li>
+                                                        <li><i class="fa fa-star"></i></li>
+                                                        <li><i class="fa fa-star"></i></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="price-box">
+                                                    <?php if ($pro['discount'] <= 0) { ?>
+                                                        <span class="new-price"><?= number_format($pro['price']) ?>₫</span>
+                                                    <?php } else { ?>
+                                                        <span class="new-price"><?= number_format(($pro['price']) - (($pro['price']) * ($pro['discount']) / 100)) ?>₫</span>
+                                                        <span class="old-price"><?= number_format($pro['price']) ?>₫</span>
+                                                    <?php } ?>
+                                                </div>
+                                            </div>
+                                            <div class="add-actions">
+                                                <ul>
+                                                    <li>
+                                                        <a class="jb-wishlist_link" href="#"><i class="fa fa-heart"></i></a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="jb-add_cart">Thêm giỏ hàng</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="jb-sp_link" href="#"><i class="fa fa-copy"></i></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php } ?>
                             <!-- end phần show sản phẩm nổi bật -->
 
                         </div>
@@ -901,7 +918,7 @@
         <div class="row g-0">
             <div class="col-lg-6">
                 <div class="banner-item">
-                    <a href="#">
+                    <a href="index.php?act=product&idcate=11">
                         <img src="./src/image/banner/poco.jpg" alt="JB's Banner" />
                     </a>
                 </div>
@@ -910,7 +927,7 @@
                 <div class="row g-0">
                     <div class="col-lg-6 col-md-6">
                         <div class="banner-item">
-                            <a href="#">
+                            <a href="index.php?act=product&idcate=8">
                                 <img src="./src/image/banner/ipx.jpg" alt="JB's Banner" />
                             </a>
                         </div>
@@ -919,14 +936,14 @@
                         <div class="row g-0">
                             <div class="col-lg-12">
                                 <div class="banner-item">
-                                    <a href="#">
+                                    <a href="index.php?act=product&idcate=14">
                                         <img src="./src/image/banner/sony.jpg" alt="JB's Banner" />
                                     </a>
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="banner-item">
-                                    <a href="#">
+                                    <a href="index.php?act=product&idcate=11">
                                         <img src="./src/image/banner/blue.jpg" alt="JB's Banner" />
                                     </a>
                                 </div>
@@ -952,11 +969,11 @@
         </div>
         <div class="product-desc" style="margin-top: 5px;">
             <p>
-            Mua điện thoại iPhone 14, 14 Plus, 14 Pro, 14 Pro Max tại UltraPhone. Trả Góp 0%. Thu cũ đổi mới giá tốt. Nhiều ưu đãi khủng. Chần chừ gì nữa mà không nhấc máy đặt hàng ngay?
+                Mua điện thoại iPhone 14, 14 Plus, 14 Pro, 14 Pro Max tại UltraPhone. Trả Góp 0%. Thu cũ đổi mới giá tốt. Nhiều ưu đãi khủng. Chần chừ gì nữa mà không nhấc máy đặt hàng ngay?
             </p>
         </div>
         <div class="jb-btn-ps_left slide-btn">
-            <a class="jb-btn-bondi_blue" href="#">Mua ngay</a>
+            <a class="jb-btn-bondi_blue" href="index.php?act=product&idcate=8">Mua ngay</a>
         </div>
     </div>
     <!-- JB's Banner Content Area End Here -->
@@ -970,14 +987,14 @@
         <div class="row g-0">
             <div class="col-lg-6">
                 <div class="banner-item">
-                    <a href="#">
+                    <a href="index.php?act=product&idcate=12">
                         <img src="./src/image/banner/banner-vsm.jpg" alt="JB's Banner" />
                     </a>
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="banner-item">
-                    <a href="#">
+                    <a href="index.php?act=product&idcate=11">
                         <img src="./src/image/banner/banner-xiaomi.jpg" alt="JB's Banner" />
                     </a>
                 </div>
@@ -986,6 +1003,3 @@
     </div>
 </div>
 <!-- JB's Banner With Two Columns Area End Here -->
-
-
-

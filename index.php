@@ -1,4 +1,5 @@
 <?php 
+session_start();
 include "view/head.php";
 include "model/pdo.php";
 include "model/sanpham.php";
@@ -40,6 +41,16 @@ if(isset($_GET['act']) && ($_GET['act'] != "")) {
                 extract($one_pro);
                 $similar_pro = similar_pro($id_pro, $idcate);
                 include "view/sanpham/sanphamct.php";
+                $seekey='post_'.$id_pro;
+                error_reporting(0);
+                $sessionView = $_SESSION[$seekey];
+                error_reporting(E_ALL);
+                if(!$sessionView){
+                    $_SESSION[$seekey] = "1";
+                    updateview($id_pro);
+                } else{
+                    break;
+                }
             }else{
                 include "view/sanpham/sanpham.php";
             }
@@ -54,4 +65,3 @@ else {
 }
 
 include "view/footer.php";
-?>

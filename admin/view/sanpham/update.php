@@ -23,20 +23,23 @@ if (is_file($img_path)) {
                 </div>
                 <div class="form-group mt-3">
                     <label for="formGroupExampleInput" class="font-lb">Tên sản phẩm</label>
-                    <input type="text" name="name_pro" class="form-control" value="<?= $name_pro ?>">
+                    <input type="text" name="name_pro" class="form-control" placeholder="Tên sản phẩm" value="<?= $name_pro ?>">
                 </div>
                 <div class="form-group mt-3">
                     <label for="formGroupExampleInput" class="font-lb">Giá</label>
-                    <input type="text" name="price" class="form-control" value="<?= $price ?>">
+                    <input type="text" name="price" class="form-control"placeholder="Giá sản phẩm" value="<?= $price ?>">
+                </div>
+                <div class="form-group mt-3">
+                    <label for="formGroupExampleInput" class="font-lb">Giảm giá</label>
+                    <input type="text" name="discount" class="form-control" placeholder="Nhập số % mà sản phẩm được giảm giá" value="<?= $discount ?>">
                 </div>
                 <div class="form-group mt-3">
                 <label for="formGroupExampleInput" class="font-lb">Mô tả ngắn</label>
-                <input type="text" name="short_des" class="form-control" value="<?= $short_des ?>">
+                <input type="text" name="short_des" class="form-control" placeholder="Mô tả tóm tắt sản phẩm" value="<?= $short_des ?>">
               </div>
                 <div class="form-group mt-3">
                     <label for="comment" class="font-lb">Mô tả chi tiết</label>
-                    <textarea class="form-control" rows="5" name="detail_des"
-                        id="detail_des"><?= $detail_des ?></textarea>
+                    <textarea class="form-control" rows="5" name="detail_des" placeholder="Mô tả đầy đủ chi tiết sản phẩm" id="detail_des"><?= $detail_des ?></textarea>
                 </div>
                 <div class="form-group mt-3 ">
                     <label for="formGroupExampleInput" class="font-lb">Hình ảnh</label> <br>

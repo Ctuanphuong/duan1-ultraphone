@@ -14,7 +14,6 @@
                             <?php
                             foreach ($ds_loai as $loai) {
                                 extract($loai);
-
                                 if ($idcate == $id_cate) {
                                     echo '<option value="' . $id_cate . '" selected>' . $name_cate . '</option>';
                                 } else {
@@ -32,6 +31,7 @@
                             <th>Mã sản phẩm</th>
                             <th>Tên sản phẩm</th>
                             <th>Giá</th>
+                            <th>Giảm giá</th>
                             <th>Hình ảnh</th>
                             <th>Mô tả ngắn</th>
                             <th>Mô tả chi tiết</th>
@@ -44,6 +44,7 @@
                             <th>Mã sản phẩm</th>
                             <th>Tên sản phẩm</th>
                             <th>Giá</th>
+                            <th>Giảm giá</th>
                             <th>Hình ảnh</th>
                             <th>Mô tả ngắn</th>
                             <th>Mô tả chi tiết</th>
@@ -67,6 +68,7 @@
                                     <td>' . $id_pro . '</td>
                                     <td>' . $name_pro . '</td>
                                     <td>' . number_format($price) . '</td>
+                                    <td>' . $discount. '%</td>
                                     <td>' . $img_pro . '</td>
                                     <td>' . $short_des . '</td>
                                     <td>' . $detail_des . '</td>

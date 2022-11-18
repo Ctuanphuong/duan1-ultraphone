@@ -18,8 +18,8 @@
                 <input type="text" name="price" class="form-control" placeholder="Giá sản phẩm">
               </div>
               <div class="form-group mt-3">
-                <label for="formGroupExampleInput" class="font-lb">Hình ảnh</label>
-                <input type="file" name="img_pro" class="form-control" placeholder="Hình ảnh sản phẩm">
+                <label for="formGroupExampleInput" class="font-lb">Giảm giá(nếu có)</label>
+                <input type="text" name="discount" class="form-control" placeholder="Nhập số % mà sản phẩm được giảm giá">
               </div>
               <div class="form-group mt-3">
                 <label for="formGroupExampleInput" class="font-lb">Mô tả ngắn</label>
@@ -29,6 +29,10 @@
           <label for="comment" class="font-lb">Mô tả chi tiết</label>
           <textarea class="form-control" rows="5" name="detail_des" id="detail_des" placeholder="Mô tả đầy đủ chi tiết sản phẩm"></textarea>
         </div>
+        <div class="form-group mt-3">
+                <label for="formGroupExampleInput" class="font-lb">Hình ảnh</label>
+                <input type="file" name="img_pro" class="form-control">
+              </div>
         <div class="form-group mt-3">
           <label for="exampleFormControlSelect1" class="font-lb">Loại điện thoại</label>
           <select class="form-control" name="idcate" id="exampleFormControlSelect1">

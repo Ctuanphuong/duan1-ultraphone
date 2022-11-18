@@ -230,7 +230,7 @@
                 <!-- Begin Header Contact Information Area -->
                 <div class="col-xl-2 col-lg-3 col-md-3">
                     <div class="contact-info">
-                        <a href="tel://+123123321345"><i class="fa fa-phone-volume"></i> +84 335099885 </a>
+                        <a href="tel://+84335099885"><i class="fa fa-phone-volume"></i> +84 335099885 </a>
                     </div>
                 </div>
                 <!-- Header Contact Information Area End Here -->

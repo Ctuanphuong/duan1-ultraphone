@@ -16,19 +16,17 @@
     <div class="container">
         <div class="sp-nav">
             <div class="row">
-                <?php
-                extract($one_pro);
-                $img = "admin/uploads/" . $img_pro;
-                echo '<div class="col-lg-5 col-md-5">
+                <?php extract($one_pro);?>
+                <div class="col-lg-5 col-md-5">
                             <div class="sp-images">
                                 <div class="sp-largeimages sp-imagezoom">
                                     <div class="sp-singleimage" data-src="image/product/large-size/5.jpg">
-                                        <img src="' . $img . '" alt="UltraPhone Product">
+                                        <img src="admin/uploads/<?= $one_pro['img_pro']; ?>" alt="UltraPhone Product">
                                     </div>
                                 </div>
                                 <div class="sp-thumbs">
                                     <div class="sp-singlethumb">
-                                        <img src="' . $img . '" alt="Ảnh sản phẩm">
+                                        <img src="admin/uploads/<?= $one_pro['img_pro']; ?>" alt="Ảnh sản phẩm">
                                     </div>
                                 </div>
                             </div>
@@ -36,7 +34,8 @@
                         <div class="col-lg-7 col-md-7">
                             <div class="sp-content">
                                 <div class="sp-heading">
-                                    <h5><a href="#">' . $name_pro . '</a></h5>
+                                    <h5><a href="#"><?= $one_pro['name_pro'] ?></a></h5>
+                                    <span class="reference">Lượt xem: <?= $one_pro['view'] ?></span>
                                 </div>
                             
                                 <div class="rating-box">
@@ -49,11 +48,17 @@
                                     </ul>
                                 </div>
                                 <div class="price-box">
-                                    <span class="new-price">' . number_format($price) . '₫</span>
-                                    <!-- <span class="old-price">$21.51</span> -->
+                                <?php if($one_pro['discount'] <= 0 ){ ?>
+                                    <span class="new-price"><?= number_format($one_pro['price']) ?>₫</span>
+                                    <?php } else { ?>
+                                        <span class="new-price"><?= number_format(($one_pro['price'])-(($one_pro['price'])*($one_pro['discount'])/100)) ?>₫</span> 
+                                        <span class="old-price"><?= number_format($one_pro['price']) ?>₫</span> 
+                                        <?php } ?>
+                                        
+                                       
                                 </div>
                                 <div class="short-desc">
-                                    <p>' . $short_des . '</p>
+                                    <p><?= $one_pro['short_des'] ?></p>
                                 </div>
                                 <div class="quantity">
                                     <label>Số lượng</label>
@@ -137,12 +142,12 @@
                             <div id="description" class="tab-pane active show" role="tabpanel">
                                 <div class="product-description">
                                     <p class="short-desc"> <strong style="font-size: 20px; line-height: 2">Thông số kỹ thuật:</strong> <br>
-                                        ' . $detail_des . '
+                                    <?= $one_pro['detail_des'] ?>
                                     </p>
                                 </div>
-                            </div>';
+                            </div>
 
-                ?>
+               
                 <!-- End phần mô tả chỉ tiết -->
 
                 <!-- Phần đánh giá, bình luận -->
@@ -272,6 +277,7 @@
                                     </div>
                                     <div class="price-box">
                                         <span class="new-price"><?php echo number_format($pro['price']); ?>₫</span>
+                                        <!-- <del class="new-price"><?php echo number_format($pro['price']); ?>₫</del> -->
                                     </div>
                                 </div>
                                 <div class="add-actions">
