@@ -26,9 +26,9 @@
                             <?php
                             foreach ($listcate as $cate) {
                                 extract($cate);
-                                $linkdetail = "index.php?act=product&idcate=" . $id_cate;
+                                $linkpro = "index.php?act=product&idcate=" . $id_cate;
                                 echo ' <li>
-                                        <a href="' . $linkdetail . '"><i class="fa-sharp fa-solid fa-angles-right"></i> ' . $name_cate . '</a>
+                                        <a href="' . $linkpro . '"><i class="fa-sharp fa-solid fa-angles-right"></i> ' . $name_cate . '</a>
                                       </li>';
                             }
                             ?>
@@ -73,7 +73,7 @@
                                                             
                                                         </div>
                                                         <div class="price-pro">
-                                                            <span class="price-17">' . number_format($price) . ' VNĐ</span>
+                                                            <span class="price-17">' . number_format($price) . '₫</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -109,9 +109,11 @@
                                     <li role="presentation"><a data-bs-toggle="tab" role="tab" aria-controls="list-view" href="#list-view"><i class="fa fa-th-list"></i></a></li>
                                 </ul>
                             </div>
+                          
                             <div class="toolbar-amount">
-                                <span>Hiện có 10 sản phẩm.</span>
+                             <span>Hiện có <?php echo count($listpro); ?> sản phẩm.</span>
                             </div>
+                          
                         </div>
                         <div class="product-select-box">
                             <div class="product-short">
@@ -168,8 +170,7 @@
                                         </ul>
                                     </div>
                                                             <div class="price-box">
-                                                                <span class="new-price"><?php echo number_format($pro['price']) ?>
-                                                                    VNĐ</span>
+                                                                <span class="new-price"><?php echo number_format($pro['price']) ?>₫</span>
                                                             </div>
                                                         </div>
                                                         <div class="add-actions">
@@ -260,8 +261,8 @@
                                                                     <p>' . $short_des . '</p>
                                                                 </div>
                                                                 <div class="price-box">
-                                                                    <span class="old-price">50,000,000 VNĐ</span>
-                                                                    <span class="new-price">' . number_format($price) . ' VNĐ</span>
+                                                                    <span class="old-price">50,000,000₫</span>
+                                                                    <span class="new-price">' . number_format($price) . '₫</span>
                                                                 </div>
                                                             </div>
                                                             <div class="add-actions">

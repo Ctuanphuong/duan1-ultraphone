@@ -8,9 +8,9 @@
                     <span>Chức thức phát hành tại Việt Nam</span>
                     <h2>Xiaomi 5G</h2>
                     <h3>Độc quyền chính hãng</h3>
-                    <h5>Giá chỉ từ 4 triệu đồng</h5>
+                    <h5>Giá rẻ bất ngờ</h5>
                     <div class="jb-btn-ps_center slide-btn">
-                        <a class="jb-btn" href="#">Mua ngay</a>
+                        <a class="jb-btn" href="index.php?act=product&idcate=11">Mua ngay</a>
                     </div>
                 </div>
                 <div class="slider-progress"></div>
@@ -26,7 +26,7 @@
                     <h3>Sale off 20%</h3>
                     <h5>Chính hãng, giá rẻ, có trả  góp</h5>
                     <div class="jb-btn-ps_center slide-btn">
-                        <a class="jb-btn" href="#">Mua ngay</a>
+                        <a class="jb-btn" href="index.php?act=product&idcate=10">Mua ngay</a>
                     </div>
                 </div>
                 <div class="slider-progress"></div>
@@ -181,7 +181,7 @@
                                         </ul>
                                     </div>
                                                 <div class="price-box">
-                                                    <span class="price-home"><?php echo number_format($pro['price']) ?> VNĐ</span>
+                                                    <span class="price-home"><?php echo number_format($pro['price']) ?>₫</span>
                                                 </div>
                                             </div>
                                             <div class="add-actions">
@@ -862,7 +862,7 @@
                           </ul>
                       </div>
                           <div class="price-box">
-                            <span class="price-home">' . number_format($price) . ' VNĐ</span>
+                            <span class="price-home">' . number_format($price) . '₫</span>
                           </div>
                         </div>
                         <div class="add-actions">

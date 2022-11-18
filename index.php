@@ -30,14 +30,15 @@ if(isset($_GET['act']) && ($_GET['act'] != "")) {
                 $idcate = 0;
             }
             $listpro = loadall_pro($kyw, $idcate);
-            $cate_name = load_name_cate($idcate);
+            $namecate =  load_namecate($idcate);
             include "view/sanpham/sanpham.php";
             break;
         case 'prodetail':
             if (isset($_GET['idpro']) && $_GET['idpro'] > 0) {
                 $id_pro = $_GET['idpro'];
                 $one_pro = loadone_pro($id_pro);
-                
+                extract($one_pro);
+                $similar_pro = similar_pro($id_pro, $idcate);
                 include "view/sanpham/sanphamct.php";
             }else{
                 include "view/sanpham/sanpham.php";

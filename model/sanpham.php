@@ -35,4 +35,9 @@ function loadall_pro_noibat()
     $listpro= pdo_query($sql);
     return $listpro;
 }
+function similar_pro($id_pro, $idcate) { 
+$sql = "SELECT * FROM product WHERE idcate = ".$idcate." AND id_pro <> ".$id_pro;
+$listpro = pdo_query($sql);
+return $listpro;
+}
 ?>

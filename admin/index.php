@@ -14,7 +14,7 @@ if (isset($_GET['act'])) {
             if(isset($_POST['btn_add']) && ($_POST['btn_add'])) { 
                 $name_cate = $_POST['name_cate'];
                 them_loai($name_cate);
-                $notice = "Thêm loại thành công !";
+                echo '<script>alert("Thêm loại thành công!")</script>';
             }
             include "view/loai/add.php";
             break;
@@ -34,6 +34,7 @@ if (isset($_GET['act'])) {
                     $id_cate = $_POST['id_cate'];
                     $name_cate = $_POST['name_cate'];
                     capnhat_loai($id_cate, $name_cate);
+                    echo '<script>alert("Cập nhật loại thành công!")</script>';
                 }
                 $ds_loai = loadall_loai();
                 include "view/loai/list.php";
@@ -61,7 +62,7 @@ if (isset($_GET['act'])) {
                     $target_file = $target_dir . basename($_FILES["img_pro"]["name"]);
                     (move_uploaded_file($_FILES["img_pro"]["tmp_name"], $target_file));
                     add_pro($name_pro, $price, $img_pro, $short_des,$detail_des, $idcate);
-                    $noticepro = "Thêm sản phẩm thành công!";
+                    echo '<script>alert("Thêm sản phẩm thành công!")</script>';
                 }
                 $ds_loai = loadall_loai();
                 include "view/sanpham/add.php";
@@ -98,7 +99,9 @@ if (isset($_GET['act'])) {
                     $target_file = $target_dir . basename($_FILES["img_pro"]["name"]);
                     (move_uploaded_file($_FILES["img_pro"]["tmp_name"], $target_file));
                     update_pro($id_pro, $name_pro, $price, $short_des, $detail_des, $img_pro, $idcate);
+                    echo '<script>alert("Cập nhật sản phẩm thành công!")</script>';
                 }
+               
                 $ds_loai = loadall_loai();
                 $listpro = loadall_pro();
                 include "view/sanpham/list.php";

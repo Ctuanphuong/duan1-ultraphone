@@ -4,14 +4,14 @@ function loadall_cate() {
     $listcate = pdo_query($sql);
     return $listcate;
 }
-function load_name_cate($idcate) { 
-    if($idcate > 0) { 
-        $sql = "SELECT * cate_name; category WHERE id_cate =".$idcate;
+function load_namecate($idcate) {
+    if ($idcate > 0 ) { 
+        $sql = "SELECT * FROM category WHERE id_cate=" .$idcate;
         $cate = pdo_query_one($sql);
         extract($cate);
-        return $cate_name;
-    } else { 
+        return $name_cate;
+    }  else { 
         return " ";
     }
-}
+    }
 ?>
