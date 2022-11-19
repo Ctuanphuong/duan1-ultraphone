@@ -35,12 +35,12 @@
                                      <label for="remember_me">Ghi nhớ tài khoản</label>
                                  </div>
                                  <div class="register-txt">
-                                    <a href="index.php?act=register">Đăng ký tài khoản mới</a>
+                                    <a href="index.php?act=register" style="font-weight: 500">Đăng ký tài khoản mới</a>
                                  </div>
                              </div>
                              <div class="col-md-4">
                                  <div class="forgotton-password_info">
-                                     <a href="#">Quên mật khẩu?</a>
+                                     <a href="index.php?act=forgotpass">Quên mật khẩu?</a>
                                  </div>
                              </div>
                              <div class="col-12 wrap-btn-sub">

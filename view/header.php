@@ -20,7 +20,7 @@
                                     <a href="index.php?act=account"><i class="fa-solid fa-user"></i>Tài khoản</a>
                                 </li> -->
                                 <div class="dropdown">
-                                    <a href="index.php?act=myaccount" class="dropbtn"><i class="fa-solid fa-user"></i> Tài khoản</a>
+                                    <a href="#" class="dropbtn"><i class="fa-solid fa-user"></i> Tài khoản</a>
                                     <div class="dropdown-content">
                                         <?php if(!isset($_SESSION['user'])) { ?>
                                        <a href="index.php?act=login">Đăng nhập <i class="fa-solid fa-right-to-bracket"></i></a>
@@ -175,7 +175,7 @@
                                                 </div>
                                             </div>
                                             <div class="minicart-button">
-                                                <a class="jb-btn jb-btn_fullwidth" href="checkout.html">Checkout</a>
+                                                <a class="jb-btn jb-btn_fullwidth" href="index.php?act=cart">Xem giỏ hàng</a>
                                             </div>
                                         </div>
                                     </li>

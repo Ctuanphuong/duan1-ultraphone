@@ -59,6 +59,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             break;
 
             // CONTROLLER ĐĂNG KÝ TÀI KHOẢN:
+        
         case "register":
             if (isset($_POST['btn_register']) && $_POST['btn_register']) {
                 $user_name = $_POST['user_name'];
@@ -92,7 +93,22 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             session_unset();
             header('Location: index.php?act=login');
             break;
+            // quên mật khâut
+            case 'forgotpass':
+                include 'view/nguoidung/forgotpass.php';
+                break;
 
+               // CONTROLLER THÔNG TIN TÀI KHOẢN: 
+               // thông tin tài khoản
+               case 'myaccount':
+                include "view/nguoidung/myaccount.php"; 
+                break;
+
+                 // CONTROLLER GIỎ HÀNG:    
+                 // giỏ hàng
+                 case 'cart': 
+                    include "view/giohang/cart.php";
+                    break;
         // giá trị default: 
         default:
             include "view/content.php";

@@ -8544,3 +8544,10 @@ li.right-menu .cat-mega-menu-3>li {
 .wrap-btn-sub input:hover {
   background-color: #0084c5;
 }
+.flex-ip-a {
+  display: flex;
+  justify-content: space-between;
+}
+.flex-ip-a > a > i{ 
+  font-size: 20px;
+}
