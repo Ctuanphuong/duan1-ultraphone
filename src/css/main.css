@@ -8526,3 +8526,21 @@ li.right-menu .cat-mega-menu-3>li {
   width: 300px;
   margin-bottom: 30px;  
 }
+.wrap-btn-sub input { 
+  display: block;
+    width: 140px;
+    border-radius: 0;
+    height: 36px;
+    border: none;
+    line-height: 24px;
+    padding: 5px 20px;
+    float: left;
+    text-transform: uppercase;
+    color: #ffffff;
+    background-color: #333333;
+    border-radius: 4px;
+    transition: all 0.3s ease-in-out;
+}
+.wrap-btn-sub input:hover {
+  background-color: #0084c5;
+}

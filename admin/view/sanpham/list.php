@@ -1,5 +1,4 @@
 <div id="layoutSidenav_content">
-
     <div class="container-fluid px-4">
         <div class="card mb-4 mt-4">
             <div class="card-header">
@@ -53,33 +52,22 @@
                         </tr>
                     </tfoot>
                     <tbody>
-                        <?php
-                        foreach ($listpro as $pro) {
-                            extract($pro);
-                            $editpro = "./index.php?act=editpro&id_pro=" . $id_pro;
-                            $removepro = "./index.php?act=removepro&id_pro=" . $id_pro;
-                            $img_path = './uploads/' . $img_pro;
-                            if (is_file($img_path)) {
-                                $img_pro = '<img src=' . $img_path . ' alt="Ảnh sản phẩm" width="50px">';
-                            } else {
-                                $img_pro = 'No photo !';
-                            }
-                            echo ' <tr>
-                                    <td>' . $id_pro . '</td>
-                                    <td>' . $name_pro . '</td>
-                                    <td>' . number_format($price) . '</td>
-                                    <td>' . $discount. '%</td>
-                                    <td>' . $img_pro . '</td>
-                                    <td>' . $short_des . '</td>
-                                    <td>' . $detail_des . '</td>
-                                    <td>' . $view . '</td>
+                        <?php foreach ($listpro as $pro) : ?>
+                             <tr>
+                                    <td><?= $pro['id_pro'] ?></td>
+                                    <td><?= $pro['name_pro'] ?></td>
+                                    <td><?= number_format($pro['price']) ?></td>
+                                    <td><?= $pro['discount'] ?>%</td>
+                                    <td><img src="./uploads/<?= $pro['img_pro']?>" alt="No photo!" width="50px"></td>
+                                    <td><?= $pro['short_des'] ?></td>
+                                    <td><?= $pro['detail_des'] ?></td>
+                                    <td><?= $pro['view'] ?></td>
                                     <td class="text-center">
-                                        <a href="' . $editpro . '" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i> Sửa</a>
-                                        <a href="' . $removepro . '" class="btn btn-danger"><i class="fa-solid fa-trash"></i> Xóa</a>
+                                        <a href="./index.php?act=editpro&id_pro=<?= $pro['id_pro'] ?>" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i> Sửa</a>
+                                        <a href="./index.php?act=removepro&id_pro=<?= $pro['id_pro'] ?>" class="btn btn-danger" onclick="return confirm('Bạn có chắc chắn muốn xóa không?')"><i class="fa-solid fa-trash"></i> Xóa</a>
                                     </td>
-                                </tr>';
-                        }
-                        ?>
+                                </tr>
+                     <?php endforeach ?>
 
                     </tbody>
                 </table>

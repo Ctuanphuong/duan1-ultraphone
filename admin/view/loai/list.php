@@ -24,21 +24,16 @@
                         </tfoot>
                         <tbody>
                             <?php
-                            foreach ($ds_loai as $loai) {
-                                extract($loai);
-                                $sualoai = "./index.php?act=sualoai&id_cate=" . $id_cate;
-                                $xoaloai = "./index.php?act=xoaloai&id_cate=" . $id_cate;
-                                echo ' <tr>        
-                                <td>'.$id_cate.'</td>
-                                <td>'.$name_cate.'</td>
+                            foreach ($ds_loai as $loai) : ?>
+                                <tr>        
+                                <td><?= $loai['id_cate'] ?></td>
+                                <td><?= $loai['name_cate'] ?></td>
                                 <td class="text-center">
-                                    <a href="'.$sualoai.'" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i> Sửa</a>
-                                    <a href="'.$xoaloai.'" class="btn btn-danger"><i class="fa-solid fa-trash"></i> Xóa</a>
+                                    <a href="index.php?act=sualoai&id_cate=<?=  $loai['id_cate'] ?>" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i> Sửa</a>
+                                    <a href="index.php?act=xoaloai&id_cate=<?=  $loai['id_cate'] ?>" class="btn btn-danger" onclick="return confirm('Bạn có chắc chắn muốn xóa không?')"><i class="fa-solid fa-trash"></i> Xóa</a>
                                 </td>
                             </tr>
-                         ';
-                            } 
-                            ?>
+                       <?php endforeach ?>
 
                         </tbody>
                     </table>

@@ -15,10 +15,22 @@
                 <div class="col-lg-9 col-md-6 col-sm-8">
                     <div class="ht-right">
                         <div class="ht-menu">
-                            <ul>
-                                <li>
-                                    <a href="#"><i class="fa-solid fa-user"></i>Tài khoản</a>
-                                </li>
+                            <ul class="hmenu">
+                                <!-- <li>
+                                    <a href="index.php?act=account"><i class="fa-solid fa-user"></i>Tài khoản</a>
+                                </li> -->
+                                <div class="dropdown">
+                                    <a href="index.php?act=myaccount" class="dropbtn"><i class="fa-solid fa-user"></i> Tài khoản</a>
+                                    <div class="dropdown-content">
+                                        <?php if(!isset($_SESSION['user'])) { ?>
+                                       <a href="index.php?act=login">Đăng nhập <i class="fa-solid fa-right-to-bracket"></i></a>
+                                      <?php } else { ?>
+                                        <a href="index.php?act=myaccount">Thông tin tài khoản <i class="fa-solid fa-circle-info"></i></a>
+                                        <a href="index.php?act=logout" onclick="return confirm('Bạn chắc chắc muốn đăng xuất tài khoản?')">Đăng xuất <i class="fa-solid fa-right-from-bracket"></i></a>
+                                        </div>
+                                        <?php } ?>
+                                </div>
+
                                 <!-- Begin Currency Area -->
 
                                 <!-- Currency Area End Here -->
@@ -59,8 +71,7 @@
                                     <!-- Header Middle Dropdwon Area End Here -->
                                 </li>
                                 <li>
-                                    <a href="index.php?act=product">Sản phẩm<i
-                                            class="fa-solid fa-chevron-down"></i></a>
+                                    <a href="index.php?act=product">Sản phẩm<i class="fa-solid fa-chevron-down"></i></a>
                                     <!-- Begin Header Middle Dropdwon Area -->
                                     <ul class="hm-dropdown">
                                         <?php
@@ -108,8 +119,7 @@
                                         <div class="minicart-single_item">
                                             <div class="minicart-img">
                                                 <a href="single-product.html">
-                                                    <img src="./src/image/product/small-size/1.jpg"
-                                                        alt="UltraPhone Product" />
+                                                    <img src="./src/image/product/small-size/1.jpg" alt="UltraPhone Product" />
                                                 </a>
                                                 <span class="product-quantity">1x</span>
                                             </div>
@@ -134,8 +144,7 @@
                                         <div class="minicart-single_item">
                                             <div class="minicart-img">
                                                 <a href="single-product.html">
-                                                    <img src="./src/image/product/small-size/2.jpg"
-                                                        alt="UltraPhone Product" />
+                                                    <img src="./src/image/product/small-size/2.jpg" alt="UltraPhone Product" />
                                                 </a>
                                                 <span class="product-quantity">1x</span>
                                             </div>
