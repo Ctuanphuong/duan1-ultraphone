@@ -40,7 +40,7 @@
                              </div>
                              <div class="col-md-4">
                                  <div class="forgotton-password_info">
-                                     <a href="index.php?act=forgotPass">Quên mật khẩu?</a>
+                                     <a href="index.php?act=mk">Quên mật khẩu?</a>
                                  </div>
                              </div>
                              <div class="col-12 wrap-btn-sub">

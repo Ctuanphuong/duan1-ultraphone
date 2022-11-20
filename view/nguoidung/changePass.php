@@ -5,9 +5,6 @@
              <div class="col-sm-12 col-md-12 col-xs-12 col-lg-6">
                  <!-- form đổi mật khẩu-->
                  <form action="index.php?act=changePass" method="post">
-                    <?php
-                   
-                    ?>
                      <div class="login-form">
                          <h4 class="login-title">Đổi mật khẩu</h4>
                             <?php
@@ -18,8 +15,10 @@
                                     if($_POST['repass'] != $_POST['newpass']){
                                         $error['fail'] = 'Nhập lại mật khẩu không khớp !';
                                     }else{
-                                        $error['success'] = 'Đổi mật khẩu thành công !';
+                                         echo'<script>alert("Đổi mật khẩu thành công!")</script>';
+                                        // $error['success'] = 'Đổi mật khẩu thành công !';
                                         $user=forgetPass($password, $email);
+                                        // include "view/nguoidung/login.php";
                                         header('Location: index.php?act=login');
                                     }
                                 }

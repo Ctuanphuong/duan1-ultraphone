@@ -98,6 +98,26 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             session_unset();
             header('Location: index.php?act=login');
             break;
+            //Form cách thức đổi mật khẩu
+        case 'mk':
+            include "view/nguoidung/cachthuclaymk.php";
+                break;
+        //Lấy lại mật khẩu thông qua User_name và Email_user
+        case "usermk":
+            if(isset($_POST['mk2']) && ($_POST['mk2'])){
+                $name = $_POST['user_name'];
+                $email = $_POST['email'];
+                $checkuser = check_pass($name, $email );
+                if(is_array($checkuser) ){
+                    $thongbao = "<span style='color: red; font-weight: 700;'>  Mật khẩu của tài khoản '".$name."' là: '".$checkuser['password']."'</span>";
+                }else {
+                    $thongbao = "<span style='color: red; font-weight: 700;'> Tài khoản hoặc Email không tồn tại!</span> ";
+                }
+                
+            }
+            include "view/nguoidung/laymk2.php";
+                break;
+        //Lấy lại mật khẩu bằng mã gửi Email
             // Quên mật khẩu: Lấy mã xác nhận
             case 'forgotPass':
                 if(isset($_POST['btn_forgotPass'])){
@@ -114,8 +134,9 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                             $mail->sendMail($title, $content, $email);
                             $_SESSION['mail'] = $email;
                             $_SESSION['code'] = $code;
+                            header('Location: index.php?act=verification');   
                         }
-                        header('Location: index.php?act=verification');   
+                        // header('Location: index.php?act=verification');   
                 }
                 include 'view/nguoidung/forgotpass.php';
                 break;
@@ -127,6 +148,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 case 'changePass':
                     include "view/nguoidung/changePass.php";
                     break;
+                
 
                // CONTROLLER THÔNG TIN TÀI KHOẢN: 
                // thông tin tài khoản
