@@ -8,4 +8,17 @@ function check_user($user_name, $password) {
     $user = pdo_query_one($sql);
     return $user;
 }
+function getUserEmail($email){
+    $sql = "SELECT * FROM user where email_user = '$email'";
+    $result = pdo_query_one($sql);
+    if($result){
+        return $result;
+    }else{
+        echo "<h4 style='color: red; text-align: center; margin-top: 10px;'>Email không tồn tại!</h4>";
+    }
+}
+function forgetPass($password, $email){
+    $sql = "UPDATE user SET password = '$password' WHERE email_user = '$email'";
+    $result =  pdo_execute($sql);
+}
 ?>

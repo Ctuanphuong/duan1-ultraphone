@@ -8,6 +8,7 @@ include "model/pdo.php";
 include "model/sanpham.php";
 include "model/loai.php";
 include "model/nguoidung.php";
+include "email/index.php";
 
 //load sản phẩm trang client
 $prohome = loadall_pro_home();
@@ -15,6 +16,10 @@ $prohome = loadall_pro_home();
 $listcate = loadall_cate();
 //load 8 sản phẩm nổi bật
 $list_topsp = loadall_pro_noibat();
+//Lấy lại mật khẩu
+$mail = new Mailer();
+
+
 include "view/header.php";
 
 // kiểm tra có act tương ứng với key người dùng click không, nếu có act thì thực hiện các case 
@@ -93,10 +98,35 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             session_unset();
             header('Location: index.php?act=login');
             break;
-            // quên mật khâut
-            case 'forgotpass':
+            // Quên mật khẩu: Lấy mã xác nhận
+            case 'forgotPass':
+                if(isset($_POST['btn_forgotPass'])){
+                    $error = array();
+                    $email= $_POST['email'];
+                        if($email == ""){
+                            $error['email']='Không để trống Email!';
+                        }
+                        if(empty($error)){
+                            $result =getUserEmail($email);
+                            $code = substr(rand(0,999999),0,6);
+                            $title ="Quên mật khẩu";
+                            $content = "Mã xác thực của bạn là: <span style='color: red'>".$code."</span>";
+                            $mail->sendMail($title, $content, $email);
+                            $_SESSION['mail'] = $email;
+                            $_SESSION['code'] = $code;
+                        }
+                        header('Location: index.php?act=verification');   
+                }
                 include 'view/nguoidung/forgotpass.php';
                 break;
+                // Quên mật khẩu: Xác minh mã được gửi qua Email
+                case 'verification':
+                    include "view/nguoidung/verification.php";
+                    break;
+                // Quên mật khẩu: Đổi mật khẩu
+                case 'changePass':
+                    include "view/nguoidung/changePass.php";
+                    break;
 
                // CONTROLLER THÔNG TIN TÀI KHOẢN: 
                // thông tin tài khoản
