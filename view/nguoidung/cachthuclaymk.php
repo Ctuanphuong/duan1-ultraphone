@@ -23,10 +23,18 @@
                          <div class="row">
                              <div class="col-md-12 col-12">
                                  
+<<<<<<< HEAD
                                  <a href="index.php?act=forgotPass" class="text-primary fw-bold">Gửi mã qua email</a>
                              </div>
                              <div class="col-12 mb--20" style="margin-top: 20px;">
                                 <a href="index.php?act=usermk" class="text-primary fw-bold">Thông qua tên đăng nhập và email</a>
+=======
+                                 <a href="index.php?act=forgotPass" style="color: red;">Lấy lại mật khẩu thông qua mã gửi Email</a>
+                             </div>
+                             <div class="col-12 mb--20" style="margin-top: 20px;">
+                                 
+                                <a href="index.php?act=usermk" style="color: red;  ">Lấy lại mật khẩu thông qua Tài khoản và Email</a>
+>>>>>>> 2271f8b54b613a902ae7b387378f3555823d2180
                              </div>
                          </div>
                      </div>

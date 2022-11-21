@@ -13,7 +13,11 @@
                              </div>
                              <div class="col-12 mb--20">
                                  <label>Email</label>
+<<<<<<< HEAD
                                  <input type="email" name="email" placeholder="Nhập email của bạn">
+=======
+                                 <input type="email" name="email" placeholder="Nhập Email của bạn">
+>>>>>>> 2271f8b54b613a902ae7b387378f3555823d2180
                              </div>
                              <div class="col-md-10">
                                  <div class="check-box">
@@ -25,7 +29,11 @@
                              </div>
                              
                              <div class="col-12 wrap-btn-sub">
+<<<<<<< HEAD
                                  <input type="submit" class="btn-submit" name="mk2" value="Tìm mật khẩu" style="margin-top: 30px;">
+=======
+                                 <input type="submit" class="btn-submit" name="mk2" value="Gửi " style="margin-top: 30px;">
+>>>>>>> 2271f8b54b613a902ae7b387378f3555823d2180
                              </div>
                              <?php
                              

@@ -25,6 +25,10 @@ function getUserEmail($email){
 }
 function forgetPass($password, $email){
     $sql = "UPDATE user SET password = '$password' WHERE email_user = '$email'";
+<<<<<<< HEAD
      pdo_execute($sql);
+=======
+    $result =  pdo_execute($sql);
+>>>>>>> 2271f8b54b613a902ae7b387378f3555823d2180
 }
 ?>

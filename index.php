@@ -6,12 +6,16 @@ include "model/pdo.php";
 include "model/sanpham.php";
 include "model/loai.php";
 include "model/nguoidung.php";
+<<<<<<< HEAD
 include "model/giohang.php";
 include "model/hoadon.php";
 include "email/index.php";
 // kiểm tra session my cart đã tồn tại là 1 mảng chưa, nếu chưa thì khởi tạo 1 mảng mới
 if (!isset($_SESSION['mycart']))
     $_SESSION['mycart'] = [];
+=======
+include "email/index.php";
+>>>>>>> 2271f8b54b613a902ae7b387378f3555823d2180
 
 //load sản phẩm trang client
 $prohome = loadall_pro_home();
@@ -21,9 +25,16 @@ $listcate = loadall_cate();
 
 //load 8 sản phẩm nổi bật
 $list_topsp = loadall_pro_noibat();
+<<<<<<< HEAD
 
 //Lấy lại mật khẩu
 $mail = new Mailer();
+=======
+//Lấy lại mật khẩu
+$mail = new Mailer();
+
+
+>>>>>>> 2271f8b54b613a902ae7b387378f3555823d2180
 include "view/header.php";
 
 // kiểm tra có act tương ứng với key người dùng click không, nếu có act thì thực hiện các case 
@@ -103,6 +114,60 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             session_unset();
             header('Location: index.php?act=login');
             break;
+<<<<<<< HEAD
+=======
+            //Form cách thức đổi mật khẩu
+        case 'mk':
+            include "view/nguoidung/cachthuclaymk.php";
+                break;
+        //Lấy lại mật khẩu thông qua User_name và Email_user
+        case "usermk":
+            if(isset($_POST['mk2']) && ($_POST['mk2'])){
+                $name = $_POST['user_name'];
+                $email = $_POST['email'];
+                $checkuser = check_pass($name, $email );
+                if(is_array($checkuser) ){
+                    $thongbao = "<span style='color: red; font-weight: 700;'>  Mật khẩu của tài khoản '".$name."' là: '".$checkuser['password']."'</span>";
+                }else {
+                    $thongbao = "<span style='color: red; font-weight: 700;'> Tài khoản hoặc Email không tồn tại!</span> ";
+                }
+                
+            }
+            include "view/nguoidung/laymk2.php";
+                break;
+        //Lấy lại mật khẩu bằng mã gửi Email
+            // Quên mật khẩu: Lấy mã xác nhận
+            case 'forgotPass':
+                if(isset($_POST['btn_forgotPass'])){
+                    $error = array();
+                    $email= $_POST['email'];
+                        if($email == ""){
+                            $error['email']='Không để trống Email!';
+                        }
+                        if(empty($error)){
+                            $result =getUserEmail($email);
+                            $code = substr(rand(0,999999),0,6);
+                            $title ="Quên mật khẩu";
+                            $content = "Mã xác thực của bạn là: <span style='color: red'>".$code."</span>";
+                            $mail->sendMail($title, $content, $email);
+                            $_SESSION['mail'] = $email;
+                            $_SESSION['code'] = $code;
+                            header('Location: index.php?act=verification');   
+                        }
+                        // header('Location: index.php?act=verification');   
+                }
+                include 'view/nguoidung/forgotpass.php';
+                break;
+                // Quên mật khẩu: Xác minh mã được gửi qua Email
+                case 'verification':
+                    include "view/nguoidung/verification.php";
+                    break;
+                // Quên mật khẩu: Đổi mật khẩu
+                case 'changePass':
+                    include "view/nguoidung/changePass.php";
+                    break;
+                
+>>>>>>> 2271f8b54b613a902ae7b387378f3555823d2180
 
          //Quên mật khẩu:
             //Form cách thức lấy lại mật khẩu
