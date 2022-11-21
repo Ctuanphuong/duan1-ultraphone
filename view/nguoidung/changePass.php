@@ -7,35 +7,11 @@
                  <form action="index.php?act=changePass" method="post">
                      <div class="login-form">
                          <h4 class="login-title">Đổi mật khẩu</h4>
-<<<<<<< HEAD
                          <div class="row">
                              <div class="col-md-12 col-12">
                                  <input type="text" name="newpass" placeholder="Nhập mật khẩu mới">
                                  <input type="text" name="repass" placeholder="Nhập lại mật khẩu mới">
                                  <span style="color: red;"><?php if(isset($error['fail'])) echo $error['fail'] ?></span> <br>
-=======
-                            <?php
-                                if(isset($_POST['btn_changePass'])){
-                                    $error = array();
-                                    $password = $_POST['newpass'];
-                                    $email = $_SESSION['mail'];
-                                    if($_POST['repass'] != $_POST['newpass']){
-                                        $error['fail'] = 'Nhập lại mật khẩu không khớp !';
-                                    }else{
-                                         echo'<script>alert("Đổi mật khẩu thành công!")</script>';
-                                        // $error['success'] = 'Đổi mật khẩu thành công !';
-                                        $user=forgetPass($password, $email);
-                                        // include "view/nguoidung/login.php";
-                                        header('Location: index.php?act=login');
-                                    }
-                                }
-                            ?>
-                         <div class="row">
-                             <div class="col-md-12 col-12">
-                                 <input type="text" name="newpass" placeholder="Nhập mật khẩu mới">
-                                 <input type="text" name="repass" placeholder="Nhập lại mật khẩu">
-                                 <span style="color: red;"><?php if(isset($error['fail'])) echo $error['fail']  ?></span> <br>
->>>>>>> 2271f8b54b613a902ae7b387378f3555823d2180
                              </div>
                              
                              <div class="col-md-10">
@@ -48,11 +24,7 @@
                              </div>
                              
                              <div class="col-12 wrap-btn-sub">
-<<<<<<< HEAD
                                  <input type="submit" class="btn-submit mt-3" name="btn_changePass" value="Đổi mật khẩu">
-=======
-                                 <input type="submit" class="btn-submit" name="btn_changePass" value="Gửi" style="margin-top: 30px;">
->>>>>>> 2271f8b54b613a902ae7b387378f3555823d2180
                              </div>
                          </div>
                      </div>
