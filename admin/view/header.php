@@ -83,11 +83,11 @@
                                 </nav>
                             </div>
                         </div>
-                        <a class="nav-link" href="khachhang.html">
+                        <a class="nav-link" href="index.php?act=listuser">
                             <div class="sb-nav-link-icon">
                                 <i class="fa-solid fa-user"></i>
                             </div>
-                            Khách hàng
+                            Người dùng
                         </a>
                         <a class="nav-link" href="binhluan.html">
                             <div class="sb-nav-link-icon">

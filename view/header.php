@@ -1,4 +1,10 @@
 <!-- Begin JB's Header Area -->
+<?php
+$count = countcart();
+$total_amount = total_amount();
+
+?>
+
 <header>
     <!-- Begin Header Top Area -->
     <div class="header-top_area bg--white_smoke">
@@ -22,28 +28,34 @@
                                 <div class="dropdown">
                                     <a href="#" class="dropbtn"><i class="fa-solid fa-user"></i> Tài khoản</a>
                                     <div class="dropdown-content">
-                                        <?php if(!isset($_SESSION['user'])) { ?>
-                                       <a href="index.php?act=login">Đăng nhập <i class="fa-solid fa-right-to-bracket"></i></a>
-                                      <?php } else { ?>
-                                        <a href="index.php?act=myaccount">Thông tin tài khoản <i class="fa-solid fa-circle-info"></i></a>
-                                        <a href="index.php?act=logout" onclick="return confirm('Bạn chắc chắc muốn đăng xuất tài khoản?')">Đăng xuất <i class="fa-solid fa-right-from-bracket"></i></a>
-                                        </div>
-                                        <?php } ?>
+                                        <?php if (!isset($_SESSION['user'])) { ?>
+                                            <a href="index.php?act=login"><i class="fa-solid fa-right-to-bracket"></i> Đăng nhập</a>
+                                        <?php } else if (isset($_SESSION['user']) && $_SESSION['user']['role'] == 1) { ?>
+                                            <a href="./admin/index.php">Vào trang Admin <i class="fa-solid fa-gears"></i></a>
+                                            <a href="index.php?act=myaccount">Thông tin tài khoản <i class="fa-solid fa-circle-info"></i></a>
+                                            <a href="index.php?act=logout" onclick="return confirm('Bạn chắc chắc muốn đăng xuất tài khoản?')">Đăng xuất <i class="fa-solid fa-right-from-bracket"></i></a>
+                                    </div>
+                                <?php } else { ?>
+                                    <a href="index.php?act=myaccount">Thông tin tài khoản <i class="fa-solid fa-circle-info"></i></a>
+                                    <a href="index.php?act=logout" onclick="return confirm('Bạn chắc chắc muốn đăng xuất tài khoản?')">Đăng xuất <i class="fa-solid fa-right-from-bracket"></i></a>
                                 </div>
+                            <?php } ?>
 
-                                <!-- Begin Currency Area -->
-
-                                <!-- Currency Area End Here -->
-                                <!-- Begin Language Area -->
-
-                                <!-- Language Area End Here -->
-                            </ul>
                         </div>
+
+                        <!-- Begin Currency Area -->
+
+                        <!-- Currency Area End Here -->
+                        <!-- Begin Language Area -->
+
+                        <!-- Language Area End Here -->
+                        </ul>
                     </div>
                 </div>
-                <!-- Header Top Right Area End Here -->
             </div>
+            <!-- Header Top Right Area End Here -->
         </div>
+    </div>
     </div>
     <!-- Header Top Area End Here -->
     <!-- Begin Header Middle Area -->
@@ -106,76 +118,61 @@
                     <div class="hm-minicart_area">
                         <ul>
                             <li>
-                                <a href="cart.html">
+                                <a href="index.php?act=viewcart">
                                     <div class="minicart-icon">
                                         <i class="fa fa-shopping-cart"></i>
-                                        <span class="item-count">2</span>
+                                        <span class="item-count"><?= $count ?></span>
                                     </div>
                                     <div class="minicart-text"><span>Giỏ hàng</span></div>
-                                    <div class="item_total"><span>$54.90</span></div>
+                                    <div class="item_total"><span><?= number_format($total_amount) ?>₫</span></div>
                                 </a>
                                 <ul class="minicart-body">
-                                    <li class="minicart-item_area">
-                                        <div class="minicart-single_item">
-                                            <div class="minicart-img">
-                                                <a href="single-product.html">
-                                                    <img src="./src/image/product/small-size/1.jpg" alt="UltraPhone Product" />
-                                                </a>
-                                                <span class="product-quantity">1x</span>
-                                            </div>
-                                            <div class="minicart-content">
-                                                <div class="product-name">
-                                                    <h6>
-                                                        <a href="single-product.html">
-                                                            Xail 9.7" 128GB iPad - Silver MP2J2LL/A
+                                    <?php if (empty($_SESSION['mycart'])) {
+                                        $emptypro = "Bạn chưa thêm sản phẩm nào vào giỏ hàng !";  ?>
+                                        <div class="mt-5">
+                                            <p class="text-danger fw-bold" style="font-size: 15px;"><?= $emptypro ?></p>
+                                        </div>
+
+                                        <?php } else {
+                                        foreach ($_SESSION['mycart'] as $cart) { ?>
+                                            <li class="minicart-item_area">
+                                                <div class="minicart-single_item">
+                                                    <div class="minicart-img">
+                                                        <a href="index.php?act=prodetail&idpro=<?= $cart[0] ?>">
+                                                            <img src="admin/uploads/<?= $cart[2] ?>" alt="UltraPhone Product" width="50px" ; />
                                                         </a>
-                                                    </h6>
-                                                </div>
-                                                <div class="price-box">
-                                                    <span class="new-price">$29.00</span>
-                                                </div>
-                                                <div class="attributes_content">
+                                                        <span class="product-quantity">1x</span>
+                                                    </div>
+                                                    <div class="minicart-content">
+                                                        <div class="product-name">
+                                                            <h6>
+                                                                <a href="index.php?act=prodetail&idpro=<?= $cart[0] ?>">
+                                                                    <?= $cart[1] ?>
+                                                                </a>
+                                                            </h6>
+                                                        </div>
+                                                        <div class="price-box">
+                                                            <span class="new-price"> <?= number_format($cart[3]) ?>₫</span>
+                                                        </div>
+                                                        <!-- <div class="attributes_content">
                                                     <span>Dimension: 40x60cm</span>
+                                                </div> -->
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="minicart-item_area">
-                                        <div class="minicart-single_item">
-                                            <div class="minicart-img">
-                                                <a href="single-product.html">
-                                                    <img src="./src/image/product/small-size/2.jpg" alt="UltraPhone Product" />
-                                                </a>
-                                                <span class="product-quantity">1x</span>
-                                            </div>
-                                            <div class="minicart-content">
-                                                <div class="product-name">
-                                                    <h6>
-                                                        <a href="single-product.html">
-                                                            Xail 12.2" Pentium, 4GB, 64GB SSD, W10
-                                                            Touchscreen
-                                                        </a>
-                                                    </h6>
-                                                </div>
-                                                <div class="price-box">
-                                                    <span class="new-price">$18.90</span>
-                                                </div>
-                                                <div class="attributes_content">
-                                                    <span>Color: White</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
+                                            </li>
+                                    <?php }
+                                    }  ?>
                                     <li>
+
                                         <div class="price_content">
                                             <div class="cart-subtotals">
                                                 <div class="cart-total subtotal-list">
                                                     <span class="label">Tổng tiền</span>
-                                                    <span class="value">$54.90</span>
+                                                    <span class="value"><?= number_format($total_amount) ?>₫</span>
                                                 </div>
                                             </div>
                                             <div class="minicart-button">
-                                                <a class="jb-btn jb-btn_fullwidth" href="index.php?act=cart">Xem giỏ hàng</a>
+                                                <a class="jb-btn jb-btn_fullwidth" href="index.php?act=viewcart">Xem giỏ hàng</a>
                                             </div>
                                         </div>
                                     </li>

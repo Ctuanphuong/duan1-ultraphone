@@ -14,6 +14,13 @@
  <!-- show form đăng nhập và đăng ký-->
  <div class="jb-login-register_area">
      <div class="container">
+        <div>
+            <?php 
+            if(isset($noti_success) && $noti_success != "") { 
+                echo $noti_success;
+            }
+            ?>
+        </div>
          <div class="row" style="justify-content: center;">
              <div class="col-sm-12 col-md-12 col-xs-12 col-lg-6">
                  <!-- form đăng nhập-->
@@ -40,7 +47,7 @@
                              </div>
                              <div class="col-md-4">
                                  <div class="forgotton-password_info">
-                                     <a href="index.php?act=forgotpass">Quên mật khẩu?</a>
+                                     <a href="index.php?act=mk">Quên mật khẩu?</a>
                                  </div>
                              </div>
                              <div class="col-12 wrap-btn-sub">

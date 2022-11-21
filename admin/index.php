@@ -5,6 +5,7 @@ include 'view/header.php';
 include "model/pdo.php";
 include "model/loai.php";
 include "model/sanpham.php";
+include "model/nguoidung.php";
 // controller
 if (isset($_GET['act'])) {
     $act = $_GET['act'];
@@ -117,6 +118,34 @@ if (isset($_GET['act'])) {
                 $listpro = loadall_pro();
                 include "view/sanpham/list.php";
                 break;
+
+                // CONTROLLER NGƯỜI DÙNG: 
+                // danh sách người dùng
+                case 'listuser':
+                    $listuser = loadall_user();
+                    include "view/nguoidung/list.php";
+                break;
+                // chỉnh sửa user
+                case 'edituser': 
+                    if(isset($_GET['id_user']) && ($_GET['id_user'] > 0)) { 
+                        $id_user = $_GET['id_user'];
+                        $user = loadone_user($id_user);
+                    }
+                    include "view/nguoidung/update.php";
+                break;
+                case 'updateuser': 
+                    if(isset($_POST['btn_update']) && ($_POST['btn_update'])){ 
+                        $id_user = $_POST['id_user'];
+                        $user_name = $_POST['user_name'];
+                        $full_name = $_POST['full_name'];
+                        $email_user = $_POST['email_user'];
+                        $password = $_POST['password'];
+                        $role = $_POST['role'];
+                        update_user($id_user, $user_name, $full_name, $email_user, $password, $role);
+                    }
+                    $listuser = loadall_user();
+                    include "view/nguoidung/list.php";
+                    break;
         default:
             include "view/content.php";
             break;

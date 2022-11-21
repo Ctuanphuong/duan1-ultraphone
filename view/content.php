@@ -43,28 +43,28 @@
         <div class="col-lg-3 col-md-6 col-sm-6">
             <div class="banner-item">
                 <a href="#">
-                    <img src="./src/image/banner/oppo.png" alt="JB's Banner" />
+                    <img src="./src/image/banner/oppo.png" alt="Ultraphone Product" />
                 </a>
             </div>
         </div>
         <div class="col-lg-3 col-md-6 col-sm-6">
             <div class="banner-item">
                 <a href="#">
-                    <img src="./src/image/banner/realme.jpg" alt="JB's Banner" />
+                    <img src="./src/image/banner/realme.jpg" alt="Ultraphone Product" />
                 </a>
             </div>
         </div>
         <div class="col-lg-3 col-md-6 col-sm-6">
             <div class="banner-item">
                 <a href="#">
-                    <img src="./src/image/banner/samsung.jpg" alt="JB's Banner" />
+                    <img src="./src/image/banner/samsung.jpg" alt="Ultraphone Product" />
                 </a>
             </div>
         </div>
         <div class="col-lg-3 col-md-6 col-sm-6">
             <div class="banner-item">
                 <a href="#">
-                    <img src="./src/image/banner/xiaomi.png" alt="JB's Banner" />
+                    <img src="./src/image/banner/xiaomi.png" alt="Ultraphone Product" />
                 </a>
             </div>
         </div>
@@ -196,18 +196,24 @@
 
                                                 </div>
                                             </div>
-                                            <div class="add-actions">
+                                            <div class="actions-add">
+                                                <form action="index.php?act=addtocart" method="post">
                                                 <ul>
                                                     <li>
                                                         <a class="jb-wishlist_link" href="#"><i class="fa fa-heart"></i></a>
                                                     </li>
+                                                    <input type="hidden" name="id_pro" value="<?php echo $pro['id_pro'] ?>">
+                                                    <input type="hidden" name="name_pro" value="<?php echo $pro['name_pro'] ?>">
+                                                    <input type="hidden" name="img_pro" value="<?php echo $pro['img_pro'] ?>">
+                                                    <input type="hidden" name="price" value="<?php echo $pro['price'] ?>">
                                                     <li>
-                                                        <a class="jb-add_cart">Thêm giỏ hàng</a>
+                                                    <input type="submit" class="addtocart" name="addtocart" value="Thêm vào giỏ">
                                                     </li>
                                                     <li>
                                                         <a class="jb-sp_link" href="#"><i class="fa fa-copy"></i></a>
                                                     </li>
                                                 </ul>
+                                                    </form>
                                             </div>
                                         </div>
                                     </div>
@@ -883,18 +889,24 @@
                                                     <?php } ?>
                                                 </div>
                                             </div>
-                                            <div class="add-actions">
+                                            <div class="actions-add">
+                                                <form action="index.php?act=addtocart" method="post">
                                                 <ul>
                                                     <li>
                                                         <a class="jb-wishlist_link" href="#"><i class="fa fa-heart"></i></a>
                                                     </li>
+                                                    <input type="hidden" name="id_pro" value="<?php echo $pro['id_pro'] ?>">
+                                                    <input type="hidden" name="name_pro" value="<?php echo $pro['name_pro'] ?>">
+                                                    <input type="hidden" name="img_pro" value="<?php echo $pro['img_pro'] ?>">
+                                                    <input type="hidden" name="price" value="<?php echo $pro['price'] ?>">
                                                     <li>
-                                                        <a class="jb-add_cart">Thêm giỏ hàng</a>
+                                                    <input type="submit" class="addtocart" name="addtocart" value="Thêm vào giỏ">
                                                     </li>
                                                     <li>
                                                         <a class="jb-sp_link" href="#"><i class="fa fa-copy"></i></a>
                                                     </li>
                                                 </ul>
+                                                    </form>
                                             </div>
                                         </div>
                                     </div>
@@ -912,14 +924,14 @@
 <!-- JB's Product Tab Area End Here -->
 
 
-<!-- Begin JB's Banner Various Style Area -->
+<!-- Begin Ultraphone Product Various Style Area -->
 <div class="jb-banner_area banner-various_style">
     <div class="container-fluid p-0">
         <div class="row g-0">
             <div class="col-lg-6">
                 <div class="banner-item">
                     <a href="index.php?act=product&idcate=11">
-                        <img src="./src/image/banner/poco.jpg" alt="JB's Banner" />
+                        <img src="./src/image/banner/poco.jpg" alt="Ultraphone Product" />
                     </a>
                 </div>
             </div>
@@ -928,7 +940,7 @@
                     <div class="col-lg-6 col-md-6">
                         <div class="banner-item">
                             <a href="index.php?act=product&idcate=8">
-                                <img src="./src/image/banner/ipx.jpg" alt="JB's Banner" />
+                                <img src="./src/image/banner/ipx.jpg" alt="Ultraphone Product" />
                             </a>
                         </div>
                     </div>
@@ -937,14 +949,14 @@
                             <div class="col-lg-12">
                                 <div class="banner-item">
                                     <a href="index.php?act=product&idcate=14">
-                                        <img src="./src/image/banner/sony.jpg" alt="JB's Banner" />
+                                        <img src="./src/image/banner/sony.jpg" alt="Ultraphone Product" />
                                     </a>
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="banner-item">
                                     <a href="index.php?act=product&idcate=11">
-                                        <img src="./src/image/banner/blue.jpg" alt="JB's Banner" />
+                                        <img src="./src/image/banner/blue.jpg" alt="Ultraphone Product" />
                                     </a>
                                 </div>
                             </div>
@@ -955,11 +967,11 @@
         </div>
     </div>
 </div>
-<!-- JB's Banner Various Style Area End Here -->
+<!-- Ultraphone Product Various Style Area End Here -->
 
-<!-- Begin JB's Banner With Content Area -->
+<!-- Begin Ultraphone Product With Content Area -->
 <div class="banner-with-content_area @@item-separation">
-    <!-- Begin JB's Banner Content Area -->
+    <!-- Begin Ultraphone Product Content Area -->
     <div class="jb-banner_content">
         <div class="product-discount">
             <span>Giảm giá lên tới 20%</span>
@@ -976,9 +988,9 @@
             <a class="jb-btn-bondi_blue" href="index.php?act=product&idcate=8">Mua ngay</a>
         </div>
     </div>
-    <!-- JB's Banner Content Area End Here -->
+    <!-- Ultraphone Product Content Area End Here -->
 </div>
-<!-- JB's Banner With Content Area End Here -->
+<!-- Ultraphone Product With Content Area End Here -->
 
 
 <!--Banner sale -->
@@ -988,18 +1000,18 @@
             <div class="col-lg-6">
                 <div class="banner-item">
                     <a href="index.php?act=product&idcate=12">
-                        <img src="./src/image/banner/banner-vsm.jpg" alt="JB's Banner" />
+                        <img src="./src/image/banner/banner-vsm.jpg" alt="Ultraphone Product" />
                     </a>
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="banner-item">
                     <a href="index.php?act=product&idcate=11">
-                        <img src="./src/image/banner/banner-xiaomi.jpg" alt="JB's Banner" />
+                        <img src="./src/image/banner/banner-xiaomi.jpg" alt="Ultraphone Product" />
                     </a>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!-- JB's Banner With Two Columns Area End Here -->
+<!-- Ultraphone Product With Two Columns Area End Here -->
