@@ -41,7 +41,11 @@
                                     <td><?= $user['password'] ?></td>
                                     <td><?= $user['full_name'] ?></td>
                                     <td><?= $user['email_user'] ?></td>
-                                    <td><?= $user['role'] ?></td>
+                                    <td><?php if($user['role'] == 1) {
+                                        echo "Admin";
+                                    } else {
+                                        echo "Thành Viên";
+                                    } ?></td>
                                     <td><?= $user['register_date'] ?></td>
                                     <td><?= $user['last_login'] ?></td>
                                     <td class="text-center">
