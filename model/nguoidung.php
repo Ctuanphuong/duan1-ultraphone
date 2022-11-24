@@ -27,4 +27,14 @@ function forgetPass($password, $email) {
     $sql = "UPDATE user SET password = '$password' WHERE email_user = '$email'";
      pdo_execute($sql);
 }
+function update_user($id_user, $img_user,$full_name, $email_user, $address, $phone_user) { 
+    $sql = "UPDATE user SET
+    img_user = '$img_user', 
+    full_name = '$full_name', 
+    email_user = '$email_user',
+    address = '$address',
+    phone_user = '$phone_user'
+      WHERE id_user = '$id_user'";
+     pdo_execute($sql);
+}
 ?>

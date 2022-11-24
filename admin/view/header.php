@@ -95,7 +95,7 @@
                             </div>
                             Bình luận
                         </a>
-                        <a class="nav-link" href="hoadon.html">
+                        <a class="nav-link" href="index.php?act=bill">
                             <div class="sb-nav-link-icon">
                                 <i class="fa-solid fa-money-bill"></i>
                             </div>

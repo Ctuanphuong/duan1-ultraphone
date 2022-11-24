@@ -1,4 +1,3 @@
-<!-- vùng bắt đầu trang chi tiết tài khoản-->
 <div class="breadcrumb-area">
     <div class="container">
         <div class="breadcrumb-content">
@@ -37,8 +36,9 @@
                                 role="tab" aria-controls="account-details" aria-selected="false">Thông tin tài khoản</a>
                         </li>
                         <li class="nav-item">
-                            <a  href="index.php?act=logout" class="nav-link" id="account-logout-tab" role="tab"
-                                aria-selected="false" onclick="return confirm('Bạn chắc chắc muốn đăng xuất tài khoản?')">Đăng xuất</a>
+                            <a href="index.php?act=logout" class="nav-link" id="account-logout-tab" role="tab"
+                                aria-selected="false"
+                                onclick="return confirm('Bạn chắc chắc muốn đăng xuất tài khoản?')">Đăng xuất</a>
                         </li>
                     </ul>
                 </div>
@@ -48,10 +48,12 @@
                             aria-labelledby="account-dashboard-tab">
                             <div class="myaccount-dashboard">
                                 <p>Xin chào, <b>Anh Phương đẹp trai</b> (không phải Phương? <a
-                                        href="index.php?act=logout" onclick="return confirm('Bạn chắc chắc muốn đăng xuất tài khoản?')" style="font-weight: 600;">Đăng xuất</a>)</p>
+                                        href="index.php?act=logout"
+                                        onclick="return confirm('Bạn chắc chắc muốn đăng xuất tài khoản?')"
+                                        style="font-weight: 600;">Đăng xuất</a>)</p>
                                 <p>Từ bảng điều khiển tài khoản của mình, bạn có thể xem các đơn đặt hàng gần đây, quản
                                     lý địa chỉ giao hàng và thanh toán cũng như chỉnh sửa mật khẩu và thông
-                                        tin chi tiết tài khoản của mình.</p>
+                                    tin chi tiết tài khoản của mình.</p>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="account-orders" role="tabpanel"
@@ -106,31 +108,46 @@
                         <div class="tab-pane fade" id="account-details" role="tabpanel"
                             aria-labelledby="account-details-tab">
                             <div class="myaccount-details">
-                                <form action="#" class="jb-form">
+                                <? if (isset($_SESSION['user']) && is_array($_SESSION['user']))
+                                    extract($_SESSION['user']);
+                                ?>
+                                <form action="index.php?act=myaccount" method="post" enctype="multipart/form-data"
+                                    class="jb-form">
+                                    <div class="avt-user mb-3 text-center">
+                                        <img src="uploads/<?=($_SESSION['user']['img_user']) ?>"
+                                            alt="Avatar người dùng"
+                                            style="border-radius: 100%; width: 100px; height: 100px; border: 1px solid #0084c5">
+                                    </div>
                                     <div class="jb-form-inner">
-                                        <div class="avt-user">
-                                            <img src="./image/menu/logo/logo.png" alt="Avatar">
-                                        </div>
                                         <div class="single-input">
                                             <label for="account-details-firstname">Ảnh đại diện</label>
-                                            <input type="file" id="account-details-firstname">
+                                            <input type="file" name="img_user" id="account-details-firstname">
                                         </div>
                                         <div class="single-input">
                                             <label for="account-details-firstname">Họ và tên</label>
-                                            <input type="text" id="account-details-firstname"
+                                            <input type="text" name="full_name" id="account-details-firstname"
+                                                value="<?= $_SESSION['user']['full_name'] ?>"
                                                 placeholder="Nhập họ tên của bạn">
                                         </div>
                                         <div class="single-input">
                                             <label for="account-details-email">Email</label>
-                                            <input type="email" id="account-details-email"
+                                            <input type="email" name="email_user" id="account-details-email"
+                                                value="<?= $_SESSION['user']['email_user'] ?>"
                                                 placeholder="Nhập địa chỉ email của bạn">
                                         </div>
                                         <div class="single-input">
                                             <label for="account-details-email">Địa chỉ</label>
-                                            <input type="text" id="account-details-email"
+                                            <input type="text" name="address" id="account-details-email"
+                                                value="<?= $_SESSION['user']['address'] ?>"
                                                 placeholder="Nhập địa chỉ nhận hàng của bạn">
                                         </div>
                                         <div class="single-input">
+                                            <label for="account-details-email">Số điện thoại</label>
+                                            <input type="text" name="phone_user" id="account-details-email"
+                                                value="<?= $_SESSION['user']['phone_user'] ?>"
+                                                placeholder="Nhập số điện thoại nhận hàng của bạn">
+                                        </div>
+                                        <!-- <div class="single-input">
                                             <label for="account-details-oldpass">Mật khẩu hiện tại (Để trống nếu không
                                                 thay đổi)</label>
                                             <input type="password" id="account-details-oldpass"
@@ -146,10 +163,12 @@
                                             <label for="account-details-confpass">Xác nhận mật khẩu mới</label>
                                             <input type="password" id="account-details-confpass"
                                                 placeholder="Nhập lại mật khẩu mới">
-                                        </div>
+                                        </div> -->
                                         <div class="col-12 wrap-btn-sub">
-                                            <input type="submit" class="btn-submit" name="btn_login"
-                                                value="Lưu thay đổi" style="margin-top: 30px;">
+                                            <input type="hidden" name="id_user"
+                                                value="<?= $_SESSION['user']['id_user'] ?>">
+                                            <input type="submit" class="btn-submit mt-3" name="btn_change"
+                                                value="Lưu thay đổi">
                                         </div>
                                     </div>
                                 </form>

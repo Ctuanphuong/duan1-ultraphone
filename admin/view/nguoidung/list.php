@@ -3,7 +3,7 @@
         <div class="card mb-4 mt-4">
             <div class="card-header">
                 <i class="fas fa-table me-1"></i>
-                Danh sách khách hàng
+                Danh sách Người dùng
             </div>
             <div class="card-body">
                 <table id="datatablesSimple">
@@ -44,7 +44,7 @@
                                     <td><?php if($user['role'] == 1) {
                                         echo "Admin";
                                     } else {
-                                        echo "Thành Viên";
+                                        echo "Người dùng";
                                     } ?></td>
                                     <td><?= $user['register_date'] ?></td>
                                     <td><?= $user['last_login'] ?></td>

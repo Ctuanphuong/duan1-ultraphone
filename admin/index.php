@@ -6,6 +6,7 @@ include "model/pdo.php";
 include "model/loai.php";
 include "model/sanpham.php";
 include "model/nguoidung.php";
+include "model/hoadon.php";
 // controller
 if (isset($_GET['act'])) {
     $act = $_GET['act'];
@@ -146,6 +147,23 @@ if (isset($_GET['act'])) {
                     $listuser = loadall_user();
                     include "view/nguoidung/list.php";
                     break;
+
+                    //CONTROLLER HÓA ĐƠN
+
+                    // show all bill
+                    case 'bill': 
+                        $listbill = loadall_bill(0);
+                        include "view/hoadon/list.php";
+                        break;
+                    // xóa bill: 
+                    case 'removebill':
+                        if(isset($_GET['idbill']) && ($_GET['idbill'])) { 
+                            $idbill = $_GET['idbill'];
+                            remove_bill($idbill);
+                        }
+                        $listbill = loadall_bill(0);
+                        include "view/hoadon/list.php"; 
+                        break;
         default:
             include "view/content.php";
             break;
