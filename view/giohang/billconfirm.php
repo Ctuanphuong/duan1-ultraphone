@@ -64,7 +64,7 @@
                    } else if($payment == 2){
                        echo "Chuyển khoản ngân hàng";
                    } else if($payment == 3) {
-                       echo "Thanh toán online";
+                       echo "Thanh toán Online";
                    } else {
                        echo "Không tìm thấy phương thức thanh toán";
                    }  ?></span> 
