@@ -59,7 +59,15 @@
             <div class="card-body">
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="payment" id="inlineRadio1" checked>
-                   <span class="text-primary fw-bold"><?= $payment ?></span> 
+                   <span class="text-primary fw-bold"><?php if($payment == 1){
+                       echo "Thanh toán khi nhận hàng ";
+                   } else if($payment == 2){
+                       echo "Chuyển khoản ngân hàng";
+                   } else if($payment == 3) {
+                       echo "Thanh toán online";
+                   } else {
+                       echo "Không tìm thấy phương thức thanh toán";
+                   }  ?></span> 
                 </div>
         </div>
         </div>
