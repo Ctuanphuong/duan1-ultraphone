@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 19, 2022 lúc 04:20 PM
+-- Thời gian đã tạo: Th10 25, 2022 lúc 05:58 AM
 -- Phiên bản máy phục vụ: 10.4.24-MariaDB
 -- Phiên bản PHP: 8.1.6
 
@@ -101,22 +101,6 @@ CREATE TABLE `comment` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `customer`
---
-
-CREATE TABLE `customer` (
-  `id_cus` int(11) NOT NULL,
-  `name_cus` varchar(255) NOT NULL,
-  `sex_cus` tinyint(1) NOT NULL,
-  `email_cus` varchar(255) NOT NULL,
-  `address_cus` varchar(255) NOT NULL,
-  `phone_number` varchar(20) NOT NULL,
-  `img_cus` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
 -- Cấu trúc bảng cho bảng `product`
 --
 
@@ -163,7 +147,11 @@ CREATE TABLE `user` (
   `user_name` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL,
   `full_name` varchar(255) NOT NULL,
+  `sex` tinyint(4) NOT NULL DEFAULT 0,
   `email_user` varchar(255) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `phone_user` varchar(25) NOT NULL,
+  `img_user` varchar(255) NOT NULL,
   `register_date` date DEFAULT NULL,
   `last_login` date DEFAULT NULL,
   `role` tinyint(1) NOT NULL DEFAULT 0
@@ -173,10 +161,8 @@ CREATE TABLE `user` (
 -- Đang đổ dữ liệu cho bảng `user`
 --
 
-INSERT INTO `user` (`id_user`, `user_name`, `password`, `full_name`, `email_user`, `register_date`, `last_login`, `role`) VALUES
-(6, 'phuongct', 'abc', 'Chu Tuấn Phương', 'phuongct@gmail.com', NULL, NULL, 0),
-(7, 'admin', '000000', 'Administrator', 'administrator.ultraphone@gmail.com', NULL, NULL, 0),
-(8, 'phuongdzvl', '2003', 'Tuấn Phương', 'ctuanphuong@gmail.com', NULL, NULL, 0);
+INSERT INTO `user` (`id_user`, `user_name`, `password`, `full_name`, `sex`, `email_user`, `address`, `phone_user`, `img_user`, `register_date`, `last_login`, `role`) VALUES
+(10, 'phuongbeo', '12345', 'Chu Tuấn Phương', 0, 'ctuanphuong18@gmail.com', 'Ngọa Long, Minh Khai, Bắc Từ Liêm, Hà Nội', '0335099885', 'z3843585386448_c70cf6f597848fcdd9a88477b3071828.jpg', NULL, NULL, 0);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -210,12 +196,6 @@ ALTER TABLE `comment`
   ADD PRIMARY KEY (`id_cmt`),
   ADD KEY `lk_user_cmt` (`id_user`),
   ADD KEY `lk_pro_cmt` (`id_pro`);
-
---
--- Chỉ mục cho bảng `customer`
---
-ALTER TABLE `customer`
-  ADD PRIMARY KEY (`id_cus`);
 
 --
 -- Chỉ mục cho bảng `product`
@@ -259,12 +239,6 @@ ALTER TABLE `comment`
   MODIFY `id_cmt` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `customer`
---
-ALTER TABLE `customer`
-  MODIFY `id_cus` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT cho bảng `product`
 --
 ALTER TABLE `product`
@@ -274,7 +248,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT cho bảng `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Các ràng buộc cho các bảng đã đổ

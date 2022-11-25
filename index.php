@@ -178,9 +178,11 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
         case 'myaccount':
             if(isset($_SESSION['user'])) { 
             if(isset($_POST['btn_change']) && ($_POST['btn_change'])) { 
-
                 $id_user = $_POST['id_user'];
                 $full_name = $_POST['full_name'];
+                $user_name = $_SESSION['user']['user_name'];
+                $password = $_SESSION['user']['password'];
+                $sex = $_POST['sex'];
                 $email_user = $_POST['email_user'];
                 $address = $_POST['address'];
                 $phone_user = $_POST['phone_user'];
@@ -188,14 +190,15 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 $target_dir = "uploads/";
                 $target_file = $target_dir . basename($_FILES["img_user"]["name"]);
                 move_uploaded_file($_FILES["img_user"]["tmp_name"], $target_file);
-                update_user($id_user, $img_user,$full_name, $email_user, $address, $phone_user);
+                update_user($id_user, $img_user, $full_name, $sex, $email_user, $address, $phone_user);
+                $_SESSION['user'] = check_user($user_name, $password);
                 echo '<script>alert("Thay đổi thông tin thành công!")</script>';
+                // header("location: index.php?act=myaccount");
             }
-        
-            include "view/nguoidung/myaccount.php";
         } else { 
             header("Location: ?act=login");
         }
+        include "view/nguoidung/myaccount.php";
             break;
 
 
