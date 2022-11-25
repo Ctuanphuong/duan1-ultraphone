@@ -26,7 +26,17 @@ $total_amount = total_amount();
                                     <a href="index.php?act=account"><i class="fa-solid fa-user"></i>Tài khoản</a>
                                 </li> -->
                                 <div class="dropdown">
-                                    <a href="#" class="dropbtn"><i class="fa-solid fa-user"></i> Tài khoản</a>
+                                    <?php if (!isset($_SESSION['user'])) { ?>
+                                        <a href="#" class="dropbtn"><i class="fa-solid fa-user"></i> Tài khoản</a>
+                                    <?php  } else { ?>
+                                        <a href="#" class="dropbtn">
+                                            <?php if (isset($_SESSION['user']['img_user']) && $_SESSION['user']['img_user'] != '') { ?>
+                                                <img src="uploads/<?= $_SESSION['user']['img_user'] ?>" style="width: 20px; height: 20px; border-radius: 100%;">
+                                            <?php } else { ?>
+                                                <i class="fa-solid fa-user"></i>
+                                            <?php } ?>
+                                            <?= $_SESSION['user']['full_name'] ?></a>
+                                    <?php } ?>
                                     <div class="dropdown-content">
                                         <?php if (!isset($_SESSION['user'])) { ?>
                                             <a href="index.php?act=login"><i class="fa-solid fa-right-to-bracket"></i> Đăng nhập</a>
