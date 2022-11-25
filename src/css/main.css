@@ -8681,3 +8681,28 @@ li.right-menu .cat-mega-menu-3>li {
   .mar-t5{ 
     margin-top: 5px;
   }
+  .flex-addtocart { 
+    display: flex;
+  }
+  .flex-addtocart .cart-plus-minus  {
+margin: 0px 20px;
+
+  }
+  .flex-addtocart label {
+    margin-top: 10px;
+  }
+  .flex-addtocart .addtocart {
+    width: 120px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    display: block;
+    border: 1px solid #0084c5;
+    color: #0084c5;
+    transition: all 0.3s ease-in-out;
+    background-color: #ffff;
+  }
+  .flex-addtocart .addtocart:hover { 
+    background-color: #0084c5;
+    color: #ffff;
+  }

@@ -33,7 +33,7 @@ foreach($_SESSION['mycart'] as $cart) {
     }
     echo '<tbody>
     <tr>
-        <td class="jb-product-thumbnail"><img src="'.$img_pro.'" alt="Ultraphone Product" width="80px"></img></td>
+        <td class="jb-product-thumbnail"><a href="'.$prodetail.'"><img src="'.$img_pro.'" alt="Ultraphone Product" width="80px"></img></a></td>
         <td class="jb-product-name"><a href="'.$prodetail.'">'.$cart[1].'</a></td>
         <td class="jb-product-price"><span class="amount">'.number_format($cart[3]).'₫</span></td>
         <td class="quantity">

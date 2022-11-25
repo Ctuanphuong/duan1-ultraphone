@@ -34,7 +34,7 @@
                 <div class="col-lg-7 col-md-7">
                     <div class="sp-content">
                         <div class="sp-heading">
-                            <h5><a href="#">
+                            <h5><a href="index.php?act=prodetail&idpro=<?php echo $pro['id_pro'] ?>">
                                     <?= $one_pro['name_pro'] ?>
                                 </a></h5>
                             <span class="reference">Lượt xem: <?= $one_pro['view'] ?></span>
@@ -72,15 +72,22 @@
                             </p>
                         </div>
                         <div class="quantity">
+                            <div class="flex-addtocart">
                             <label>Số lượng</label>
                             <div class="cart-plus-minus">
                                 <input class="cart-plus-minus-box" value="1" type="text">
                                 <div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>
                                 <div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>
                             </div>
-                            <div class="jb-quantity-btn_area">
-                                <a class="jb-quantity_btn" href="cart.html">Thêm giỏ hàng</a>
-                                
+                            <div class="detail-addpro">
+                                <form action="index.php?act=addtocart" method="post">
+                            <input type="hidden" name="id_pro" value="<?php echo $one_pro['id_pro'] ?>">
+                            <input type="hidden" name="name_pro" value="<?php echo $one_pro['name_pro'] ?>">
+                            <input type="hidden" name="img_pro" value="<?php echo $one_pro['img_pro'] ?>">
+                            <input type="hidden" name="price" value="<?php echo $one_pro['price'] ?>">
+                                <input type="submit" name="addtocart" class="addtocart" value="Thêm giỏ hàng">
+                                </form>
+                                </div>
                             </div>
                         </div>
                         <div class="jb-social_link jb-link_share">
@@ -280,8 +287,6 @@
                                     <img src="admin/uploads/<?php echo $pro['img_pro']; ?>" alt="UltraPhone Product">
                                 </a>
                                 <span class="sticker">New</span>
-                                <div><a href="#" title="Quick View" class="quick-view-btn" data-bs-toggle="modal"
-                                        data-bs-target="#exampleModalCenter"><i class="fa fa-search"></i></a></div>
                             </div>
                             <div class="jb-product_content">
                                 <div class="product-desc_info">
