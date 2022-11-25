@@ -302,13 +302,25 @@
                                                                 <?php } ?>
                                                             </div>
                                                         </div>
-                                                        <div class="add-actions">
-                                                            <ul>
-                                                                <li><a class="jb-wishlist_link" href="#"><i class="fa fa-heart"></i></a></li>
-                                                                <li><a class="jb-add_cart" href="#"><i class="icon_cart_alt"></i>Thêm giỏ hàng</a></li>
-                                                                <li><a class="jb-sp_link" href="#"><i class="fa fa-copy"></i></a></li>
-                                                            </ul>
-                                                        </div>
+                                                        <div class="actions-add-2">
+                                                <form action="index.php?act=addtocart" method="post">
+                                                <ul>
+                                                    <li>
+                                                        <a class="jb-wishlist_link" href="#"><i class="fa fa-heart"></i></a>
+                                                    </li>
+                                                    <input type="hidden" name="id_pro" value="<?php echo $pro['id_pro'] ?>">
+                                                    <input type="hidden" name="name_pro" value="<?php echo $pro['name_pro'] ?>">
+                                                    <input type="hidden" name="img_pro" value="<?php echo $pro['img_pro'] ?>">
+                                                    <input type="hidden" name="price" value="<?php echo $pro['price'] ?>">
+                                                    <li>
+                                                    <input type="submit" class="addtocart" name="addtocart" value="Thêm vào giỏ">
+                                                    </li>
+                                                    <li>
+                                                        <a class="jb-sp_link" href="#"><i class="fa fa-copy"></i></a>
+                                                    </li>
+                                                </ul>
+                                                    </form>
+                                            </div>
                                                     </div>
                                                 </div>
                                             </div>

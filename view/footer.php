@@ -66,7 +66,7 @@
 
         <div>
           <i class="fa fa-phone"></i>
-          <p>+84335099885</p>
+          <p>+84 335099885</p>
         </div>
 
         <div>

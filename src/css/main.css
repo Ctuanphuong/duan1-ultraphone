@@ -8590,6 +8590,35 @@ li.right-menu .cat-mega-menu-3>li {
   background-color: #0084c5;
   color: #ffffff !important;
 }
+
+/* nút add trang bonus */
+.actions-add-2>form>ul {
+  display: flex;
+}
+
+.actions-add-2>form>ul>li>.addtocart {
+  margin: 0px 10px;
+  width: 130px;
+  opacity: 1;
+  color: #333333;
+  background-color: white;
+  visibility: visible;
+  border: 1px solid #e5e5e5;
+  height: 42px;
+  line-height: 40px;
+  display: block;
+  border-radius: 4px;
+  text-align: center;
+  text-transform: uppercase ;
+  transition: all .3s ease-in-out;
+
+}
+
+.actions-add-2>form>ul>li>.addtocart:hover {
+  border-color: #0084c5;
+  background-color: #0084c5;
+  color: #ffffff !important;
+}
 .jb-wishlist_link { 
   display: block;
   margin-top: 10px;
