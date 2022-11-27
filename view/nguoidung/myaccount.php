@@ -35,6 +35,9 @@
                                 <a class="nav-link" id="account-details-tab" data-bs-toggle="tab" href="#account-details" role="tab" aria-controls="account-details" aria-selected="false">Thông tin tài khoản</a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link" id="account-password-tab" data-bs-toggle="tab" href="#account-password" role="tab" aria-controls="account-password" aria-selected="false">Mật khẩu</a>
+                            </li>
+                            <li class="nav-item">
                                 <a href="index.php?act=logout" class="nav-link" id="account-logout-tab" role="tab" aria-selected="false" onclick="return confirm('Bạn chắc chắc muốn đăng xuất tài khoản?')">Đăng xuất</a>
                             </li>
                         </ul>
@@ -159,14 +162,35 @@
                                             <input type="submit" class="btn-submit mt-3" name="btn_change" value="Lưu thay đổi">
                                         </div>
                                     </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="account-password" role="tabpanel" aria-labelledby="account-password-tab">
+                                <div class="myaccount-details">
+                                    <div class="jb-form-inner">
+                                        
+                                        <div class="single-input">
+                                            <label for="account-password-newpass">Mật khẩu mới </label>
+                                            <input type="password" id="account-password-newpass"
+                                                placeholder="Nhập mật khẩu mới" name="newpass">
+                                        </div>
+                                        <div class="single-input">
+                                            <label for="account-password-confpass">Xác nhận mật khẩu mới</label>
+                                            <input type="password" id="account-password-confpass"
+                                                placeholder="Nhập lại mật khẩu mới" name="repass">
+                                        </div>
+                                        <span style="color: red;"><?php if(isset($error['fail'])) echo $error['fail'] ?></span> <br>
+                                        <div class="col-12 wrap-btn-sub">
+                                            <input type="hidden" name="id_user" value="<?= $_SESSION['user']['id_user'] ?>">
+                                            <input type="submit" class="btn-submit mt-3" name="btn_pass" value="Lưu thay đổi">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </form>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    <!-- JB's Account Page Area End Here -->
 </main>
 <!-- JB's Page Content Area End Here -->

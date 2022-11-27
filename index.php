@@ -195,6 +195,15 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 echo '<script>alert("Thay đổi thông tin thành công!")</script>';
                 // header("location: index.php?act=myaccount");
             }
+            if (isset($_POST['btn_pass'])) {
+                $password = $_POST['newpass'];
+                if ($_POST['repass'] != $_POST['newpass']) {
+                    echo '<script>alert("Nhập lại mật khẩu không khớp !")</script>';
+                } else {
+                    $pass= updatePass($password);
+                    echo '<script>alert("Đổi mật khẩu thành công !")</script>';
+                }
+            }
         } else { 
             header("Location: ?act=login");
         }

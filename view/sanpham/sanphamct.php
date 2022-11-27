@@ -191,7 +191,7 @@
                                 <a class="review-btn" href="#" data-bs-toggle="modal" data-bs-target="#mymodal">Đánh giá
                                     của bạn</a>
                             </div>
-                            <!-- Begin Quick View Feedback Form -->
+                            <!-- Form bình luận-->
                             <div class="modal fade modal-wrapper quickview-feedback_form" id="mymodal">
                                 <div class="modal-dialog modal-dialog-centered" role="document">
                                     <div class="modal-content">
@@ -203,7 +203,7 @@
                                                         <img src="image/product/large-size/1.jpg" alt="JB's Product">
                                                         <div class="jb-review-product-desc">
                                                             <p class="jb-product-name"> <strong>Tên sản
-                                                                    phẩm</strong></p>
+                                                                    phẩm    </strong></p>
                                                             <p>
                                                                 <span>Mô tả ngắn
                                                                 </span>
@@ -256,7 +256,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Quick View Feedback Form Area End Here -->
+                            <!-- End bình luận -->
                         </div>
                     </div>
                     <!-- End phần đánh giá, bình luận -->
