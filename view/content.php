@@ -167,9 +167,6 @@
                                             <?php } else { ?>
                                                 <span class="sticker-2">-<?= $pro['discount'] ?>%</span>
                                             <?php } ?>
-                                            <div>
-                                                <a href="index.php?act=prodetail&idpro=<?php echo $pro['id_pro'] ?>" title="Quick View" class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><i class="fa fa-search"></i></a>
-                                            </div>
                                         </div>
                                         <div class="jb-product_content">
                                             <div class="product-desc_info">

@@ -1,5 +1,5 @@
- <!-- phần active trang đang được hiển thị-->
- <div class="breadcrumb-area">
+<!-- phần active trang đang được hiển thị-->
+<div class="breadcrumb-area">
      <div class="container">
          <div class="breadcrumb-content">
              <ul>

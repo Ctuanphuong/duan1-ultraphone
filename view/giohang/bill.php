@@ -13,7 +13,7 @@
  <article class="mt-3 container-sm">
         <!-- thông tin đặt hàng -->
         <form action="index.php?act=billconfirm" method="post">
-        <?php if (isset($_SESSION['user'])) {  $user_name = $_SESSION['user']['user_name']; ?>
+        <?php if (isset($_SESSION['user'])) {  extract($_SESSION['user']); ?>
         <div class="card">
             <div class="card-header cart text-primary fw-bold">Thông tin đặt hàng</div>
             <div class="card-body">  
@@ -23,19 +23,19 @@
                 </div>
                 <div class="wrap-infocart mar-t5">
                     <span>Họ tên người đặt: </span>
-                    <input name="full_name" type="text" class="ip-cart ml-91" placeholder="Nhập họ tên người nhận" />
+                    <input name="full_name" type="text" class="ip-cart ml-91" placeholder="Nhập họ tên người nhận" value="<?= $full_name ?>"  />
                 </div>
                 <div class="wrap-infocart mar-t5">
                     <span>Địa chỉ: </span>
-                    <input name="address" type="text" class="ip-cart ml-158" placeholder="Nhập địa chỉ nhận hàng" />
+                    <input name="address" type="text" class="ip-cart ml-158" placeholder="Nhập địa chỉ nhận hàng" value="<?= $address ?>" />
                 </div>
                 <div class="wrap-infocart mar-t5">
                     <span>Email: </span>
-                    <input name="email" type="email" class="ip-cart ml-166"  placeholder="Nhập email người nhận"/>
+                    <input name="email" type="email" class="ip-cart ml-166"  placeholder="Nhập email người nhận" value="<?= $email_user ?>" />
                 </div>
                 <div class="wrap-infocart mar-t5">
                     <span>Điện thoại: </span>
-                    <input name="phone" type="text" class="ip-cart ml-134" placeholder="Nhập số điện thoại người nhận"/>
+                    <input name="phone" type="text" class="ip-cart ml-134" placeholder="Nhập số điện thoại người nhận" value="<?= $phone_user ?>" />
                 </div>
             </div>
         </div>

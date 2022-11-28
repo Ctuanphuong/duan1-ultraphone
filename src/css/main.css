@@ -8590,6 +8590,35 @@ li.right-menu .cat-mega-menu-3>li {
   background-color: #0084c5;
   color: #ffffff !important;
 }
+
+/* nút add trang bonus */
+.actions-add-2>form>ul {
+  display: flex;
+}
+
+.actions-add-2>form>ul>li>.addtocart {
+  margin: 0px 10px;
+  width: 130px;
+  opacity: 1;
+  color: #333333;
+  background-color: white;
+  visibility: visible;
+  border: 1px solid #e5e5e5;
+  height: 42px;
+  line-height: 40px;
+  display: block;
+  border-radius: 4px;
+  text-align: center;
+  text-transform: uppercase ;
+  transition: all .3s ease-in-out;
+
+}
+
+.actions-add-2>form>ul>li>.addtocart:hover {
+  border-color: #0084c5;
+  background-color: #0084c5;
+  color: #ffffff !important;
+}
 .jb-wishlist_link { 
   display: block;
   margin-top: 10px;
@@ -8651,4 +8680,29 @@ li.right-menu .cat-mega-menu-3>li {
   }
   .mar-t5{ 
     margin-top: 5px;
+  }
+  .flex-addtocart { 
+    display: flex;
+  }
+  .flex-addtocart .cart-plus-minus  {
+margin: 0px 20px;
+
+  }
+  .flex-addtocart label {
+    margin-top: 10px;
+  }
+  .flex-addtocart .addtocart {
+    width: 120px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    display: block;
+    border: 1px solid #0084c5;
+    color: #0084c5;
+    transition: all 0.3s ease-in-out;
+    background-color: #ffff;
+  }
+  .flex-addtocart .addtocart:hover { 
+    background-color: #0084c5;
+    color: #ffff;
   }
