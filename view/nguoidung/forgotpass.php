@@ -23,7 +23,7 @@
                             <div class="col-md-12 col-12">
                                 <labe>Email</labe>
                                 <input type="email" style="margin-top: 10px;" name="email" placeholder="Nhập địa chỉ email đăng ký">
-                                <span class="text-danger fw-bolder"><?php if(isset($error['email'])) echo $error['email']  ?></span>
+                                <span class="text-danger fw-bolder"><?php if (isset($error['email'])) echo $error['email']  ?></span>
                                 <br>
                             </div>
                             <div class="col-12 wrap-btn-sub mt-2">

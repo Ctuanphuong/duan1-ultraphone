@@ -12,8 +12,8 @@
  <!--end phần active trang đang được hiển thị-->
  <!-- show form đăng nhập và đăng ký-->
  <div class="jb-login-register_area">
-            <div class="container">
-                <div class="row" style="justify-content: center;">
+     <div class="container">
+         <div class="row" style="justify-content: center;">
              <!-- form đăng ký -->
              <div class="col-sm-12 col-md-12 col-lg-6 col-xs-12">
                  <form action="index.php?act=register" method="post">
