@@ -20,6 +20,7 @@ function viewcart($removecol)
  ' . $remove_th . '
 </tr>
 </thead>';
+
 foreach($_SESSION['mycart'] as $cart) { 
     $removepro= "index.php?act=removecart&idcart=".$i;
     $img_pro = "admin/uploads/".$cart[2];
@@ -86,8 +87,7 @@ echo '
         </div>
     </div>
 </div>';
-
-}
+} 
 function cart_detail($listcart)
 {
     $total_amount = 0;

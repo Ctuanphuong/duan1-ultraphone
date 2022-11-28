@@ -42,28 +42,28 @@
     <div class="row g-0 remove-g-0_md">
         <div class="col-lg-3 col-md-6 col-sm-6">
             <div class="banner-item">
-                <a href="#">
+                <a href="index.php?act=product">
                     <img src="./src/image/banner/oppo.png" alt="Ultraphone Product" />
                 </a>
             </div>
         </div>
         <div class="col-lg-3 col-md-6 col-sm-6">
             <div class="banner-item">
-                <a href="#">
+                <a href="index.php?act=product">
                     <img src="./src/image/banner/realme.jpg" alt="Ultraphone Product" />
                 </a>
             </div>
         </div>
         <div class="col-lg-3 col-md-6 col-sm-6">
             <div class="banner-item">
-                <a href="#">
+                <a href="index.php?act=product">
                     <img src="./src/image/banner/samsung.jpg" alt="Ultraphone Product" />
                 </a>
             </div>
         </div>
         <div class="col-lg-3 col-md-6 col-sm-6">
             <div class="banner-item">
-                <a href="#">
+                <a href="index.php?act=product">
                     <img src="./src/image/banner/xiaomi.png" alt="Ultraphone Product" />
                 </a>
             </div>

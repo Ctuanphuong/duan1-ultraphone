@@ -17,9 +17,13 @@
                     <div class="col-12">
                         <form action="index.php?act=bill" method="post">
                             <div class="table-content table-responsive">
+                           <?php if(!empty($_SESSION['mycart'])) { ?>
                            <?php viewcart(1); ?>
                             <div class="wrap-btn-order mt-4">
                             <input type="submit" href="index.php?act=bill" value="Xác nhận đặt hàng">
+                            <?php } else {?>
+                                <h3 class="text-danger">Giỏ hàng trống. Vui lòng thêm sản phẩm để đặt hàng!</h3>
+                                <?php } ?>
                             </div>
                         </form>
                     </div>
