@@ -33,9 +33,9 @@
   </div>
   <!-- end đăng ký nhận thư -->
   <!-- Remove the container if you want to extend the Footer to full width. -->
-<div class="wrap-footer">
+  <div class="wrap-footer">
 
-<footer class="footer-distributed">
+    <footer class="footer-distributed">
 
       <div class="footer-left">
 
@@ -43,15 +43,15 @@
 
         <p class="footer-links">
           <a href="index.php" class="link-1">Trang chủ</a>
-          
+
           <a href="index.php?act=product">Sản phẩm</a>
-        
+
           <a href="#">Giới thiệu</a>
-        
+
           <a href="#">Liên hệ</a>
-          
+
           <a href="#">Hỏi đáp</a>
-          
+
         </p>
 
         <p class="footer-company-name">UltraPhone © 2022</p>
@@ -94,10 +94,10 @@
 
     </footer>
 
-</div>
-<!-- End of .container -->
+  </div>
+  <!-- End of .container -->
   <!-- Phần show nhanh chi tiết ngắn sản phẩm-->
-  
+
 </div>
 <!-- end footer -->
 <script src="./src/js/plugins.min.js"></script>

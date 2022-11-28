@@ -14,13 +14,13 @@
  <!-- show form đăng nhập và đăng ký-->
  <div class="jb-login-register_area">
      <div class="container">
-        <div>
-            <?php 
-            if(isset($noti_success) && $noti_success != "") { 
-                echo $noti_success;
-            }
-            ?>
-        </div>
+         <div>
+             <?php
+                if (isset($noti_success) && $noti_success != "") {
+                    echo $noti_success;
+                }
+                ?>
+         </div>
          <div class="row" style="justify-content: center;">
              <div class="col-sm-12 col-md-12 col-xs-12 col-lg-6">
                  <!-- form đăng nhập-->
@@ -42,7 +42,7 @@
                                      <label for="remember_me">Ghi nhớ tài khoản</label>
                                  </div>
                                  <div class="register-txt">
-                                    <a href="index.php?act=register" style="font-weight: 500">Đăng ký tài khoản mới</a>
+                                     <a href="index.php?act=register" style="font-weight: 500">Đăng ký tài khoản mới</a>
                                  </div>
                              </div>
                              <div class="col-md-4">
@@ -57,6 +57,6 @@
                      </div>
                  </form>
              </div>
-             </div>
-            </div>
-        </div>
+         </div>
+     </div>
+ </div>
