@@ -22,3 +22,8 @@ function update_user($id_user, $user_name, $full_name, $email_user, $password, $
     WHERE id_user=".$id_user;
     pdo_execute($sql);
 }
+function delete_user($id_user) { 
+    $sql = "DELETE FROM user WHERE id_user=".$id_user;
+    pdo_execute($sql);
+}
+?>

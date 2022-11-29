@@ -148,6 +148,15 @@ if (isset($_GET['act'])) {
                     $listuser = loadall_user();
                     include "view/nguoidung/list.php";
                     break;
+                    // Xóa người dùng
+                    case "removeuser": 
+                        if(isset($_GET['id_user']) && ($_GET['id_user'] > 0)) { 
+                        $id_user = $_GET['id_user'];
+                        delete_user($id_user);
+                        }
+                        $listuser = loadall_user();
+                        include "view/nguoidung/list.php";
+                        break;
 
                     //CONTROLLER HÓA ĐƠN
 
