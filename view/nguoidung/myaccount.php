@@ -167,7 +167,7 @@
                             <div class="tab-pane fade" id="account-password" role="tabpanel" aria-labelledby="account-password-tab">
                                 <div class="myaccount-details">
                                     <div class="jb-form-inner">
-
+                                        
                                         <div class="single-input">
                                             <label for="account-password-newpass">Mật khẩu mới </label>
                                             <input type="password" id="account-password-newpass" placeholder="Nhập mật khẩu mới" name="newpass">
@@ -176,7 +176,7 @@
                                             <label for="account-password-confpass">Xác nhận mật khẩu mới</label>
                                             <input type="password" id="account-password-confpass" placeholder="Nhập lại mật khẩu mới" name="repass">
                                         </div>
-                                        <span style="color: red;"><?php if (isset($error['fail'])) echo $error['fail'] ?></span> <br>
+                                        
                                         <div class="col-12 wrap-btn-sub">
                                             <input type="hidden" name="id_user" value="<?= $_SESSION['user']['id_user'] ?>">
                                             <input type="submit" class="btn-submit mt-3" name="btn_pass" value="Lưu thay đổi">
