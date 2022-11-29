@@ -288,6 +288,8 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             if ($payment == 2 || $payment == 3) {
                 $_SESSION['pay'] = [$payment, $total_amount, $bill_code];
                 header('location: view/qr.php');
+            } else {
+                $_SESSION['check'] == 1;
             }
             error_reporting(E_ALL);
             if ($_SESSION['check'] == 1 || $payment == 1) {
