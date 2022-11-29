@@ -294,6 +294,10 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             }
             break;
             // giá trị default: 
+            // Quên mật khẩu: Nhập mã xác minh mã được gửi qua Email
+        case 'question':
+            include "view/question.php";
+            break;
         default:
             include "view/content.php";
             break;

@@ -114,10 +114,7 @@ $total_amount = total_amount();
                                     <a href="contact.html">Liên hệ</a>
                                 </li>
                                 <li>
-                                    <a href="faq.html">Hỏi đáp</a>
-                                    <!-- Begin Header Middle Dropdwon Area -->
-
-                                    <!-- Header Middle Dropdwon Area End Here -->
+                                    <a href="index.php?act=question">Hỏi đáp</a>
                                 </li>
                             </ul>
                         </nav>
