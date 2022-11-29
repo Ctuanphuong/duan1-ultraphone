@@ -22,7 +22,6 @@ require_once 'function.php';
             $check_username = checkbill($id);
             if(isset($check_username))
             {
-                
                 if(empty($check_code))
                 {
                     // echo $check_username;
