@@ -167,7 +167,10 @@
                             <div class="tab-pane fade" id="account-password" role="tabpanel" aria-labelledby="account-password-tab">
                                 <div class="myaccount-details">
                                     <div class="jb-form-inner">
-                                        
+                                        <div class="single-input">
+                                            <label for="account-details-firstname">Tên đăng nhập</label>
+                                            <input type="text" name="user_name" id="account-details-firstname" value="<?= $_SESSION['user']['user_name'] ?>" placeholder="Nhập họ tên của bạn" disabled>
+                                        </div>
                                         <div class="single-input">
                                             <label for="account-password-newpass">Mật khẩu mới </label>
                                             <input type="password" id="account-password-newpass" placeholder="Nhập mật khẩu mới" name="newpass">
