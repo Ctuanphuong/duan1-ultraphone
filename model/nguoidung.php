@@ -27,9 +27,9 @@ function getUserEmail($email)
         echo "<h4 style='color: red; text-align: center; margin-top: 10px;'>Email không tồn tại!</h4>";
     }
 }
-function updatePass( $password)
+function updatePass($user_name, $password)
 {
-    $sql = "UPDATE `user` SET password = '$password' WHERE 1";
+    $sql = "UPDATE `user` SET password = '$password' WHERE user_name ='" . $user_name . "'";
     pdo_execute($sql);
 }
 function forgetPass($password, $email)

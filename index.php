@@ -195,13 +195,14 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                     // header("location: index.php?act=myaccount");
                 }
                 if (isset($_POST['btn_pass'])) {
+                    $user_name = $_SESSION['user']['user_name'];
                     $password = $_POST['newpass'];
                     if($password ==""){
                         echo '<script>alert("Không được để trống mật khẩu mới !")</script>';
                     }elseif ($_POST['repass'] != $_POST['newpass']) {
                         echo '<script>alert("Nhập lại mật khẩu không khớp !")</script>';
                     } else {
-                        $pass = updatePass($password);
+                        $pass = updatePass($user_name, $password);
                         echo '<script>alert("Đổi mật khẩu thành công !")</script>';
                     }
                 }
