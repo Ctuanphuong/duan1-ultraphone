@@ -209,6 +209,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             } else {
                 header("Location: ?act=login");
             }
+            $list_mybill = loadall_bill($_SESSION['user']['id_user']);
             include "view/nguoidung/myaccount.php";
             break;
 

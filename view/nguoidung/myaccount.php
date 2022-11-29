@@ -64,17 +64,21 @@
                                                     <th>Số lượng</th>
                                                     <th>Trạng thái</th>
                                                     <th>Tổng tiền</th>
-                                                    <th>Thao tác</th>
                                                 </tr>
+                                                <?php 
+                                               foreach($list_mybill as $bill) :
+                                                extract($bill);  
+                                                $stt = get_stt($status); 
+                                                $countpro = loadall_countcart($id_bill);
+                                                ?>
                                                 <tr>
-                                                    <td><a class="account-order-id" href="#">#5364</a></td>
-                                                    <td>Mar 27, 2022</td>
-                                                    <td>10</td>
-                                                    <td>Đang xử lí</td>
-                                                    <td>3,000,000đ</td>
-                                                    <td><a href="#" class="jb-btn jb-btn_dark jb-btn_sm"><span>Xem chi
-                                                                tiết</span></a></td>
+                                                    <td><a class="account-order-id" href="#">DA1-<?= $id_bill ?></a></td>
+                                                    <td><?= $order_date ?></td>
+                                                    <td><?= $countpro ?></td>
+                                                    <td><?= $stt ?></td>
+                                                    <td><?= $total_amount ?></td>
                                                 </tr>
+                                                <?php endforeach ?>
                                             </tbody>
                                         </table>
                                     </div>
