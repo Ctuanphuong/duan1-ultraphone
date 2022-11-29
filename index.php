@@ -69,7 +69,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             }
             break;
 
-        // CONTROLLER ĐĂNG KÝ TÀI KHOẢN:
+            // CONTROLLER ĐĂNG KÝ TÀI KHOẢN:
 
         case "register":
             if (isset($_POST['btn_register']) && $_POST['btn_register']) {
@@ -83,7 +83,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             }
             include "view/nguoidung/register.php";
             break;
-        // CONTROLLER ĐĂNG NHẬP TÀI KHOẢN:
+            // CONTROLLER ĐĂNG NHẬP TÀI KHOẢN:
 
         case "login":
             if (isset($_POST['btn_login']) && $_POST['btn_login']) {
@@ -100,19 +100,19 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             }
             include "view/nguoidung/login.php";
             break;
-        // đăng xuất tài khoản: 
+            // đăng xuất tài khoản: 
         case 'logout':
             session_unset();
             header('Location: index.php?act=login');
             break;
 
-        //Quên mật khẩu:
-        //Form cách thức lấy lại mật khẩu
+            //Quên mật khẩu:
+            //Form cách thức lấy lại mật khẩu
         case 'mk':
             include "view/nguoidung/cachthuclaymk.php";
             break;
 
-        //Lấy lại mật khẩu thông qua User_name và Email_user
+            //Lấy lại mật khẩu thông qua User_name và Email_user
         case "usermk":
             if (isset($_POST['mk2']) && ($_POST['mk2'])) {
                 $name = $_POST['user_name'];
@@ -123,11 +123,10 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 } else {
                     $thongbao = '<p class="text-danger fw-bold">Tài khoản hoặc Email không tồn tại! Vui lòng kiểm tra lại</p>';
                 }
-
             }
             include "view/nguoidung/laymk2.php";
             break;
-        // Quên mật khẩu: Lấy lại mật khẩu thông qua mã xác nhận được gửi vào email
+            // Quên mật khẩu: Lấy lại mật khẩu thông qua mã xác nhận được gửi vào email
         case 'forgotPass':
             if (isset($_POST['btn_forgotPass'])) {
                 $error = array();
@@ -150,12 +149,12 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             include 'view/nguoidung/forgotpass.php';
             break;
 
-        // Quên mật khẩu: Nhập mã xác minh mã được gửi qua Email
+            // Quên mật khẩu: Nhập mã xác minh mã được gửi qua Email
         case 'verification':
             include "view/nguoidung/verification.php";
             break;
 
-        // Quên mật khẩu: Tạo mật khẩu mới để đăng nhập
+            // Quên mật khẩu: Tạo mật khẩu mới để đăng nhập
         case 'changePass':
             if (isset($_POST['btn_changePass'])) {
                 $error = array();
@@ -173,51 +172,51 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             include "view/nguoidung/changePass.php";
             break;
 
-        // CONTROLLER THÔNG TIN TÀI KHOẢN: 
-        // thông tin tài khoản
+            // CONTROLLER THÔNG TIN TÀI KHOẢN: 
+            // thông tin tài khoản
         case 'myaccount':
-            if(isset($_SESSION['user'])) { 
-            if(isset($_POST['btn_change']) && ($_POST['btn_change'])) { 
-                $id_user = $_POST['id_user'];
-                $full_name = $_POST['full_name'];
-                $user_name = $_SESSION['user']['user_name'];
-                $password = $_SESSION['user']['password'];
-                $sex = $_POST['sex'];
-                $email_user = $_POST['email_user'];
-                $address = $_POST['address'];
-                $phone_user = $_POST['phone_user'];
-                $img_user = $_FILES['img_user']['name'];
-                $target_dir = "uploads/";
-                $target_file = $target_dir . basename($_FILES["img_user"]["name"]);
-                move_uploaded_file($_FILES["img_user"]["tmp_name"], $target_file);
-                update_user($id_user, $img_user, $full_name, $sex, $email_user, $address, $phone_user);
-                $_SESSION['user'] = check_user($user_name, $password);
-                echo '<script>alert("Thay đổi thông tin thành công!")</script>';
-                // header("location: index.php?act=myaccount");
-            }
-            if (isset($_POST['btn_pass'])) {
-                $password = $_POST['newpass'];
-                if ($_POST['repass'] != $_POST['newpass']) {
-                    echo '<script>alert("Nhập lại mật khẩu không khớp !")</script>';
-                } else {
-                    $pass= updatePass($password);
-                    echo '<script>alert("Đổi mật khẩu thành công !")</script>';
+            if (isset($_SESSION['user'])) {
+                if (isset($_POST['btn_change']) && ($_POST['btn_change'])) {
+                    $id_user = $_POST['id_user'];
+                    $full_name = $_POST['full_name'];
+                    $user_name = $_SESSION['user']['user_name'];
+                    $password = $_SESSION['user']['password'];
+                    $sex = $_POST['sex'];
+                    $email_user = $_POST['email_user'];
+                    $address = $_POST['address'];
+                    $phone_user = $_POST['phone_user'];
+                    $img_user = $_FILES['img_user']['name'];
+                    $target_dir = "uploads/";
+                    $target_file = $target_dir . basename($_FILES["img_user"]["name"]);
+                    move_uploaded_file($_FILES["img_user"]["tmp_name"], $target_file);
+                    update_user($id_user, $img_user, $full_name, $sex, $email_user, $address, $phone_user);
+                    $_SESSION['user'] = check_user($user_name, $password);
+                    echo '<script>alert("Thay đổi thông tin thành công!")</script>';
+                    // header("location: index.php?act=myaccount");
                 }
+                if (isset($_POST['btn_pass'])) {
+                    $password = $_POST['newpass'];
+                    if ($_POST['repass'] != $_POST['newpass']) {
+                        echo '<script>alert("Nhập lại mật khẩu không khớp !")</script>';
+                    } else {
+                        $pass = updatePass($password);
+                        echo '<script>alert("Đổi mật khẩu thành công !")</script>';
+                    }
+                }
+            } else {
+                header("Location: ?act=login");
             }
-        } else { 
-            header("Location: ?act=login");
-        }
-        include "view/nguoidung/myaccount.php";
+            include "view/nguoidung/myaccount.php";
             break;
 
 
-        // CONTROLLER GIỎ HÀNG:   
-        // xem giỏ hàng
+            // CONTROLLER GIỎ HÀNG:   
+            // xem giỏ hàng
         case 'viewcart':
             include "view/giohang/viewcart.php";
             break;
 
-        // thêm vào giỏ hàng
+            // thêm vào giỏ hàng
         case 'addtocart':
             if (isset($_POST['addtocart']) && $_POST['addtocart']) {
                 $id_pro = $_POST['id_pro'];
@@ -232,7 +231,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             }
             include "view/giohang/viewcart.php";
             break;
-        // xóa sản phẩm trong giỏ hàng
+            // xóa sản phẩm trong giỏ hàng
         case 'removecart':
             if (isset($_GET['idcart'])) {
                 $idcart = $_GET['idcart'];
@@ -242,14 +241,19 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             }
             header('location: index.php?act=viewcart');
             break;
-        // tạo bill 
+            // tạo bill 
         case 'bill':
-
             include "view/giohang/bill.php";
             break;
+        case 'pay':
+            include "view/qr.php";
+            break;
         case 'billconfirm':
+            // $_SESSION['check'] = 0;
             if (isset($_POST['orderconfirm']) && ($_POST['orderconfirm'])) {
                 if (isset($_SESSION['user'])) {
+                    $randomNum = substr(str_shuffle("0123456789"), 0, 5);
+                    $bill_code = $randomNum;
                     $id_user = $_SESSION['user']['id_user'];
                     $user_name = $_SESSION['user']['user_name'];
                     $full_name = $_POST['full_name'];
@@ -259,8 +263,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                     $payment = $_POST['payment'];
                     $order_date = date('d/m/Y h:i:sa');
                     $total_amount = total_amount();
-                    $idbill = insert_bill($id_user, $user_name, $full_name, $address, $phone, $email, $payment, $order_date, $total_amount);
-
+                    $_SESSION['idbill'] = $idbill = insert_bill($bill_code, $id_user, $user_name, $full_name, $address, $phone, $email, $payment, $order_date, $total_amount);
                 } else {
                     echo '<script>alert("Bạn phải đăng nhập để đặt hàng!")</script>';
                     include "view/giohang/viewcart.php";
@@ -271,11 +274,19 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 }
                 $_SESSION['mycart'] = [];
             }
-            $bill = loadone_bill($idbill);
-            $cart_detail = loadall_cart($idbill);
-            include "view/giohang/billconfirm.php";
+            $bill = loadone_bill($_SESSION['idbill']);
+            $cart_detail = loadall_cart($_SESSION['idbill']);
+            error_reporting(0);
+            if ($payment == 2 || $payment == 3) {
+                $_SESSION['pay'] = [$payment, $total_amount, $bill_code];
+                header('location: view/qr.php');
+            }
+            error_reporting(E_ALL);
+            if ($_SESSION['check'] == 1 || $payment == 1) {
+                include "view/giohang/billconfirm.php";
+            }
             break;
-        // giá trị default: 
+            // giá trị default: 
         default:
             include "view/content.php";
             break;
@@ -286,5 +297,3 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
 
 include "view/footer.php";
 ob_end_flush();
-
-?>
