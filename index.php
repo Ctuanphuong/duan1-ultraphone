@@ -262,13 +262,11 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                     $payment = $_POST['payment'];
                     $order_date = date('d/m/Y h:i:sa');
                     $total_amount = total_amount();
-                    if($total_amount > 0){
+                    if ($total_amount > 0) {
                         $_SESSION['idbill'] = $idbill = insert_bill($bill_code, $id_user, $user_name, $full_name, $address, $phone, $email, $payment, $order_date, $total_amount);
-
                     } else {
                         header('location: ?act=viewcart');
                     }
-
                 } else {
                     echo '<script>alert("Bạn phải đăng nhập để đặt hàng!")</script>';
                     include "view/giohang/viewcart.php";

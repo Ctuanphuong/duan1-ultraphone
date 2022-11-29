@@ -2,16 +2,16 @@
 session_start();
 $_SESSION['check'] = 1;
 
-if($_SESSION['check'] == 2){
+if ($_SESSION['check'] == 2) {
     header("location: index.php?act=billconfirm");
 }
 
 if (isset($_SESSION['pay'])) {
-    
+
     $amount = $_SESSION['pay'][1];
     $commnet = $_SESSION['pay'][2];
     $payment = $_SESSION['pay'][0];
-} 
+}
 
 ?>
 <!DOCTYPE html>
@@ -87,50 +87,50 @@ if (isset($_SESSION['pay'])) {
                 <?php if ($payment == 2) { ?>
                     <div class="col-xs-12 col-sm-12 col-md-4 left">
                         <div class="info-box">
-                                <div class="entry">
-                                    <p><i class="fa fa-university" aria-hidden="true"></i>
-                                        <span style="padding-left: 5px;">Phương thức</span>
-                                        <br>
-                                        <span style="padding-left: 25px;word-break: keep-all;">Ngân hàng</span>
-                                    </p>
-                                </div>
-                                <div class="entry">
-                                    <p><i class="fa fa-university" aria-hidden="true"></i>
-                                        <span style="padding-left: 5px;">Ngân hàng</span>
-                                        <br>
-                                        <span style="padding-left: 25px;word-break: keep-all;">MB Bank</span>
-                                    </p>
-                                </div>
-                                <div class="entry">
-                                    <p><i class="fa fa-credit-card" aria-hidden="true"></i>
-                                        <span style="padding-left: 5px;">Số tài khoản</span>
-                                        <br>
-                                        <b id="copyStk" style="padding-left: 25px;word-break: keep-all;color:greenyellow;">60000000003</b>
-                                        <i onclick="copy()" data-clipboard-target="#copyStk" class="fas fa-copy copy"></i>
-                                    </p>
-                                </div>
-                                <div class="entry">
-                                    <p><i class="fa fa-user" aria-hidden="true"></i>
-                                        <span style="padding-left: 5px;">Chủ tài khoản</span>
-                                        <br>
-                                        <span style="padding-left: 25px;word-break: keep-all;">Đỗ Quang Linh</span>
-                                    </p>
-                                </div>
-                                <div class="entry">
-                                    <p><i class="fa fa-money" aria-hidden="true"></i>
-                                        <span style="padding-left: 5px;">Số tiền cần thanh toán</span>
-                                        <br>
-                                        <b style="padding-left: 25px;color:aqua;"><?= number_format($amount) ?> đ</b>
-                                    </p>
-                                </div>
-                                <div class="entry">
-                                    <p><i class="fa fa-comment" aria-hidden="true"></i>
-                                        <span style="padding-left: 5px;">Nội dung chuyển khoản</span>
-                                        <br>
-                                        <b id="copyNoiDung" style="padding-left: 25px;word-break: keep-all;color:yellow;"><?= $commnet ?></b>
-                                        <i onclick="copy()" data-clipboard-target="#copyNoiDung" class="fas fa-copy copy"></i>
-                                    </p>
-                                </div>
+                            <div class="entry">
+                                <p><i class="fa fa-university" aria-hidden="true"></i>
+                                    <span style="padding-left: 5px;">Phương thức</span>
+                                    <br>
+                                    <span style="padding-left: 25px;word-break: keep-all;">Ngân hàng</span>
+                                </p>
+                            </div>
+                            <div class="entry">
+                                <p><i class="fa fa-university" aria-hidden="true"></i>
+                                    <span style="padding-left: 5px;">Ngân hàng</span>
+                                    <br>
+                                    <span style="padding-left: 25px;word-break: keep-all;">MB Bank</span>
+                                </p>
+                            </div>
+                            <div class="entry">
+                                <p><i class="fa fa-credit-card" aria-hidden="true"></i>
+                                    <span style="padding-left: 5px;">Số tài khoản</span>
+                                    <br>
+                                    <b id="copyStk" style="padding-left: 25px;word-break: keep-all;color:greenyellow;">60000000003</b>
+                                    <i onclick="copy()" data-clipboard-target="#copyStk" class="fas fa-copy copy"></i>
+                                </p>
+                            </div>
+                            <div class="entry">
+                                <p><i class="fa fa-user" aria-hidden="true"></i>
+                                    <span style="padding-left: 5px;">Chủ tài khoản</span>
+                                    <br>
+                                    <span style="padding-left: 25px;word-break: keep-all;">Đỗ Quang Linh</span>
+                                </p>
+                            </div>
+                            <div class="entry">
+                                <p><i class="fa fa-money" aria-hidden="true"></i>
+                                    <span style="padding-left: 5px;">Số tiền cần thanh toán</span>
+                                    <br>
+                                    <b style="padding-left: 25px;color:aqua;"><?= number_format($amount) ?> đ</b>
+                                </p>
+                            </div>
+                            <div class="entry">
+                                <p><i class="fa fa-comment" aria-hidden="true"></i>
+                                    <span style="padding-left: 5px;">Nội dung chuyển khoản</span>
+                                    <br>
+                                    <b id="copyNoiDung" style="padding-left: 25px;word-break: keep-all;color:yellow;"><?= $commnet ?></b>
+                                    <i onclick="copy()" data-clipboard-target="#copyNoiDung" class="fas fa-copy copy"></i>
+                                </p>
+                            </div>
                             <div class="entry">
                                 <p><i class="fa fa-barcode" aria-hidden="true"></i>
                                     <span style="padding-left: 5px;">Trạng thái <i class="fa fa-spinner fa-spin"></i>
@@ -181,43 +181,43 @@ if (isset($_SESSION['pay'])) {
                 <?php } else { ?>
                     <div class="col-xs-12 col-sm-12 col-md-4" style="background-color: #a50064; color:white">
                         <div class="info-box">
-                                <div class="entry">
-                                    <p><i class="fa fa-university" aria-hidden="true"></i>
-                                        <span style="padding-left: 5px;">Phương thức</span>
-                                        <br>
-                                        <span style="padding-left: 25px;word-break: keep-all;">MOMO</span>
-                                    </p>
-                                </div>
-                                <div class="entry">
-                                    <p><i class="fa fa-credit-card" aria-hidden="true"></i>
-                                        <span style="padding-left: 5px;">Số điện thoại</span>
-                                        <br>
-                                        <b id="copyStk" style="padding-left: 25px;word-break: keep-all;color:greenyellow;">0335535000</b>
-                                        <i onclick="copy()" data-clipboard-target="#copyStk" class="fas fa-copy copy"></i>
-                                    </p>
-                                </div>
-                                <div class="entry">
-                                    <p><i class="fa fa-user" aria-hidden="true"></i>
-                                        <span style="padding-left: 5px;">Chủ tài khoản</span>
-                                        <br>
-                                        <span style="padding-left: 25px;word-break: keep-all;">Đỗ Quang Linh</span>
-                                    </p>
-                                </div>
-                                <div class="entry">
-                                    <p><i class="fa fa-money" aria-hidden="true"></i>
-                                        <span style="padding-left: 5px;">Số tiền cần thanh toán</span>
-                                        <br>
-                                        <b style="padding-left: 25px;color:aqua;"><?= number_format($amount) ?> đ</b>
-                                    </p>
-                                </div>
-                                <div class="entry">
-                                    <p><i class="fa fa-comment" aria-hidden="true"></i>
-                                        <span style="padding-left: 5px;">Nội dung chuyển khoản</span>
-                                        <br>
-                                        <b id="copyNoiDung" style="padding-left: 25px;word-break: keep-all;color:yellow;"><?= $commnet ?></b>
-                                        <i onclick="copy()" data-clipboard-target="#copyNoiDung" class="fas fa-copy copy"></i>
-                                    </p>
-                                </div>
+                            <div class="entry">
+                                <p><i class="fa fa-university" aria-hidden="true"></i>
+                                    <span style="padding-left: 5px;">Phương thức</span>
+                                    <br>
+                                    <span style="padding-left: 25px;word-break: keep-all;">MOMO</span>
+                                </p>
+                            </div>
+                            <div class="entry">
+                                <p><i class="fa fa-credit-card" aria-hidden="true"></i>
+                                    <span style="padding-left: 5px;">Số điện thoại</span>
+                                    <br>
+                                    <b id="copyStk" style="padding-left: 25px;word-break: keep-all;color:greenyellow;">0335535000</b>
+                                    <i onclick="copy()" data-clipboard-target="#copyStk" class="fas fa-copy copy"></i>
+                                </p>
+                            </div>
+                            <div class="entry">
+                                <p><i class="fa fa-user" aria-hidden="true"></i>
+                                    <span style="padding-left: 5px;">Chủ tài khoản</span>
+                                    <br>
+                                    <span style="padding-left: 25px;word-break: keep-all;">Đỗ Quang Linh</span>
+                                </p>
+                            </div>
+                            <div class="entry">
+                                <p><i class="fa fa-money" aria-hidden="true"></i>
+                                    <span style="padding-left: 5px;">Số tiền cần thanh toán</span>
+                                    <br>
+                                    <b style="padding-left: 25px;color:aqua;"><?= number_format($amount) ?> đ</b>
+                                </p>
+                            </div>
+                            <div class="entry">
+                                <p><i class="fa fa-comment" aria-hidden="true"></i>
+                                    <span style="padding-left: 5px;">Nội dung chuyển khoản</span>
+                                    <br>
+                                    <b id="copyNoiDung" style="padding-left: 25px;word-break: keep-all;color:yellow;"><?= $commnet ?></b>
+                                    <i onclick="copy()" data-clipboard-target="#copyNoiDung" class="fas fa-copy copy"></i>
+                                </p>
+                            </div>
                             <div class="entry">
                                 <p><i class="fa fa-barcode" aria-hidden="true"></i>
                                     <span style="padding-left: 5px;">Trạng thái <i class="fa fa-spinner fa-spin"></i>
@@ -256,7 +256,7 @@ if (isset($_SESSION['pay'])) {
                                                             quét mã</a>
                                                     </div>
                                                     <img src="https://quickchart.io/qr?text=2|99|0335535000|DO QUANG LINH||0|0|<?= $amount ?>|<?= $commnet ?>|transfer_myqr&ecLevel=H&size=1000" width="50%" style="margin-top:20%">
-                                                    
+
                                                     <div>
                                                         <span class="mt-5"><i class="fa fa-spinner fa-spin"></i> Đang chờ bạn quét ...</span>
                                                     </div>
