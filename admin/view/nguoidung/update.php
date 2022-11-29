@@ -29,7 +29,6 @@
           <input type="text" name="password" class="form-control" placeholder="Nhập mật khẩu muốn thay đổi" value="<?= $password ?>">
         </div>
         
-<<<<<<< HEAD
             <div class="form-group">
               <label for="">Vai trò: <span style="color:red">
               <?php if ($role == 1) {
@@ -38,16 +37,6 @@
               echo "Thành viên"; } ?></span></label>
               <select required class="form-control" name="role" id="">
                 <?php $arr = array('0' => 'Thành Viên', '1' => 'Admin'); ?>
-=======
-            <div class="form-group mt-3">
-              <label for="formGroupExampleInput">Vai trò: <span class="text-danger font-lb">
-              <?php if ($role == 1) {
-              echo "Admin";
-              } else {
-              echo "Người dùng"; } ?></span></label>
-              <select required class="form-control" name="role" id="">
-                <?php $arr = array('0' => 'Người dùng', '1' => 'Admin'); ?>
->>>>>>> 3155e391efcebe5dd35fa8e83401351be332486d
                 <?php foreach ($arr as $key => $value) { ?>
                   <option value="<?php echo $key; ?>" <?php echo $key ==  $role ? ' selected="selected"' : ''; ?>><?php echo $value; ?></option>
                 <?php } ?>
@@ -62,8 +51,4 @@
       </form>
     </div>
     <div class="pb-70"></div>
-<<<<<<< HEAD
     <div class="col">
-=======
-    <div class="col">
->>>>>>> 3155e391efcebe5dd35fa8e83401351be332486d

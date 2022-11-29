@@ -15,8 +15,8 @@
                             <th>Họ tên</th>
                             <th>Email</th>
                             <th>Vai trò</th>
-                            <th>Ngày đăng ký</th>
-                            <th>Lần đăng nhập cuối</th>
+                            <!-- <th>Ngày đăng ký</th>
+                            <th>Lần đăng nhập cuối</th> -->
                             <th>Thao tác</th>
                         </tr>
                     </thead>
@@ -28,8 +28,8 @@
                             <th>Họ tên</th>
                             <th>Email</th>
                             <th>Vai trò</th>
-                            <th>Ngày đăng ký</th>
-                            <th>Lần đăng nhập cuối</th>
+                            <!-- <th>Ngày đăng ký</th>
+                            <th>Lần đăng nhập cuối</th> -->
                             <th>Thao tác</th>
                         </tr>
                     </tfoot>
@@ -46,8 +46,6 @@
                                     } else {
                                         echo "Người dùng";
                                     } ?></td>
-                                    <td><?= $user['register_date'] ?></td>
-                                    <td><?= $user['last_login'] ?></td>
                                     <td class="text-center">
                                         <a href="./index.php?act=edituser&id_user=<?= $user['id_user'] ?>" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i> Sửa</a>
                                         <a href="./index.php?act=removeuser&id_user=<?= $user['id_user'] ?>" class="btn btn-danger" onclick="return confirm('Bạn có chắc chắn muốn xóa không?')"><i class="fa-solid fa-trash"></i> Xóa</a>
