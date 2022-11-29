@@ -143,6 +143,7 @@ if (isset($_GET['act'])) {
                         $password = $_POST['password'];
                         $role = $_POST['role'];
                         update_user($id_user, $user_name, $full_name, $email_user, $password, $role);
+                        echo '<script>alert("Cập nhật tài khoản thành công!")</script>';
                     }
                     $listuser = loadall_user();
                     include "view/nguoidung/list.php";
