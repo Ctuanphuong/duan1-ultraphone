@@ -72,7 +72,7 @@
                                                 $countpro = loadall_countcart($id_bill);
                                                 ?>
                                                 <tr>
-                                                    <td><a class="account-order-id" href="#">DA1-<?= $id_bill ?></a></td>
+                                                    <td><a class="account-order-id" href="#">UTP-<?= $id_bill ?></a></td>
                                                     <td><?= $order_date ?></td>
                                                     <td><?= $countpro ?></td>
                                                     <td><?= $stt ?></td>
