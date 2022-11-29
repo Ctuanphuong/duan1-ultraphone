@@ -30,4 +30,3 @@
         </div>
     </div>
 </div>
-<!-- JB's Cart Area End Here -->

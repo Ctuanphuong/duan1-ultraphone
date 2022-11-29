@@ -255,7 +255,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
         case 'billconfirm':
             if (isset($_POST['orderconfirm']) && ($_POST['orderconfirm'])) {
                 if (isset($_SESSION['user'])) {
-                    $randomNum = substr(str_shuffle("0123456789"), 0, 5);
+                    $randomNum = substr(str_shuffle("123456789"), 0, 5);
                     $bill_code = $randomNum;
                     $id_user = $_SESSION['user']['id_user'];
                     $user_name = $_SESSION['user']['user_name'];

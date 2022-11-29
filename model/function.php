@@ -1,5 +1,5 @@
 <?php 
-$MEMO_PREFIX = $system['MEMO_PREFIX'];
+$MEMO_PREFIX = " ";
 function parse_order_id($des){
     global $MEMO_PREFIX;
     $re = '/'.$MEMO_PREFIX.'\d+/im';
@@ -21,4 +21,15 @@ function curl_get($url)
     
     curl_close($ch);
     return $data;
+}
+function checkcode($tranId) { 
+    $sql = "SELECT * FROM history_bank WHERE tranid = '$tranId'";
+    pdo_query($sql);
+
+}
+function checkbill($id) { 
+    $sql = "SELECT * FROM bill WHERE bill_code = '$id'";
+    $a = pdo_query($sql);
+    // return $a;
+
 }

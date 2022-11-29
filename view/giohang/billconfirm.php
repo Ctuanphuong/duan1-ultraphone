@@ -24,7 +24,7 @@
              <li class="font-weight-normal">Mã đơn hàng: <span class="fw-bold">UTP-<?= $bill_code ?></span></li>
              <li class="font-weight-normal">Thời gian đặt hàng: <span class="fw-bold"><?= $order_date ?></span></li>
              <li class="font-weight-normal">Tổng thành tiền: <span class="fw-bold"><?= number_format($total_amount) ?>₫</span></li>
-             <li class="font-weight-normal">Trạng thái: <span class="fw-bold"><?php if ($_SESSION['check'] == 2) {
+             <li class="font-weight-normal">Trạng thái: <span class="fw-bold"><?php if ($status_pay == 1) {
                                                                                     echo "Đã thanh toán";
                                                                                 } else {
                                                                                     echo "Chưa thanh toán";
