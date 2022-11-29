@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 26, 2022 lúc 01:44 PM
+-- Thời gian đã tạo: Th10 29, 2022 lúc 06:02 AM
 -- Phiên bản máy phục vụ: 10.4.24-MariaDB
--- Phiên bản PHP: 8.1.6
+-- Phiên bản PHP: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,6 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `bill` (
   `id_bill` int(11) NOT NULL,
+  `bill_code` varchar(255) DEFAULT NULL,
   `id_user` int(11) NOT NULL,
   `user_name` varchar(255) NOT NULL,
   `full_name` varchar(55) NOT NULL,
@@ -45,15 +46,17 @@ CREATE TABLE `bill` (
 -- Đang đổ dữ liệu cho bảng `bill`
 --
 
-INSERT INTO `bill` (`id_bill`, `id_user`, `user_name`, `full_name`, `address`, `phone`, `email`, `payment`, `order_date`, `total_amount`, `status`) VALUES
-(1, 11, 'phuongct', '', 'Phu Tho', 335099885, 'ctuanphuong18@gmail.com', 1, '25/11/2022 09:10:11am', 59580000, 0),
-(2, 11, 'phuongct', '', 'Phu Tho', 335099885, 'ctuanphuong18@gmail.com', 1, '25/11/2022 09:10:46am', 0, 0),
-(3, 11, 'phuongct', 'Chu Tuấn Phương', 'Phu Tho', 335099885, 'ctuanphuong18@gmail.com', 3, '25/11/2022 09:11:10am', 5990000, 0),
-(4, 11, 'phuongct', 'Tuấn Phương', 'Minh Tiến, Đoan Hùng, Phú Thọ', 335099885, 'ctuanphuong18@gmail.com', 1, '25/11/2022 09:13:39am', 20590000, 0),
-(5, 12, 'minhnv', 'Văn Minh', 'Minh Tiến', 12345678, 'minhnvph20000@gmail.com', 2, '25/11/2022 09:15:37am', 20590000, 0),
-(6, 10, 'phuongbeo', 'Chu Tuấn Phương', 'Ngọa Long, Minh Khai, Bắc Từ Liêm, Hà Nội', 335099885, 'ctuanphuong18@gmail.com', 3, '25/11/2022 09:20:51am', 26590000, 0),
-(7, 10, 'phuongbeo', 'Chu Tuấn Phương', 'Ngọa Long, Minh Khai, Bắc Từ Liêm, Hà Nội', 335099885, 'ctuanphuong18@gmail.com', 3, '25/11/2022 09:21:18am', 0, 0),
-(8, 11, 'phuongct', 'Tuấn Phương', 'Minh Tiến, Đoan Hùng, Phú Thọ', 335099885, 'ctuanphuong18@gmail.com', 2, '25/11/2022 05:08:38pm', 40280000, 0);
+INSERT INTO `bill` (`id_bill`, `bill_code`, `id_user`, `user_name`, `full_name`, `address`, `phone`, `email`, `payment`, `order_date`, `total_amount`, `status`) VALUES
+(1, NULL, 11, 'phuongct', '', 'Phu Tho', 335099885, 'ctuanphuong18@gmail.com', 1, '25/11/2022 09:10:11am', 59580000, 0),
+(2, NULL, 11, 'phuongct', '', 'Phu Tho', 335099885, 'ctuanphuong18@gmail.com', 1, '25/11/2022 09:10:46am', 0, 0),
+(3, NULL, 11, 'phuongct', 'Chu Tuấn Phương', 'Phu Tho', 335099885, 'ctuanphuong18@gmail.com', 3, '25/11/2022 09:11:10am', 5990000, 0),
+(4, NULL, 11, 'phuongct', 'Tuấn Phương', 'Minh Tiến, Đoan Hùng, Phú Thọ', 335099885, 'ctuanphuong18@gmail.com', 1, '25/11/2022 09:13:39am', 20590000, 0),
+(5, NULL, 12, 'minhnv', 'Văn Minh', 'Minh Tiến', 12345678, 'minhnvph20000@gmail.com', 2, '25/11/2022 09:15:37am', 20590000, 0),
+(6, NULL, 10, 'phuongbeo', 'Chu Tuấn Phương', 'Ngọa Long, Minh Khai, Bắc Từ Liêm, Hà Nội', 335099885, 'ctuanphuong18@gmail.com', 3, '25/11/2022 09:20:51am', 26590000, 0),
+(7, NULL, 10, 'phuongbeo', 'Chu Tuấn Phương', 'Ngọa Long, Minh Khai, Bắc Từ Liêm, Hà Nội', 335099885, 'ctuanphuong18@gmail.com', 3, '25/11/2022 09:21:18am', 0, 0),
+(8, NULL, 11, 'phuongct', 'Tuấn Phương', 'Minh Tiến, Đoan Hùng, Phú Thọ', 335099885, 'ctuanphuong18@gmail.com', 2, '25/11/2022 05:08:38pm', 40280000, 0),
+(41, '25379', 13, 'quanglinhnb', 'đỗ linh', 'nb', 921122458, 'quanglinh2942003@gmail.com', 2, '29/11/2022 05:53:07am', 20590000, 0),
+(42, '18956', 13, 'quanglinhnb', 'Đỗ Quang Linh', 'Gia Vien', 329200345, 'quanglinh2942003@gmail.com', 2, '29/11/2022 05:54:48am', 5990000, 0);
 
 -- --------------------------------------------------------
 
@@ -89,8 +92,9 @@ INSERT INTO `cart` (`id`, `id_user`, `user_name`, `id_pro`, `img_pro`, `name_pro
 (8, 10, 'phuongbeo', 27, 'samsung-galaxy-z-flip4-5g-128gb-thumb-tim-600x600.jpg', 'Samsung Galaxy Z Flip 4', 20590000, 1, 20590000, 6),
 (9, 10, 'phuongbeo', 30, '9283447401-oppo-a77s-128gb-ram-8gb.jpg', 'OPPO A77S 8GB/128GB', 6000000, 1, 6000000, 6),
 (10, 11, 'phuongct', 25, 'Xiaomi-11T-White-1-2-3-600x600.jpg', ' Xiaomi 11T Pro 5G 12GB ', 14390000, 1, 14390000, 8),
-(11, 11, 'phuongct', 24, 'apple-iphone-x-new-1.jpg', 'iPhone X 512GB ', 18600000, 1, 18600000, 8),
-(12, 11, 'phuongct', 22, 'xanh_22p2-68.jpg', ' Xiaomi POCO F3 ', 7290000, 1, 7290000, 8);
+(12, 11, 'phuongct', 22, 'xanh_22p2-68.jpg', ' Xiaomi POCO F3 ', 7290000, 1, 7290000, 8),
+(28, 13, 'quanglinhnb', 27, 'samsung-galaxy-z-flip4-5g-128gb-thumb-tim-600x600.jpg', 'Samsung Galaxy Z Flip 4', 20590000, 1, 20590000, 41),
+(29, 13, 'quanglinhnb', 26, 'realme-5-tim-new-600x600.jpg', 'Realme 5 4GB/128GB', 5990000, 1, 5990000, 42);
 
 -- --------------------------------------------------------
 
@@ -198,7 +202,8 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`id_user`, `user_name`, `password`, `full_name`, `sex`, `email_user`, `address`, `phone_user`, `img_user`, `register_date`, `last_login`, `role`) VALUES
 (10, 'phuongbeo', '12345', 'Chu Tuấn Phương', 0, 'ctuanphuong18@gmail.com', 'Ngọa Long, Minh Khai, Bắc Từ Liêm, Hà Nội', '0335099885', 'z3843585245563_735b917490198943a7b26951da37b59c.jpg', NULL, NULL, 0),
 (11, 'phuongct', '000000', 'Tuấn Phương', 0, 'ctuanphuong18@gmail.com', 'Minh Tiến, Đoan Hùng, Phú Thọ', '0335099885', 'z3843585386448_c70cf6f597848fcdd9a88477b3071828.jpg', NULL, NULL, 0),
-(12, 'minhnv', '123456', 'Văn Minh', 0, 'minhnvph20000@gmail.com', '', '', '', NULL, NULL, 0);
+(12, 'minhnv', '123456', 'Văn Minh', 0, 'minhnvph20000@gmail.com', '', '', '', NULL, NULL, 0),
+(13, 'quanglinhnb', 'linhz123', 'Đỗ Quang Linh', 0, 'quanglinh2942003@gmail.com', '', '', '', NULL, NULL, 0);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -254,13 +259,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT cho bảng `bill`
 --
 ALTER TABLE `bill`
-  MODIFY `id_bill` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_bill` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT cho bảng `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT cho bảng `category`
@@ -284,7 +289,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT cho bảng `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
