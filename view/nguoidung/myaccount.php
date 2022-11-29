@@ -76,7 +76,7 @@
                                                     <td><?= $order_date ?></td>
                                                     <td><?= $countpro ?></td>
                                                     <td><?= $stt ?></td>
-                                                    <td><?= $total_amount ?></td>
+                                                    <td><?= number_format($total_amount)?>₫</td>
                                                 </tr>
                                                 <?php endforeach ?>
                                             </tbody>
