@@ -1,5 +1,10 @@
 <?php 
-$idpro = $_REQUEST['idpro']
+session_start();
+include "../../model/pdo.php";
+include "../../model/binhluan.php";
+
+$idpro = $_REQUEST['idpro'];
+$listcmt=loadall_comment($idpro);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,8 +22,9 @@ $idpro = $_REQUEST['idpro']
 </head>
 <body>
     <div class="product_comments_block">
+        <?php foreach($listcmt as $cmt) : extract($cmt); ?>
         <div class="comment_details same-stuff">
-            <span class="user-id">Phương</span>
+            <span class="user-id"><?= $full_name ?> (<?= $user_name ?>)</span>
             <div class="rating-box">
                 <ul>
                     <li><i class="fa fa-star"></i></li>
@@ -28,80 +34,31 @@ $idpro = $_REQUEST['idpro']
                     <li><i class="fa fa-star"></i></li>
                 </ul>
             </div>
-            <em class="user-comment"><?= $idpro ?></em>
-            <em>25/03/2022</em>
+            <em class="user-comment"><?= $content ?></em>
+            <em><?= $comment_date ?></em>
         </div>
-        <div class="review-btn_area">
-            <a class="review-btn" href="" data-bs-toggle="modal" data-bs-target="#mymodal">Đánh giá
-                của bạn</a>
-        </div>
+        <?php endforeach ?>
         <!-- Form bình luận-->
-        <div class="modal fade modal-wrapper quickview-feedback_form" id="mymodal">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <h3 class="review-page-title">Viết đánh giá của bạn</h3>
-                        <div class="modal-inner-area row">
-                            <div class="col-lg-6">
-                                <div class="jb-review-product">
-                                    <img src="admin/uploads/<?= $one_pro['img_pro']; ?>" alt="UltraPhone Product">
-                                    <div class="jb-review-product-desc">
-                                        <p class="jb-product-name"> <strong>
-                                                <?= $one_pro['name_pro'] ?></strong></p>
-                                        <p>
-                                            <span> <?= $one_pro['short_des'] ?>
-                                            </span>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="jb-review-content">
-                                    <!-- Begin Feedback Area -->
-                                    <div class="feedback-area">
-                                        <div class="feedback">
-                                            <h3 class="feedback-title">Phản hồi</h3>
-                                            <form action="#">
-                                                <p class="your-opinion">
-                                                    <label>Đánh giá</label>
-                                                    <span>
-                                                        <select class="star-rating">
-                                                            <option value="1">1</option>
-                                                            <option value="2">2</option>
-                                                            <option value="3">3</option>
-                                                            <option value="4">4</option>
-                                                            <option value="5">5</option>
-                                                        </select>
-                                                    </span>
-                                                </p>
-                                                <p class="feedback-form">
-                                                    <label for="feedback">Bình luận</label>
-                                                    <textarea id="feedback" name="comment"
-                                                        placeholder="Nhập bình luận của bạn..." cols="45" rows="8"
-                                                        aria-required="true"></textarea>
-                                                </p>
-                                                <div class="cmt-input">
-                                                    <div class="feedback-inner_btn">
-                                                        <!-- <a href="#">Gửi</a> -->
-                                                        <input type="submit" name="btn_cmt" class="btn_cmt" value="Gửi">
-                                                        <a href="#" class="close" data-bs-dismiss="modal"
-                                                            aria-label="Close">Đóng</a>
-                                                        <!-- <input type="button" name="btn_close" class="btn_close" value="Đóng"> -->
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <!-- Feedback Area End Here -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="comment-btn-area mt-3">
+            <form action="<?= $_SERVER['PHP_SELF']; ?>" method="post">
+          <textarea name="content_cmt" class="area-cmt" cols="60" rows="3" placeholder="Nhập bình luận của bạn"></textarea> <br>
+           <input type="hidden" name="idpro" value="<?= $idpro ?>">
+          <input type="submit" name="btn_cmt" class="ip-cmt" value="Gửi">
+           </form>
         </div>
         <!-- End bình luận -->
-    
+    <?php 
+    if(isset($_POST['btn_cmt']) && $_POST['btn_cmt']) { 
+        $content = $_POST['content_cmt'];
+        $idpro = $_POST['idpro'];
+        $id_user = $_SESSION['user']['id_user'];
+        $user_name = $_SESSION['user']['user_name'];
+        $full_name = $_SESSION['user']['full_name'];
+        $comment_date = date("m/d/Y h:i:sa");
+        insert_comment($content, $id_user, $user_name, $full_name, $idpro, $comment_date);
+        header("Location: ". $_SERVER['HTTP_REFERER']);
+    }
+    ?>
 </div>
 <script src="./src/js/plugins.min.js"></script>
 <script src="./src/js/ajax-mail.js"></script>

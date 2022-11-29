@@ -8706,3 +8706,24 @@ margin: 0px 20px;
     background-color: #0084c5;
     color: #ffff;
   }
+  /* .comment-btn-area {
+    display: flex;
+  } */
+  .area-cmt {
+    padding: 5px;
+    border: 1px solid #e5e5e5;
+  }
+  .ip-cmt { 
+    width: 70px;
+height: 30px;
+text-align: center;
+background-color: #333333;
+color: #ffff;
+border: 1px solid #333333;
+transition: 0.3s all ease-in-out;
+  }
+  .ip-cmt:hover{ 
+border: 1px solid #0084c5;
+color: #ffff;
+    background-color: #0084c5;
+  }

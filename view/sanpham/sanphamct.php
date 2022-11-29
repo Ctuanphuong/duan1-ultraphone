@@ -177,6 +177,8 @@
                         $(document).ready(function() {
                             $("#comment").load("./view/binhluan/formbinhluan.php", {
                                 idpro: <?= $one_pro['id_pro'] ?>
+
+                               
                             });
                         });
                         </script>
