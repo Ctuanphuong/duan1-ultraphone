@@ -20,7 +20,7 @@ require_once 'function.php';
         {
             $check_code = checkcode($tranId);
             $check_username = checkbill($id);
-            if(isset($check_username))
+            if(isset($check_username) && $amount > 0)
             {
                 if(empty($check_code))
                 {
