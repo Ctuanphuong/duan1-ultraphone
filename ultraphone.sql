@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 30, 2022 lúc 08:07 AM
+-- Thời gian đã tạo: Th10 30, 2022 lúc 08:20 AM
 -- Phiên bản máy phục vụ: 10.4.24-MariaDB
--- Phiên bản PHP: 7.4.29
+-- Phiên bản PHP: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -84,7 +84,8 @@ INSERT INTO `bill` (`id_bill`, `bill_code`, `id_user`, `user_name`, `full_name`,
 (53, '83059', 13, 'quanglinhnb', 'đỗ linh', 'nb', 921122458, 'quanglinh2942003@gmail.com', 1, '29/11/2022 05:57:44pm', 26590000, 0, '0'),
 (54, '58697', 13, 'quanglinhnb', 'đỗ linh', 'nb', 921122458, 'quanglinh2942003@gmail.com', 1, '29/11/2022 05:58:40pm', 20590000, 0, '0'),
 (55, '4678', 13, 'quanglinhnb', 'đỗ linh', 'nb', 921122458, 'quanglinh2942003@gmail.com', 2, '29/11/2022 07:17:51pm', 20590000, 1, '0'),
-(56, '17654', 13, 'quanglinhnb', 'đỗ linh', 'nb', 921122458, 'quanglinh2942003@gmail.com', 2, '29/11/2022 08:33:19pm', 20590000, 1, '1');
+(56, '17654', 13, 'quanglinhnb', 'đỗ linh', 'nb', 921122458, 'quanglinh2942003@gmail.com', 2, '29/11/2022 08:33:19pm', 20590000, 1, '1'),
+(57, '45197', 11, 'phuongct', 'Tuấn Phương', 'Minh Tiến, Đoan Hùng, Phú Thọ', 335099885, 'ctuanphuong18@gmail.com', 1, '30/11/2022 08:16:40am', 11990000, 0, '0');
 
 -- --------------------------------------------------------
 
@@ -131,7 +132,9 @@ INSERT INTO `cart` (`id`, `id_user`, `user_name`, `id_pro`, `img_pro`, `name_pro
 (35, 13, 'quanglinhnb', 30, '9283447401-oppo-a77s-128gb-ram-8gb.jpg', 'OPPO A77S 8GB/128GB', 6000000, 1, 6000000, 53),
 (36, 13, 'quanglinhnb', 27, 'samsung-galaxy-z-flip4-5g-128gb-thumb-tim-600x600.jpg', 'Samsung Galaxy Z Flip 4', 20590000, 1, 20590000, 54),
 (37, 13, 'quanglinhnb', 27, 'samsung-galaxy-z-flip4-5g-128gb-thumb-tim-600x600.jpg', 'Samsung Galaxy Z Flip 4', 20590000, 1, 20590000, 55),
-(38, 13, 'quanglinhnb', 27, 'samsung-galaxy-z-flip4-5g-128gb-thumb-tim-600x600.jpg', 'Samsung Galaxy Z Flip 4', 20590000, 1, 20590000, 56);
+(38, 13, 'quanglinhnb', 27, 'samsung-galaxy-z-flip4-5g-128gb-thumb-tim-600x600.jpg', 'Samsung Galaxy Z Flip 4', 20590000, 1, 20590000, 56),
+(39, 11, 'phuongct', 26, 'realme-5-tim-new-600x600.jpg', 'Realme 5 4GB/128GB', 5990000, 1, 5990000, 57),
+(40, 11, 'phuongct', 30, '9283447401-oppo-a77s-128gb-ram-8gb.jpg', 'OPPO A77S 8GB/128GB', 6000000, 1, 6000000, 57);
 
 -- --------------------------------------------------------
 
@@ -169,9 +172,17 @@ CREATE TABLE `comment` (
   `content` varchar(255) NOT NULL,
   `id_user` int(11) NOT NULL,
   `user_name` varchar(50) NOT NULL,
+  `full_name` varchar(255) NOT NULL,
   `id_pro` int(11) NOT NULL,
   `comment_date` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `comment`
+--
+
+INSERT INTO `comment` (`id_cmt`, `content`, `id_user`, `user_name`, `full_name`, `id_pro`, `comment_date`) VALUES
+(1, 'đẹppp', 11, 'phuongct', 'Tuấn Phương', 27, '11/30/2022 08:18:17am');
 
 -- --------------------------------------------------------
 
@@ -221,7 +232,7 @@ INSERT INTO `product` (`id_pro`, `name_pro`, `price`, `discount`, `img_pro`, `sh
 (24, 'iPhone X 512GB ', 18600000, 0, 'apple-iphone-x-new-1.jpg', 'iPhone Xs Max 512GB là chiếc smartphone mạnh mẽ của Apple mang nhiều ưu điểm vượt trội hơn so với các phiên bản iPhone trước đó, từ thiết kế, cấu hình và các tính năng ưu việt.', '\r\n• Màn hình: 2K, 5.8\" inch, 1125 x 2436 pixels, 19.5:9 ratio, Super Retina 463ppi, 3D touch, TrueTone Dolby Vision HDR10, 120Hz touch-sensing\r\n• CPU: Apple A12 Bionic, 6 nhân 64-bit, 7nm,  Neural Engine 5 ngàn tỉ phép tính mỗi giây.\r\n• RAM: 4GB\r\n• Hệ điều hành: iOS 12\r\n• Camera chính: Dual 12 MP, Wide f/1.8 & Tele f/2.4, Quay phim 4K 2160p@30fps\r\n• Camera phụ: 7 MP, f/2.2 xóa phông\r\n• Bộ nhớ trong: 512GB\r\n• Thẻ nhớ ngoài: không\r\n• Dung lượng pin: 2658 mAh\r\n', 43, 8),
 (25, ' Xiaomi 11T Pro 5G 12GB ', 14390000, 0, 'Xiaomi-11T-White-1-2-3-600x600.jpg', 'Xiaomi 11T Pro - mẫu smartphone được nâng cấp đáng kể với camera 108 MP xuất sắc, màn hình tần số quét 120 Hz đẹp tuyệt mỹ cùng hiệu năng mạnh mẽ từ Snapdragon 888 đáng kinh ngạc nhưng lại có mức giá hấp dẫn đến bất ngờ.', '•	Màn hình: AMOLED6.67\"Full HD+\r\n•	Hệ điều hành: Android 11\r\n•	Camera sau: Chính 108 MP & Phụ 8 MP, 5 MP\r\n•	Camera trước: 16 MP\r\n•	Chip: Snapdragon 888\r\n•	RAM: 12 GB\r\n•	Dung lượng lưu trữ: 256 GB\r\n•	SIM: 2 Nano SIMHỗ trợ 5G\r\n•	Pin, Sạc: 5000 mAh120 W\r\n', 10, 11),
 (26, 'Realme 5 4GB/128GB', 5990000, 0, 'realme-5-tim-new-600x600.jpg', 'Mới đây, bộ đôi smartphone Realme 5 và Realme 5 Pro chính thức được Realme giới thiệu tại thành phố Hồ Chí Minh, trong đó Realme 5 4GB/128GB là phiên bản với mức giá rẻ hơn, tuy nhiên những tính năng nổi bật như cụm 4 camera, dung lượng pin lớn vẫn được ưu ái giữ lại.', '• Màn hình: IPS LCD6.5\"HD+\r\n• Hệ điều hành: Android 9 (Pie)\r\n• Camera sau: Chính 12 MP & Phụ 8 MP, 2 MP, 2 MP\r\n• Camera trước: 13 MP\r\n• Chip: Snapdragon 665\r\n• RAM: 4 GB\r\n• Dung lượng lưu trữ: 128 GB\r\n• SIM: 2 Nano SIMHỗ trợ 4G\r\n• Pin, Sạc: 5000 mAh\r\n', 10, 10),
-(27, 'Samsung Galaxy Z Flip 4', 20590000, 10, 'samsung-galaxy-z-flip4-5g-128gb-thumb-tim-600x600.jpg', 'Tiếp tục là một mẫu smartphone màn hình gập độc đáo, đầy lôi cuốn và mới mẻ từ hãng công nghệ Hàn Quốc, dự kiến sẽ có tên là Samsung Galaxy Z Flip 4 với nhiều nâng cấp. Đây hứa hẹn sẽ là một siêu phẩm bùng nổ trong thời gian tới và thu hút được sự quan tâm của đông đảo người dùng với nhiều cải tiến từ ngoại hình, camera, bộ vi xử lý và viên pin được nâng cấp.', '• Kích thước màn hình: 6.7 inches\r\n• Công nghệ màn hình: Dynamic AMOLED 2X\r\n• Camera sau: Camera góc rộng: 12 MP, f/1.8, PDAF, OIS\r\n• Camera góc siêu rộng: 12 MP, f/2.2, 123˚\r\n• Camera trước: 10 MP, f/2.4\r\n• Chipset: Snapdragon 8+ Gen 1 (4 nm)\r\n• Dung lượng RAM: 8 GB\r\n• Bộ nhớ trong: 128 GB\r\n• Pin: 3700 mAh\r\n• Thẻ SIM: 2 SIM (nano‑SIM và eSIM)\r\n• Hệ điều hành: Android 12, One UI 4.1.1\r\n• Tính năng màn hình: Màn hình chính: 6.7 inches\r\n• Màn hình ngoài: 2.1 inches, Super AMOLED 120Hz, HDR10+, 1200 nits (peak)\r\n', 430, 1),
+(27, 'Samsung Galaxy Z Flip 4', 20590000, 10, 'samsung-galaxy-z-flip4-5g-128gb-thumb-tim-600x600.jpg', 'Tiếp tục là một mẫu smartphone màn hình gập độc đáo, đầy lôi cuốn và mới mẻ từ hãng công nghệ Hàn Quốc, dự kiến sẽ có tên là Samsung Galaxy Z Flip 4 với nhiều nâng cấp. Đây hứa hẹn sẽ là một siêu phẩm bùng nổ trong thời gian tới và thu hút được sự quan tâm của đông đảo người dùng với nhiều cải tiến từ ngoại hình, camera, bộ vi xử lý và viên pin được nâng cấp.', '• Kích thước màn hình: 6.7 inches\r\n• Công nghệ màn hình: Dynamic AMOLED 2X\r\n• Camera sau: Camera góc rộng: 12 MP, f/1.8, PDAF, OIS\r\n• Camera góc siêu rộng: 12 MP, f/2.2, 123˚\r\n• Camera trước: 10 MP, f/2.4\r\n• Chipset: Snapdragon 8+ Gen 1 (4 nm)\r\n• Dung lượng RAM: 8 GB\r\n• Bộ nhớ trong: 128 GB\r\n• Pin: 3700 mAh\r\n• Thẻ SIM: 2 SIM (nano‑SIM và eSIM)\r\n• Hệ điều hành: Android 12, One UI 4.1.1\r\n• Tính năng màn hình: Màn hình chính: 6.7 inches\r\n• Màn hình ngoài: 2.1 inches, Super AMOLED 120Hz, HDR10+, 1200 nits (peak)\r\n', 431, 1),
 (28, 'Huawei P30 Pro 8G/256G', 3180000, 0, 'huawei-p30-pro-1-600x600.jpg', 'Điện thoại Huawei P30 Pro – Siêu phẩm Flagship tiếp theo của Huawei Huawei P30 Pro, Huawei P30 và P30 Lite là 3 mẫu điện thoại mới nhất sẽ được Huawei ra mắt vào ngày 26/3 tại Paris, Pháp. Trong đó, P30 Pro là phiên bản cao cấp nhất với nhiều công nghệ đột phá đặt biệt là camera. Với dòng P của mình Huawei cho thấy khả năng dẫn đầu mảng cameraphone.', '•	Màn hình: OLED6.47\"Full HD+ \r\n•	Hệ điều hành: Android 9 (Pie) \r\n•	Camera sau: Chính 40 MP & Phụ 20 MP, 8 MP, TOF 3D \r\n•	Camera trước: 32 MP Chip: Kirin 980 \r\n•	RAM: 8 GB \r\n•	Dung lượng lưu trữ: 256 GB\r\n•	SIM: 2 Nano SIM (SIM 2 chung khe thẻ nhớ) Hỗ trợ 4G \r\n•	Pin, Sạc: 4200 mAh\r\n', 71, 13),
 (30, 'OPPO A77S 8GB/128GB', 6000000, 15, '9283447401-oppo-a77s-128gb-ram-8gb.jpg', 'OPPO vừa cho ra mắt mẫu điện thoại tầm trung mới với tên gọi OPPO A77s, máy sở hữu màn hình lớn, thiết kế đẹp mắt, hiệu năng ổn định cùng khả năng mở rộng RAM lên đến 8 GB vô cùng nổi bật trong phân khúc.', '• Màn hình: IPS LCD6.56\"HD+\r\n• Hệ điều hành: Android 12\r\n• Camera sau: Chính 50 MP & Phụ 2 MP\r\n• Camera trước: 8 MP\r\n• Chip: Snapdragon 680 4G\r\n• RAM: 8 GB\r\n• Dung lượng lưu trữ: 128 GB\r\n• SIM: 2 Nano SIM Hỗ trợ 4G\r\n• Pin, Sạc: 5000 mAh33 W\r\n', 6, 7);
 
@@ -328,13 +339,13 @@ ALTER TABLE `bank`
 -- AUTO_INCREMENT cho bảng `bill`
 --
 ALTER TABLE `bill`
-  MODIFY `id_bill` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `id_bill` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
 -- AUTO_INCREMENT cho bảng `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT cho bảng `category`
@@ -346,7 +357,7 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT cho bảng `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `id_cmt` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_cmt` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT cho bảng `history_bank`

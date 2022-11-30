@@ -30,6 +30,6 @@ function checkcode($tranId) {
 function checkbill($id) { 
     $sql = "SELECT * FROM bill WHERE bill_code = '$id'";
     $a = pdo_query($sql);
-    // return $a;
+    return $a;
 
 }
