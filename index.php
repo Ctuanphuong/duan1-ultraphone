@@ -197,9 +197,9 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 if (isset($_POST['btn_pass'])) {
                     $user_name = $_SESSION['user']['user_name'];
                     $password = $_POST['newpass'];
-                    if($password ==""){
+                    if ($password == "") {
                         echo '<script>alert("Không được để trống mật khẩu mới !")</script>';
-                    }elseif ($_POST['repass'] != $_POST['newpass']) {
+                    } elseif ($_POST['repass'] != $_POST['newpass']) {
                         echo '<script>alert("Nhập lại mật khẩu không khớp !")</script>';
                     } else {
                         $pass = updatePass($user_name, $password);

@@ -12,4 +12,13 @@ function remove_bill($idbill)
     $sql = "DELETE FROM bill WHERE id_bill=" . $idbill;
     pdo_execute($sql);
 }
+function loadone_bill($idbill) { 
+    $sql = "SELECT * FROM bill WHERE id_bill =".$idbill;
+    $one_bill = pdo_query_one($sql);
+    return $one_bill;
+}
+function update_bill($id_bill, $status){ 
+    $sql = "UPDATE bill SET status = '$status' WHERE id_bill=" . $id_bill;
+    pdo_execute($sql);
+}
 ?>
