@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 29, 2022 lúc 06:02 AM
+-- Thời gian đã tạo: Th10 30, 2022 lúc 08:07 AM
 -- Phiên bản máy phục vụ: 10.4.24-MariaDB
 -- Phiên bản PHP: 7.4.29
 
@@ -24,6 +24,19 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Cấu trúc bảng cho bảng `bank`
+--
+
+CREATE TABLE `bank` (
+  `id` int(11) NOT NULL,
+  `name_bank` varchar(255) NOT NULL,
+  `num_bank` varchar(255) NOT NULL,
+  `name_num` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Cấu trúc bảng cho bảng `bill`
 --
 
@@ -39,24 +52,39 @@ CREATE TABLE `bill` (
   `payment` tinyint(1) NOT NULL DEFAULT 1 COMMENT '1.Thanh toán khi nhận hàng 2.Chuyển khoản ngân hàng 3.Thanh toán online',
   `order_date` varchar(50) NOT NULL,
   `total_amount` int(10) NOT NULL,
-  `status` tinyint(4) NOT NULL COMMENT '0.Đơn hàng mới \r\n1.Đang xử lý\r\n2.Đang giao hàng\r\n3.Đã giao hàng'
+  `status` tinyint(4) NOT NULL COMMENT '0.Đơn hàng mới \r\n1.Đang xử lý\r\n2.Đang giao hàng\r\n3.Đã giao hàng',
+  `status_pay` varchar(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Đang đổ dữ liệu cho bảng `bill`
 --
 
-INSERT INTO `bill` (`id_bill`, `bill_code`, `id_user`, `user_name`, `full_name`, `address`, `phone`, `email`, `payment`, `order_date`, `total_amount`, `status`) VALUES
-(1, NULL, 11, 'phuongct', '', 'Phu Tho', 335099885, 'ctuanphuong18@gmail.com', 1, '25/11/2022 09:10:11am', 59580000, 0),
-(2, NULL, 11, 'phuongct', '', 'Phu Tho', 335099885, 'ctuanphuong18@gmail.com', 1, '25/11/2022 09:10:46am', 0, 0),
-(3, NULL, 11, 'phuongct', 'Chu Tuấn Phương', 'Phu Tho', 335099885, 'ctuanphuong18@gmail.com', 3, '25/11/2022 09:11:10am', 5990000, 0),
-(4, NULL, 11, 'phuongct', 'Tuấn Phương', 'Minh Tiến, Đoan Hùng, Phú Thọ', 335099885, 'ctuanphuong18@gmail.com', 1, '25/11/2022 09:13:39am', 20590000, 0),
-(5, NULL, 12, 'minhnv', 'Văn Minh', 'Minh Tiến', 12345678, 'minhnvph20000@gmail.com', 2, '25/11/2022 09:15:37am', 20590000, 0),
-(6, NULL, 10, 'phuongbeo', 'Chu Tuấn Phương', 'Ngọa Long, Minh Khai, Bắc Từ Liêm, Hà Nội', 335099885, 'ctuanphuong18@gmail.com', 3, '25/11/2022 09:20:51am', 26590000, 0),
-(7, NULL, 10, 'phuongbeo', 'Chu Tuấn Phương', 'Ngọa Long, Minh Khai, Bắc Từ Liêm, Hà Nội', 335099885, 'ctuanphuong18@gmail.com', 3, '25/11/2022 09:21:18am', 0, 0),
-(8, NULL, 11, 'phuongct', 'Tuấn Phương', 'Minh Tiến, Đoan Hùng, Phú Thọ', 335099885, 'ctuanphuong18@gmail.com', 2, '25/11/2022 05:08:38pm', 40280000, 0),
-(41, '25379', 13, 'quanglinhnb', 'đỗ linh', 'nb', 921122458, 'quanglinh2942003@gmail.com', 2, '29/11/2022 05:53:07am', 20590000, 0),
-(42, '18956', 13, 'quanglinhnb', 'Đỗ Quang Linh', 'Gia Vien', 329200345, 'quanglinh2942003@gmail.com', 2, '29/11/2022 05:54:48am', 5990000, 0);
+INSERT INTO `bill` (`id_bill`, `bill_code`, `id_user`, `user_name`, `full_name`, `address`, `phone`, `email`, `payment`, `order_date`, `total_amount`, `status`, `status_pay`) VALUES
+(1, NULL, 11, 'phuongct', '', 'Phu Tho', 335099885, 'ctuanphuong18@gmail.com', 1, '25/11/2022 09:10:11am', 59580000, 0, '0'),
+(2, NULL, 11, 'phuongct', '', 'Phu Tho', 335099885, 'ctuanphuong18@gmail.com', 1, '25/11/2022 09:10:46am', 0, 0, '0'),
+(3, NULL, 11, 'phuongct', 'Chu Tuấn Phương', 'Phu Tho', 335099885, 'ctuanphuong18@gmail.com', 3, '25/11/2022 09:11:10am', 5990000, 0, '0'),
+(4, NULL, 11, 'phuongct', 'Tuấn Phương', 'Minh Tiến, Đoan Hùng, Phú Thọ', 335099885, 'ctuanphuong18@gmail.com', 1, '25/11/2022 09:13:39am', 20590000, 0, '0'),
+(5, NULL, 12, 'minhnv', 'Văn Minh', 'Minh Tiến', 12345678, 'minhnvph20000@gmail.com', 2, '25/11/2022 09:15:37am', 20590000, 0, '0'),
+(6, NULL, 10, 'phuongbeo', 'Chu Tuấn Phương', 'Ngọa Long, Minh Khai, Bắc Từ Liêm, Hà Nội', 335099885, 'ctuanphuong18@gmail.com', 3, '25/11/2022 09:20:51am', 26590000, 0, '0'),
+(7, NULL, 10, 'phuongbeo', 'Chu Tuấn Phương', 'Ngọa Long, Minh Khai, Bắc Từ Liêm, Hà Nội', 335099885, 'ctuanphuong18@gmail.com', 3, '25/11/2022 09:21:18am', 0, 0, '0'),
+(8, NULL, 11, 'phuongct', 'Tuấn Phương', 'Minh Tiến, Đoan Hùng, Phú Thọ', 335099885, 'ctuanphuong18@gmail.com', 2, '25/11/2022 05:08:38pm', 40280000, 0, '0'),
+(41, '25379', 13, 'quanglinhnb', 'đỗ linh', 'nb', 921122458, 'quanglinh2942003@gmail.com', 2, '29/11/2022 05:53:07am', 20590000, 0, '0'),
+(42, '18956', 13, 'quanglinhnb', 'Đỗ Quang Linh', 'Gia Vien', 329200345, 'quanglinh2942003@gmail.com', 2, '29/11/2022 05:54:48am', 5990000, 0, '0'),
+(43, '36015', 13, 'quanglinhnb', 'đỗ linh', 'nb', 921122458, 'quanglinh2942003@gmail.com', 2, '29/11/2022 06:14:23am', 20590000, 0, '0'),
+(44, '59276', 13, 'quanglinhnb', 'đỗ linh', 'nb', 921122458, 'quanglinh2942003@gmail.com', 1, '29/11/2022 06:16:12am', 20590000, 0, '0'),
+(45, '39840', 13, 'quanglinhnb', 'đỗ linh', 'nb', 921122458, 'quanglinh2942003@gmail.com', 1, '29/11/2022 08:23:30am', 0, 0, '0'),
+(46, '56937', 13, 'quanglinhnb', 'đỗ linh', 'nb', 921122458, 'quanglinh2942003@gmail.com', 1, '29/11/2022 08:28:21am', 0, 0, '0'),
+(47, '17365', 13, 'quanglinhnb', 'đỗ linh', 'nb', 921122458, 'quanglinh2942003@gmail.com', 1, '29/11/2022 08:28:24am', 0, 0, '0'),
+(48, '92105', 13, 'quanglinhnb', 'đỗ linh', 'nb', 921122458, 'quanglinh2942003@gmail.com', 1, '29/11/2022 08:30:07am', 20590000, 0, '0'),
+(49, '59320', 13, 'quanglinhnb', 'đỗ linh', 'nb', 921122458, 'quanglinh2942003@gmail.com', 1, '29/11/2022 08:30:27am', 0, 0, '0'),
+(50, '08312', 13, 'quanglinhnb', 'đỗ linh', 'nb', 921122458, 'quanglinh2942003@gmail.com', 1, '29/11/2022 08:31:08am', 0, 0, '0'),
+(51, '05176', 13, 'quanglinhnb', 'đỗ linh', 'nb', 921122458, 'quanglinh2942003@gmail.com', 1, '29/11/2022 08:31:10am', 0, 0, '0'),
+(52, '37054', 13, 'quanglinhnb', 'đỗ linh', 'nb', 921122458, 'quanglinh2942003@gmail.com', 1, '29/11/2022 08:33:02am', 20590000, 0, '0'),
+(53, '83059', 13, 'quanglinhnb', 'đỗ linh', 'nb', 921122458, 'quanglinh2942003@gmail.com', 1, '29/11/2022 05:57:44pm', 26590000, 0, '0'),
+(54, '58697', 13, 'quanglinhnb', 'đỗ linh', 'nb', 921122458, 'quanglinh2942003@gmail.com', 1, '29/11/2022 05:58:40pm', 20590000, 0, '0'),
+(55, '4678', 13, 'quanglinhnb', 'đỗ linh', 'nb', 921122458, 'quanglinh2942003@gmail.com', 2, '29/11/2022 07:17:51pm', 20590000, 1, '0'),
+(56, '17654', 13, 'quanglinhnb', 'đỗ linh', 'nb', 921122458, 'quanglinh2942003@gmail.com', 2, '29/11/2022 08:33:19pm', 20590000, 1, '1');
 
 -- --------------------------------------------------------
 
@@ -94,7 +122,16 @@ INSERT INTO `cart` (`id`, `id_user`, `user_name`, `id_pro`, `img_pro`, `name_pro
 (10, 11, 'phuongct', 25, 'Xiaomi-11T-White-1-2-3-600x600.jpg', ' Xiaomi 11T Pro 5G 12GB ', 14390000, 1, 14390000, 8),
 (12, 11, 'phuongct', 22, 'xanh_22p2-68.jpg', ' Xiaomi POCO F3 ', 7290000, 1, 7290000, 8),
 (28, 13, 'quanglinhnb', 27, 'samsung-galaxy-z-flip4-5g-128gb-thumb-tim-600x600.jpg', 'Samsung Galaxy Z Flip 4', 20590000, 1, 20590000, 41),
-(29, 13, 'quanglinhnb', 26, 'realme-5-tim-new-600x600.jpg', 'Realme 5 4GB/128GB', 5990000, 1, 5990000, 42);
+(29, 13, 'quanglinhnb', 26, 'realme-5-tim-new-600x600.jpg', 'Realme 5 4GB/128GB', 5990000, 1, 5990000, 42),
+(30, 13, 'quanglinhnb', 27, 'samsung-galaxy-z-flip4-5g-128gb-thumb-tim-600x600.jpg', 'Samsung Galaxy Z Flip 4', 20590000, 1, 20590000, 43),
+(31, 13, 'quanglinhnb', 27, 'samsung-galaxy-z-flip4-5g-128gb-thumb-tim-600x600.jpg', 'Samsung Galaxy Z Flip 4', 20590000, 1, 20590000, 44),
+(32, 13, 'quanglinhnb', 27, 'samsung-galaxy-z-flip4-5g-128gb-thumb-tim-600x600.jpg', 'Samsung Galaxy Z Flip 4', 20590000, 1, 20590000, 48),
+(33, 13, 'quanglinhnb', 27, 'samsung-galaxy-z-flip4-5g-128gb-thumb-tim-600x600.jpg', 'Samsung Galaxy Z Flip 4', 20590000, 1, 20590000, 52),
+(34, 13, 'quanglinhnb', 27, 'samsung-galaxy-z-flip4-5g-128gb-thumb-tim-600x600.jpg', 'Samsung Galaxy Z Flip 4', 20590000, 1, 20590000, 53),
+(35, 13, 'quanglinhnb', 30, '9283447401-oppo-a77s-128gb-ram-8gb.jpg', 'OPPO A77S 8GB/128GB', 6000000, 1, 6000000, 53),
+(36, 13, 'quanglinhnb', 27, 'samsung-galaxy-z-flip4-5g-128gb-thumb-tim-600x600.jpg', 'Samsung Galaxy Z Flip 4', 20590000, 1, 20590000, 54),
+(37, 13, 'quanglinhnb', 27, 'samsung-galaxy-z-flip4-5g-128gb-thumb-tim-600x600.jpg', 'Samsung Galaxy Z Flip 4', 20590000, 1, 20590000, 55),
+(38, 13, 'quanglinhnb', 27, 'samsung-galaxy-z-flip4-5g-128gb-thumb-tim-600x600.jpg', 'Samsung Galaxy Z Flip 4', 20590000, 1, 20590000, 56);
 
 -- --------------------------------------------------------
 
@@ -134,6 +171,20 @@ CREATE TABLE `comment` (
   `user_name` varchar(50) NOT NULL,
   `id_pro` int(11) NOT NULL,
   `comment_date` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `history_bank`
+--
+
+CREATE TABLE `history_bank` (
+  `id` int(11) NOT NULL,
+  `amount` varchar(255) DEFAULT NULL,
+  `comment` varchar(255) DEFAULT NULL,
+  `time` varchar(255) DEFAULT NULL,
+  `tranid` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -203,11 +254,17 @@ INSERT INTO `user` (`id_user`, `user_name`, `password`, `full_name`, `sex`, `ema
 (10, 'phuongbeo', '12345', 'Chu Tuấn Phương', 0, 'ctuanphuong18@gmail.com', 'Ngọa Long, Minh Khai, Bắc Từ Liêm, Hà Nội', '0335099885', 'z3843585245563_735b917490198943a7b26951da37b59c.jpg', NULL, NULL, 0),
 (11, 'phuongct', '000000', 'Tuấn Phương', 0, 'ctuanphuong18@gmail.com', 'Minh Tiến, Đoan Hùng, Phú Thọ', '0335099885', 'z3843585386448_c70cf6f597848fcdd9a88477b3071828.jpg', NULL, NULL, 0),
 (12, 'minhnv', '123456', 'Văn Minh', 0, 'minhnvph20000@gmail.com', '', '', '', NULL, NULL, 0),
-(13, 'quanglinhnb', 'linhz123', 'Đỗ Quang Linh', 0, 'quanglinh2942003@gmail.com', '', '', '', NULL, NULL, 0);
+(13, 'quanglinhnb', 'linhz123', 'Đỗ Quang Linh', 0, 'quanglinh2942003@gmail.com', '', '', '', NULL, NULL, 1);
 
 --
 -- Chỉ mục cho các bảng đã đổ
 --
+
+--
+-- Chỉ mục cho bảng `bank`
+--
+ALTER TABLE `bank`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Chỉ mục cho bảng `bill`
@@ -239,6 +296,12 @@ ALTER TABLE `comment`
   ADD KEY `lk_pro_cmt` (`id_pro`);
 
 --
+-- Chỉ mục cho bảng `history_bank`
+--
+ALTER TABLE `history_bank`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Chỉ mục cho bảng `product`
 --
 ALTER TABLE `product`
@@ -256,16 +319,22 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT cho bảng `bank`
+--
+ALTER TABLE `bank`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT cho bảng `bill`
 --
 ALTER TABLE `bill`
-  MODIFY `id_bill` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id_bill` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT cho bảng `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT cho bảng `category`
@@ -278,6 +347,12 @@ ALTER TABLE `category`
 --
 ALTER TABLE `comment`
   MODIFY `id_cmt` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT cho bảng `history_bank`
+--
+ALTER TABLE `history_bank`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT cho bảng `product`
