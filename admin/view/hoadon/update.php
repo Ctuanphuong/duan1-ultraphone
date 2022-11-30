@@ -21,14 +21,9 @@ if (is_array($one_bill)) {
                         value="<?= $user_name ?>" disabled>
                 </div>
                 <div class="form-group mt-3">
-                    <label for="formGroupExampleInput" class="font-lb">Mã sản phẩm</label>
-                    <input type="text" name="id_pro" class="form-control" placeholder="Mã sản phẩm"
-                        value="<?= $id_pro ?>" disabled>
-                </div>
-                <div class="form-group mt-3">
-                    <label for="formGroupExampleInput" class="font-lb">Tên sản phẩm</label>
-                    <input type="text" name="name_pro" class="form-control" placeholder="Tên sản phẩm"
-                        value="<?= $name_pro ?>" disabled>
+                    <label for="formGroupExampleInput" class="font-lb">Địa chỉ nhận hàng</label>
+                    <input type="text" name="user_name" class="form-control" placeholder="Mã sản phẩm"
+                        value="<?= $address ?>" disabled>
                 </div>
                 <div class="form-group mt-3">
                     <label for="formGroupExampleInput" class="font-lb">Ngày đặt</label>

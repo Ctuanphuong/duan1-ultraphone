@@ -18,6 +18,7 @@ require_once 'function.php';
         //Xử lý giao dịch
         if ($id)
         {
+            echo $id ." ";
             $check_code = checkcode($tranId);
             $check_username = checkbill($id);
             if(isset($check_username) && $amount > 0)
@@ -28,7 +29,7 @@ require_once 'function.php';
                     $money = str_replace(',', '', $money);
                     $sql = "INSERT INTO history_bank (tranid,amount,comment,time) VALUES ('$tranId', '$money', '$comment','$time')";
                     pdo_execute($sql);
-                    $sqll = "UPDATE `bill` SET status = 1 AND status_pay = 1 WHERE bill_code ='" . $id . "'";
+                    $sqll = "UPDATE `bill` SET status = 1 AND status_pay = 1 WHERE bill_code = '" . $id . "'";
                     pdo_execute($sqll);
                     $_SESSION['check'] = 2;
                 }
