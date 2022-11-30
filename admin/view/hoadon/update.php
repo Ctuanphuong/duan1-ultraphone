@@ -73,9 +73,9 @@ if (is_array($one_bill)) {
                 </thead>
                 <tbody>
                     <?php $id = $_GET['idbill'];
-                        $bill = load_cart_all($id);
-                        // var_dump($bill);
-                        foreach ($bill as $value) {
+                    $bill = load_cart_all($id);
+                    // var_dump($bill);
+                    foreach ($bill as $value) {
                     ?>
                         <tr>
                             <td class="jb-product-thumbnail"><img src="../admin/uploads/<?= $value['img_pro'] ?>" alt="Ultraphone Product" width="80px"></img></td>
@@ -89,4 +89,3 @@ if (is_array($one_bill)) {
             </table>
             <div class="wrap-btn-order mt-4">
                 <div class="pb-70"></div>
-
