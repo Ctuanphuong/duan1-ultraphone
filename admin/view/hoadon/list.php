@@ -11,7 +11,6 @@
                         <tr>
                             <th>Mã hóa đơn</th>
                             <th>Người đặt</th>
-                            <th>Sản phẩm</th>
                             <th>Ngày đặt</th>
                             <th>Thành tiền</th>
                             <th>Phương thức thanh toán</th>
@@ -23,7 +22,6 @@
                         <tr>
                             <th>Mã hóa đơn</th>
                             <th>Người đặt</th>
-                            <th>Sản phẩm</th>
                             <th>Ngày đặt</th>
                             <th>Thành tiền</th>
                             <th>Phương thức thanh toán</th>
@@ -39,8 +37,7 @@
                         ?>
                             <tr>
                                 <td><?= $bill['id_bill'] ?></td>
-                                <td><?= $user_detail ?></td>
-                                <td>chưa show</td>
+                                <td><?= $bill['full_name'] ?></td>
                                 <td><?= $bill['order_date'] ?></td>
                                 <td><?= number_format($bill['total_amount']) ?></td>
                                 <td><?php if ($bill['payment'] == 1) {

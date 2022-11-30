@@ -273,7 +273,8 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                     }
                 } else {
                     echo '<script>alert("Bạn phải đăng nhập để đặt hàng!")</script>';
-                    include "view/giohang/viewcart.php";
+                    header("location: index.php?act=login");
+                    // include "view/giohang/viewcart.php";
                     break;
                 }
                 foreach ($_SESSION['mycart'] as $cart) {

@@ -82,7 +82,6 @@
              <div class="container">
                  <div class="row">
                      <div class="col-12">
-                         <!-- <form action="index.php?act=bill" method="post"> -->
                          <div class="table-content table-responsive">
                              <?php cart_detail($cart_detail); ?>
                              <div class="wrap-btn-order mt-4">
