@@ -101,17 +101,17 @@
                             </div>
                             Hóa đơn
                         </a>
-                        <a class="nav-link" href="thongke.html">
+                        <a class="nav-link" href="index.php?act=liststatis">
                             <div class="sb-nav-link-icon">
                                 <i class="fas fa-chart-area"></i>
                             </div>
                             Thống kê
                         </a>
-                        <a class="nav-link" href="bieudo.html">
+                        <a class="nav-link" href="index.php?act=chart">
                             <div class="sb-nav-link-icon">
                                 <i class="fa-solid fa-chart-pie"></i>
                             </div>
-                            Biểu đồ
+                            Biểu đồ thống kê
                         </a>
                     </div>
                 </div>

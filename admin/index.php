@@ -8,6 +8,7 @@ include "model/sanpham.php";
 include "model/nguoidung.php";
 include "model/hoadon.php";
 include "model/binhluan.php";
+include "model/thongke.php";
 // controller
 if (isset($_GET['act'])) {
     $act = $_GET['act'];
@@ -192,6 +193,7 @@ if (isset($_GET['act'])) {
                 $listbill = loadall_bill(0);
                 include "view/hoadon/list.php";  
                 break;
+
             //CONTROLLER BÌNH LUẬN
             //show list: 
         case 'listcmt':
@@ -208,6 +210,12 @@ if (isset($_GET['act'])) {
             include "view/binhluan/list.php";
             break;
             
+              //CONTROLLER THỐNG KÊ
+              //list thống kê: 
+              case 'liststatis': 
+                $liststatis = loadall_statis();
+                include "view/thongke/list.php";
+                break;
          
         default:
             include "view/content.php";
