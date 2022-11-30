@@ -57,20 +57,24 @@
         </div>
     </li>
 
-    <li class="nav-item">
+    <!-- <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwoo" aria-expanded="true" aria-controls="collapseTwoo">
             <i class=" fas fa-solid fa-users"></i>
             <span>Khách hàng</span>
         </a>
         <div id="collapseTwoo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <!-- <h6 class="collapse-header">Custom Components:</h6> -->
                 <a class="collapse-item" href="">Thêm khách hàng</a>
                 <a class="collapse-item" href="index.php?act=list_user">Danh sách khách hàng</a>
             </div>
         </div>
+    </li> -->
+    
+    <li class="nav-item">
+        <a class="nav-link" href="index.php?act=list_user">
+            <i class=" fas fa-solid fa-users"></i>
+            <span>Khách hàng</span></a>
     </li>
-
     <li class="nav-item">
         <a class="nav-link" href="index.php?act=list_bill">
             <i class="fas fa-solid fa-receipt"></i>
@@ -91,12 +95,12 @@
     <hr class="sidebar-divider">
 
     <!-- Heading -->
-    <div class="sidebar-heading">
+    <!-- <div class="sidebar-heading">
         SETTING
-    </div>
+    </div> -->
 
     <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item">
+    <!-- <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
             <i class="fas fa-fw fa-folder"></i>
             <span>Pages</span>
@@ -115,19 +119,19 @@
         </div>
     </li>
 
-    <!-- Nav Item - Charts -->
+     Nav Item - Charts
     <li class="nav-item">
         <a class="nav-link" href="charts.html">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Charts</span></a>
     </li>
 
-    <!-- Nav Item - Tables -->
+     Nav Item - Tables 
     <li class="nav-item">
         <a class="nav-link" href="tables.html">
             <i class="fas fa-fw fa-table"></i>
             <span>Tables</span></a>
-    </li>
+    </li> -->
 
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">

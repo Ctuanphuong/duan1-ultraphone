@@ -199,12 +199,15 @@ if (isset($_GET['act'])) {
             //     $listbill = loadall_bill(0);
             //     include "view/hoadon/list.php";
             //     break;
-        case 'editbill':
+        case 'edit_bill':
             if (isset($_GET['idbill']) && ($_GET['idbill']) > 0) {
                 $idbill = $_GET['idbill'];
                 $one_bill = loadone_bill($idbill);
             }
-            include "view/hoadon/update.php";
+            render(
+                'update_bill',
+                ['one_bill' => $one_bill]
+            );
             break;
         case 'updatebill':
             if (isset($_POST['btn_update']) && ($_POST['btn_update'])) {
@@ -212,9 +215,9 @@ if (isset($_GET['act'])) {
                 $status = $_POST['status'];
                 update_bill($id_bill, $status);
                 echo '<script>alert("Cập nhật đơn hàng thành công!")</script>';
+                header('location:index.php?act=list_bill');
             }
-            $listbill = loadall_bill(0);
-            include "view/hoadon/list.php";
+            
             break;
 
             //CONTROLLER BÌNH LUẬN
