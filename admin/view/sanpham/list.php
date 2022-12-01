@@ -56,7 +56,7 @@
                              <tr>
                                     <td><?= $pro['id_pro'] ?></td>
                                     <td><?= $pro['name_pro'] ?></td>
-                                    <td><?= number_format($pro['price']) ?></td>
+                                    <td><?= number_format($pro['price']) ?>₫</td>
                                     <td><?= $pro['discount'] ?>%</td>
                                     <td><img src="./uploads/<?= $pro['img_pro']?>" alt="No photo!" width="50px"></td>
                                     <td><?= $pro['short_des'] ?></td>

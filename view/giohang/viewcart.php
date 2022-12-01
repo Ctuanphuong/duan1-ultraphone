@@ -23,6 +23,9 @@
                                 <input type="submit" href="index.php?act=bill" value="Xác nhận đặt hàng">
                             <?php } else { ?>
                                 <h3 class="text-danger">Giỏ hàng trống. Vui lòng thêm sản phẩm để đặt hàng!</h3>
+                                <div class="wrap-btn-order mt-4">
+                                 <a href="index.php?act=product" class="btn btn-secondary text-white"><i class="fa-solid fa-plus"></i> Thêm sản phẩm</a>
+                             </div>
                             <?php } ?>
                             </div>
                 </form>

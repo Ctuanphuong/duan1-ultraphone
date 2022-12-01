@@ -36,10 +36,10 @@
                                         </td>'
                         ?>
                             <tr>
-                                <td><?= $bill['id_bill'] ?></td>
+                                <td>UTP-<?= $bill['id_bill'] ?></td>
                                 <td><?= $bill['full_name'] ?></td>
                                 <td><?= $bill['order_date'] ?></td>
-                                <td><?= number_format($bill['total_amount']) ?></td>
+                                <td><?= number_format($bill['total_amount']) ?>₫</td>
                                 <td><?php if ($bill['payment'] == 1) {
                                         echo "Thanh toán khi nhận hàng";
                                     } else if ($bill['payment'] == 2) {
@@ -61,7 +61,8 @@
                                         echo "Lỗi trạng thái";
                                     } ?></td>
                                 <td class="text-center">
-                                    <a href="index.php?act=editbill&idbill=<?= $bill['id_bill'] ?>" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i> Sửa</a>
+                                    <a href="index.php?act=editbill&idbill=<?= $bill['id_bill'] ?>" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i> Sửa đơn</a>
+                                    <a href="index.php?act=billdetail&idbill=<?= $bill['id_bill'] ?>" class="btn btn-success"><i class="fa-solid fa-circle-info"></i> Chi tiết</a>
                                 </td>
                             </tr>
                         <?php endforeach ?>

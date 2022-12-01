@@ -29,7 +29,7 @@ if (is_file($img_path)) {
                 <div class="form-group mt-3">
                     <label for="formGroupExampleInput" class="font-lb">Giá</label>
                     <input type="text" name="price" class="form-control" placeholder="Giá sản phẩm"
-                        value="<?= $price ?>">
+                        value="<?= number_format($price) ?>₫">
                 </div>
                 <div class="form-group mt-3">
                     <label for="formGroupExampleInput" class="font-lb">Giảm giá</label>

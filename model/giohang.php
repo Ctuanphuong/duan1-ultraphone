@@ -58,7 +58,7 @@ if ($removecol == 1) {
     $btn_remove = '';
 }
 if ($removecol == 1) {
-    $btn_update= '<input type="submit" class="button" name="update_cart" value="Cập nhật giỏ hàng">';
+    $btn_update= '<a href="index.php?act=product"><input type="button" class="button" value="Xem thêm sản phẩm"></a>';
 } else {
     $btn_update = '<a href="index.php?act=viewcart"><input type="button" class="button" value="Quay lại giỏ hàng"></a>';
 }

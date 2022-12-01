@@ -89,12 +89,6 @@
                             </div>
                             Người dùng
                         </a>
-                        <a class="nav-link" href="index.php?act=listcmt">
-                            <div class="sb-nav-link-icon">
-                                <i class="fa-solid fa-comment"></i>
-                            </div>
-                            Bình luận
-                        </a>
                         <a class="nav-link" href="index.php?act=listbill">
                             <div class="sb-nav-link-icon">
                                 <i class="fa-solid fa-money-bill"></i>
@@ -112,6 +106,12 @@
                                 <i class="fa-solid fa-chart-pie"></i>
                             </div>
                             Biểu đồ thống kê
+                        </a>
+                        <a class="nav-link" href="index.php?act=listcmt">
+                            <div class="sb-nav-link-icon">
+                                <i class="fa-solid fa-comment"></i>
+                            </div>
+                            Bình luận
                         </a>
                     </div>
                 </div>

@@ -193,7 +193,15 @@ if (isset($_GET['act'])) {
                 $listbill = loadall_bill(0);
                 include "view/hoadon/list.php";  
                 break;
-
+        
+                // xem chi tiết bill: 
+        case 'billdetail': 
+            if(isset($_GET['idbill']) && ($_GET['idbill']) > 0) { 
+                $idbill = $_GET['idbill'];
+                $one_bill = loadone_bill($idbill);
+            }
+            include "view/hoadon/billdetail.php";
+            break;
             //CONTROLLER BÌNH LUẬN
             //show list: 
         case 'listcmt':

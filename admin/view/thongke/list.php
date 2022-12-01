@@ -33,9 +33,9 @@
                                             <td><?= $idcate ?></td>
                                             <td><?= $namecate ?></td>
                                             <td><?= $pro_quantity ?></td>
-                                            <td><?= number_format($min_price)?></td>
-                                            <td><?= number_format($max_price)?></td>
-                                            <td><?= number_format($avg_price)?></td>
+                                            <td><?= number_format($min_price)?>₫</td>
+                                            <td><?= number_format($max_price)?>₫</td>
+                                            <td><?= number_format($avg_price)?>₫</td>
                                         </tr>
                                         <?php endforeach ?>
                                     </tbody>
