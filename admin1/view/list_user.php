@@ -18,7 +18,6 @@
                                 <tr>
                                     <th>Mã người dùng</th>
                                     <th>Tên đăng nhập</th>
-                                    <th>Mật khẩu</th>
                                     <th>Họ tên</th>
                                     <th>Email</th>
                                     <th>Vai trò</th>
@@ -31,7 +30,6 @@
                                 <tr>
                                     <th>Mã người dùng</th>
                                     <th>Tên đăng nhập</th>
-                                    <th>Mật khẩu</th>
                                     <th>Họ tên</th>
                                     <th>Email</th>
                                     <th>Vai trò</th>
@@ -45,13 +43,13 @@
                                     <tr>
                                         <td><?= $user['id_user'] ?></td>
                                         <td><?= $user['user_name'] ?></td>
-                                        <td><?= $user['password'] ?></td>
                                         <td><?= $user['full_name'] ?></td>
                                         <td><?= $user['email_user'] ?></td>
                                         <td><?php if ($user['role'] == 1) {
-                                                echo "Admin";
+                                                echo "<span class='badge badge-danger'>Admin</span>";
                                             } else {
-                                                echo "Người dùng";
+                                                echo "<span class='badge badge-success'>Thành Viên</span>
+                                            ";
                                             } ?></td>
                                         <td class="text-center">
                                             <a href="./index.php?act=edit_user&id_user=<?= $user['id_user'] ?>" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i> Sửa</a>
