@@ -16,7 +16,7 @@
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
-                                    <th>Mã người dùng</th>
+                                    <th>Mã User</th>
                                     <th>Tên đăng nhập</th>
                                     <th>Họ tên</th>
                                     <th>Email</th>
@@ -28,7 +28,7 @@
                             </thead>
                             <tfoot>
                                 <tr>
-                                    <th>Mã người dùng</th>
+                                    <th>Mã User</th>
                                     <th>Tên đăng nhập</th>
                                     <th>Họ tên</th>
                                     <th>Email</th>

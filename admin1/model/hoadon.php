@@ -1,7 +1,7 @@
 <?php 
 function loadall_bill($iduser)
 {
-    $sql = "SELECT * FROM bill WHERE 1"; 
+    $sql = "SELECT * FROM bill"; 
     if($iduser > 0) $sql .=" AND id_user= ".$iduser ; 
     $sql .= " ORDER BY id_bill DESC";
     $listbill = pdo_query($sql);

@@ -56,6 +56,8 @@
                             <option value="1" <?= $status == 1 ? "selected" : "" ?>>Đang xử lý</option>
                             <option value="2" <?= $status == 2 ? "selected" : "" ?>>Đang giao hàng</option>
                             <option value="3" <?= $status == 3 ? "selected" : "" ?>>Đã giao hàng</option>
+                            <option value="4" <?= $status == 4 ? "selected" : "" ?>>Đã hủy</option>
+
                         </select>
                     </div>
 
