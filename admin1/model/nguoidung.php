@@ -26,4 +26,9 @@ function delete_user($id_user) {
     $sql = "DELETE FROM user WHERE id_user=".$id_user;
     pdo_execute($sql);
 }
-?>
+function countusser()
+{
+    $sql = "SELECT count(*) FROM user";
+    $a = pdo_query($sql);
+    return $a;
+}

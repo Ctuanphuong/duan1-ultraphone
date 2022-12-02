@@ -40,7 +40,7 @@ foreach($_SESSION['mycart'] as $cart) {
         <td class="quantity">
             <label>Số lượng</label>
             <div class="cart-plus-minus">
-                <input class="cart-plus-minus-box" value="1" type="text">
+                <input class="cart-plus-minus-box" value="1" type="text" name="number-323">
                 <div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>
                 <div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>
             </div>

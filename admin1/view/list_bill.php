@@ -12,17 +12,18 @@
                         <h6 class="m-0 font-weight-bold text-primary">Quản Lý Hóa Đơn</h6>
                     </div>
                     <div class="card-body">
-                        <div class="table-responsive">
+                        <div class="table-responsive-lg">
                             <table class="table table-bordered" id="table1" width="100%" cellspacing="0">
                                 <thead>
                                     <tr>
-                                        <th>Mã hóa đơn</th>
-                                        <th>Người đặt</th>
-                                        <th>Ngày đặt</th>
-                                        <th>Thành tiền</th>
-                                        <th>Phương thức thanh toán</th>
-                                        <th>Trạng thái</th>
-                                        <th>Thao tác</th>
+                                        <th scope="col">Mã hóa đơn</th>
+                                        <th scope="col">Người đặt</th>
+                                        <th scope="col">Ngày đặt</th>
+                                        <th scope="col">Thành tiền</th>
+                                        <th scope="col">Phương thức thanh toán</th>
+                                        <th scope="col" >Trạng thái thanh toán</th>
+                                        <th scope="col">Trạng thái đơn hàng</th>
+                                        <th scope="col">Thao tác</th>
                                     </tr>
                                 </thead>
                                 <tfoot>
@@ -32,7 +33,8 @@
                                         <th>Ngày đặt</th>
                                         <th>Thành tiền</th>
                                         <th>Phương thức thanh toán</th>
-                                        <th>Trạng thái</th>
+                                        <th>Trạng thái thanh toán</th>
+                                        <th>Trạng thái đơn hàng</th>
                                         <th>Thao tác</th>
                                     </tr>
                                 </tfoot>
@@ -56,14 +58,23 @@
                                                 } else {
                                                     echo "Không tìm thấy phương thức thanh toán";
                                                 }  ?></td>
+                                            <td><?php if ($bill['status_pay'] == 0) {
+                                                    echo "Chưa thanh toán";
+                                                } else if ($bill['status_pay'] == 1) {
+                                                    echo "Đã thanh toán";
+                                                } else {
+                                                    echo "Không tìm thấy phương thức thanh toán";
+                                                }  ?></td>
                                             <td><?php if ($bill['status'] == 0) {
-                                                    echo "Đơn hàng mới";
+                                                    echo "<span class='badge badge-info'>Đơn hàng mới</span>";
                                                 } else if ($bill['status'] == 1) {
-                                                    echo "Đang xử lý";
+                                                    echo "<span class='badge badge-warning'>Đang xử lý</span>";
                                                 } else if ($bill['status'] == 2) {
-                                                    echo "Đang giao hàng";
+                                                    echo "<span class='badge badge-primary'>Đang giao hàng</span>";
                                                 } else if ($bill['status'] == 3) {
-                                                    echo "Đã giao hàng";
+                                                    echo "<span class='badge badge-success'>Đã giao hàng</span>";
+                                                } elseif ($bill['status'] == 4) {
+                                                    echo "<span class='badge badge-danger'>Đã hủy</span>";
                                                 } else {
                                                     echo "Lỗi trạng thái";
                                                 } ?></td>
