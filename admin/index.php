@@ -9,6 +9,7 @@ include "model/nguoidung.php";
 include "model/hoadon.php";
 include "model/binhluan.php";
 include "model/thongke.php";
+include "model/bieudo.php";
 // controller
 if (isset($_GET['act'])) {
     $act = $_GET['act'];
@@ -218,11 +219,17 @@ if (isset($_GET['act'])) {
             include "view/binhluan/list.php";
             break;
             
-              //CONTROLLER THỐNG KÊ
+              //CONTROLLER THỐNG KÊ SẢN PHẨM THEO LOẠI
               //list thống kê: 
               case 'liststatis': 
                 $liststatis = loadall_statis();
                 include "view/thongke/list.php";
+                break;
+            
+              //CONTROLLER THỐNG KÊ DOANH THU
+               //lấy dữ liệu vào biểu đồ thống kê:
+                case 'chart':
+                include "view/bieudo/turnover.php";
                 break;
          
         default:

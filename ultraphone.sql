@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 30, 2022 lúc 08:20 AM
+-- Thời gian đã tạo: Th12 02, 2022 lúc 08:28 AM
 -- Phiên bản máy phục vụ: 10.4.24-MariaDB
 -- Phiên bản PHP: 8.1.6
 
@@ -44,7 +44,9 @@ CREATE TABLE `bill` (
   `id_bill` int(11) NOT NULL,
   `bill_code` varchar(255) DEFAULT NULL,
   `id_user` int(11) NOT NULL,
+  `id_pro` int(11) NOT NULL,
   `user_name` varchar(255) NOT NULL,
+  `name_pro` varchar(255) NOT NULL,
   `full_name` varchar(55) NOT NULL,
   `address` varchar(255) NOT NULL,
   `phone` int(25) NOT NULL,
@@ -60,32 +62,8 @@ CREATE TABLE `bill` (
 -- Đang đổ dữ liệu cho bảng `bill`
 --
 
-INSERT INTO `bill` (`id_bill`, `bill_code`, `id_user`, `user_name`, `full_name`, `address`, `phone`, `email`, `payment`, `order_date`, `total_amount`, `status`, `status_pay`) VALUES
-(1, NULL, 11, 'phuongct', '', 'Phu Tho', 335099885, 'ctuanphuong18@gmail.com', 1, '25/11/2022 09:10:11am', 59580000, 0, '0'),
-(2, NULL, 11, 'phuongct', '', 'Phu Tho', 335099885, 'ctuanphuong18@gmail.com', 1, '25/11/2022 09:10:46am', 0, 0, '0'),
-(3, NULL, 11, 'phuongct', 'Chu Tuấn Phương', 'Phu Tho', 335099885, 'ctuanphuong18@gmail.com', 3, '25/11/2022 09:11:10am', 5990000, 0, '0'),
-(4, NULL, 11, 'phuongct', 'Tuấn Phương', 'Minh Tiến, Đoan Hùng, Phú Thọ', 335099885, 'ctuanphuong18@gmail.com', 1, '25/11/2022 09:13:39am', 20590000, 0, '0'),
-(5, NULL, 12, 'minhnv', 'Văn Minh', 'Minh Tiến', 12345678, 'minhnvph20000@gmail.com', 2, '25/11/2022 09:15:37am', 20590000, 0, '0'),
-(6, NULL, 10, 'phuongbeo', 'Chu Tuấn Phương', 'Ngọa Long, Minh Khai, Bắc Từ Liêm, Hà Nội', 335099885, 'ctuanphuong18@gmail.com', 3, '25/11/2022 09:20:51am', 26590000, 0, '0'),
-(7, NULL, 10, 'phuongbeo', 'Chu Tuấn Phương', 'Ngọa Long, Minh Khai, Bắc Từ Liêm, Hà Nội', 335099885, 'ctuanphuong18@gmail.com', 3, '25/11/2022 09:21:18am', 0, 0, '0'),
-(8, NULL, 11, 'phuongct', 'Tuấn Phương', 'Minh Tiến, Đoan Hùng, Phú Thọ', 335099885, 'ctuanphuong18@gmail.com', 2, '25/11/2022 05:08:38pm', 40280000, 0, '0'),
-(41, '25379', 13, 'quanglinhnb', 'đỗ linh', 'nb', 921122458, 'quanglinh2942003@gmail.com', 2, '29/11/2022 05:53:07am', 20590000, 0, '0'),
-(42, '18956', 13, 'quanglinhnb', 'Đỗ Quang Linh', 'Gia Vien', 329200345, 'quanglinh2942003@gmail.com', 2, '29/11/2022 05:54:48am', 5990000, 0, '0'),
-(43, '36015', 13, 'quanglinhnb', 'đỗ linh', 'nb', 921122458, 'quanglinh2942003@gmail.com', 2, '29/11/2022 06:14:23am', 20590000, 0, '0'),
-(44, '59276', 13, 'quanglinhnb', 'đỗ linh', 'nb', 921122458, 'quanglinh2942003@gmail.com', 1, '29/11/2022 06:16:12am', 20590000, 0, '0'),
-(45, '39840', 13, 'quanglinhnb', 'đỗ linh', 'nb', 921122458, 'quanglinh2942003@gmail.com', 1, '29/11/2022 08:23:30am', 0, 0, '0'),
-(46, '56937', 13, 'quanglinhnb', 'đỗ linh', 'nb', 921122458, 'quanglinh2942003@gmail.com', 1, '29/11/2022 08:28:21am', 0, 0, '0'),
-(47, '17365', 13, 'quanglinhnb', 'đỗ linh', 'nb', 921122458, 'quanglinh2942003@gmail.com', 1, '29/11/2022 08:28:24am', 0, 0, '0'),
-(48, '92105', 13, 'quanglinhnb', 'đỗ linh', 'nb', 921122458, 'quanglinh2942003@gmail.com', 1, '29/11/2022 08:30:07am', 20590000, 0, '0'),
-(49, '59320', 13, 'quanglinhnb', 'đỗ linh', 'nb', 921122458, 'quanglinh2942003@gmail.com', 1, '29/11/2022 08:30:27am', 0, 0, '0'),
-(50, '08312', 13, 'quanglinhnb', 'đỗ linh', 'nb', 921122458, 'quanglinh2942003@gmail.com', 1, '29/11/2022 08:31:08am', 0, 0, '0'),
-(51, '05176', 13, 'quanglinhnb', 'đỗ linh', 'nb', 921122458, 'quanglinh2942003@gmail.com', 1, '29/11/2022 08:31:10am', 0, 0, '0'),
-(52, '37054', 13, 'quanglinhnb', 'đỗ linh', 'nb', 921122458, 'quanglinh2942003@gmail.com', 1, '29/11/2022 08:33:02am', 20590000, 0, '0'),
-(53, '83059', 13, 'quanglinhnb', 'đỗ linh', 'nb', 921122458, 'quanglinh2942003@gmail.com', 1, '29/11/2022 05:57:44pm', 26590000, 0, '0'),
-(54, '58697', 13, 'quanglinhnb', 'đỗ linh', 'nb', 921122458, 'quanglinh2942003@gmail.com', 1, '29/11/2022 05:58:40pm', 20590000, 0, '0'),
-(55, '4678', 13, 'quanglinhnb', 'đỗ linh', 'nb', 921122458, 'quanglinh2942003@gmail.com', 2, '29/11/2022 07:17:51pm', 20590000, 1, '0'),
-(56, '17654', 13, 'quanglinhnb', 'đỗ linh', 'nb', 921122458, 'quanglinh2942003@gmail.com', 2, '29/11/2022 08:33:19pm', 20590000, 1, '1'),
-(57, '45197', 11, 'phuongct', 'Tuấn Phương', 'Minh Tiến, Đoan Hùng, Phú Thọ', 335099885, 'ctuanphuong18@gmail.com', 1, '30/11/2022 08:16:40am', 11990000, 0, '0');
+INSERT INTO `bill` (`id_bill`, `bill_code`, `id_user`, `id_pro`, `user_name`, `name_pro`, `full_name`, `address`, `phone`, `email`, `payment`, `order_date`, `total_amount`, `status`, `status_pay`) VALUES
+(68, '17983', 15, 0, 'phuongct', '', 'Chu Tuấn Phương', 'Ngọa Long, Minh Khai, Bắc Từ Liêm, Hà Nội', 335099885, 'ctuanphuong18@gmail.com', 1, '02/12/2022 08:25:27am', 9180000, 0, '0');
 
 -- --------------------------------------------------------
 
@@ -111,30 +89,8 @@ CREATE TABLE `cart` (
 --
 
 INSERT INTO `cart` (`id`, `id_user`, `user_name`, `id_pro`, `img_pro`, `name_pro`, `price_pro`, `quantity`, `total_amount`, `id_bill`) VALUES
-(1, 11, 'phuongct', 25, 'Xiaomi-11T-White-1-2-3-600x600.jpg', ' Xiaomi 11T Pro 5G 12GB ', 14390000, 1, 14390000, 1),
-(2, 11, 'phuongct', 24, 'apple-iphone-x-new-1.jpg', 'iPhone X 512GB ', 18600000, 1, 18600000, 1),
-(3, 11, 'phuongct', 27, 'samsung-galaxy-z-flip4-5g-128gb-thumb-tim-600x600.jpg', 'Samsung Galaxy Z Flip 4', 20590000, 1, 20590000, 1),
-(4, 11, 'phuongct', 30, '9283447401-oppo-a77s-128gb-ram-8gb.jpg', 'OPPO A77S 8GB/128GB', 6000000, 1, 6000000, 1),
-(5, 11, 'phuongct', 26, 'realme-5-tim-new-600x600.jpg', 'Realme 5 4GB/128GB', 5990000, 1, 5990000, 3),
-(6, 11, 'phuongct', 27, 'samsung-galaxy-z-flip4-5g-128gb-thumb-tim-600x600.jpg', 'Samsung Galaxy Z Flip 4', 20590000, 1, 20590000, 4),
-(7, 12, 'minhnv', 27, 'samsung-galaxy-z-flip4-5g-128gb-thumb-tim-600x600.jpg', 'Samsung Galaxy Z Flip 4', 20590000, 1, 20590000, 5),
-(8, 10, 'phuongbeo', 27, 'samsung-galaxy-z-flip4-5g-128gb-thumb-tim-600x600.jpg', 'Samsung Galaxy Z Flip 4', 20590000, 1, 20590000, 6),
-(9, 10, 'phuongbeo', 30, '9283447401-oppo-a77s-128gb-ram-8gb.jpg', 'OPPO A77S 8GB/128GB', 6000000, 1, 6000000, 6),
-(10, 11, 'phuongct', 25, 'Xiaomi-11T-White-1-2-3-600x600.jpg', ' Xiaomi 11T Pro 5G 12GB ', 14390000, 1, 14390000, 8),
-(12, 11, 'phuongct', 22, 'xanh_22p2-68.jpg', ' Xiaomi POCO F3 ', 7290000, 1, 7290000, 8),
-(28, 13, 'quanglinhnb', 27, 'samsung-galaxy-z-flip4-5g-128gb-thumb-tim-600x600.jpg', 'Samsung Galaxy Z Flip 4', 20590000, 1, 20590000, 41),
-(29, 13, 'quanglinhnb', 26, 'realme-5-tim-new-600x600.jpg', 'Realme 5 4GB/128GB', 5990000, 1, 5990000, 42),
-(30, 13, 'quanglinhnb', 27, 'samsung-galaxy-z-flip4-5g-128gb-thumb-tim-600x600.jpg', 'Samsung Galaxy Z Flip 4', 20590000, 1, 20590000, 43),
-(31, 13, 'quanglinhnb', 27, 'samsung-galaxy-z-flip4-5g-128gb-thumb-tim-600x600.jpg', 'Samsung Galaxy Z Flip 4', 20590000, 1, 20590000, 44),
-(32, 13, 'quanglinhnb', 27, 'samsung-galaxy-z-flip4-5g-128gb-thumb-tim-600x600.jpg', 'Samsung Galaxy Z Flip 4', 20590000, 1, 20590000, 48),
-(33, 13, 'quanglinhnb', 27, 'samsung-galaxy-z-flip4-5g-128gb-thumb-tim-600x600.jpg', 'Samsung Galaxy Z Flip 4', 20590000, 1, 20590000, 52),
-(34, 13, 'quanglinhnb', 27, 'samsung-galaxy-z-flip4-5g-128gb-thumb-tim-600x600.jpg', 'Samsung Galaxy Z Flip 4', 20590000, 1, 20590000, 53),
-(35, 13, 'quanglinhnb', 30, '9283447401-oppo-a77s-128gb-ram-8gb.jpg', 'OPPO A77S 8GB/128GB', 6000000, 1, 6000000, 53),
-(36, 13, 'quanglinhnb', 27, 'samsung-galaxy-z-flip4-5g-128gb-thumb-tim-600x600.jpg', 'Samsung Galaxy Z Flip 4', 20590000, 1, 20590000, 54),
-(37, 13, 'quanglinhnb', 27, 'samsung-galaxy-z-flip4-5g-128gb-thumb-tim-600x600.jpg', 'Samsung Galaxy Z Flip 4', 20590000, 1, 20590000, 55),
-(38, 13, 'quanglinhnb', 27, 'samsung-galaxy-z-flip4-5g-128gb-thumb-tim-600x600.jpg', 'Samsung Galaxy Z Flip 4', 20590000, 1, 20590000, 56),
-(39, 11, 'phuongct', 26, 'realme-5-tim-new-600x600.jpg', 'Realme 5 4GB/128GB', 5990000, 1, 5990000, 57),
-(40, 11, 'phuongct', 30, '9283447401-oppo-a77s-128gb-ram-8gb.jpg', 'OPPO A77S 8GB/128GB', 6000000, 1, 6000000, 57);
+(56, 15, 'phuongct', 30, '9283447401-oppo-a77s-128gb-ram-8gb.jpg', 'OPPO A77S 8GB/128GB', 6000000, 1, 6000000, 68),
+(57, 15, 'phuongct', 28, 'huawei-p30-pro-1-600x600.jpg', 'Huawei P30 Pro 8G/256G', 3180000, 1, 3180000, 68);
 
 -- --------------------------------------------------------
 
@@ -182,7 +138,13 @@ CREATE TABLE `comment` (
 --
 
 INSERT INTO `comment` (`id_cmt`, `content`, `id_user`, `user_name`, `full_name`, `id_pro`, `comment_date`) VALUES
-(1, 'đẹppp', 11, 'phuongct', 'Tuấn Phương', 27, '11/30/2022 08:18:17am');
+(1, 'đẹppp', 11, 'phuongct', 'Tuấn Phương', 27, '11/30/2022 08:18:17am'),
+(2, 'sản phẩm tuyệt vời quá', 11, 'phuongct', 'Tuấn Phương', 30, '11/30/2022 08:27:31am'),
+(3, 'nếu có 6 sao em cũng vote 1 sao cho sốp, điện thoại xấu quá\r\n', 11, 'phuongct', 'Tuấn Phương', 9, '11/30/2022 08:28:13am'),
+(4, 'sản phẩm rất đẹp ạ', 15, 'phuongct', 'Chu Tuấn Phương', 26, '12/02/2022 08:25:40am'),
+(5, 'điện thoại đã rẻ còn xấu nữa tuyệt vời quá xốp', 15, 'phuongct', 'Chu Tuấn Phương', 21, '12/02/2022 08:26:35am'),
+(6, 'sản phẩm thật tuyệt vời', 15, 'phuongct', 'Chu Tuấn Phương', 20, '12/02/2022 08:26:48am'),
+(7, 'sản phẩm tuyệt vời quá ôi nhìn là muốn mua 1 chiếc điện thoại như vậy rồi', 15, 'phuongct', 'Chu Tuấn Phương', 7, '12/02/2022 08:27:22am');
 
 -- --------------------------------------------------------
 
@@ -197,6 +159,21 @@ CREATE TABLE `history_bank` (
   `time` varchar(255) DEFAULT NULL,
   `tranid` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `history_bank`
+--
+
+INSERT INTO `history_bank` (`id`, `amount`, `comment`, `time`, `tranid`) VALUES
+(21, '1000', 'CUSTOMER 94173 Trace 985625', '30/11/2022 14:30:00', 'FT22334261631086BNK'),
+(22, '0', 'CUSTOMER DO QUANG LINH chuyen khoan - Ma gia o dich/ Trace 401309', '30/11/2022 13:40:00', 'FT22334147891961'),
+(23, '0', 'CUSTOMER Thanh toan QR DO QUANG LINH chuyen  khoan - Ma giao dich/ Trace 031916', '30/11/2022 11:45:00', 'FT22334401685537'),
+(24, '0', 'CUSTOMER DO QUANG LINH chuyen khoan - Ma gia o dich/ Trace 070167', '30/11/2022 11:18:00', 'FT22334305991988'),
+(25, '100000', 'CUSTOMER MBVCB 2768157086 025846 NGUYEN KHAC  TOAN chuyen tien CT tu 04510004281 92 NGUYEN KHAC TOAN toi 60000000003  DO QUANG LINH Ngan hang Quan Doi  ', '30/11/2022 10:44:00', 'FT22334426800035BNK'),
+(26, '0', 'CUSTOMER Thanh toan QR DO QUANG LINH chuyen  khoan - Ma giao dich/ Trace 462972', '30/11/2022 09:02:00', 'FT22334100078954'),
+(27, '1000', 'CUSTOMER Linh 17654 Trace 588656', '30/11/2022 02:33:00', 'FT22334547643305BNK'),
+(28, '1000', 'CUSTOMER Linh 04678 Trace 581325', '30/11/2022 02:18:00', 'FT22334507816023BNK'),
+(29, '1000', 'CUSTOMER Chuyen tien Trace 571867', '30/11/2022 01:53:00', 'FT22334062224594BNK');
 
 -- --------------------------------------------------------
 
@@ -221,20 +198,20 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id_pro`, `name_pro`, `price`, `discount`, `img_pro`, `short_des`, `detail_des`, `view`, `idcate`) VALUES
-(7, 'iPhone 14 Pro Max 256GB', 36999000, 10, 'iPhone_14_Pro_Max-Pur1.jpg', 'iPhone 14 Pro Max đem đến những trải nghiệm không thể tìm thấy trên mọi thế hệ iPhone trước đó với màu Tím Deep Purple sang trọng, camera 48MP lần đầu xuất hiện, chip A16 Bionic và màn hình “viên thuốc” Dynamic Island linh hoạt, nịnh mắt.', '•	Màn hình: OLED6.7\"Super Retina XDR\r\n•	Hệ điều hành: iOS 16\r\n•	Camera sau: Chính 48 MP & Phụ 12 MP, 12 MP\r\n•	Camera trước: 12 MP\r\n•	Chip: Apple A16 Bionic\r\n•	RAM: 6 GB\r\n•	Dung lượng lưu trữ: 256 GB\r\n•	SIM: 1 Nano SIM & 1 eSIMHỗ trợ 5G\r\n•	Pin, Sạc: 4323 mAh20 W\r\n\r\n', 127, 8),
+(7, 'iPhone 14 Pro Max 256GB', 36999000, 10, 'iPhone_14_Pro_Max-Pur1.jpg', 'iPhone 14 Pro Max đem đến những trải nghiệm không thể tìm thấy trên mọi thế hệ iPhone trước đó với màu Tím Deep Purple sang trọng, camera 48MP lần đầu xuất hiện, chip A16 Bionic và màn hình “viên thuốc” Dynamic Island linh hoạt, nịnh mắt.', '•	Màn hình: OLED6.7\"Super Retina XDR\r\n•	Hệ điều hành: iOS 16\r\n•	Camera sau: Chính 48 MP & Phụ 12 MP, 12 MP\r\n•	Camera trước: 12 MP\r\n•	Chip: Apple A16 Bionic\r\n•	RAM: 6 GB\r\n•	Dung lượng lưu trữ: 256 GB\r\n•	SIM: 1 Nano SIM & 1 eSIMHỗ trợ 5G\r\n•	Pin, Sạc: 4323 mAh20 W\r\n\r\n', 128, 8),
 (8, 'OPPO Reno6 5G', 9850000, 0, 'oppo_reno4g.jpg', 'Nối tiếp sự thành công của dòng Reno5, OPPO mới đây đã trình làng bộ đôi siêu phẩm thuộc dòng OPPO Reno6 series có cấu hình mạnh mẽ, thiết kế ấn tượng. Trong đó, chiếc OPPO Reno6 5G với những cải tiến mới mẻ hơn thế hệ tiền nhiệm chắc chắn sẽ là một siêu phẩm trên thị trường smartphone hiện nay mà bạn không nên bỏ lỡ!', '•	Màn hình: AMOLED6.43\"Full HD+\r\n•	Hệ điều hành: Android 11\r\n•	Camera sau: Chính 64 MP & Phụ 8 MP, 2 MP\r\n•	Camera trước: 32 MP\r\n•	Chip: MediaTek Dimensity 900 5G\r\n•	RAM: 8 GB\r\n•	Dung lượng lưu trữ: 128 GB\r\n•	SIM: 2 Nano SIMHỗ trợ 5G\r\n•	Pin, Sạc: 4300 mAh65 W\r\n\r\n', 43, 7),
-(9, 'Galaxy S22 Ultra 8/128GB', 17990000, 0, 'Galaxy-S22-Ultra-Black-600x600.jpg', 'Samsung Galaxy S22 Ultra đơn giản nhưng đồng thời cũng tuyệt đẹp. Các góc cạnh của sản phẩm hoàn thiện sắc nét, vuông vắn. Cụm camera vuông như mọi năm đã biến mất, thay vào đó là một thiết kế đồng bộ camera với mặt lưng. Chúng phẳng hơn và liền lạc, tổng thể là đơn giản nhưng đẹp mắt.', '•	Công nghệ màn hình: Dynamic AMOLED 2X\r\n•	Độ phân giải: 3088 x 1440\r\n•	Màn hình rộng: 6.8\", Tần số quét: 1 - 120 Hz\r\n•	Độ phân giải: 12MP (UW) + 108MP (W) + 12MP (Tele3x) + 12MP (Tele10x), 40MP\r\n•	Hệ điều hành: Android 12\r\n•	Chip xử lý (CPU): Snapdragon® 8 Gen 1 (4nm)\r\n•	Bộ nhớ trong (ROM): 128GB\r\n•	RAM: 8GB\r\n•	Mạng di động: 5G\r\n•	Số khe sim: 1 nano SIM + 1 e-SIM\r\n•	Dung lượng pin: 5000 mAh\r\n', 182, 1),
-(11, ' Realme C35 128GB', 4690000, 0, 'realme-c35-thumb-new-600x600.jpg', 'Realme C35 sở hữu màu sắc như xanh ngọc sang trọng, đen tuyền huyền bí cùng các đường nét thiết kế tỉ mỉ, điện thoại này được thiết kế với khung bo góc làm bằng vật liệu 2D phát sáng linh động, làm cho tổng thể vẻ ngoài của máy trở nên phong cách hơn.', '•	Màn hình: IPS LCD6.6\"Full HD+\r\n•	Hệ điều hành: Android 11\r\n•	Camera sau: Chính 50 MP & Phụ 2 MP, 0.3 MP\r\n•	Camera trước: 8 MP\r\n•	Chip: Unisoc T616\r\n•	RAM: 4GB\r\n•	Dung lượng lưu trữ: 128 GB\r\n•	SIM: 2 Nano SIM Hỗ trợ 4G\r\n•	Pin, Sạc: 5000 mAh18 W\r\n', 25, 10),
-(20, 'Xiaomi 12S Ultra', 20950000, 0, 'xiaomi-12s-ultra-050722-023437-600x600.jpg', 'Mới đây thì bộ ba Xiaomi 12S series cũng được cho ra mắt, trong đố nỏi bật hơn hết chính là Xiaomi 12S Ultra nhờ có thiết kế cao cấp, cùng những thông số kỹ thuật hàng đầu trong ngành điện thoại. Điểm nhấn chính của mẫu Ultra là hệ thống camera với sự hợp tác cùng thương hiệu nhiếp ảnh nổi tiếng Leica.', '• Màn hình: AMOLED6.73\"\r\n• Hệ điều hành: Android 12\r\n• Camera sau: Chính 50 MP & Phụ 48 MP, 48 MP\r\n• Camera trước: 32 MP\r\n• Chip: Snapdragon 8+ Gen 1\r\n• RAM: 8GB\r\n• Dung lượng lưu trữ: 256 GB\r\n• SIM: 2 Nano SIMHỗ trợ 5G\r\n• Pin, Sạc: 4850 mAh67 W\r\n', 114, 11),
-(21, ' Vsmart Active 3 (6GB/64GB) ', 2990000, 0, 'vsmart-active-3-tim-600x600-200x200.jpg', 'Vsmart Active 3 (6GB/64GB) là một smartphone có hiệu năng ổn định, thời lượng pin cả ngày dài và còn nhiều tính năng đặc biệt khác nữa, hứa hẹn sẽ mang đến cho bạn một thiết bị công nghệ chẳng những thời trang mà còn rất hiện đại.', '•	Màn hình: AMOLED6.39\"Full HD+\r\n•	Hệ điều hành: Android 9 (Pie)\r\n•	Camera sau: Chính 48 MP & Phụ 8 MP, 2 MP\r\n•	Camera trước: 16 MP\r\n•	Chip: MediaTek Helio P60\r\n•	RAM: 6 GB\r\n•	Dung lượng lưu trữ: 64 GB\r\n•	SIM:2 Nano SIM (SIM 2 chung khe thẻ nhớ) Hỗ trợ 4G\r\n•	Pin, Sạc: 4020 mAh15 W\r\n', 18, 12),
+(9, 'Galaxy S22 Ultra 8/128GB', 17990000, 0, 'Galaxy-S22-Ultra-Black-600x600.jpg', 'Samsung Galaxy S22 Ultra đơn giản nhưng đồng thời cũng tuyệt đẹp. Các góc cạnh của sản phẩm hoàn thiện sắc nét, vuông vắn. Cụm camera vuông như mọi năm đã biến mất, thay vào đó là một thiết kế đồng bộ camera với mặt lưng. Chúng phẳng hơn và liền lạc, tổng thể là đơn giản nhưng đẹp mắt.', '•	Công nghệ màn hình: Dynamic AMOLED 2X\r\n•	Độ phân giải: 3088 x 1440\r\n•	Màn hình rộng: 6.8\", Tần số quét: 1 - 120 Hz\r\n•	Độ phân giải: 12MP (UW) + 108MP (W) + 12MP (Tele3x) + 12MP (Tele10x), 40MP\r\n•	Hệ điều hành: Android 12\r\n•	Chip xử lý (CPU): Snapdragon® 8 Gen 1 (4nm)\r\n•	Bộ nhớ trong (ROM): 128GB\r\n•	RAM: 8GB\r\n•	Mạng di động: 5G\r\n•	Số khe sim: 1 nano SIM + 1 e-SIM\r\n•	Dung lượng pin: 5000 mAh\r\n', 183, 1),
+(11, ' Realme C35 128GB', 4690000, 0, 'realme-c35-thumb-new-600x600.jpg', 'Realme C35 sở hữu màu sắc như xanh ngọc sang trọng, đen tuyền huyền bí cùng các đường nét thiết kế tỉ mỉ, điện thoại này được thiết kế với khung bo góc làm bằng vật liệu 2D phát sáng linh động, làm cho tổng thể vẻ ngoài của máy trở nên phong cách hơn.', '•	Màn hình: IPS LCD6.6\"Full HD+\r\n•	Hệ điều hành: Android 11\r\n•	Camera sau: Chính 50 MP & Phụ 2 MP, 0.3 MP\r\n•	Camera trước: 8 MP\r\n•	Chip: Unisoc T616\r\n•	RAM: 4GB\r\n•	Dung lượng lưu trữ: 128 GB\r\n•	SIM: 2 Nano SIM Hỗ trợ 4G\r\n•	Pin, Sạc: 5000 mAh18 W\r\n', 26, 10),
+(20, 'Xiaomi 12S Ultra', 20950000, 0, 'xiaomi-12s-ultra-050722-023437-600x600.jpg', 'Mới đây thì bộ ba Xiaomi 12S series cũng được cho ra mắt, trong đố nỏi bật hơn hết chính là Xiaomi 12S Ultra nhờ có thiết kế cao cấp, cùng những thông số kỹ thuật hàng đầu trong ngành điện thoại. Điểm nhấn chính của mẫu Ultra là hệ thống camera với sự hợp tác cùng thương hiệu nhiếp ảnh nổi tiếng Leica.', '• Màn hình: AMOLED6.73\"\r\n• Hệ điều hành: Android 12\r\n• Camera sau: Chính 50 MP & Phụ 48 MP, 48 MP\r\n• Camera trước: 32 MP\r\n• Chip: Snapdragon 8+ Gen 1\r\n• RAM: 8GB\r\n• Dung lượng lưu trữ: 256 GB\r\n• SIM: 2 Nano SIMHỗ trợ 5G\r\n• Pin, Sạc: 4850 mAh67 W\r\n', 115, 11),
+(21, ' Vsmart Active 3 (6GB/64GB) ', 2990000, 0, 'vsmart-active-3-tim-600x600-200x200.jpg', 'Vsmart Active 3 (6GB/64GB) là một smartphone có hiệu năng ổn định, thời lượng pin cả ngày dài và còn nhiều tính năng đặc biệt khác nữa, hứa hẹn sẽ mang đến cho bạn một thiết bị công nghệ chẳng những thời trang mà còn rất hiện đại.', '•	Màn hình: AMOLED6.39\"Full HD+\r\n•	Hệ điều hành: Android 9 (Pie)\r\n•	Camera sau: Chính 48 MP & Phụ 8 MP, 2 MP\r\n•	Camera trước: 16 MP\r\n•	Chip: MediaTek Helio P60\r\n•	RAM: 6 GB\r\n•	Dung lượng lưu trữ: 64 GB\r\n•	SIM:2 Nano SIM (SIM 2 chung khe thẻ nhớ) Hỗ trợ 4G\r\n•	Pin, Sạc: 4020 mAh15 W\r\n', 19, 12),
 (22, ' Xiaomi POCO F3 ', 7290000, 0, 'xanh_22p2-68.jpg', 'Sở hữu sức mạnh “vô đối” đến từ CPU của nhà Qualcomm, Xiaomi POCO F3 mang đến người dùng cơ hội trải nghiệm hiệu năng của flagship hàng đầu trong mức giá tầm trung, một “món hời” mà các tín đồ “hệ gaming” không thể nào bỏ qua.', '•	Màn hình: AMOLED6.67\"Full HD+\r\n•	Hệ điều hành: Android 11\r\n•	Camera sau: Chính 48 MP & Phụ 8 MP, 5 MP\r\n•	Camera trước: 20 MP\r\n•	Chip: Snapdragon 870\r\n•	RAM: 6 GB\r\n•	Dung lượng lưu trữ: 128 GB\r\n•	SIM: 2 Nano SIM Hỗ trợ 5G\r\n•	Pin, Sạc: 4520 mAh\r\n\r\n', 247, 11),
 (23, 'Sony Xperia 5 Mark 2', 10000000, 15, 'sony-xperia-5-plus-600x600-1-600x600.jpg', 'Được xem như là bản kết hợp của thế hệ tiền nhiệm Xperia 1 Mark 2 và bản nâng cấp của Xperia 5 nên Xperia 5 Mark 2 có tất cả những gì tinh tuý nhất về kiểu dáng của  thiết kế bên ngoài cho dòng sản phẩm của Sony.', '• Hệ điều hành: Android 10, upgradable to Android 12\r\n• Chipset: Qualcomm SM8250 Snapdragon 865 5G (7 nm+)\r\n• Độ phân giải: 1080 x 2520 pixels\r\n• Màn hình rộng: 6.1 inches\r\n• Camera sau: 12MP + 12MP + 12MP\r\n• RAM: 8 GB\r\n• Bộ nhớ trong ( Rom): 128 GB\r\n• Camera trước: 8MP\r\n• Dung lượng pin: 4000 mAh\r\n\r\n', 41, 14),
 (24, 'iPhone X 512GB ', 18600000, 0, 'apple-iphone-x-new-1.jpg', 'iPhone Xs Max 512GB là chiếc smartphone mạnh mẽ của Apple mang nhiều ưu điểm vượt trội hơn so với các phiên bản iPhone trước đó, từ thiết kế, cấu hình và các tính năng ưu việt.', '\r\n• Màn hình: 2K, 5.8\" inch, 1125 x 2436 pixels, 19.5:9 ratio, Super Retina 463ppi, 3D touch, TrueTone Dolby Vision HDR10, 120Hz touch-sensing\r\n• CPU: Apple A12 Bionic, 6 nhân 64-bit, 7nm,  Neural Engine 5 ngàn tỉ phép tính mỗi giây.\r\n• RAM: 4GB\r\n• Hệ điều hành: iOS 12\r\n• Camera chính: Dual 12 MP, Wide f/1.8 & Tele f/2.4, Quay phim 4K 2160p@30fps\r\n• Camera phụ: 7 MP, f/2.2 xóa phông\r\n• Bộ nhớ trong: 512GB\r\n• Thẻ nhớ ngoài: không\r\n• Dung lượng pin: 2658 mAh\r\n', 43, 8),
 (25, ' Xiaomi 11T Pro 5G 12GB ', 14390000, 0, 'Xiaomi-11T-White-1-2-3-600x600.jpg', 'Xiaomi 11T Pro - mẫu smartphone được nâng cấp đáng kể với camera 108 MP xuất sắc, màn hình tần số quét 120 Hz đẹp tuyệt mỹ cùng hiệu năng mạnh mẽ từ Snapdragon 888 đáng kinh ngạc nhưng lại có mức giá hấp dẫn đến bất ngờ.', '•	Màn hình: AMOLED6.67\"Full HD+\r\n•	Hệ điều hành: Android 11\r\n•	Camera sau: Chính 108 MP & Phụ 8 MP, 5 MP\r\n•	Camera trước: 16 MP\r\n•	Chip: Snapdragon 888\r\n•	RAM: 12 GB\r\n•	Dung lượng lưu trữ: 256 GB\r\n•	SIM: 2 Nano SIMHỗ trợ 5G\r\n•	Pin, Sạc: 5000 mAh120 W\r\n', 10, 11),
-(26, 'Realme 5 4GB/128GB', 5990000, 0, 'realme-5-tim-new-600x600.jpg', 'Mới đây, bộ đôi smartphone Realme 5 và Realme 5 Pro chính thức được Realme giới thiệu tại thành phố Hồ Chí Minh, trong đó Realme 5 4GB/128GB là phiên bản với mức giá rẻ hơn, tuy nhiên những tính năng nổi bật như cụm 4 camera, dung lượng pin lớn vẫn được ưu ái giữ lại.', '• Màn hình: IPS LCD6.5\"HD+\r\n• Hệ điều hành: Android 9 (Pie)\r\n• Camera sau: Chính 12 MP & Phụ 8 MP, 2 MP, 2 MP\r\n• Camera trước: 13 MP\r\n• Chip: Snapdragon 665\r\n• RAM: 4 GB\r\n• Dung lượng lưu trữ: 128 GB\r\n• SIM: 2 Nano SIMHỗ trợ 4G\r\n• Pin, Sạc: 5000 mAh\r\n', 10, 10),
+(26, 'Realme 5 4GB/128GB', 5990000, 0, 'realme-5-tim-new-600x600.jpg', 'Mới đây, bộ đôi smartphone Realme 5 và Realme 5 Pro chính thức được Realme giới thiệu tại thành phố Hồ Chí Minh, trong đó Realme 5 4GB/128GB là phiên bản với mức giá rẻ hơn, tuy nhiên những tính năng nổi bật như cụm 4 camera, dung lượng pin lớn vẫn được ưu ái giữ lại.', '• Màn hình: IPS LCD6.5\"HD+\r\n• Hệ điều hành: Android 9 (Pie)\r\n• Camera sau: Chính 12 MP & Phụ 8 MP, 2 MP, 2 MP\r\n• Camera trước: 13 MP\r\n• Chip: Snapdragon 665\r\n• RAM: 4 GB\r\n• Dung lượng lưu trữ: 128 GB\r\n• SIM: 2 Nano SIMHỗ trợ 4G\r\n• Pin, Sạc: 5000 mAh\r\n', 11, 10),
 (27, 'Samsung Galaxy Z Flip 4', 20590000, 10, 'samsung-galaxy-z-flip4-5g-128gb-thumb-tim-600x600.jpg', 'Tiếp tục là một mẫu smartphone màn hình gập độc đáo, đầy lôi cuốn và mới mẻ từ hãng công nghệ Hàn Quốc, dự kiến sẽ có tên là Samsung Galaxy Z Flip 4 với nhiều nâng cấp. Đây hứa hẹn sẽ là một siêu phẩm bùng nổ trong thời gian tới và thu hút được sự quan tâm của đông đảo người dùng với nhiều cải tiến từ ngoại hình, camera, bộ vi xử lý và viên pin được nâng cấp.', '• Kích thước màn hình: 6.7 inches\r\n• Công nghệ màn hình: Dynamic AMOLED 2X\r\n• Camera sau: Camera góc rộng: 12 MP, f/1.8, PDAF, OIS\r\n• Camera góc siêu rộng: 12 MP, f/2.2, 123˚\r\n• Camera trước: 10 MP, f/2.4\r\n• Chipset: Snapdragon 8+ Gen 1 (4 nm)\r\n• Dung lượng RAM: 8 GB\r\n• Bộ nhớ trong: 128 GB\r\n• Pin: 3700 mAh\r\n• Thẻ SIM: 2 SIM (nano‑SIM và eSIM)\r\n• Hệ điều hành: Android 12, One UI 4.1.1\r\n• Tính năng màn hình: Màn hình chính: 6.7 inches\r\n• Màn hình ngoài: 2.1 inches, Super AMOLED 120Hz, HDR10+, 1200 nits (peak)\r\n', 431, 1),
-(28, 'Huawei P30 Pro 8G/256G', 3180000, 0, 'huawei-p30-pro-1-600x600.jpg', 'Điện thoại Huawei P30 Pro – Siêu phẩm Flagship tiếp theo của Huawei Huawei P30 Pro, Huawei P30 và P30 Lite là 3 mẫu điện thoại mới nhất sẽ được Huawei ra mắt vào ngày 26/3 tại Paris, Pháp. Trong đó, P30 Pro là phiên bản cao cấp nhất với nhiều công nghệ đột phá đặt biệt là camera. Với dòng P của mình Huawei cho thấy khả năng dẫn đầu mảng cameraphone.', '•	Màn hình: OLED6.47\"Full HD+ \r\n•	Hệ điều hành: Android 9 (Pie) \r\n•	Camera sau: Chính 40 MP & Phụ 20 MP, 8 MP, TOF 3D \r\n•	Camera trước: 32 MP Chip: Kirin 980 \r\n•	RAM: 8 GB \r\n•	Dung lượng lưu trữ: 256 GB\r\n•	SIM: 2 Nano SIM (SIM 2 chung khe thẻ nhớ) Hỗ trợ 4G \r\n•	Pin, Sạc: 4200 mAh\r\n', 71, 13),
-(30, 'OPPO A77S 8GB/128GB', 6000000, 15, '9283447401-oppo-a77s-128gb-ram-8gb.jpg', 'OPPO vừa cho ra mắt mẫu điện thoại tầm trung mới với tên gọi OPPO A77s, máy sở hữu màn hình lớn, thiết kế đẹp mắt, hiệu năng ổn định cùng khả năng mở rộng RAM lên đến 8 GB vô cùng nổi bật trong phân khúc.', '• Màn hình: IPS LCD6.56\"HD+\r\n• Hệ điều hành: Android 12\r\n• Camera sau: Chính 50 MP & Phụ 2 MP\r\n• Camera trước: 8 MP\r\n• Chip: Snapdragon 680 4G\r\n• RAM: 8 GB\r\n• Dung lượng lưu trữ: 128 GB\r\n• SIM: 2 Nano SIM Hỗ trợ 4G\r\n• Pin, Sạc: 5000 mAh33 W\r\n', 6, 7);
+(28, 'Huawei P30 Pro 8G/256G', 3180000, 0, 'huawei-p30-pro-1-600x600.jpg', 'Điện thoại Huawei P30 Pro – Siêu phẩm Flagship tiếp theo của Huawei Huawei P30 Pro, Huawei P30 và P30 Lite là 3 mẫu điện thoại mới nhất sẽ được Huawei ra mắt vào ngày 26/3 tại Paris, Pháp. Trong đó, P30 Pro là phiên bản cao cấp nhất với nhiều công nghệ đột phá đặt biệt là camera. Với dòng P của mình Huawei cho thấy khả năng dẫn đầu mảng cameraphone.', '•	Màn hình: OLED6.47\"Full HD+ \r\n•	Hệ điều hành: Android 9 (Pie) \r\n•	Camera sau: Chính 40 MP & Phụ 20 MP, 8 MP, TOF 3D \r\n•	Camera trước: 32 MP Chip: Kirin 980 \r\n•	RAM: 8 GB \r\n•	Dung lượng lưu trữ: 256 GB\r\n•	SIM: 2 Nano SIM (SIM 2 chung khe thẻ nhớ) Hỗ trợ 4G \r\n•	Pin, Sạc: 4200 mAh\r\n', 72, 13),
+(30, 'OPPO A77S 8GB/128GB', 6000000, 15, '9283447401-oppo-a77s-128gb-ram-8gb.jpg', 'OPPO vừa cho ra mắt mẫu điện thoại tầm trung mới với tên gọi OPPO A77s, máy sở hữu màn hình lớn, thiết kế đẹp mắt, hiệu năng ổn định cùng khả năng mở rộng RAM lên đến 8 GB vô cùng nổi bật trong phân khúc.', '• Màn hình: IPS LCD6.56\"HD+\r\n• Hệ điều hành: Android 12\r\n• Camera sau: Chính 50 MP & Phụ 2 MP\r\n• Camera trước: 8 MP\r\n• Chip: Snapdragon 680 4G\r\n• RAM: 8 GB\r\n• Dung lượng lưu trữ: 128 GB\r\n• SIM: 2 Nano SIM Hỗ trợ 4G\r\n• Pin, Sạc: 5000 mAh33 W\r\n', 7, 7);
 
 -- --------------------------------------------------------
 
@@ -258,16 +235,6 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Đang đổ dữ liệu cho bảng `user`
---
-
-INSERT INTO `user` (`id_user`, `user_name`, `password`, `full_name`, `sex`, `email_user`, `address`, `phone_user`, `img_user`, `register_date`, `last_login`, `role`) VALUES
-(10, 'phuongbeo', '12345', 'Chu Tuấn Phương', 0, 'ctuanphuong18@gmail.com', 'Ngọa Long, Minh Khai, Bắc Từ Liêm, Hà Nội', '0335099885', 'z3843585245563_735b917490198943a7b26951da37b59c.jpg', NULL, NULL, 0),
-(11, 'phuongct', '000000', 'Tuấn Phương', 0, 'ctuanphuong18@gmail.com', 'Minh Tiến, Đoan Hùng, Phú Thọ', '0335099885', 'z3843585386448_c70cf6f597848fcdd9a88477b3071828.jpg', NULL, NULL, 0),
-(12, 'minhnv', '123456', 'Văn Minh', 0, 'minhnvph20000@gmail.com', '', '', '', NULL, NULL, 0),
-(13, 'quanglinhnb', 'linhz123', 'Đỗ Quang Linh', 0, 'quanglinh2942003@gmail.com', '', '', '', NULL, NULL, 1);
-
---
 -- Chỉ mục cho các bảng đã đổ
 --
 
@@ -288,7 +255,6 @@ ALTER TABLE `bill`
 --
 ALTER TABLE `cart`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `lk_acc_cart` (`id_user`),
   ADD KEY `lk_pro_cart` (`id_pro`),
   ADD KEY `lk_bill_cart` (`id_bill`);
 
@@ -339,13 +305,13 @@ ALTER TABLE `bank`
 -- AUTO_INCREMENT cho bảng `bill`
 --
 ALTER TABLE `bill`
-  MODIFY `id_bill` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+  MODIFY `id_bill` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
 
 --
 -- AUTO_INCREMENT cho bảng `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
 -- AUTO_INCREMENT cho bảng `category`
@@ -357,13 +323,13 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT cho bảng `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `id_cmt` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_cmt` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT cho bảng `history_bank`
 --
 ALTER TABLE `history_bank`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT cho bảng `product`
@@ -375,7 +341,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT cho bảng `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
@@ -385,7 +351,6 @@ ALTER TABLE `user`
 -- Các ràng buộc cho bảng `cart`
 --
 ALTER TABLE `cart`
-  ADD CONSTRAINT `lk_acc_cart` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`),
   ADD CONSTRAINT `lk_bill_cart` FOREIGN KEY (`id_bill`) REFERENCES `bill` (`id_bill`),
   ADD CONSTRAINT `lk_pro_cart` FOREIGN KEY (`id_pro`) REFERENCES `product` (`id_pro`);
 
@@ -393,8 +358,7 @@ ALTER TABLE `cart`
 -- Các ràng buộc cho bảng `comment`
 --
 ALTER TABLE `comment`
-  ADD CONSTRAINT `lk_pro_cmt` FOREIGN KEY (`id_pro`) REFERENCES `product` (`id_pro`),
-  ADD CONSTRAINT `lk_user_cmt` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`);
+  ADD CONSTRAINT `lk_pro_cmt` FOREIGN KEY (`id_pro`) REFERENCES `product` (`id_pro`);
 
 --
 -- Các ràng buộc cho bảng `product`
