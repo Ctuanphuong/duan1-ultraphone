@@ -18,7 +18,10 @@ if (isset($_GET['act'])) {
         case '/':
 
         case 'dashboard':
-            render('dashboard');
+            render(
+                'dashboard',
+            );
+
             break;
 
             // CONTROLLER LOẠI:
@@ -259,9 +262,13 @@ if (isset($_GET['act'])) {
             break;
 
         default:
-            render('dashboard');
-            break;
+            render(
+                'dashboard',
+            );;
     }
 } else {
-    render('dashboard');
+
+    render(
+        'dashboard',
+    );
 }

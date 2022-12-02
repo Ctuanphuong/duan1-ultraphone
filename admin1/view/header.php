@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Dashboard</title>
+  <title>UltraPhone Admin - Dashboard</title>
 
   <!-- Custom fonts for this template-->
   <link href="view/assets/css/all.min.css" rel="stylesheet">
