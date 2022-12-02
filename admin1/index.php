@@ -260,7 +260,6 @@ if (isset($_GET['act'])) {
 
         default:
             render('dashboard');
-
             break;
     }
 } else {
