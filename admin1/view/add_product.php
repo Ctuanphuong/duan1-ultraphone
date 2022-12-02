@@ -7,7 +7,7 @@
     <?php include_once "nav.php" ?>
     <!-- Begin Page Content -->
     <div class="container-fluid">
-      <div class="container-fluid mt-3">
+      <div class="card shadow mb-4">
         <div>
           <h3 class="alert alert-success">Thêm sản phẩm</h3>
         </div>

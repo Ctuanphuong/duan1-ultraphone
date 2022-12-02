@@ -149,14 +149,17 @@ if (isset($_GET['act'])) {
             );
             break;
             // chỉnh sửa user
-        case 'edituser':
+        case 'edit_user':
             if (isset($_GET['id_user']) && ($_GET['id_user'] > 0)) {
                 $id_user = $_GET['id_user'];
                 $user = loadone_user($id_user);
             }
-            include "view/nguoidung/update.php";
+            render(
+                'update_user',
+                ['user' => $user]
+            );
             break;
-        case 'updateuser':
+        case 'update_user':
             if (isset($_POST['btn_update']) && ($_POST['btn_update'])) {
                 $id_user = $_POST['id_user'];
                 $user_name = $_POST['user_name'];
@@ -167,17 +170,15 @@ if (isset($_GET['act'])) {
                 update_user($id_user, $user_name, $full_name, $email_user, $password, $role);
                 echo '<script>alert("Cập nhật tài khoản thành công!")</script>';
             }
-            $listuser = loadall_user();
-            include "view/nguoidung/list.php";
+            header('location: index.php?act=list_user');
             break;
             // Xóa người dùng
-        case "removeuser":
+        case "delete_usser":
             if (isset($_GET['id_user']) && ($_GET['id_user'] > 0)) {
                 $id_user = $_GET['id_user'];
                 delete_user($id_user);
             }
-            $listuser = loadall_user();
-            include "view/nguoidung/list.php";
+            header("location: index.php?act=list_user");
             break;
 
             //CONTROLLER HÓA ĐƠN
@@ -209,7 +210,7 @@ if (isset($_GET['act'])) {
                 ['one_bill' => $one_bill]
             );
             break;
-        case 'updatebill':
+        case 'update_bill':
             if (isset($_POST['btn_update']) && ($_POST['btn_update'])) {
                 $id_bill = $_POST['id_bill'];
                 $status = $_POST['status'];
@@ -217,23 +218,34 @@ if (isset($_GET['act'])) {
                 echo '<script>alert("Cập nhật đơn hàng thành công!")</script>';
                 header('location:index.php?act=list_bill');
             }
-            
             break;
-
+        case 'billdetail':
+            if (isset($_GET['idbill']) && ($_GET['idbill']) > 0) {
+                $idbill = $_GET['idbill'];
+                $one_bill = loadone_bill($idbill);
+            }
+            render(
+                'billdetail',
+                ['one_bill' => $one_bill]
+            );
+            break;
             //CONTROLLER BÌNH LUẬN
             //show list: 
-        case 'listcmt':
+        case 'list_cmt':
             $listcmt = loadall_cmt();
+            render(
+                'list_comment',
+                ['listcmt' => $listcmt]
+            );
             include "view/binhluan/list.php";
             break;
-            //xóa bình luận: 
-        case 'removecmt':
+            //xóa bì-nh luận: 
+        case 'delete_cmt':
             if (isset($_GET['idcmt']) && ($_GET['idcmt']) > 0) {
                 $id_cmt = $_GET['idcmt'];
                 remove_cmt($id_cmt);
             }
-            $listcmt = loadall_cmt();
-            include "view/binhluan/list.php";
+            header('location: index.php?act=list_cmt');
             break;
 
             //CONTROLLER THỐNG KÊ
@@ -247,7 +259,10 @@ if (isset($_GET['act'])) {
             break;
 
         default:
-            include "view/dashboard.php";
+            render('dashboard');
+
             break;
     }
+} else {
+    render('dashboard');
 }
