@@ -81,12 +81,18 @@
             <span>Hóa đơn</span></a>
     </li>
     <li class="nav-item">
+        <a class="nav-link" href="index.php?act=list_cmt">
+            <i class=" fas fa-solid fa-comment"></i>
+            <span>Bình luận</span></a>
+    </li>
+    <li class="nav-item">
         <a class="nav-link" href="index.php?act=list_statis">
             <i class="fas fa-solid fa-chart-simple"></i>
             <span>Thống kê</span></a>
     </li>
+
     <li class="nav-item">
-        <a class="nav-link" href="tables.html">
+        <a class="nav-link" href="">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Biểu đồ</span></a>
     </li>

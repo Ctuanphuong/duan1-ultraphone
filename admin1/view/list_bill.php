@@ -69,6 +69,7 @@
                                                 } ?></td>
                                             <td class="text-center">
                                                 <a href="index.php?act=edit_bill&idbill=<?= $bill['id_bill'] ?>" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i> Sửa</a>
+                                                <a href="index.php?act=billdetail&idbill=<?= $bill['id_bill'] ?>" class="btn btn-success"><i class="fa-solid fa-circle-info"></i> Chi tiết</a>
                                             </td>
                                         </tr>
                                     <?php endforeach ?>

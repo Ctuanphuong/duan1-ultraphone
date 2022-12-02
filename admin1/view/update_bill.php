@@ -16,7 +16,7 @@
                 <h3 class="alert alert-success">Cập nhật hóa đơn</h3>
             </div>
             <div class="form-addcate">
-                <form action="./index.php?act=updatebill" method="post">
+                <form action="./index.php?act=update_bill" method="post">
                     <div class="form-group mt-3">
                         <label for="formGroupExampleInput" class="font-lb">Mã hóa đơn</label>
                         <input type="text" name="id_bill" class="form-control" value="<?= $id_bill ?>" disabled>
