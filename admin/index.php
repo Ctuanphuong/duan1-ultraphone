@@ -1,7 +1,9 @@
 <?php
-include 'view/header.php';
+session_start();
+require_once "controller/controller.php";
 
 //include dao để dùng các functione: 
+
 include "model/pdo.php";
 include "model/loai.php";
 include "model/sanpham.php";
@@ -9,90 +11,172 @@ include "model/nguoidung.php";
 include "model/hoadon.php";
 include "model/binhluan.php";
 include "model/thongke.php";
-include "model/bieudo.php";
 // controller
 if (isset($_GET['act'])) {
     $act = $_GET['act'];
     switch ($act) {
+        case '/':
+
+        case 'dashboard':
+            if (isset($_SESSION['admin'])) {
+                render('dashboard');
+            } else {
+                header("location: index.php?act=login");
+            }
+            // render('dashboard');
+            break;
+        case 'logout':
+            session_unset();
+            header('Location: index.php?act=login');
+            break;
+        case 'login':
+            if (isset($_SESSION['admin'])) {
+                header('location: index.php');
+            } else {
+                if (isset($_POST['btn_login']) && $_POST['btn_login']) {
+                    $user_name = $_POST['user_name'];
+                    $password = $_POST['password'];
+                    $check = check_user_admin($user_name, $password);
+                    if (is_array($check)) {
+                        $_SESSION['admin'] = $check;
+                        echo '<script>alert("Đăng nhập thành công!")</script>';
+                        // sleep(10);
+                        header('Location: index.php');
+                    } else {
+                        echo '<script>alert("Tài khoản sai hoặc không tồn tại!")</script>';
+                    }
+                }
+                render('login');
+            }
+            break;
+
             // CONTROLLER LOẠI:
-        case "addl":
-            if (isset($_POST['btn_add']) && ($_POST['btn_add'])) {
-                $name_cate = $_POST['name_cate'];
-                them_loai($name_cate);
-                echo '<script>alert("Thêm loại thành công!")</script>';
+        case "add_category":
+            if (isset($_SESSION['admin'])) {
+                if (isset($_POST['btn_add']) && ($_POST['btn_add'])) {
+                    $name_cate = $_POST['name_cate'];
+                    them_loai($name_cate);
+                    echo '<script>alert("Thêm loại thành công!")</script>';
+                }
+                render('add_category');
+            } else {
+                header("location: index.php?act=login");
             }
-            include "view/loai/add.php";
+
             break;
-        case "listl":
-            $ds_loai = loadall_loai();
-            include "view/loai/list.php";
-            break;
-        case "sualoai":
-            if (isset($_GET['id_cate']) && ($_GET['id_cate'] > 0)) {
-                $id_cate = $_GET['id_cate'];
-                $one_loai = loadone_loai($id_cate);
+        case "list_category":
+
+            if (isset($_SESSION['admin'])) {
+                $ds_loai = loadall_loai();
+                render(
+                    'list_category',
+                    ['ds_loai' => $ds_loai]
+                );
+            } else {
+                header("location: index.php?act=login");
             }
-            include "view/loai/update.php";
+
             break;
-        case "capnhatloai":
+        case "edit_category":
+
+            if (isset($_SESSION['admin'])) {
+                if (isset($_GET['id_cate']) && ($_GET['id_cate'] > 0)) {
+                    $id_cate = $_GET['id_cate'];
+                    $one_loai = loadone_loai($id_cate);
+                }
+                render(
+                    'update_category',
+                    ['one_loai' => $one_loai]
+                );
+            } else {
+                header("location: index.php?act=login");
+            }
+
+            break;
+        case "update_category":
             if (isset($_POST['btn_update']) && ($_POST['btn_update'])) {
                 $id_cate = $_POST['id_cate'];
                 $name_cate = $_POST['name_cate'];
                 capnhat_loai($id_cate, $name_cate);
                 echo '<script>alert("Cập nhật loại thành công!")</script>';
             }
-            $ds_loai = loadall_loai();
-            include "view/loai/list.php";
+            header('location:index.php?act=list_category');
             break;
-        case "xoaloai":
+        case "delete_cate":
             if (isset($_GET['id_cate']) && ($_GET['id_cate'] > 0)) {
                 $id_cate = $_GET['id_cate'];
                 xoa_loai($id_cate);
             }
-            $ds_loai = loadall_loai();
-            include "view/loai/list.php";
+            header('location:index.php?act=list_category');
             break;
 
             // CONTROLLER SẢN PHẨM:
-        case "addpro":
-            if (isset($_POST['btn_add']) && ($_POST['btn_add'])) {
-                // $id_pro = $_POST['id_pro'];
-                $name_pro = $_POST['name_pro'];
-                $price = $_POST['price'];
-                $discount = $_POST['discount'];
-                $short_des = $_POST['short_des'];
-                $detail_des = $_POST['detail_des'];
-                $idcate = $_POST['idcate'];
-                $img_pro = $_FILES['img_pro']['name'];
-                $target_dir = "./uploads/";
-                $target_file = $target_dir . basename($_FILES["img_pro"]["name"]);
-                (move_uploaded_file($_FILES["img_pro"]["tmp_name"], $target_file));
-                add_pro($name_pro, $price, $discount, $img_pro, $short_des, $detail_des, $idcate);
-                echo '<script>alert("Thêm sản phẩm thành công!")</script>';
-            }
-            $ds_loai = loadall_loai();
-            include "view/sanpham/add.php";
-            break;
-        case "listpro":
-            if (isset($_POST['btn_filter']) && ($_POST['btn_filter'])) {
-                $idcate = $_POST['idcate'];
+        case "add_product":
+
+            if (isset($_SESSION['admin'])) {
+                if (isset($_POST['btn_add']) && ($_POST['btn_add'])) {
+                    // $id_pro = $_POST['id_pro'];
+                    $name_pro = $_POST['name_pro'];
+                    $price = $_POST['price'];
+                    $discount = $_POST['discount'];
+                    $short_des = $_POST['short_des'];
+                    $detail_des = $_POST['detail_des'];
+                    $idcate = $_POST['idcate'];
+                    $img_pro = $_FILES['img_pro']['name'];
+                    $target_dir = "./uploads/";
+                    $target_file = $target_dir . basename($_FILES["img_pro"]["name"]);
+                    (move_uploaded_file($_FILES["img_pro"]["tmp_name"], $target_file));
+                    add_pro($name_pro, $price, $discount, $img_pro, $short_des, $detail_des, $idcate);
+                    echo '<script>alert("Thêm sản phẩm thành công!")</script>';
+                }
+                $ds_loai = loadall_loai();
+                render(
+                    'add_product',
+                    ['ds_loai' => $ds_loai]
+                );
             } else {
-                $idcate = 0;
-            }
-            $ds_loai = loadall_loai();
-            $listpro = loadall_pro($idcate);
-            include "view/sanpham/list.php";
-            break;
-        case "editpro":
-            if (isset($_GET['id_pro']) && $_GET['id_pro'] > 0) {
-                $id_pro = $_GET['id_pro'];
-                $pro = loadone_pro($id_pro);
+                header("location: index.php?act=login");
             }
 
-            $ds_loai = loadall_loai();
-            include "view/sanpham/update.php";
             break;
-        case "updatepro":
+        case "list_product":
+
+            if (isset($_SESSION['admin'])) {
+                if (isset($_POST['btn_filter']) && ($_POST['btn_filter'])) {
+                    $idcate = $_POST['idcate'];
+                } else {
+                    $idcate = 0;
+                }
+                $ds_loai = loadall_loai();
+                $listpro = loadall_pro($idcate);
+                render(
+                    "list_product",
+                    ['ds_loai' => $ds_loai, 'listpro' => $listpro]
+                );
+            } else {
+                header("location: index.php?act=login");
+            }
+
+            break;
+        case "edit_product":
+
+            if (isset($_SESSION['admin'])) {
+                if (isset($_GET['id_pro']) && $_GET['id_pro'] > 0) {
+                    $id_pro = $_GET['id_pro'];
+                    $pro = loadone_pro($id_pro);
+                }
+
+                $ds_loai = loadall_loai();
+                render(
+                    'update_product',
+                    ['ds_loai' => $ds_loai, 'pro' => $pro]
+                );
+            } else {
+                header("location: index.php?act=login");
+            }
+
+            break;
+        case "update_product":
             if (isset($_POST['btn_update']) && $_POST['btn_update'] > 0) {
                 $id_pro = $_POST['id_pro'];
                 $idcate = $_POST['idcate'];
@@ -107,37 +191,50 @@ if (isset($_GET['act'])) {
                 (move_uploaded_file($_FILES["img_pro"]["tmp_name"], $target_file));
                 update_pro($id_pro, $name_pro, $price, $discount, $short_des, $detail_des, $img_pro, $idcate);
                 echo '<script>alert("Cập nhật sản phẩm thành công!")</script>';
+                header('location:index.php?act=list_product');
             }
-
-            $ds_loai = loadall_loai();
-            $listpro = loadall_pro();
-            include "view/sanpham/list.php";
             break;
-        case "removepro":
+        case "delete_product":
             if (isset($_GET['id_pro']) && ($_GET['id_pro']) > 0) {
                 $id_pro = $_GET['id_pro'];
                 remove_pro($id_pro);
             }
-            $ds_loai = loadall_loai();
-            $listpro = loadall_pro();
-            include "view/sanpham/list.php";
+            header('location:index.php?act=list_product');
             break;
 
             // CONTROLLER NGƯỜI DÙNG: 
             // danh sách người dùng
-        case 'listuser':
-            $listuser = loadall_user();
-            include "view/nguoidung/list.php";
+        case 'list_user':
+
+            if (isset($_SESSION['admin'])) {
+                $listuser = loadall_user();
+                render(
+                    'list_user',
+                    ['listuser' => $listuser]
+                );
+            } else {
+                header("location: index.php?act=login");
+            }
+
             break;
             // chỉnh sửa user
-        case 'edituser':
-            if (isset($_GET['id_user']) && ($_GET['id_user'] > 0)) {
-                $id_user = $_GET['id_user'];
-                $user = loadone_user($id_user);
+        case 'edit_user':
+
+            if (isset($_SESSION['admin'])) {
+                if (isset($_GET['id_user']) && ($_GET['id_user'] > 0)) {
+                    $id_user = $_GET['id_user'];
+                    $user = loadone_user($id_user);
+                }
+                render(
+                    'update_user',
+                    ['user' => $user]
+                );
+            } else {
+                header("location: index.php?act=login");
             }
-            include "view/nguoidung/update.php";
+
             break;
-        case 'updateuser':
+        case 'update_user':
             if (isset($_POST['btn_update']) && ($_POST['btn_update'])) {
                 $id_user = $_POST['id_user'];
                 $user_name = $_POST['user_name'];
@@ -148,97 +245,132 @@ if (isset($_GET['act'])) {
                 update_user($id_user, $user_name, $full_name, $email_user, $password, $role);
                 echo '<script>alert("Cập nhật tài khoản thành công!")</script>';
             }
-            $listuser = loadall_user();
-            include "view/nguoidung/list.php";
+            header('location: index.php?act=list_user');
             break;
             // Xóa người dùng
-        case "removeuser":
+        case "delete_usser":
             if (isset($_GET['id_user']) && ($_GET['id_user'] > 0)) {
                 $id_user = $_GET['id_user'];
                 delete_user($id_user);
             }
-            $listuser = loadall_user();
-            include "view/nguoidung/list.php";
+            header("location: index.php?act=list_user");
             break;
 
             //CONTROLLER HÓA ĐƠN
 
             // show all bill
-        case 'listbill':
-            $listbill = loadall_bill(0);
-            include "view/hoadon/list.php";
+        case 'list_bill':
+
+            if (isset($_SESSION['admin'])) {
+                $listbill = loadall_bill(0);
+                render(
+                    'list_bill',
+                    ['listbill' => $listbill]
+                );
+            } else {
+                header("location: index.php?act=login");
+            }
+
             break;
-        //     xóa bill: 
-        // case 'removebill':
-        //     if (isset($_GET['idbill']) && ($_GET['idbill'])) {
-        //         $idbill = $_GET['idbill'];
-        //         remove_bill($idbill);
-        //     }
-        //     $listbill = loadall_bill(0);
-        //     include "view/hoadon/list.php";
-        //     break;
-        case 'editbill': 
-                if(isset($_GET['idbill']) && ($_GET['idbill']) > 0) { 
+            //     xóa bill: 
+            // case 'removebill':
+            //     if (isset($_GET['idbill']) && ($_GET['idbill'])) {
+            //         $idbill = $_GET['idbill'];
+            //         remove_bill($idbill);
+            //     }
+            //     $listbill = loadall_bill(0);
+            //     include "view/hoadon/list.php";
+            //     break;
+        case 'edit_bill':
+            if (isset($_SESSION['admin'])) {
+                if (isset($_GET['idbill']) && ($_GET['idbill']) > 0) {
                     $idbill = $_GET['idbill'];
                     $one_bill = loadone_bill($idbill);
                 }
-                include "view/hoadon/update.php"; 
-                break;
-            case 'updatebill': 
-                if(isset($_POST['btn_update']) && ($_POST['btn_update'])) { 
-                    $id_bill = $_POST['id_bill'];
-                    $status = $_POST['status'];
-                    update_bill($id_bill, $status);
-                    echo '<script>alert("Cập nhật đơn hàng thành công!")</script>';
-                }
-                $listbill = loadall_bill(0);
-                include "view/hoadon/list.php";  
-                break;
-        
-                // xem chi tiết bill: 
-        case 'billdetail': 
-            if(isset($_GET['idbill']) && ($_GET['idbill']) > 0) { 
-                $idbill = $_GET['idbill'];
-                $one_bill = loadone_bill($idbill);
+                render(
+                    'update_bill',
+                    ['one_bill' => $one_bill]
+                );
+            } else {
+                header("location: index.php?act=login");
             }
-            include "view/hoadon/billdetail.php";
+
+            break;
+        case 'update_bill':
+            if (isset($_POST['btn_update']) && ($_POST['btn_update'])) {
+                $id_bill = $_POST['id_bill'];
+                $status = $_POST['status'];
+                update_bill($id_bill, $status);
+                echo '<script>alert("Cập nhật đơn hàng thành công!")</script>';
+                header('location:index.php?act=list_bill');
+            }
+            break;
+        case 'billdetail':
+            if (isset($_SESSION['admin'])) {
+                if (isset($_GET['idbill']) && ($_GET['idbill']) > 0) {
+                    $idbill = $_GET['idbill'];
+                    $one_bill = loadone_bill($idbill);
+                }
+                render(
+                    'billdetail',
+                    ['one_bill' => $one_bill]
+                );
+            } else {
+                header("location: index.php?act=login");
+            }
+
             break;
             //CONTROLLER BÌNH LUẬN
             //show list: 
-        case 'listcmt':
-            $listcmt = loadall_cmt();
-            include "view/binhluan/list.php";
+        case 'list_cmt':
+            if (isset($_SESSION['admin'])) {
+                $listcmt = loadall_cmt();
+                render(
+                    'list_comment',
+                    ['listcmt' => $listcmt]
+                );
+            } else {
+                header("location: index.php?act=login");
+            }
+
             break;
-            //xóa bình luận: 
-        case 'removecmt':
+            //xóa bì-nh luận: 
+        case 'delete_cmt':
             if (isset($_GET['idcmt']) && ($_GET['idcmt']) > 0) {
                 $id_cmt = $_GET['idcmt'];
                 remove_cmt($id_cmt);
             }
-            $listcmt = loadall_cmt();
-            include "view/binhluan/list.php";
+            header('location: index.php?act=list_cmt');
             break;
-            
-              //CONTROLLER THỐNG KÊ SẢN PHẨM THEO LOẠI
-              //list thống kê: 
-              case 'liststatis': 
+
+            //CONTROLLER THỐNG KÊ
+            //list thống kê: 
+        case 'list_statis':
+            if (isset($_SESSION['admin'])) {
                 $liststatis = loadall_statis();
-                include "view/thongke/list.php";
-                break;
-            
-              //CONTROLLER THỐNG KÊ DOANH THU
-               //lấy dữ liệu vào biểu đồ thống kê:
-                case 'chart':
-                include "view/bieudo/turnover.php";
-                break;
-         
-        default:
-            include "view/content.php";
+                render(
+                    'list_statistic',
+                    ['liststatis' => $liststatis]
+                );
+            } else {
+                header("location: index.php?act=login");
+            }
+
             break;
+
+        default:
+            if (isset($_SESSION['admin'])) {
+                render('dashboard');
+            } else {
+                header("location: index.php?act=login");
+            }
+            // render('dashboard');
     }
 } else {
-    include "view/content.php";
+    if (isset($_SESSION['admin'])) {
+        render('dashboard');
+    } else {
+        header("location: index.php?act=login");
+    }
+    // render('dashboard');
 }
-
-
-include 'view/footer.php';
