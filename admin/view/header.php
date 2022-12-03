@@ -21,5 +21,6 @@
   <link rel="stylesheet" type="text/css" href="view/assets/css/jquery.dataTables.css">
   <script type="text/javascript" charset="utf8" src="view/assets/js/jquery-1.7.1.min.js"></script>
   <script src="//cdn.ckeditor.com/4.20.0/standard/ckeditor.js"></script>
-
+  <script type="text/javascript" src="view/assets/js/Chart.min.js"></script>
+  <script type="text/javascript" src="view/assets/js/jquery.min.js"></script>
 </head>

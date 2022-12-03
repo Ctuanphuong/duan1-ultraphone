@@ -32,7 +32,7 @@ $ds_loai = loadall_loai(); ?>
                                     <div class="h5 mb-0 font-weight-bold text-gray-800"><?= number_format(ngay())  ?> đ</div>
                                 </div>
                                 <div class="col-auto">
-                                    <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                    <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
                                 </div>
                             </div>
                         </div>
@@ -50,7 +50,7 @@ $ds_loai = loadall_loai(); ?>
                                     <div class="h5 mb-0 font-weight-bold text-gray-800"><?= number_format(tuan())  ?> đ</div>
                                 </div>
                                 <div class="col-auto">
-                                    <i class="fas fa-comments fa-2x text-gray-300"></i>
+                                    <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
                                 </div>
                             </div>
                         </div>
@@ -84,15 +84,10 @@ $ds_loai = loadall_loai(); ?>
                                         <div class="col-auto">
                                             <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?= number_format(nam())  ?> đ</div>
                                         </div>
-                                        <!-- <div class="col">
-                                            <div class="progress progress-sm mr-2">
-                                                <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                        </div> -->
                                     </div>
                                 </div>
                                 <div class="col-auto">
-                                    <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                                    <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
                                 </div>
                             </div>
                         </div>
@@ -100,11 +95,11 @@ $ds_loai = loadall_loai(); ?>
                 </div>
                 <!-- Earnings (Monthly) Card Example -->
                 <div class="col-xl-3 col-md-6 mb-4">
-                    <div class="card border-left-info shadow h-100 py-2">
+                    <div class="card border-left-primary shadow h-100 py-2">
                         <div class="card-body">
                             <div class="row no-gutters align-items-center">
                                 <div class="col mr-2">
-                                    <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Số lượng đơn</div>
+                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Tổng đơn</div>
                                     <div class="row no-gutters align-items-center">
                                         <div class="col-auto">
                                             <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?= count($listbill) ?></div>
@@ -126,32 +121,16 @@ $ds_loai = loadall_loai(); ?>
 
                 <!-- Pending Requests Card Example -->
                 <div class="col-xl-3 col-md-6 mb-4">
-                    <div class="card border-left-primary shadow h-100 py-2">
-                        <div class="card-body">
-                            <div class="row no-gutters align-items-center">
-                                <div class="col mr-2">
-                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Số lượng tài khoản</div>
-
-                                    <div class="h5 mb-0 font-weight-bold text-gray-800"><?= count($listuser); ?></div>
-                                </div>
-                                <div class="col-auto">
-                                    <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Pending Requests Card Example -->
-                <div class="col-xl-3 col-md-6 mb-4">
                     <div class="card border-left-warning shadow h-100 py-2">
                         <div class="card-body">
                             <div class="row no-gutters align-items-center">
                                 <div class="col mr-2">
-                                    <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Số lượng sản phẩm</div>
-                                    <div class="h5 mb-0 font-weight-bold text-gray-800"><?= count($listpro) ?></div>
+                                    <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Tổng khách hàng</div>
+
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800"><?= count($listuser); ?></div>
                                 </div>
                                 <div class="col-auto">
-                                    <i class="fas fa-comments fa-2x text-gray-300"></i>
+                                    <i class="fas fa-solid fa-user fa-2x text-gray-300"></i>
                                 </div>
                             </div>
                         </div>
@@ -163,11 +142,27 @@ $ds_loai = loadall_loai(); ?>
                         <div class="card-body">
                             <div class="row no-gutters align-items-center">
                                 <div class="col mr-2">
-                                    <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Tổng số loại sản phẩm</div>
+                                    <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Tổng sản phẩm</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800"><?= count($listpro) ?></div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fas fa-brands fa-product-hunt fa-2x text-gray-300"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Pending Requests Card Example -->
+                <div class="col-xl-3 col-md-6 mb-4">
+                    <div class="card border-left-info shadow h-100 py-2">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tổng loại sản phẩm</div>
                                     <div class="h5 mb-0 font-weight-bold text-gray-800"><?= count($ds_loai) ?></div>
                                 </div>
                                 <div class="col-auto">
-                                    <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                    <i class="fas fa-solid fa-weight-hanging fa-2x text-gray-300"></i>
                                 </div>
                             </div>
                         </div>
@@ -190,12 +185,87 @@ $ds_loai = loadall_loai(); ?>
                         </div>
                         <!-- Card Body -->
                         <div class="card-body">
-                            <div class="chart-area">
-                                <canvas id="myAreaChart"></canvas>
+                            <div class="chart">
+                                <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
                             </div>
                         </div>
                     </div>
                 </div>
+                <script type="text/javascript">
+                    $(function() {
+
+                        var areaChartCanvas = $('#areaChart').get(0).getContext('2d')
+
+                        var areaChartData = {
+                            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                            datasets: [{
+                                label: 'Digital Goods',
+                                backgroundColor: 'rgba(60,141,188,0.9)',
+                                borderColor: 'rgba(60,141,188,0.8)',
+                                pointRadius: false,
+                                pointColor: '#3b8bba',
+                                pointStrokeColor: 'rgba(60,141,188,1)',
+                                pointHighlightFill: '#fff',
+                                pointHighlightStroke: 'rgba(60,141,188,1)',
+                                data: [28, 48, 40, 19, 86, 27, 90]
+                            }, {
+                                label: 'Electronics',
+                                backgroundColor: 'rgba(210, 214, 222, 1)',
+                                borderColor: 'rgba(210, 214, 222, 1)',
+                                pointRadius: false,
+                                pointColor: 'rgba(210, 214, 222, 1)',
+                                pointStrokeColor: '#c1c7d1',
+                                pointHighlightFill: '#fff',
+                                pointHighlightStroke: 'rgba(220,220,220,1)',
+                                data: [65, 59, 80, 81, 56, 55, 40]
+                            }, ]
+                        }
+
+                        var areaChartOptions = {
+                            maintainAspectRatio: false,
+                            responsive: true,
+                            legend: {
+                                display: false
+                            },
+                            scales: {
+                                xAxes: [{
+                                    gridLines: {
+                                        display: false,
+                                    }
+                                }],
+                                yAxes: [{
+                                    gridLines: {
+                                        display: false,
+                                    }
+                                }]
+                            }
+                        }
+
+                        // This will get the first returned node in the jQuery collection.
+                        new Chart(areaChartCanvas, {
+                            type: 'line',
+                            data: areaChartData,
+                            options: areaChartOptions
+                        })
+
+                        //-------------
+                        //- LINE CHART -
+                        //--------------
+                        var lineChartCanvas = $('#lineChart').get(0).getContext('2d')
+                        var lineChartOptions = $.extend(true, {}, areaChartOptions)
+                        var lineChartData = $.extend(true, {}, areaChartData)
+                        lineChartData.datasets[0].fill = false;
+                        lineChartData.datasets[1].fill = false;
+                        lineChartOptions.datasetFill = false
+
+                        var lineChart = new Chart(lineChartCanvas, {
+                            type: 'line',
+                            data: lineChartData,
+                            options: lineChartOptions
+                        })
+                    
+                    })
+                </script>
 
                 <!-- Pie Chart -->
                 <div class="col-xl-4 col-lg-5">
@@ -209,8 +279,7 @@ $ds_loai = loadall_loai(); ?>
                             </div>
                             <!-- /.card-body -->
                         </div>
-                        <script type="text/javascript" src="view/assets/js/Chart.min.js"></script>
-                        <script type="text/javascript" src="view/assets/js/jquery.min.js"></script>
+                        
 
                         <script type="text/javascript">
                             <?php $all = thonngke();

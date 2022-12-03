@@ -34,7 +34,7 @@
                         <table class="table table-bordered" id="example" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
-                                    <th>Mã sản phẩm</th>
+                                    <th>Mã SP</th>
                                     <th>Tên sản phẩm</th>
                                     <th>Giá</th>
                                     <th>Giảm giá</th>
@@ -47,7 +47,7 @@
                             </thead>
                             <tfoot>
                                 <tr>
-                                    <th>Mã sản phẩm</th>
+                                    <th>Mã SP</th>
                                     <th>Tên sản phẩm</th>
                                     <th>Giá</th>
                                     <th>Giảm giá</th>
@@ -70,8 +70,8 @@
                                         <td><?= $pro['detail_des'] ?></td>
                                         <td><?= $pro['view'] ?></td>
                                         <td class="text-center">
-                                            <a href="./index.php?act=edit_product&id_pro=<?= $pro['id_pro'] ?>" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i> Sửa</a>
-                                            <a href="./index.php?act=delete_product&id_pro=<?= $pro['id_pro'] ?>" class="btn btn-danger" onclick="return confirm('Bạn có chắc chắn muốn xóa không?')"><i class="fa-solid fa-trash"></i> Xóa</a>
+                                            <a href="./index.php?act=edit_product&id_pro=<?= $pro['id_pro'] ?>" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
+                                            <a href="./index.php?act=delete_product&id_pro=<?= $pro['id_pro'] ?>" class="btn btn-danger" onclick="return confirm('Bạn có chắc chắn muốn xóa không?')"><i class="fa-solid fa-trash"></i></a>
                                         </td>
                                     </tr>
                                 <?php endforeach ?>
