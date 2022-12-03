@@ -20,4 +20,6 @@
   <link href="view/assets/css/sb-admin-2.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="view/assets/css/jquery.dataTables.css">
   <script type="text/javascript" charset="utf8" src="view/assets/js/jquery-1.7.1.min.js"></script>
+  <script src="//cdn.ckeditor.com/4.20.0/standard/ckeditor.js"></script>
+
 </head>

@@ -300,7 +300,8 @@ if (isset($_GET['act'])) {
             if (isset($_POST['btn_update']) && ($_POST['btn_update'])) {
                 $id_bill = $_POST['id_bill'];
                 $status = $_POST['status'];
-                update_bill($id_bill, $status);
+                $status_pay = $_POST['status_pay'];
+                update_bill($id_bill, $status,$status_pay);
                 echo '<script>alert("Cập nhật đơn hàng thành công!")</script>';
                 header('location:index.php?act=list_bill');
             }

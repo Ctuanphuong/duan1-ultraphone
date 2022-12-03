@@ -7,17 +7,16 @@
     <?php include_once "nav.php" ?>
     <!-- Begin Page Content -->
     <div class="container-fluid">
-
       <?php
       if (is_array($one_loai)) {
         extract($one_loai);
       }
       ?>
-      <div id="layoutSidenav_content" class="container-fluid">
-        <div class="container-fluid mt-3">
-          <div>
-            <h3 class="alert alert-success">Cập nhật loại điện thoại</h3>
-          </div>
+      <div class="card shadow mb-4">
+        <div class="card-header py-3">
+          <h6 class="m-0 font-weight-bold text-primary">Cập nhật loại điện thoại</h6>
+        </div>
+        <div class="card-body">
           <div class="form-addcate">
             <form action="index.php?act=update_category" method="post">
               <div class="form-group mt-3">
@@ -35,10 +34,10 @@
               </div>
             </form>
           </div>
-
         </div>
-        <!-- /.container-fluid -->
-
       </div>
-      <!-- End of Main Content -->
-      <?php include_once "footer.php" ?>
+      <!-- /.container-fluid -->
+
+    </div>
+    <!-- End of Main Content -->
+    <?php include_once "footer.php" ?>
