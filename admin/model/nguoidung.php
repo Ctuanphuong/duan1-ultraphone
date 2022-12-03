@@ -26,4 +26,21 @@ function delete_user($id_user) {
     $sql = "DELETE FROM user WHERE id_user=".$id_user;
     pdo_execute($sql);
 }
-?>
+function countusser()
+{
+    $sql = "SELECT count(*) FROM user";
+    $a = pdo_query($sql);
+    return $a;
+}
+// function check_user_admin($user_name, $password)
+// {
+//     $sql = "SELECT * FROM user WHERE ((user_name ='$user_name') OR (email_user ='$user_name')) AND password = '$password'";
+//     $user = pdo_query_one($sql);
+//     return $user;
+// }
+function check_user_admin($user_name, $password)
+{
+    $sql = "SELECT * FROM user WHERE ((user_name ='" . $user_name . "') OR (email_user ='" . $user_name . "')) AND password = '" . $password . "' AND role = '1'";
+    $user = pdo_query_one($sql);
+    return $user;
+}

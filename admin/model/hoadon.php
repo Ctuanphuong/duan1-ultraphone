@@ -1,7 +1,7 @@
 <?php 
 function loadall_bill($iduser)
 {
-    $sql = "SELECT * FROM bill WHERE 1"; 
+    $sql = "SELECT * FROM bill"; 
     if($iduser > 0) $sql .=" AND id_user= ".$iduser ; 
     $sql .= " ORDER BY id_bill DESC";
     $listbill = pdo_query($sql);
@@ -23,8 +23,8 @@ function load_cart_all($idbill) {
     $ab = pdo_query($sql);
     return $ab;
 }
-function update_bill($id_bill, $status){ 
-    $sql = "UPDATE bill SET status = '$status' WHERE id_bill=" . $id_bill;
+function update_bill($id_bill, $status, $status_pay){ 
+    $sql = "UPDATE bill SET status = '$status', status_pay = '$status_pay' WHERE id_bill=" . $id_bill;
     pdo_execute($sql);
 }
 ?>

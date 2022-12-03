@@ -10,6 +10,7 @@ function check_user($user_name, $password)
     $user = pdo_query_one($sql);
     return $user;
 }
+
 function check_pass($name, $email)
 {
     $sql = "SELECT * FROM user WHERE user_name ='" . $name . "' AND email_user ='" . $email . "'";

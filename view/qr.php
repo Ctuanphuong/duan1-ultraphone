@@ -21,8 +21,7 @@ if (isset($_SESSION['pay'])) {
 <head id="j_idt2">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="x-ua-compatible" content="IE=edge">
-    <title>Thanh toán hoá đơn - MuaCloneFB.COM</title>
-    <meta name="description" content="Cổng thanh toán MuaCloneFB.COM">
+    <title>Thanh toán hoá đơn</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no">
     <meta name="robots" content="all,follow">
@@ -230,7 +229,7 @@ if (isset($_SESSION['pay'])) {
                                                     <circle cx="12" cy="12" r="8" fill="#db7e06"></circle>
                                                 </svg>
                                             </small>Sau Khi Thanh Toán Thành Công Vui Lòng Quay Lại Trang Chủ Chờ Khoảng 3p Tiền Sẻ Được Tự Động Cập Nhật -->
-                                            <a href="?act=billconfirm" class="text-white">
+                                            <a href="../index.php?act=billconfirm" class="text-white">
                                                 <i class="fa fa-arrow-left" aria-hidden="true"></i>
                                                 <span>Quay lại</span></a>
                                         </p>
