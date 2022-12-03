@@ -52,7 +52,7 @@ CREATE TABLE `bill` (
   `phone` int(25) NOT NULL,
   `email` varchar(255) NOT NULL,
   `payment` tinyint(1) NOT NULL DEFAULT 1 COMMENT '1.Thanh toán khi nhận hàng 2.Chuyển khoản ngân hàng 3.Thanh toán online',
-  `order_date` varchar(50) NOT NULL,
+  `order_date` datetime NOT NULL,
   `total_amount` int(10) NOT NULL,
   `status` tinyint(4) NOT NULL COMMENT '0.Đơn hàng mới \r\n1.Đang xử lý\r\n2.Đang giao hàng\r\n3.Đã giao hàng',
   `status_pay` varchar(11) NOT NULL DEFAULT '0'
