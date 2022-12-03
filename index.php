@@ -148,7 +148,6 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             }
             include 'view/nguoidung/forgotpass.php';
             break;
-
             // Quên mật khẩu: Nhập mã xác minh mã được gửi qua Email
         case 'verification':
             include "view/nguoidung/verification.php";
@@ -266,8 +265,25 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                     $payment = $_POST['payment'];
                     $order_date = date('d/m/Y h:i:sa');
                     $total_amount = total_amount();
+
                     if ($total_amount > 0) {
                         $_SESSION['idbill'] = $idbill = insert_bill($bill_code, $id_user, $user_name, $full_name, $address, $phone, $email, $payment, $order_date, $total_amount);
+                        $result = getUserEmail($email);
+                        $title = "Thông báo đặt hàng thành công!";
+                        $content = "<h3>Xin chào, cảm ơn quý khách đặt hàng tại UltraPhone.<br></h3>
+                        <h4>Thông tin người nhận:</h4>
+                        <p>Tên khách hàng: ".$full_name."</p>
+                        <p>Email: ".$email."</p>
+                        <p>Địa chỉ: ".$address."</p>
+                        <p>Số điện thoại: ".$phone."</p>
+                        <p>Ngày đặt hàng: ".$order_date."</p>
+                        <p>Tổng tiền: ".$total_amount."</p>
+                        ";
+                        $content .="Chào mừng đến với  <a href='http://'>UltraPhone! </a>";
+                       
+                    
+                        $mail->sendMail($title, $content, $email);
+                        $_SESSION['mail'] = $email;
                     } else {
                         header('location: ?act=viewcart');
                     }

@@ -16,6 +16,11 @@ function loadall_bill($id_user)
     $listbill = pdo_query($sql);
     return $listbill;
 }
+function load_cart_all($idbill) { 
+    $sql = "SELECT * FROM `cart` WHERE id_bill=".$idbill;
+    $ab = pdo_query($sql);
+    return $ab;
+}
 function get_stt($n)
 {
     switch ($n) {
