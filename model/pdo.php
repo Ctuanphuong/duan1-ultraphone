@@ -2,6 +2,8 @@
 /**
  * Mở kết nối đến CSDL sử dụng PDO
  */
+date_default_timezone_set('Asia/Ho_Chi_Minh');
+
 function pdo_get_connection(){
     $dburl = "mysql:host=127.0.0.1;dbname=ultraphone;charset=utf8";
     $username = 'root';

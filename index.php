@@ -264,7 +264,8 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                     $phone = $_POST['phone'];
                     $email = $_POST['email'];
                     $payment = $_POST['payment'];
-                    $order_date = date('d/m/Y h:i:sa');
+                    $order_date = date('Y/m/d h:i:s', time());
+
                     $total_amount = total_amount();
                     if ($total_amount > 0) {
                         $_SESSION['idbill'] = $idbill = insert_bill($bill_code, $id_user, $user_name, $full_name, $address, $phone, $email, $payment, $order_date, $total_amount);

@@ -11,43 +11,47 @@
                     <div class="card-header py-3">
                         <h6 class="m-0 font-weight-bold text-primary">Quản Lý Hóa Đơn</h6>
                     </div>
+
                     <div class="card-body">
-                        <div class="table-responsive-lg">
-                            <table class="table table-bordered" id="table1" width="100%" cellspacing="0">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover" id="table1">
                                 <thead>
                                     <tr>
-                                        <th scope="col">Mã hóa đơn</th>
+                                        <th>STT</th>
+                                        <!-- <th scope="col">Mã Bill</th> -->
                                         <th scope="col">Người đặt</th>
-                                        <th scope="col">Ngày đặt</th>
                                         <th scope="col">Thành tiền</th>
                                         <th scope="col">Phương thức thanh toán</th>
-                                        <th scope="col" >Trạng thái thanh toán</th>
+                                        <th scope="col">Trạng thái thanh toán</th>
                                         <th scope="col">Trạng thái đơn hàng</th>
+                                        <th scope="col">Ngày đặt</th>
                                         <th scope="col">Thao tác</th>
                                     </tr>
                                 </thead>
                                 <tfoot>
                                     <tr>
-                                        <th>Mã hóa đơn</th>
+                                        <th>STT</th>
+                                        <!-- <th>Mã Bill</th> -->
                                         <th>Người đặt</th>
-                                        <th>Ngày đặt</th>
                                         <th>Thành tiền</th>
                                         <th>Phương thức thanh toán</th>
                                         <th>Trạng thái thanh toán</th>
                                         <th>Trạng thái đơn hàng</th>
+                                        <th>Ngày đặt</th>
                                         <th>Thao tác</th>
                                     </tr>
                                 </tfoot>
                                 <tbody>
-                                    <?php foreach ($listbill as $bill) :
+                                    <?php $i = 1;
+                                    foreach ($listbill as $bill) :
                                         extract($bill);
                                         $user_detail = '' . $bill['user_name'] . '<br>' . $bill['full_name'] . '<br> ' . $bill['email'] . '<br> ' . $bill['address'] . '<br>0' . $bill['phone'] . '<br> 
                                         </td>'
                                     ?>
                                         <tr>
-                                            <td><?= $bill['id_bill'] ?></td>
+                                            <td><?= $i ?></td>
+                                            <!-- <td><?= $bill['id_bill'] ?></td> -->
                                             <td><?= $bill['full_name'] ?></td>
-                                            <td><?= $bill['order_date'] ?></td>
                                             <td><?= number_format($bill['total_amount']) ?></td>
                                             <td><?php if ($bill['payment'] == 1) {
                                                     echo "Thanh toán khi nhận hàng";
@@ -59,9 +63,9 @@
                                                     echo "Không tìm thấy phương thức thanh toán";
                                                 }  ?></td>
                                             <td><?php if ($bill['status_pay'] == 0) {
-                                                    echo "Chưa thanh toán";
+                                                    echo "<span class='badge badge-warning'>Chưa thanh toán</span>";
                                                 } else if ($bill['status_pay'] == 1) {
-                                                    echo "Đã thanh toán";
+                                                    echo "<span class='badge badge-success'>Đã thanh toán</span>";
                                                 } else {
                                                     echo "Không tìm thấy phương thức thanh toán";
                                                 }  ?></td>
@@ -78,12 +82,16 @@
                                                 } else {
                                                     echo "Lỗi trạng thái";
                                                 } ?></td>
+                                            <td><span class="badge badge-dark"><?= $bill['order_date'] ?></span></td>
+
                                             <td class="text-center">
-                                                <a href="index.php?act=edit_bill&idbill=<?= $bill['id_bill'] ?>" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i> Sửa</a>
-                                                <a href="index.php?act=billdetail&idbill=<?= $bill['id_bill'] ?>" class="btn btn-success"><i class="fa-solid fa-circle-info"></i> Chi tiết</a>
+                                                <a type="button" href="index.php?act=edit_bill&idbill=<?= $bill['id_bill'] ?>" class="btn btn-warning"><i class="fas fa-edit"></i>
+                                                    <span>Sửa</span></a>
+                                                <a href="index.php?act=billdetail&idbill=<?= $bill['id_bill'] ?>" class="btn btn-success"><i class="fa-solid fa-circle-info"></i> </a>
                                             </td>
                                         </tr>
-                                    <?php endforeach ?>
+                                    <?php $i++;
+                                    endforeach ?>
                                 </tbody>
                             </table>
                         </div>
