@@ -280,7 +280,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                         <p>Ngày đặt hàng: ".$order_date."</p>
                         <p>Tổng tiền: ".$total_amount."</p>
                         ";
-                        $content .="Chào mừng đến với  <a href='http://'>UltraPhone! </a>";
+                        $content .="Chào mừng đến với  <a href='http://localhost/duan1-ultraphone/index.php'>UltraPhone! </a>";
                        
                     
                         $mail->sendMail($title, $content, $email);
