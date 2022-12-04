@@ -301,6 +301,9 @@ if (isset($_GET['act'])) {
                 $id_bill = $_POST['id_bill'];
                 $status = $_POST['status'];
                 $status_pay = $_POST['status_pay'];
+                if($status == 3){
+                    $status_pay = 1;
+                }
                 update_bill($id_bill, $status,$status_pay);
                 echo '<script>alert("Cập nhật đơn hàng thành công!")</script>';
                 header('location:index.php?act=list_bill');

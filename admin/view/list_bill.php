@@ -86,9 +86,9 @@
 
                                             <td class="text-center">
                                                 <a type="button" href="index.php?act=edit_bill&idbill=<?= $bill['id_bill'] ?>" class="btn btn-warning"><i class="fas fa-edit"></i>
-                                                    </a>
+                                                </a>
                                                 <a href="index.php?act=billdetail&idbill=<?= $bill['id_bill'] ?>" class="btn btn-success"><i class="fa-solid fa-circle-info"></i> </a>
-                                                <button onClick="window.print()" class="btn btn-danger"><i class="fa-solid fa-print"></i></button>
+                                                <!-- <button onClick="window.print()" class="btn btn-danger"><i class="fa-solid fa-print"></i></button> -->
                                             </td>
                                         </tr>
                                     <?php $i++;
