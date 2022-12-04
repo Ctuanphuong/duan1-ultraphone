@@ -21,13 +21,7 @@
                                         <th>Thao Tác</th>
                                     </tr>
                                 </thead>
-                                <tfoot>
-                                    <tr>
-                                        <th>Mã loại</th>
-                                        <th>Tên loại</th>
-                                        <th>Thao tác</th>
-                                    </tr>
-                                </tfoot>
+                                
                                 <tbody>
                                     <?php
                                     foreach ($ds_loai as $loai) : ?>

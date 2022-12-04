@@ -26,18 +26,7 @@
                                     <th>Thao tác</th>
                                 </tr>
                             </thead>
-                            <tfoot>
-                                <tr>
-                                    <th>Mã User</th>
-                                    <th>Tên đăng nhập</th>
-                                    <th>Họ tên</th>
-                                    <th>Email</th>
-                                    <th>Vai trò</th>
-                                    <!-- <th>Ngày đăng ký</th>
-                            <th>Lần đăng nhập cuối</th> -->
-                                    <th>Thao tác</th>
-                                </tr>
-                            </tfoot>
+                            
                             <tbody>
                                 <?php foreach ($listuser as $user) : ?>
                                     <tr>

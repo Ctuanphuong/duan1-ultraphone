@@ -28,19 +28,7 @@
                                         <th scope="col">Thao tác</th>
                                     </tr>
                                 </thead>
-                                <tfoot>
-                                    <tr>
-                                        <th>STT</th>
-                                        <!-- <th>Mã Bill</th> -->
-                                        <th>Người đặt</th>
-                                        <th>Thành tiền</th>
-                                        <th>Phương thức thanh toán</th>
-                                        <th>Trạng thái thanh toán</th>
-                                        <th>Trạng thái đơn hàng</th>
-                                        <th>Ngày đặt</th>
-                                        <th>Thao tác</th>
-                                    </tr>
-                                </tfoot>
+                                
                                 <tbody>
                                     <?php $i = 1;
                                     foreach ($listbill as $bill) :

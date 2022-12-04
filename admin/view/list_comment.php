@@ -24,16 +24,7 @@
                                     <th>Thao tác</th>
                                 </tr>
                             </thead>
-                            <tfoot>
-                                <tr>
-                                    <th>Mã bình luận</th>
-                                    <th>Người bình luận</th>
-                                    <th>Sản phẩm</th>
-                                    <th>Nội dung</th>
-                                    <th>Ngày bình luận</th>
-                                    <th>Thao tác</th>
-                                </tr>
-                            </tfoot>
+                            
                             <tbody>
                                 <?php
                                 foreach ($listcmt as $cmt) : extract($cmt); ?>

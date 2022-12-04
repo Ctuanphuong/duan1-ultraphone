@@ -45,19 +45,7 @@
                                     <th>Thao Tác</th>
                                 </tr>
                             </thead>
-                            <tfoot>
-                                <tr>
-                                    <th>Mã SP</th>
-                                    <th>Tên sản phẩm</th>
-                                    <th>Giá</th>
-                                    <th>Giảm giá</th>
-                                    <th>Hình ảnh</th>
-                                    <th>Mô tả ngắn</th>
-                                    <th>Mô tả chi tiết</th>
-                                    <th>Lượt xem</th>
-                                    <th>Thao Tác</th>
-                                </tr>
-                            </tfoot>
+                            
                             <tbody>
                                 <?php foreach ($listpro as $pro) : ?>
                                     <tr>
