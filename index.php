@@ -285,6 +285,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                     
                         $mail->sendMail($title, $content, $email);
                         $_SESSION['mail'] = $email;
+                        header('location: ?act=viewbill');
                     } else {
                         header('location: ?act=viewcart');
                     }
@@ -318,6 +319,49 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             // Quên mật khẩu: Nhập mã xác minh mã được gửi qua Email
         case 'question':
             include "view/question.php";
+            break;
+        case'viewbill':
+            if (isset($_SESSION['user'])) {
+                $randomNum = substr(str_shuffle("123456789"), 0, 5);
+                $bill_code = $randomNum;
+                $id_user = $_SESSION['user']['id_user'];
+                $user_name = $_SESSION['user']['user_name'];
+                // $full_name = $_POST['full_name'];
+                // $address = $_POST['address'];
+                // $phone = $_POST['phone'];
+                // $email = $_POST['email'];
+                // $payment = $_POST['payment'];
+                $order_date = date('Y/m/d h:i:s', time());
+
+                $total_amount = total_amount();
+
+                if ($total_amount > 0) {
+                    $_SESSION['idbill'] = $idbill = insert_bill($bill_code, $id_user, $user_name, $full_name, $address, $phone, $email, $payment, $order_date, $total_amount);
+                    header('location: ?act=viewbill');
+                }
+            } 
+            foreach ($_SESSION['mycart'] as $cart) {
+                insert_cart($_SESSION['user']['id_user'], $_SESSION['user']['user_name'], $cart[0], $cart[2], $cart[1], $cart[3], $cart[4], $cart[5], $idbill);
+            }
+            $_SESSION['mycart'] = [];
+        
+        $bill = loadone_bill($_SESSION['idbill']);
+        $cart_detail = loadall_cart($_SESSION['idbill']);
+        error_reporting(0);
+
+        if ($payment == 2 || $payment == 3) {
+            $_SESSION['pay'] = [$payment, $total_amount, $bill_code];
+            header('location: view/qr.php');
+        } else {
+            $_SESSION['check'] = 1;
+        }
+        error_reporting(E_ALL);
+        if ($_SESSION['check'] == 1 || $payment == 1) {
+            include "view/giohang/billconfirm.php";
+        }
+        break;
+
+            include "view/giohang/viewbill.php";
             break;
         default:
             include "view/content.php";
