@@ -278,7 +278,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                         <p>Địa chỉ: ".$address."</p>
                         <p>Số điện thoại: ".$phone."</p>
                         <p>Ngày đặt hàng: ".$order_date."</p>
-                        <p>Tổng tiền: ".$total_amount."</p>
+                        <p>Tổng tiền: ".number_format($total_amount)."₫</p>
                         ";
                         $content .="Chào mừng đến với  <a href='http://localhost/duan1-ultraphone/index.php'>UltraPhone! </a>";
                        
