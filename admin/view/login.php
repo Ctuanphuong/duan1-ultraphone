@@ -9,8 +9,8 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Login</title>
-
+  <title>ULtraphone - Login</title>
+  <link rel="shortcut icon" type="imagex-icon" href="view/assets/img/logo-url.png" />
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
@@ -37,7 +37,7 @@
               <div class="col-lg-6">
                 <div class="p-5">
                   <div class="text-center">
-                    <h1 class="h4 text-gray-900 mb-4">Welcome Admin!</h1>
+                    <h1 class="h4 text-gray-900 mb-4">Chào mừng đến với Trang quản trị UltraPhone!</h1>
                   </div>
                   <form class="user" action="index.php?act=login" method="post">
                     <div class="form-group">
@@ -49,7 +49,7 @@
                     <div class="form-group">
                       <div class="custom-control custom-checkbox small">
                         <input type="checkbox" class="custom-control-input" id="customCheck">
-                        <label class="custom-control-label" for="customCheck">Remember Me</label>
+                        <label class="custom-control-label" for="customCheck">Ghi nhớ tài khoản</label>
                       </div>
                     </div>
                     <input type="submit" class="btn btn-dark btn-user btn-block" name="btn_login" value="Đăng nhập">

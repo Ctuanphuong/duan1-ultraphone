@@ -28,7 +28,7 @@
                                     }
                                     ?>
                                 </select>
-                                <input type="submit" value="Filter" name="btn_filter" class="btn-filter">
+                                <input type="submit" value="Lọc" name="btn_filter" class="btn-filter">
                             </form>
                         </div>
                         <table class="table table-bordered" id="example" width="100%" cellspacing="0">
