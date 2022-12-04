@@ -39,6 +39,13 @@ function nam()
     $liststatis = pdo_query_value($sql);
     return $liststatis;
 }
+
+function tungthang($a)
+{
+    $sql = "SELECT SUM(`total_amount`) as soluong FROM `bill` WHERE `status_pay` = '1' AND Month(order_date) = '$a' ";
+    $liststatis = pdo_query_value($sql);
+    return $liststatis;
+}
 // select SUM(`total_amount`) from bill where order_date >now() - interval 1 month
 
 // STR_TO_DATE("10-17-2021 15:40:10", "%d-%m-%Y %H:%i:%s");
