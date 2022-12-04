@@ -24,16 +24,7 @@
                                     <th>Giá trung bình</th>
                                 </tr>
                             </thead>
-                            <tfoot>
-                                <tr>
-                                    <th>Mã loại</th>
-                                    <th>Tên loại</th>
-                                    <th>Số lượng sản phẩm</th>
-                                    <th>Giá thấp nhất</th>
-                                    <th>Giá cao nhất</th>
-                                    <th>Giá trung bình</th>
-                                </tr>
-                            </tfoot>
+                            
                             <tbody>
                                 <?php foreach ($liststatis as $statis) : extract($statis); ?>
                                     <tr>
