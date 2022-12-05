@@ -22,7 +22,7 @@
                          <div class="row">
                              <div class="col-md-6 col-12 mb--20">
                                  <label>Tên đăng nhập</label>
-                                 <input type="text" name="user_name" placeholder="Tạo tên đăng nhập của bạn">
+                                 <input type="text" name="user_name" placeholder="Tạo tên đăng nhập của bạn" required>
                              </div>
                              <div class="col-md-6 col-12 mb--20">
                                  <label>Họ tên</label>
