@@ -20,7 +20,7 @@
                 <div class="col-lg-5 col-md-5">
                     <div class="sp-images">
                         <div class="sp-largeimages sp-imagezoom">
-                            <div class="sp-singleimage" data-src="image/product/large-size/5.jpg">
+                            <div class="sp-singleimage">
                                 <img src="admin/uploads/<?= $one_pro['img_pro']; ?>" alt="UltraPhone Product">
                             </div>
                         </div>
