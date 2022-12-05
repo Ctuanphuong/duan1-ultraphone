@@ -319,10 +319,9 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 include "view/giohang/billconfirm.php";
             }
             break;
-            // giá trị default: 
-            // Quên mật khẩu: Nhập mã xác minh mã được gửi qua Email
-        case 'question':
             
+            // Hỏi đáp
+        case 'question':
             include "view/hoidap/question.php";
             break;
         case 'viewbill':
