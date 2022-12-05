@@ -25,6 +25,7 @@ foreach($_SESSION['mycart'] as $cart) {
     $removepro= "index.php?act=removecart&idcart=".$i;
     $img_pro = "admin/uploads/".$cart[2];
     $prodetail = "index.php?act=prodetail&idpro=".$cart[0];
+    $quantity = $cart[4];
     $total = $cart[3] * $cart[4]; 
     $total_amount += $total;
     if($removecol == 1) { 
@@ -40,7 +41,7 @@ foreach($_SESSION['mycart'] as $cart) {
         <td class="quantity">
             <label>Số lượng</label>
             <div class="cart-plus-minus">
-                <input class="cart-plus-minus-box" value="1" type="text" name="number-323">
+                <input class="cart-plus-minus-box" value="'.$quantity.'" type="text" name="number-323">
                 <div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>
                 <div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>
             </div>
@@ -169,4 +170,3 @@ function loadall_countcart($idbill)
     $listcart = pdo_query($sql);
     return count($listcart);
 }
- ?>
