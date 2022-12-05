@@ -1,0 +1,28 @@
+New versions require PHP 7.3 or above so make sure your server has it before upgrading.
+
+Follow these steps to upgrade SMS Gateway v3.x.x or above to latest version.
+
+[1] Remove all the files and folders except config.php and uploads folder from your SMS Gateway directory.
+[2] Extract SMS.Gateway.Package.zip to your SMS Gateway directory.
+[3] Run the upgrade.php or go to the login page.
+[5] You will need to add cron job if you are upgrading from v5.0.1 or below for schedule, auto retry and recieved messages to email features to work. You can do this by following below guide.
+
+https://smsgateway.rbsoft.org/docs/setting_up_the_cron_job_1.htm
+
+[6] You can change logo, name, and server url of Android app by registering on app builder server from below. You will be able to create up to 3 customized apks for every new version from now on.
+
+https://app-builder.rbsoft.org/register
+
+If you need help creating customized apk file then you can follow below video tutorial.
+
+https://youtu.be/YcNKYZawe7E
+
+[7] To enable PayPal follow below guide.
+
+https://smsgateway.rbsoft.org/docs/setup_subscriptions.htm
+
+It is required to create a separate cron job for renewing subscriptions. It is required if you want to create subscriptions manually or use PayPal. If you followed all steps from above then you don't have to do this, but if you only want to use manual subscriptions then you can set it up as shown in below guide.
+
+https://smsgateway.rbsoft.org/docs/setting_up_the_cron_job_2.htm
+
+Note :- Upgrade from v1.x.x or v2.x.x to v8.x.x isn't possible. You need to do a fresh install if you are using v1.x.x or v2.x.x.

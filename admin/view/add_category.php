@@ -20,11 +20,11 @@
               </div>
               <div class="form-group mt-3">
                 <label for="formGroupExampleInput" class="font-lb">Tên loại</label>
-                <input type="text" name="name_cate" class="form-control" placeholder="Tên loại điện thoại">
+                <input type="text" name="name_cate" class="form-control" placeholder="Tên loại điện thoại" required>
               </div>
               <div class="wrap-btn">
                 <input type="submit" name="btn_add" class="btn btn-success mt-3" value="Thêm">
-                <input type="reset" class="btn btn-danger mt-3" value="Nhập lại">
+                <a href="index.php?act=list_category" class="btn btn-danger mt-3">Quay Lại danh sách</a>
               </div>
             </form>
             <h3 class="text-success fs-6 mt-3 fw-bolder">
