@@ -266,31 +266,25 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                     $order_date = date('Y/m/d h:i:s', time());
 
                     $total_amount = total_amount();
-
                     if ($total_amount > 0) {
-                        if($user_name == NULL || $full_name == "" ||$address == "" ||$phone == ""){
-                            echo '<script>alert("Bạn phải nhập đầy đủ thông tin để đặt hàng!")</script>';
-                            header("location: index.php?act=billconfirm");
-                        } else {
-                            $_SESSION['idbill'] = $idbill = insert_bill($bill_code, $id_user, $user_name, $full_name, $address, $phone, $email, $payment, $order_date, $total_amount);
-                            $result = getUserEmail($email);
-                            $title = "Thông báo đặt hàng thành công!";
-                            $content = "<h3>Xin chào, cảm ơn quý khách đặt hàng tại UltraPhone.<br></h3>
-                            <h4>Thông tin người nhận:</h4>
-                            <p>Tên khách hàng: ".$full_name."</p>
-                            <p>Email: ".$email."</p>
-                            <p>Địa chỉ: ".$address."</p>
-                            <p>Số điện thoại: ".$phone."</p>
-                            <p>Ngày đặt hàng: ".$order_date."</p>
-                            <p>Tổng tiền: ".number_format($total_amount)."₫</p>
-                            ";
-                            $content .="Chào mừng đến với  <a href='http://localhost/duan1-ultraphone/index.php'>UltraPhone! </a>";
-                            $mail->sendMail($title, $content, $email);
-                            $_SESSION['mail'] = $email;
-                            header('location: ?act=viewbill');
-                        }
-                    }
-                    else {
+                        $_SESSION['idbill'] = $idbill = insert_bill($bill_code, $id_user, $user_name, $full_name, $address, $phone, $email, $payment, $order_date, $total_amount);
+                        $result = getUserEmail($email);
+                        $title = "Thông báo đặt hàng thành công!";
+                        $content = "<h3>Xin chào, cảm ơn quý khách đặt hàng tại UltraPhone.<br></h3>
+                        <h4>Thông tin người nhận:</h4>
+                        <p>Tên khách hàng: ".$full_name."</p>
+                        <p>Email: ".$email."</p>
+                        <p>Địa chỉ: ".$address."</p>
+                        <p>Số điện thoại: ".$phone."</p>
+                        <p>Ngày đặt hàng: ".$order_date."</p>
+                        <p>Tổng tiền: ".number_format($total_amount)."₫</p>
+                        
+                        ";
+                        $content .="Chào mừng đến với  <a href='http://localhost/duan1-ultraphone/index.php'>UltraPhone! </a>";
+                        $mail->sendMail($title, $content, $email);
+                        $_SESSION['mail'] = $email;
+                        header('location: ?act=viewbill');
+                    } else {
                         header('location: ?act=viewcart');
                     }
                 } else {
