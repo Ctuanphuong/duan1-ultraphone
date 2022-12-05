@@ -30,7 +30,7 @@
                              </div>
                              <div class="col-md-12">
                                  <label>Email</label>
-                                 <input type="email" name="email_user" placeholder="Nhập địa chỉ email của bạn">
+                                 <input type="email" name="email_user" placeholder="Nhập địa chỉ email của bạn" required>
                              </div>
                              <div class="col-md-12">
                                  <label>Mật khẩu</label>
