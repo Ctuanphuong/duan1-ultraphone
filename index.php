@@ -24,6 +24,9 @@ $listcate = loadall_cate();
 //load 8 sản phẩm nổi bật
 $list_topsp = loadall_pro_noibat();
 
+//load sản phẩm bán chạy
+$list_bestsp =  loadall_pro_best();
+
 //Lấy lại mật khẩu
 $mail = new Mailer();
 
