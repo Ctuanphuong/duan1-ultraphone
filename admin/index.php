@@ -390,6 +390,14 @@ if (isset($_GET['act'])) {
                 header("location: index.php?act=login");
             }
         break;
+        //    //xóa hỏi đáp: 
+        //    case 'delete_ques':
+        //     if (isset($_GET['id_ques']) && ($_GET['id_ques']) > 0) {
+        //         $id_ques = $_GET['id_ques'];
+        //         delete_ques($id_ques);
+        //     }
+        //     header('location: index.php?act=list_ques');
+        //     break;
 
         default:
             if (isset($_SESSION['admin'])) {
