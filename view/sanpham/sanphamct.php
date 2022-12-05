@@ -51,17 +51,17 @@
                         </div>
                         <div class="price-box">
                             <?php if ($one_pro['discount'] <= 0) { ?>
-                            <span class="new-price">
-                                <?= number_format($one_pro['price']) ?>₫
-                            </span>
+                                <span class="new-price">
+                                    <?= number_format($one_pro['price']) ?>₫
+                                </span>
                             <?php } else { ?>
-                            <span class="new-price">
-                                <?= number_format(($one_pro['price']) - (($one_pro['price']) * ($one_pro['discount']) /
+                                <span class="new-price">
+                                    <?= number_format(($one_pro['price']) - (($one_pro['price']) * ($one_pro['discount']) /
                                         100)) ?>₫
-                            </span>
-                            <span class="old-price">
-                                <?= number_format($one_pro['price']) ?>₫
-                            </span>
+                                </span>
+                                <span class="old-price">
+                                    <?= number_format($one_pro['price']) ?>₫
+                                </span>
                             <?php } ?>
 
 
@@ -71,55 +71,50 @@
                                 <?= $one_pro['short_des'] ?>
                             </p>
                         </div>
-                        <div class="quantity">
-                            <div class="flex-addtocart">
-                                <label>Số lượng</label>
-                                <div class="cart-plus-minus">
-                                    <input class="cart-plus-minus-box" value="1" type="text">
-                                    <div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>
-                                    <div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>
-                                </div>
-                                <div class="detail-addpro">
-                                    <form action="index.php?act=addtocart" method="post">
+                        <form action="index.php?act=addtocart" method="post">
+                            <div class="quantity">
+                                <div class="flex-addtocart">
+                                    <label>Số lượng</label>
+                                    <div class="cart-plus-minus">
+                                        <input class="cart-plus-minus-box" name="quatity" value="1" type="text">
+                                        <div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>
+                                        <div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>
+                                    </div>
+                                    <div class="detail-addpro">
                                         <input type="hidden" name="id_pro" value="<?php echo $one_pro['id_pro'] ?>">
                                         <input type="hidden" name="name_pro" value="<?php echo $one_pro['name_pro'] ?>">
                                         <input type="hidden" name="img_pro" value="<?php echo $one_pro['img_pro'] ?>">
                                         <input type="hidden" name="price" value="<?php echo $one_pro['price'] ?>">
                                         <input type="submit" name="addtocart" class="addtocart" value="Thêm giỏ hàng">
-                                    </form>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </form>
                         <div class="jb-social_link jb-link_share">
                             <span>Chia sẻ</span>
                             <ul>
                                 <li class="facebook">
-                                    <a href="https://www.facebook.com/" data-bs-toggle="tooltip" target="_blank"
-                                        title="Facebook">
+                                    <a href="https://www.facebook.com/" data-bs-toggle="tooltip" target="_blank" title="Facebook">
                                         <i class="fab fa-facebook"></i>
                                     </a>
                                 </li>
                                 <li class="twitter">
-                                    <a href="https://twitter.com/" data-bs-toggle="tooltip" target="_blank"
-                                        title="Twitter">
+                                    <a href="https://twitter.com/" data-bs-toggle="tooltip" target="_blank" title="Twitter">
                                         <i class="fab fa-twitter-square"></i>
                                     </a>
                                 </li>
                                 <li class="youtube">
-                                    <a href="https://www.youtube.com/" data-bs-toggle="tooltip" target="_blank"
-                                        title="Youtube">
+                                    <a href="https://www.youtube.com/" data-bs-toggle="tooltip" target="_blank" title="Youtube">
                                         <i class="fab fa-youtube"></i>
                                     </a>
                                 </li>
                                 <li class="google-plus">
-                                    <a href="https://www.plus.google.com/discover" data-bs-toggle="tooltip"
-                                        target="_blank" title="Google Plus">
+                                    <a href="https://www.plus.google.com/discover" data-bs-toggle="tooltip" target="_blank" title="Google Plus">
                                         <i class="fab fa-google-plus"></i>
                                     </a>
                                 </li>
                                 <li class="instagram">
-                                    <a href="https://rss.com/" data-bs-toggle="tooltip" target="_blank"
-                                        title="Instagram">
+                                    <a href="https://rss.com/" data-bs-toggle="tooltip" target="_blank" title="Instagram">
                                         <i class="fab fa-instagram"></i>
                                     </a>
                                 </li>
@@ -174,11 +169,11 @@
                         <!-- jquery bình luận -->
                         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
                         <script>
-                        $(document).ready(function() {
-                            $("#comment").load("./view/binhluan/formbinhluan.php", {
-                                idpro: <?= $one_pro['id_pro'] ?>, 
-                             });
-                        });
+                            $(document).ready(function() {
+                                $("#comment").load("./view/binhluan/formbinhluan.php", {
+                                    idpro: <?= $one_pro['id_pro'] ?>,
+                                });
+                            });
                         </script>
                         <div id="comment"></div>
                     </div>
@@ -201,60 +196,58 @@
             <div class="col-lg-12">
                 <div class="jb-product_slider">
                     <?php foreach ($similar_pro as $pro) { ?>
-                    <!-- Sản phẩm -->
-                    <div class="jb-slide-item">
-                        <div class="jb-single_product">
-                            <div class="product-img">
-                                <a href="index.php?act=prodetail&idpro=<?php echo $pro['id_pro']; ?>">
-                                    <img src="admin/uploads/<?php echo $pro['img_pro']; ?>" alt="UltraPhone Product">
-                                </a>
-                                <span class="sticker">New</span>
-                            </div>
-                            <div class="jb-product_content">
-                                <div class="product-desc_info">
-                                    <h6><a class="product-name"
-                                            href="index.php?act=prodetail&idpro=<?php echo $pro['id_pro'] ?>">
-                                            <?php echo $pro['name_pro']; ?>
-                                        </a></h6>
-                                    <div class="rating-box">
-                                        <ul>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                        </ul>
-                                    </div>
-                                    <div class="price-box">
-                                        <span class="new-price">
-                                            <?php echo number_format($pro['price']); ?>₫
-                                        </span>
-                                        <!-- <del class="new-price"><?php echo number_format($pro['price']); ?>₫</del> -->
-                                    </div>
+                        <!-- Sản phẩm -->
+                        <div class="jb-slide-item">
+                            <div class="jb-single_product">
+                                <div class="product-img">
+                                    <a href="index.php?act=prodetail&idpro=<?php echo $pro['id_pro']; ?>">
+                                        <img src="admin/uploads/<?php echo $pro['img_pro']; ?>" alt="UltraPhone Product">
+                                    </a>
+                                    <span class="sticker">New</span>
                                 </div>
-                                <div class="actions-add">
-                                    <form action="index.php?act=addtocart" method="post">
-                                        <ul>
-                                            <li>
-                                                <a class="jb-wishlist_link" href="#"><i class="fa fa-heart"></i></a>
-                                            </li>
-                                            <input type="hidden" name="id_pro" value="<?php echo $pro['id_pro'] ?>">
-                                            <input type="hidden" name="name_pro" value="<?php echo $pro['name_pro'] ?>">
-                                            <input type="hidden" name="img_pro" value="<?php echo $pro['img_pro'] ?>">
-                                            <input type="hidden" name="price" value="<?php echo $pro['price'] ?>">
-                                            <li>
-                                                <input type="submit" class="addtocart" name="addtocart"
-                                                    value="Thêm vào giỏ">
-                                            </li>
-                                            <li>
-                                                <a class="jb-sp_link" href="#"><i class="fa fa-copy"></i></a>
-                                            </li>
-                                        </ul>
-                                    </form>
+                                <div class="jb-product_content">
+                                    <div class="product-desc_info">
+                                        <h6><a class="product-name" href="index.php?act=prodetail&idpro=<?php echo $pro['id_pro'] ?>">
+                                                <?php echo $pro['name_pro']; ?>
+                                            </a></h6>
+                                        <div class="rating-box">
+                                            <ul>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                            </ul>
+                                        </div>
+                                        <div class="price-box">
+                                            <span class="new-price">
+                                                <?php echo number_format($pro['price']); ?>₫
+                                            </span>
+                                            <!-- <del class="new-price"><?php echo number_format($pro['price']); ?>₫</del> -->
+                                        </div>
+                                    </div>
+                                    <div class="actions-add">
+                                        <form action="index.php?act=addtocart" method="post">
+                                            <ul>
+                                                <li>
+                                                    <a class="jb-wishlist_link" href="#"><i class="fa fa-heart"></i></a>
+                                                </li>
+                                                <input type="hidden" name="id_pro" value="<?php echo $pro['id_pro'] ?>">
+                                                <input type="hidden" name="name_pro" value="<?php echo $pro['name_pro'] ?>">
+                                                <input type="hidden" name="img_pro" value="<?php echo $pro['img_pro'] ?>">
+                                                <input type="hidden" name="price" value="<?php echo $pro['price'] ?>">
+                                                <li>
+                                                    <input type="submit" class="addtocart" name="addtocart" value="Thêm vào giỏ">
+                                                </li>
+                                                <li>
+                                                    <a class="jb-sp_link" href="#"><i class="fa fa-copy"></i></a>
+                                                </li>
+                                            </ul>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
                     <?php } ?>
                     <!-- End sản phẩm -->
 

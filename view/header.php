@@ -232,7 +232,7 @@ $total_amount = total_amount();
                 <div class="col-xl-7 col-lg-6 col-md-5">
                     <div class="header-search_area">
                         <form action="index.php?act=product" method="post" class="header-search_box">
-                            <input class="jb-search_input" name="kyw" type="text" placeholder="Nhập từ khóa tìm kiếm ..." />
+                            <input class="jb-search_input" name="kyw" type="text" placeholder="Nhập từ khóa tìm kiếm ..." required/>
                             <button class="jb-search_btn" name="btn_search" type="submit">
                                 <i class="fa fa-search"></i>
                             </button>

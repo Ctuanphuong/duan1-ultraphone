@@ -54,6 +54,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 extract($one_pro);
                 $similar_pro = similar_pro($id_pro, $idcate);
                 include "view/sanpham/sanphamct.php";
+
                 $seekey = 'post_' . $id_pro;
                 error_reporting(0);
                 $sessionView = $_SESSION[$seekey];
@@ -226,7 +227,12 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 $name_pro = $_POST['name_pro'];
                 $img_pro = $_POST['img_pro'];
                 $price = $_POST['price'];
-                $quantity = 1;
+                if (isset($_POST['quatity']) && $_POST['quatity'] >= 1) {
+                    $quantity = $_POST['quatity'];
+                } else {
+                    $quantity = 1;
+                }
+
                 $total = $price * $quantity;
                 $add_pro = [$id_pro, $name_pro, $img_pro, $price, $quantity, $total];
                 array_push($_SESSION['mycart'], $add_pro);
@@ -272,15 +278,14 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                         $title = "Thông báo đặt hàng thành công!";
                         $content = "<h3>Xin chào, cảm ơn quý khách đặt hàng tại UltraPhone.<br></h3>
                         <h4>Thông tin người nhận:</h4>
-                        <p>Tên khách hàng: ".$full_name."</p>
-                        <p>Email: ".$email."</p>
-                        <p>Địa chỉ: ".$address."</p>
-                        <p>Số điện thoại: ".$phone."</p>
-                        <p>Ngày đặt hàng: ".$order_date."</p>
-                        <p>Tổng tiền: ".number_format($total_amount)."₫</p>
-                        
+                        <p>Tên khách hàng: " . $full_name . "</p>
+                        <p>Email: " . $email . "</p>
+                        <p>Địa chỉ: " . $address . "</p>
+                        <p>Số điện thoại: " . $phone . "</p>
+                        <p>Ngày đặt hàng: " . $order_date . "</p>
+                        <p>Tổng tiền: " . number_format($total_amount) . "₫</p>
                         ";
-                        $content .="Chào mừng đến với  <a href='http://localhost/duan1-ultraphone/index.php'>UltraPhone! </a>";
+                        $content .= "Chào mừng đến với  <a href='http://localhost/duan1-ultraphone/index.php'>UltraPhone! </a>";
                         $mail->sendMail($title, $content, $email);
                         $_SESSION['mail'] = $email;
                         header('location: ?act=viewbill');
@@ -319,7 +324,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
         case 'question':
             include "view/question.php";
             break;
-        case'viewbill':
+        case 'viewbill':
             if (isset($_SESSION['user'])) {
                 $randomNum = substr(str_shuffle("123456789"), 0, 5);
                 $bill_code = $randomNum;
@@ -338,27 +343,27 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                     $_SESSION['idbill'] = $idbill = insert_bill($bill_code, $id_user, $user_name, $full_name, $address, $phone, $email, $payment, $order_date, $total_amount);
                     header('location: ?act=viewbill');
                 }
-            } 
+            }
             foreach ($_SESSION['mycart'] as $cart) {
                 insert_cart($_SESSION['user']['id_user'], $_SESSION['user']['user_name'], $cart[0], $cart[2], $cart[1], $cart[3], $cart[4], $cart[5], $idbill);
             }
             $_SESSION['mycart'] = [];
-        
-        $bill = loadone_bill($_SESSION['idbill']);
-        $cart_detail = loadall_cart($_SESSION['idbill']);
-        error_reporting(0);
 
-        if ($payment == 2 || $payment == 3) {
-            $_SESSION['pay'] = [$payment, $total_amount, $bill_code];
-            header('location: view/qr.php');
-        } else {
-            $_SESSION['check'] = 1;
-        }
-        error_reporting(E_ALL);
-        if ($_SESSION['check'] == 1 || $payment == 1) {
-            include "view/giohang/billconfirm.php";
-        }
-        break;
+            $bill = loadone_bill($_SESSION['idbill']);
+            $cart_detail = loadall_cart($_SESSION['idbill']);
+            error_reporting(0);
+
+            if ($payment == 2 || $payment == 3) {
+                $_SESSION['pay'] = [$payment, $total_amount, $bill_code];
+                header('location: view/qr.php');
+            } else {
+                $_SESSION['check'] = 1;
+            }
+            error_reporting(E_ALL);
+            if ($_SESSION['check'] == 1 || $payment == 1) {
+                include "view/giohang/billconfirm.php";
+            }
+            break;
 
             include "view/giohang/viewbill.php";
             break;
