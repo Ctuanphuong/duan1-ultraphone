@@ -26,7 +26,7 @@
                              </div>
                              <div class="col-md-6 col-12 mb--20">
                                  <label>Họ tên</label>
-                                 <input type="text" name="full_name" placeholder="Nhập họ tên của bạn">
+                                 <input type="text" name="full_name" placeholder="Nhập họ tên của bạn" required>
                              </div>
                              <div class="col-md-12">
                                  <label>Email</label>
