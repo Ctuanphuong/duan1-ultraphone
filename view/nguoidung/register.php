@@ -34,7 +34,7 @@
                              </div>
                              <div class="col-md-12">
                                  <label>Mật khẩu</label>
-                                 <input type="password" name="password" placeholder="Tạo mật khẩu của bạn">
+                                 <input type="password" name="password" placeholder="Tạo mật khẩu của bạn" required>
                              </div>
                              <!-- <div class="col-md-6">
                                         <label>Xác nhận mật khẩu</label>
