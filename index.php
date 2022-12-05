@@ -322,7 +322,8 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             // giá trị default: 
             // Quên mật khẩu: Nhập mã xác minh mã được gửi qua Email
         case 'question':
-            include "view/question.php";
+            
+            include "view/hoidap/question.php";
             break;
         case 'viewbill':
             if (isset($_SESSION['user'])) {
