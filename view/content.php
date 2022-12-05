@@ -221,7 +221,74 @@
                         </div>
                     </div>
                     <div id="bestseller" class="tab-pane" role="tabpanel">
-                        
+                    <div class="jb-product-tab_slider">
+                            <!-- Sản phẩm bán chạy -->
+                            <?php
+                            foreach ($list_bestsp as $pro) { ?>
+                                <div class="jb-slide-item">
+                                    <div class="jb-single_product">
+                                        <div class="product-img">
+                                            <a href="index.php?act=prodetail&idpro=<?= $pro['id_pro'] ?>"><img src="admin/uploads/<?= $pro['img_pro'] ?>" alt="Ảnh sản phẩm" />
+                                            </a>
+                                            <span class="sticker">Hot</span>
+                                            <?php if ($pro['discount'] <= 0) { ?>
+                                                <span></span>
+                                            <?php } else { ?>
+                                                <span class="sticker-2">-<?= $pro['discount'] ?>%</span>
+                                            <?php } ?>
+                                            <div>
+                                                <a href="index.php?act=prodetail&idpro=<?= $pro['id_pro'] ?>" title="Quick View" class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><i class="fa fa-search"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="jb-product_content">
+                                            <div class="product-desc_info">
+                                                <h6>
+                                                    <a class="product-name" href="index.php?act=prodetail&idpro=<?= $pro['id_pro'] ?>"><?= $pro['name_pro'] ?></a>
+                                                </h6>
+                                                <div class="rating-box">
+                                                    <ul>
+                                                        <li><i class="fa fa-star"></i></li>
+                                                        <li><i class="fa fa-star"></i></li>
+                                                        <li><i class="fa fa-star"></i></li>
+                                                        <li><i class="fa fa-star"></i></li>
+                                                        <li><i class="fa fa-star"></i></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="price-box">
+                                                    <?php if ($pro['discount'] <= 0) { ?>
+                                                        <span class="new-price"><?= number_format($pro['price']) ?>₫</span>
+                                                    <?php } else { ?>
+                                                        <span class="new-price"><?= number_format(($pro['price']) - (($pro['price']) * ($pro['discount']) / 100)) ?>₫</span>
+                                                        <span class="old-price"><?= number_format($pro['price']) ?>₫</span>
+                                                    <?php } ?>
+                                                </div>
+                                            </div>
+                                            <div class="actions-add">
+                                                <form action="index.php?act=addtocart" method="post">
+                                                    <ul>
+                                                        <li>
+                                                            <a class="jb-wishlist_link" href="#"><i class="fa fa-heart"></i></a>
+                                                        </li>
+                                                        <input type="hidden" name="id_pro" value="<?php echo $pro['id_pro'] ?>">
+                                                        <input type="hidden" name="name_pro" value="<?php echo $pro['name_pro'] ?>">
+                                                        <input type="hidden" name="img_pro" value="<?php echo $pro['img_pro'] ?>">
+                                                        <input type="hidden" name="price" value="<?php echo $pro['price'] ?>">
+                                                        <li>
+                                                            <input type="submit" class="addtocart" name="addtocart" value="Thêm vào giỏ">
+                                                        </li>
+                                                        <li>
+                                                            <a class="jb-sp_link" href="#"><i class="fa fa-copy"></i></a>
+                                                        </li>
+                                                    </ul>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php } ?>
+                            
+                            <!-- End sản phẩm bán chạy -->
+                        </div>
                     </div>
 
                     <!-- show sản phẩm nổi bật -->
