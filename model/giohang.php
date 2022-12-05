@@ -62,6 +62,7 @@ if ($removecol == 1) {
 } else {
     $btn_update = '<a href="index.php?act=viewcart"><input type="button" class="button" value="Quay lại giỏ hàng"></a>';
 }
+
 echo '    
  </table>
 </div>
