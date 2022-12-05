@@ -54,5 +54,6 @@
             $('#dataTable').DataTable();
         });
     </script>
+    
     <!-- End of Main Content -->
     <?php include_once "footer.php" ?>

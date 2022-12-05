@@ -85,6 +85,11 @@
             <i class=" fas fa-solid fa-comment"></i>
             <span>Bình luận</span></a>
     </li>
+    <!-- <li class="nav-item">
+        <a class="nav-link" href="index.php?act=list_ques">
+            <i class=" fas fa-solid fa-comment"></i>
+            <span>Hỏi đáp</span></a>
+    </li> -->
     <li class="nav-item">
         <a class="nav-link" href="index.php?act=list_statis">
             <i class="fas fa-solid fa-chart-simple"></i>

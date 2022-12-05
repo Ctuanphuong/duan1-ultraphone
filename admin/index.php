@@ -11,6 +11,7 @@ include "model/nguoidung.php";
 include "model/hoadon.php";
 include "model/binhluan.php";
 include "model/thongke.php";
+include "model/hoidap.php";
 // controller
 if (isset($_GET['act'])) {
     $act = $_GET['act'];
@@ -377,6 +378,18 @@ if (isset($_GET['act'])) {
             }
 
             break;
+            // Danh sách hỏi đáp
+        case 'list_ques':
+            if (isset($_SESSION['admin'])) {
+                $listques = question();
+                render(
+                    'list_question',
+                    ['listques' => $listques]
+                );
+            } else {
+                header("location: index.php?act=login");
+            }
+        break;
 
         default:
             if (isset($_SESSION['admin'])) {
