@@ -8,6 +8,7 @@ include "model/loai.php";
 include "model/nguoidung.php";
 include "model/giohang.php";
 include "model/hoadon.php";
+include "model/question.php";
 include "email/index.php";
 
 // kiểm tra session my cart đã tồn tại là 1 mảng chưa, nếu chưa thì khởi tạo 1 mảng mới
@@ -322,6 +323,14 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             
             // Hỏi đáp
         case 'question':
+            if (isset($_POST['btn_question']) && ($_POST['btn_question'])) {
+                $name = $_POST['name'];
+                $email = $_POST['email'];
+                $phone = $_POST['phone'];
+                $contennt = $_POST['contennt'];
+                question($name, $email, $phone, $contennt);
+                echo '<script>alert("Gửi câu hỏi thành công !")</script>';
+            }
             include "view/hoidap/question.php";
             break;
         case 'viewbill':
