@@ -5,7 +5,7 @@ session_start();
 require_once 'pdo.php';
 require_once 'function.php';
 
-    $result = curl_get("https://doquanglinh.com/api/alo/index.php");
+    $result = curl_get("https://doquanglinh.com/api/index.php");
     $result = json_decode($result, true);
     foreach($result['transactionHistoryList'] as $data)
     {
