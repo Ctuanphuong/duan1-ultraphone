@@ -41,10 +41,10 @@
                   </div>
                   <form class="user" action="index.php?act=login" method="post">
                     <div class="form-group">
-                      <input type="text" class="form-control form-control-user" name="user_name" placeholder="Enter Email Address...">
+                      <input type="text" class="form-control form-control-user" name="user_name" placeholder="Nhập tên đăng nhập hoặc Email của bạn ">
                     </div>
                     <div class="form-group">
-                      <input type="password" class="form-control form-control-user" name="password" placeholder="Password">
+                      <input type="password" class="form-control form-control-user" name="password" placeholder="Nhập mật khẩu của bạn">
                     </div>
                     <div class="form-group">
                       <div class="custom-control custom-checkbox small">
