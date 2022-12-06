@@ -24,19 +24,19 @@
                      </div>
                      <div class="wrap-infocart mar-t5">
                          <span>Họ tên người đặt: </span>
-                         <input name="full_name" type="text" class="ip-cart ml-91" placeholder="Nhập họ tên người nhận" value="<?= $full_name ?>" />
+                         <input name="full_name" type="text" class="ip-cart ml-91" placeholder="Nhập họ tên người nhận" value="<?= $full_name ?>" required />
                      </div>
                      <div class="wrap-infocart mar-t5">
                          <span>Địa chỉ: </span>
-                         <input name="address" type="text" class="ip-cart ml-158" placeholder="Nhập địa chỉ nhận hàng" value="<?= $address ?>" />
+                         <input name="address" type="text" class="ip-cart ml-158" placeholder="Nhập địa chỉ nhận hàng" value="<?= $address ?>" required />
                      </div>
                      <div class="wrap-infocart mar-t5">
                          <span>Email: </span>
-                         <input name="email" type="email" class="ip-cart ml-166" placeholder="Nhập email người nhận" value="<?= $email_user ?>" />
+                         <input name="email" type="email" class="ip-cart ml-166" placeholder="Nhập email người nhận" value="<?= $email_user ?>" required />
                      </div>
                      <div class="wrap-infocart mar-t5">
                          <span>Điện thoại: </span>
-                         <input name="phone" type="text" class="ip-cart ml-134" placeholder="Nhập số điện thoại người nhận" value="<?= $phone_user ?>" />
+                         <input name="phone" type="text" class="ip-cart ml-134" placeholder="Nhập số điện thoại người nhận" value="<?= $phone_user ?>" required />
                      </div>
                  </div>
              </div>

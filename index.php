@@ -223,7 +223,19 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
         case 'viewcart':
             include "view/giohang/viewcart.php";
             break;
-
+        case "edit":
+            // $total_price = 0;
+            foreach ($_SESSION['mycart'] as $k => $v) {
+                if ($_POST["code"] == $k) {
+                    if ($_POST["quantity"] == '0') {
+                        array_splice($_SESSION['mycart'], $k, 1);
+                    } else {
+                        $_SESSION['mycart'][$k][4] = $_POST["quantity"];
+                        $_SESSION['mycart'][$k][5] = $_SESSION['mycart'][$k][3] * $_SESSION['mycart'][$k][4];
+                    }
+                }
+            }
+            break;
             // thêm vào giỏ hàng
         case 'addtocart':
             if (isset($_POST['addtocart']) && $_POST['addtocart']) {
@@ -323,7 +335,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 include "view/giohang/billconfirm.php";
             }
             break;
-            
+
             // Hỏi đáp
         case 'question':
             if (isset($_POST['btn_question']) && ($_POST['btn_question'])) {
