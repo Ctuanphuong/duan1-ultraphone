@@ -38,6 +38,11 @@
                          <span>Điện thoại: </span>
                          <input name="phone" type="text" class="ip-cart ml-134" placeholder="Nhập số điện thoại người nhận" value="<?= $phone_user ?>" required />
                      </div>
+                     <?php if (isset($_COOKIE['error'])) : ?>
+                         <p class="font-weight-bold text-success">
+                             <?= $_COOKIE['error'] ?>
+                         </p>
+                     <?php endif ?>
                  </div>
              </div>
              <!-- phương thức thanh toán -->

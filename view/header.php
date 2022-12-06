@@ -141,14 +141,14 @@ $total_amount = total_amount();
                                         </div>
 
                                         <?php } else {
-                                        foreach ($_SESSION['mycart'] as $cart) { ?>
+                                        foreach ($_SESSION['mycart'] as $cart) {  ?>
                                             <li class="minicart-item_area">
                                                 <div class="minicart-single_item">
                                                     <div class="minicart-img">
                                                         <a href="index.php?act=prodetail&idpro=<?= $cart[0] ?>">
                                                             <img src="admin/uploads/<?= $cart[2] ?>" alt="UltraPhone Product" width="50px" ; />
                                                         </a>
-                                                        <span class="product-quantity">1x</span>
+                                                        <span class="product-quantity"><?= $cart[4] ?>x</span>
                                                     </div>
                                                     <div class="minicart-content">
                                                         <div class="product-name">
@@ -232,7 +232,7 @@ $total_amount = total_amount();
                 <div class="col-xl-7 col-lg-6 col-md-5">
                     <div class="header-search_area">
                         <form action="index.php?act=product" method="post" class="header-search_box">
-                            <input class="jb-search_input" name="kyw" type="text" placeholder="Nhập từ khóa tìm kiếm ..." required/>
+                            <input class="jb-search_input" name="kyw" type="text" placeholder="Nhập từ khóa tìm kiếm ..." required />
                             <button class="jb-search_btn" name="btn_search" type="submit">
                                 <i class="fa fa-search"></i>
                             </button>

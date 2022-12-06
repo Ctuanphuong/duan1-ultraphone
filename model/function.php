@@ -24,12 +24,12 @@ function curl_get($url)
 }
 function checkcode($tranId) { 
     $sql = "SELECT * FROM history_bank WHERE tranid = '$tranId'";
-    pdo_query($sql);
-
+    $a = pdo_query_one($sql);
+    return $a;
 }
 function checkbill($id) { 
     $sql = "SELECT * FROM bill WHERE bill_code = '$id'";
-    $a = pdo_query($sql);
+    $a = pdo_query_one($sql);
     return $a;
 
 }
