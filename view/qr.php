@@ -279,7 +279,7 @@ if (isset($_SESSION['pay'])) {
                             <br>
                             Vui lòng thanh toán vào thông tin tài khoản trên để hệ thống xử lý hoá đơn tự động.
                         </p>
-                        <a href="/view/naptien">
+                        <a href="?act=billconfirm">
                             <i class="fa fa-arrow-left" aria-hidden="true"></i>
                             <span>Quay lại</span></a>
                     </div>
