@@ -8,19 +8,12 @@
                         <h4 class="login-title">Đổi mật khẩu</h4>
                         <div class="row">
                             <div class="col-md-12 col-12">
-                                <input type="text" name="newpass" placeholder="Nhập mật khẩu mới">
-                                <input type="text" name="repass" placeholder="Nhập lại mật khẩu mới">
+                                <input type="password" name="newpass" placeholder="Nhập mật khẩu mới" required>
+                                <input type="password" name="repass" placeholder="Nhập lại mật khẩu mới">
                                 <span style="color: red;"><?php if (isset($error['fail'])) echo $error['fail'] ?></span> <br>
                             </div>
 
-                            <div class="col-md-10">
-                                <div class="check-box">
-                                    <a href="index.php?act=login">Đăng nhập </a>
-                                </div>
-                                <div class="register-txt">
-                                    <a href="index.php?act=register">Đăng ký tài khoản mới</a>
-                                </div>
-                            </div>
+                            
 
                             <div class="col-12 wrap-btn-sub">
                                 <input type="submit" class="btn-submit mt-3" name="btn_changePass" value="Đổi mật khẩu">

@@ -26,14 +26,6 @@
                                 <span style="color: red;"><?php if (isset($error['fali'])) echo $error['fali']  ?></span>
                             </div>
 
-                            <div class="col-md-10 mt-3">
-                                <div class="check-box">
-                                    <a href="index.php?act=login">Đăng nhập </a>
-                                </div>
-                                <div class="register-txt">
-                                    <a href="index.php?act=register">Đăng ký tài khoản mới</a>
-                                </div>
-                            </div>
 
                             <div class="col-12 wrap-btn-sub">
                                 <input type="submit" class="btn-submit" name="btn_verification" value="Xác nhận" style="margin-top: 30px;">
