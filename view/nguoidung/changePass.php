@@ -13,14 +13,7 @@
                                 <span style="color: red;"><?php if (isset($error['fail'])) echo $error['fail'] ?></span> <br>
                             </div>
 
-                            <div class="col-md-10">
-                                <div class="check-box">
-                                    <a href="index.php?act=login">Đăng nhập </a>
-                                </div>
-                                <div class="register-txt">
-                                    <a href="index.php?act=register">Đăng ký tài khoản mới</a>
-                                </div>
-                            </div>
+                            
 
                             <div class="col-12 wrap-btn-sub">
                                 <input type="submit" class="btn-submit mt-3" name="btn_changePass" value="Đổi mật khẩu">
