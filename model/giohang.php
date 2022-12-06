@@ -139,8 +139,8 @@ echo '
 
 function countcart(){
     $i = 0;
-    foreach($_SESSION['mycart'] as $cart){
-        $i ++;
+    foreach($_SESSION['mycart'] as $k => $cart){
+        $i = $i + $_SESSION['mycart'][$k][4];
     }
     return $i;
 }
