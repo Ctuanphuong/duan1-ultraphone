@@ -279,6 +279,12 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             break;
             // tạo bill 
         case 'bill':
+            if (isset($_SESSION['errorMessage'])) {
+                echo "<script type='text/javascript'>
+                        alert('" . $_SESSION['errorMessage'] . "');
+                      </script>";
+                unset($_SESSION['errorMessage']);
+            }
             include "view/giohang/bill.php";
             break;
         case 'pay':
@@ -297,27 +303,48 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                     $email = $_POST['email'];
                     $payment = $_POST['payment'];
                     $order_date = date('Y/m/d h:i:s', time());
-
+                    $check_error = 0;
                     $total_amount = total_amount();
-                    if ($total_amount > 0) {
-                        $_SESSION['idbill'] = $idbill = insert_bill($bill_code, $id_user, $user_name, $full_name, $address, $phone, $email, $payment, $order_date, $total_amount);
-                        $result = getUserEmail($email);
-                        $title = "Thông báo đặt hàng thành công!";
-                        $content = "<h3>Xin chào, cảm ơn quý khách đặt hàng tại UltraPhone.<br></h3>
-                        <h4>Thông tin người nhận:</h4>
-                        <p>Tên khách hàng: " . $full_name . "</p>
-                        <p>Email: " . $email . "</p>
-                        <p>Địa chỉ: " . $address . "</p>
-                        <p>Số điện thoại: " . $phone . "</p>
-                        <p>Ngày đặt hàng: " . $order_date . "</p>
-                        <p>Tổng tiền: " . number_format($total_amount) . "₫</p>
-                        ";
-                        $content .= "Chào mừng đến với  <a href='http://localhost/duan1-ultraphone/index.php'>UltraPhone! </a>";
-                        $mail->sendMail($title, $content, $email);
-                        $_SESSION['mail'] = $email;
-                        header('location: ?act=viewbill');
+
+                    function validate_mobile($mobile)
+                    {
+                        return preg_match('/^[0-9]{10}+$/', $mobile);
+                    }
+                    function validate_email($email)
+                    {
+                        return filter_var($email, FILTER_VALIDATE_EMAIL);
+                    }
+                    if (!validate_email($mai)) {
+                        $_SESSION['errorMessage'] = "Email không hợp lệ !";
+                        $check_error = 1;
+                    }
+                    if (validate_mobile($phone) == 0) {
+                        $_SESSION['errorMessage'] = "Số điện thoại không đúng định dạng !";
+                        $check_error = 1;
+                    }
+                    if ($check_error == 0) {
+                        if ($total_amount > 0) {
+                            $_SESSION['idbill'] = $idbill = insert_bill($bill_code, $id_user, $user_name, $full_name, $address, $phone, $email, $payment, $order_date, $total_amount);
+                            $result = getUserEmail($email);
+                            $title = "Thông báo đặt hàng thành công!";
+                            $content = "<h3>Xin chào, cảm ơn quý khách đặt hàng tại UltraPhone.<br></h3>
+                            <h4>Thông tin người nhận:</h4>
+                            <p>Tên khách hàng: " . $full_name . "</p>
+                            <p>Email: " . $email . "</p>
+                            <p>Địa chỉ: " . $address . "</p>
+                            <p>Số điện thoại: " . $phone . "</p>
+                            <p>Ngày đặt hàng: " . $order_date . "</p>
+                            <p>Tổng tiền: " . number_format($total_amount) . "₫</p>
+                            ";
+                            $content .= "Chào mừng đến với  <a href='http://localhost/duan1-ultraphone/index.php'>UltraPhone! </a>";
+                            $mail->sendMail($title, $content, $email);
+                            $_SESSION['mail'] = $email;
+                            header('location: ?act=viewbill');
+                        } else {
+                            header('location: ?act=viewcart');
+                        }
                     } else {
-                        header('location: ?act=viewcart');
+                        header('location: ?act=bill');
                     }
                 } else {
                     echo '<script>alert("Bạn phải đăng nhập để đặt hàng!")</script>';
