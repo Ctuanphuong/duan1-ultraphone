@@ -243,16 +243,27 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 $name_pro = $_POST['name_pro'];
                 $img_pro = $_POST['img_pro'];
                 $price = $_POST['price'];
+                $check = 0;
                 if (isset($_POST['quatity']) && $_POST['quatity'] >= 1) {
                     $quantity = $_POST['quatity'];
                 } else {
                     $quantity = 1;
                 }
-
-                $total = $price * $quantity;
-                $add_pro = [$id_pro, $name_pro, $img_pro, $price, $quantity, $total];
-                array_push($_SESSION['mycart'], $add_pro);
-                header("location: index.php?act=viewcart");
+                foreach ($_SESSION['mycart'] as $k => $w) {
+                    if ($id_pro == $_SESSION['mycart'][$k][0]) {
+                        $sl = $_SESSION['mycart'][$k][4];
+                        $_SESSION['mycart'][$k][4] = $sl + $quantity;
+                        $_SESSION['mycart'][$k][5] = $_SESSION['mycart'][$k][3] * $_SESSION['mycart'][$k][4];
+                        header("location: index.php?act=viewcart");
+                        $check = 1;
+                    }
+                }
+                if ($check == 0) {
+                    $total = $price * $quantity;
+                    $add_pro = [$id_pro, $name_pro, $img_pro, $price, $quantity, $total];
+                    array_push($_SESSION['mycart'], $add_pro);
+                    header("location: index.php?act=viewcart");
+                }
             }
             include "view/giohang/viewcart.php";
             break;
