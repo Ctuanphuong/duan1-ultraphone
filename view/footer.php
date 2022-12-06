@@ -46,9 +46,9 @@
 
           <a href="index.php?act=product">Sản phẩm</a>
 
-          <a href="#">Giới thiệu</a>
+          <a href="index.php?act=introduce">Giới thiệu</a>
 
-          <a href="#">Liên hệ</a>
+          <a href="index.php?act=contact">Liên hệ</a>
 
           <a href="index.php?act=question">Hỏi đáp</a>
 

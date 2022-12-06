@@ -108,10 +108,10 @@ $total_amount = total_amount();
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="about-us.html">Giới thiệu</a>
+                                    <a href="index.php?act=introduce">Giới thiệu</a>
                                 </li>
                                 <li>
-                                    <a href="contact.html">Liên hệ</a>
+                                    <a href="index.php?act=contact">Liên hệ</a>
                                 </li>
                                 <li>
                                     <a href="index.php?act=question">Hỏi đáp</a>

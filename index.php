@@ -402,6 +402,14 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
 
             include "view/giohang/viewbill.php";
             break;
+                //Giới thiệu
+            case 'introduce':
+                include "view/gioithieu.php";
+                break;
+                //Liên hệ
+            case 'contact':
+                include "view/lienhe.php";
+                break;
         default:
             include "view/content.php";
             break;
