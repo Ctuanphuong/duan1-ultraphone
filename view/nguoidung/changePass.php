@@ -8,7 +8,7 @@
                         <h4 class="login-title">Đổi mật khẩu</h4>
                         <div class="row">
                             <div class="col-md-12 col-12">
-                                <input type="text" name="newpass" placeholder="Nhập mật khẩu mới">
+                                <input type="text" name="newpass" placeholder="Nhập mật khẩu mới" required>
                                 <input type="text" name="repass" placeholder="Nhập lại mật khẩu mới">
                                 <span style="color: red;"><?php if (isset($error['fail'])) echo $error['fail'] ?></span> <br>
                             </div>
