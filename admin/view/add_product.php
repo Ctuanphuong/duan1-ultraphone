@@ -57,7 +57,7 @@
 
               <div class="wrap-btn">
                 <input type="submit" name="btn_add" class="btn btn-success mt-3" value="Thêm">
-                <input type="reset" class="btn btn-danger mt-3" value="Nhập lại">
+                <a href="?act=list_product" class="btn btn-danger mt-3">Quay Lại</a>
               </div>
             </form>
             <h3 class="text-success fs-6 mt-3 fw-bolder">

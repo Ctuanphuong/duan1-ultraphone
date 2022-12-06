@@ -36,14 +36,18 @@ if (isset($_GET['act'])) {
                 if (isset($_POST['btn_login']) && $_POST['btn_login']) {
                     $user_name = $_POST['user_name'];
                     $password = $_POST['password'];
-                    $check = check_user_admin($user_name, $password);
-                    if (is_array($check)) {
-                        $_SESSION['admin'] = $check;
-                        echo '<script>alert("Đăng nhập thành công!")</script>';
-                        // sleep(10);
-                        header('Location: index.php');
+                    if ($user_name == null || $password == null) {
+                        echo '<script>alert("Điền đầy đủ thông tin !")</script>';
                     } else {
-                        echo '<script>alert("Tài khoản sai hoặc không tồn tại!")</script>';
+                        $check = check_user_admin($user_name, $password);
+                        if (is_array($check)) {
+                            $_SESSION['admin'] = $check;
+                            echo '<script>alert("Đăng nhập thành công!")</script>';
+                            // sleep(10);
+                            header('Location: index.php');
+                        } else {
+                            echo '<script>alert("Tài khoản sai hoặc không tồn tại!")</script>';
+                        }
                     }
                 }
                 render('login');
@@ -264,13 +268,13 @@ if (isset($_GET['act'])) {
             header('location: index.php?act=list_user');
             break;
             // Xóa người dùng
-            case "delete_usser":
-                if (isset($_GET['id_user']) && ($_GET['id_user'] > 0)) {
-                    $id_user = $_GET['id_user'];
-                    delete_user($id_user);
-                }
-                header('location:index.php?act=list_user');
-                break;
+        case "delete_usser":
+            if (isset($_GET['id_user']) && ($_GET['id_user'] > 0)) {
+                $id_user = $_GET['id_user'];
+                delete_user($id_user);
+            }
+            header('location:index.php?act=list_user');
+            break;
 
             //CONTROLLER HÓA ĐƠN
 

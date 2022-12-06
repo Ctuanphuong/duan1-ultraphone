@@ -41,9 +41,9 @@ foreach($_SESSION['mycart'] as $cart) {
         <td class="quantity">
             <label>Số lượng</label>
             <div class="cart-plus-minus">
-                <input class="cart-plus-minus-box" value="'.$quantity.'" type="text" name="number-323">
-                <div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>
-                <div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>
+                <input class="cart-plus-minus-box" value="'.$quantity.'" type="text" onchange="aler()">
+                <div class="dec qtybutton" onclick="aler()"><i class="fa fa-angle-down"></i></div>
+                <div class="inc qtybutton" onclick="aler()"><i class="fa fa-angle-up"></i></div>
             </div>
         </td>
         <td class="product-subtotal"><span class="amount">'.number_format($total).'₫</span></td>

@@ -29,7 +29,14 @@
                             <?php } ?>
                             </div>
                 </form>
+                <button onclick="aler()">test</button>
             </div>
         </div>
     </div>
 </div>
+<script>
+    function aler(){
+        alert("Hello! I am an alert box!!");
+    }
+
+</script>
