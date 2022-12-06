@@ -34,12 +34,12 @@
             <!-- Nested Row within Card Body -->
             <div class="row">
               <div class="col-lg-6 d-none d-lg-block ">
-                <img src="uploads/logo.png" alt="logo Ultraphone" style="width: 500px; padding-top: 100px; ">
+                <img src="uploads/admin1.jpg" alt="logo Ultraphone" style="width: 500px; ">
               </div>
               <div class="col-lg-6">
                 <div class="p-5">
                   <div class="text-center">
-                    <h1 class="h4 text-gray-900 mb-4">Chào mừng đến với Trang quản trị UltraPhone!</h1>
+                    <h1 class="h4 text-gray-900 mb-4">Trang quản trị UltraPhone!</h1>
                   </div>
                   <form class="user" action="index.php?act=login" method="post">
                     <div class="form-group">
