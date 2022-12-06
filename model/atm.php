@@ -11,7 +11,7 @@ require_once 'function.php';
     {
         $comment        = $data['description'];             // NỘI DUNG CHUYỂN TIỀN
         $tranId         = $data['refNo'];                 // MÃ GIAO DỊCH
-        $id       = parse_order_id($comment);         // TÁCH NỘI DUNG CHUYỂN TIỀN
+        $id             = parse_order_id($comment);         // TÁCH NỘI DUNG CHUYỂN TIỀN
         $amount         = $data['creditAmount'];
         $money          = $amount;
         $time           = $data['transactionDate'];    

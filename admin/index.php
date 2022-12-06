@@ -136,7 +136,7 @@ if (isset($_GET['act'])) {
                     $target_file = $target_dir . basename($_FILES["img_pro"]["name"]);
                     $extension = pathinfo($img_pro, PATHINFO_EXTENSION);
 
-                    $allowed_extensions = array(".jpg", "jpeg", ".png", ".gif");
+                    $allowed_extensions = array("jpg", "jpeg", "png", "gif");
 
                     (move_uploaded_file($_FILES["img_pro"]["tmp_name"], $target_file));
                     if ($name_pro == null || $price == null || $short_des == null || $idcate == null) {
