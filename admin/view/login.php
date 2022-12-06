@@ -49,12 +49,12 @@
                       <input type="password" class="form-control form-control-user" name="password" placeholder="Nhập mật khẩu" required>
 
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                       <div class="custom-control custom-checkbox small">
                         <input type="checkbox" class="custom-control-input" id="customCheck">
                         <label class="custom-control-label" for="customCheck">Ghi nhớ tài khoản</label>
                       </div>
-                    </div>
+                    </div> -->
                     <input type="submit" class="btn btn-dark btn-user btn-block" name="btn_login" value="Đăng nhập">
                     <hr>
                   </form>
