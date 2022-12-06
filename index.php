@@ -8,6 +8,7 @@ include "model/loai.php";
 include "model/nguoidung.php";
 include "model/giohang.php";
 include "model/hoadon.php";
+include "model/question.php";
 include "email/index.php";
 
 // kiểm tra session my cart đã tồn tại là 1 mảng chưa, nếu chưa thì khởi tạo 1 mảng mới
@@ -22,6 +23,9 @@ $listcate = loadall_cate();
 
 //load 8 sản phẩm nổi bật
 $list_topsp = loadall_pro_noibat();
+
+//load sản phẩm bán chạy
+$list_bestsp =  loadall_pro_best();
 
 //Lấy lại mật khẩu
 $mail = new Mailer();
@@ -319,10 +323,18 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 include "view/giohang/billconfirm.php";
             }
             break;
-            // giá trị default: 
-            // Quên mật khẩu: Nhập mã xác minh mã được gửi qua Email
+            
+            // Hỏi đáp
         case 'question':
-            include "view/question.php";
+            if (isset($_POST['btn_question']) && ($_POST['btn_question'])) {
+                $name = $_POST['name'];
+                $email = $_POST['email'];
+                $phone = $_POST['phone'];
+                $contennt = $_POST['contennt'];
+                question($name, $email, $phone, $contennt);
+                echo '<script>alert("Gửi câu hỏi thành công !")</script>';
+            }
+            include "view/hoidap/question.php";
             break;
         case 'viewbill':
             if (isset($_SESSION['user'])) {

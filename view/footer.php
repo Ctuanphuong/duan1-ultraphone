@@ -50,7 +50,7 @@
 
           <a href="#">Liên hệ</a>
 
-          <a href="#">Hỏi đáp</a>
+          <a href="index.php?act=question">Hỏi đáp</a>
 
         </p>
 
@@ -83,13 +83,7 @@
           Mua Ultraphone giao tận nơi và tham khảo thêm nhiều sản phẩm khác. Miễn phí vận chuyển toàn quốc cho mọi đơn hàng . Đổi trả dễ dàng. Thanh toán bảo mật.
         </p>
 
-        <div class="footer-icons">
-          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="#"><i class="fa-brands fa-twitter"></i></a>
-          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-          <a href="#"><i class="fa-brands fa-github"></i></a>
-
-        </div>
+        
       </div>
 
     </footer>

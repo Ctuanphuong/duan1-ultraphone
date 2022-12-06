@@ -86,6 +86,11 @@
             <span>Bình luận</span></a>
     </li>
     <li class="nav-item">
+        <a class="nav-link" href="index.php?act=list_ques">
+        <i class="fa-solid fa-circle-question"></i>
+            <span>Hỏi đáp</span></a>
+    </li>
+    <li class="nav-item">
         <a class="nav-link" href="index.php?act=list_statis">
             <i class="fas fa-solid fa-chart-simple"></i>
             <span>Thống kê</span></a>

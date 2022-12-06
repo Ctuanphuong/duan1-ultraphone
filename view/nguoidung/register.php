@@ -22,19 +22,19 @@
                          <div class="row">
                              <div class="col-md-6 col-12 mb--20">
                                  <label>Tên đăng nhập</label>
-                                 <input type="text" name="user_name" placeholder="Tạo tên đăng nhập của bạn">
+                                 <input type="text" name="user_name" placeholder="Tạo tên đăng nhập của bạn" required>
                              </div>
                              <div class="col-md-6 col-12 mb--20">
                                  <label>Họ tên</label>
-                                 <input type="text" name="full_name" placeholder="Nhập họ tên của bạn">
+                                 <input type="text" name="full_name" placeholder="Nhập họ tên của bạn" required>
                              </div>
                              <div class="col-md-12">
                                  <label>Email</label>
-                                 <input type="email" name="email_user" placeholder="Nhập địa chỉ email của bạn">
+                                 <input type="email" name="email_user" placeholder="Nhập địa chỉ email của bạn" required>
                              </div>
                              <div class="col-md-12">
                                  <label>Mật khẩu</label>
-                                 <input type="password" name="password" placeholder="Tạo mật khẩu của bạn">
+                                 <input type="password" name="password" placeholder="Tạo mật khẩu của bạn" required>
                              </div>
                              <!-- <div class="col-md-6">
                                         <label>Xác nhận mật khẩu</label>

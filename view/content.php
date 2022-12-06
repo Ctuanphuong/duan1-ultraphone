@@ -221,624 +221,73 @@
                         </div>
                     </div>
                     <div id="bestseller" class="tab-pane" role="tabpanel">
-                        <div class="jb-product-tab_slider">
-                            <!-- Begin JB's Slide Item Area -->
-                            <div class="jb-slide-item">
-                                <div class="jb-single_product">
-                                    <div class="product-img">
-                                        <a href="single-product.html">
-                                            <img src="./src/image/product/medium-size/1-2.jpg" alt="Ảnh sản phẩm" />
-                                        </a>
-                                        <span class="sticker">New</span>
-                                        <div>
-                                            <a href="#" title="Quick View" class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleCenter"><i class="fa fa-search"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="jb-product_content">
-                                        <div class="product-desc_info">
-                                            <div class="manufacturer">
-                                                <a href="#">Studio Design</a>
-                                            </div>
-                                            <h6>
-                                                <a class="product-name" href="single-product.html">Xail G120 32GB IOS
-                                                    10...</a>
-                                            </h6>
-                                            <div class="rating-box">
-                                                <ul>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                </ul>
-                                            </div>
-                                            <div class="price-box">
-                                                <span class="new-price">$999.00</span>
+                    <div class="jb-product-tab_slider">
+                            <!-- Sản phẩm bán chạy -->
+                            <?php
+                            foreach ($list_bestsp as $pro) { ?>
+                                <div class="jb-slide-item">
+                                    <div class="jb-single_product">
+                                        <div class="product-img">
+                                            <a href="index.php?act=prodetail&idpro=<?= $pro['id_pro'] ?>"><img src="admin/uploads/<?= $pro['img_pro'] ?>" alt="Ảnh sản phẩm" />
+                                            </a>
+                                            <span class="sticker">Hot</span>
+                                            <?php if ($pro['discount'] <= 0) { ?>
+                                                <span></span>
+                                            <?php } else { ?>
+                                                <span class="sticker-2">-<?= $pro['discount'] ?>%</span>
+                                            <?php } ?>
+                                            <div>
+                                                <a href="index.php?act=prodetail&idpro=<?= $pro['id_pro'] ?>" title="Quick View" class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><i class="fa fa-search"></i></a>
                                             </div>
                                         </div>
-                                        <div class="add-actions">
-                                            <ul>
-                                                <li>
-                                                    <a class="jb-wishlist_link" href="wishlist.html"><i class="fa fa-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a class="jb-add_cart" href="cart.html"><i class="icon_cart_alt"></i>Add to cart</a>
-                                                </li>
-                                                <li>
-                                                    <a class="jb-sp_link" href="single-product.html"><i class="fa fa-copy"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- JB's Slide Item Area End Here -->
-                            <!-- Begin JB's Slide Item Area -->
-                            <div class="jb-slide-item">
-                                <div class="jb-single_product">
-                                    <div class="product-img">
-                                        <a href="single-product.html">
-                                            <img src="./src/image/product/medium-size/1-3.jpg" alt="Ảnh sản phẩm" />
-                                        </a>
-                                        <span class="sticker">New</span>
-                                        <div>
-                                            <a href="#" title="Quick View" class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><i class="fa fa-search"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="jb-product_content">
-                                        <div class="product-desc_info">
-                                            <div class="manufacturer">
-                                                <a href="#">Studio Design</a>
-                                            </div>
-                                            <h6>
-                                                <a class="product-name" href="single-product.html">Full HD 8GB Flash
-                                                    Memory...</a>
-                                            </h6>
-                                            <div class="rating-box">
-                                                <ul>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                </ul>
-                                            </div>
-                                            <div class="price-box">
-                                                <span class="new-price">$11.90</span>
-                                            </div>
-                                        </div>
-                                        <div class="add-actions">
-                                            <ul>
-                                                <li>
-                                                    <a class="jb-wishlist_link" href="wishlist.html"><i class="fa fa-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a class="jb-add_cart" href="cart.html"><i class="icon_cart_alt"></i>Add to cart</a>
-                                                </li>
-                                                <li>
-                                                    <a class="jb-sp_link" href="single-product.html"><i class="fa fa-copy"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- JB's Slide Item Area End Here -->
-                            <!-- Begin JB's Slide Item Area -->
-                            <div class="jb-slide-item">
-                                <div class="jb-single_product">
-                                    <div class="product-img">
-                                        <a href="single-product.html">
-                                            <img src="./src/image/product/medium-size/1-4.jpg" alt="Ảnh sản phẩm" />
-                                        </a>
-                                        <span class="sticker">New</span>
-                                        <span class="sticker-2">-10%</span>
-                                        <div>
-                                            <a href="#" title="Quick View" class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><i class="fa fa-search"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="jb-product_content">
-                                        <div class="product-desc_info">
-                                            <div class="manufacturer">
-                                                <a href="#">Studio Design</a>
-                                            </div>
-                                            <h6>
-                                                <a class="product-name" href="single-product.html">HD Video Recording
-                                                    PJ...</a>
-                                            </h6>
-                                            <div class="rating-box">
-                                                <ul>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                </ul>
-                                            </div>
-                                            <div class="price-box">
-                                                <span class="old-price">$18.90</span>
-                                                <span class="new-price">$17.01</span>
-                                            </div>
-                                        </div>
-                                        <div class="add-actions">
-                                            <ul>
-                                                <li>
-                                                    <a class="jb-wishlist_link" href="wishlist.html"><i class="fa fa-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a class="jb-add_cart" href="cart.html"><i class="icon_cart_alt"></i>Add to cart</a>
-                                                </li>
-                                                <li>
-                                                    <a class="jb-sp_link" href="single-product.html"><i class="fa fa-copy"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- JB's Slide Item Area End Here -->
-                            <!-- Begin JB's Slide Item Area -->
-                            <div class="jb-slide-item">
-                                <div class="jb-single_product">
-                                    <div class="product-img">
-                                        <a href="single-product.html">
-                                            <img src="./src/image/product/medium-size/1-5.jpg" alt="Ảnh sản phẩm" />
-                                        </a>
-                                        <span class="sticker">New</span>
-                                        <div>
-                                            <a href="#" title="Quick View" class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><i class="fa fa-search"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="jb-product_content">
-                                        <div class="product-desc_info">
-                                            <div class="manufacturer">
-                                                <a href="#">Studio Design</a>
-                                            </div>
-                                            <h6>
-                                                <a class="product-name" href="single-product.html">720 Degree Panoramic
-                                                    HD 360...</a>
-                                            </h6>
-                                            <div class="rating-box">
-                                                <ul>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                </ul>
-                                            </div>
-                                            <div class="price-box">
-                                                <span class="new-price">$29.51</span>
-                                            </div>
-                                        </div>
-                                        <div class="add-actions">
-                                            <ul>
-                                                <li>
-                                                    <a class="jb-wishlist_link" href="wishlist.html"><i class="fa fa-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a class="jb-add_cart" href="cart.html"><i class="icon_cart_alt"></i>Add to cart</a>
-                                                </li>
-                                                <li>
-                                                    <a class="jb-sp_link" href="single-product.html"><i class="fa fa-copy"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- JB's Slide Item Area End Here -->
-                            <!-- Begin JB's Slide Item Area -->
-                            <div class="jb-slide-item">
-                                <div class="jb-single_product">
-                                    <div class="product-img">
-                                        <a href="single-product.html">
-                                            <img src="./src/image/product/medium-size/1-6.jpg" alt="Ảnh sản phẩm" />
-                                        </a>
-                                        <span class="sticker">New</span>
-                                        <div>
-                                            <a href="#" title="Quick View" class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><i class="fa fa-search"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="jb-product_content">
-                                        <div class="product-desc_info">
-                                            <div class="manufacturer">
-                                                <a href="#">Studio Design</a>
-                                            </div>
-                                            <h6>
-                                                <a class="product-name" href="single-product.html">Xail 9.7" 128GB iPad
-                                                    -...</a>
-                                            </h6>
-                                            <div class="rating-box">
-                                                <ul>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                </ul>
-                                            </div>
-                                            <div class="price-box">
-                                                <span class="new-price">$29.00</span>
-                                            </div>
-                                        </div>
-                                        <div class="add-actions">
-                                            <ul>
-                                                <li>
-                                                    <a class="jb-wishlist_link" href="wishlist.html"><i class="fa fa-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a class="jb-add_cart" href="cart.html"><i class="icon_cart_alt"></i>Add to cart</a>
-                                                </li>
-                                                <li>
-                                                    <a class="jb-sp_link" href="single-product.html"><i class="fa fa-copy"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- JB's Slide Item Area End Here -->
-                            <!-- Begin JB's Slide Item Area -->
-                            <div class="jb-slide-item">
-                                <div class="jb-single_product">
-                                    <div class="product-img">
-                                        <a href="single-product.html">
-                                            <img src="./src/image/product/medium-size/1-1.jpg" alt="Ảnh sản phẩm" />
-                                        </a>
-                                        <span class="sticker">New</span>
-                                        <span class="sticker-2">-10%</span>
-                                        <div>
-                                            <a href="#" title="Quick View" class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><i class="fa fa-search"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="jb-product_content">
-                                        <div class="product-desc_info">
-                                            <div class="manufacturer">
-                                                <a href="#">Studio Design</a>
-                                            </div>
-                                            <h6>
-                                                <a class="product-name" href="single-product.html">Janon vista fhd
-                                                    4k...</a>
-                                            </h6>
-                                            <div class="rating-box">
-                                                <ul>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                </ul>
-                                            </div>
-                                            <div class="price-box">
-                                                <span class="old-price">$23.90</span>
-                                                <span class="new-price">$21.51</span>
-                                            </div>
-                                        </div>
-                                        <div class="add-actions">
-                                            <ul>
-                                                <li>
-                                                    <a class="jb-wishlist_link" href="wishlist.html"><i class="fa fa-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a class="jb-add_cart" href="cart.html"><i class="icon_cart_alt"></i>Add to cart</a>
-                                                </li>
-                                                <li>
-                                                    <a class="jb-sp_link" href="single-product.html"><i class="fa fa-copy"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- JB's Slide Item Area End Here -->
-                            <!-- Begin JB's Slide Item Area -->
-                            <div class="jb-slide-item">
-                                <div class="jb-single_product">
-                                    <div class="product-img">
-                                        <a href="single-product.html">
-                                            <img src="./src/image/product/medium-size/1-7.jpg" alt="Ảnh sản phẩm" />
-                                        </a>
-                                        <span class="sticker">New</span>
-                                        <div>
-                                            <a href="#" title="Quick View" class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><i class="fa fa-search"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="jb-product_content">
-                                        <div class="product-desc_info">
-                                            <div class="manufacturer">
-                                                <a href="#">Studio Design</a>
-                                            </div>
-                                            <h6>
-                                                <a class="product-name" href="single-product.html">Sanai Smartphone</a>
-                                            </h6>
-                                            <div class="rating-box">
-                                                <ul>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                </ul>
-                                            </div>
-                                            <div class="price-box">
-                                                <span class="new-price">$18.90</span>
-                                            </div>
-                                        </div>
-                                        <div class="add-actions">
-                                            <ul>
-                                                <li>
-                                                    <a class="jb-wishlist_link" href="wishlist.html"><i class="fa fa-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a class="jb-add_cart" href="cart.html"><i class="icon_cart_alt"></i>Add to cart</a>
-                                                </li>
-                                                <li>
-                                                    <a class="jb-sp_link" href="single-product.html"><i class="fa fa-copy"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- JB's Slide Item Area End Here -->
-                            <!-- Begin JB's Slide Item Area -->
-                            <div class="jb-slide-item">
-                                <div class="jb-single_product">
-                                    <div class="product-img">
-                                        <a href="single-product.html">
-                                            <img src="./src/image/product/medium-size/1-8.jpg" alt="Ảnh sản phẩm" />
-                                        </a>
-                                        <span class="sticker">New</span>
-                                        <div>
-                                            <a href="#" title="Quick View" class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><i class="fa fa-search"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="jb-product_content">
-                                        <div class="product-desc_info">
-                                            <div class="manufacturer">
-                                                <a href="#">Studio Design</a>
-                                            </div>
-                                            <h6>
-                                                <a class="product-name" href="single-product.html">Meito 12.2" Pentium,
-                                                    4GB,...</a>
-                                            </h6>
-                                            <div class="rating-box">
-                                                <ul>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                </ul>
-                                            </div>
-                                            <div class="price-box">
-                                                <span class="new-price">$81.90</span>
-                                            </div>
-                                        </div>
-                                        <div class="add-actions">
-                                            <ul>
-                                                <li>
-                                                    <a class="jb-wishlist_link" href="wishlist.html"><i class="fa fa-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a class="jb-add_cart" href="cart.html"><i class="icon_cart_alt"></i>Add to cart</a>
-                                                </li>
-                                                <li>
-                                                    <a class="jb-sp_link" href="single-product.html"><i class="fa fa-copy"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- JB's Slide Item Area End Here -->
-                            <!-- Begin JB's Slide Item Area -->
-                            <div class="jb-slide-item">
-                                <div class="jb-single_product">
-                                    <div class="product-img">
-                                        <a href="single-product.html">
-                                            <img src="./src/image/product/medium-size/1-9.jpg" alt="Ảnh sản phẩm" />
-                                        </a>
-                                        <span class="sticker">New</span>
-                                        <div>
-                                            <a href="#" title="Quick View" class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><i class="fa fa-search"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="jb-product_content">
-                                        <div class="product-desc_info">
-                                            <div class="manufacturer">
-                                                <a href="#">Studio Design</a>
-                                            </div>
-                                            <h6>
-                                                <a class="product-name" href="single-product.html">Xailbox 4 Pro 1TB
-                                                    Star...</a>
-                                            </h6>
-                                            <div class="rating-box">
-                                                <ul>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                </ul>
-                                            </div>
-                                            <div class="price-box">
-                                                <span class="new-price">$65.00</span>
-                                            </div>
-                                        </div>
-                                        <div class="add-actions">
-                                            <ul>
-                                                <li>
-                                                    <a class="jb-wishlist_link" href="wishlist.html"><i class="fa fa-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a class="jb-add_cart" href="cart.html"><i class="icon_cart_alt"></i>Add to cart</a>
-                                                </li>
-                                                <li>
-                                                    <a class="jb-sp_link" href="single-product.html"><i class="fa fa-copy"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- JB's Slide Item Area End Here -->
-                            <!-- Begin JB's Slide Item Area -->
-                            <div class="jb-slide-item">
-                                <div class="jb-single_product">
-                                    <div class="product-img">
-                                        <a href="single-product.html">
-                                            <img src="./src/image/product/medium-size/1-10.jpg" alt="Ảnh sản phẩm" />
-                                        </a>
-                                        <span class="sticker">New</span>
-                                        <div>
-                                            <a href="#" title="Quick View" class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><i class="fa fa-search"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="jb-product_content">
-                                        <div class="product-desc_info">
-                                            <div class="manufacturer">
-                                                <a href="#">Studio Design</a>
-                                            </div>
-                                            <h6>
-                                                <a class="product-name" href="single-product.html">16 GB Grade A
-                                                    Unlocked...</a>
-                                            </h6>
-                                            <div class="rating-box">
-                                                <ul>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                </ul>
-                                            </div>
-                                            <div class="price-box">
-                                                <span class="new-price">$35.00</span>
-                                            </div>
-                                        </div>
-                                        <div class="add-actions">
-                                            <ul>
-                                                <li>
-                                                    <a class="jb-wishlist_link" href="wishlist.html"><i class="fa fa-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a class="jb-add_cart" href="cart.html"><i class="icon_cart_alt"></i>Add to cart</a>
-                                                </li>
-                                                <li>
-                                                    <a class="jb-sp_link" href="single-product.html"><i class="fa fa-copy"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- JB's Slide Item Area End Here -->
-                            <!-- Begin JB's Slide Item Area -->
-                            <div class="jb-slide-item">
-                                <div class="jb-single_product">
-                                    <div class="product-img">
-                                        <a href="single-product.html">
-                                            <img src="./src/image/product/medium-size/1-11.jpg" alt="Ảnh sản phẩm" />
-                                        </a>
-                                        <span class="sticker">New</span>
-                                        <div>
-                                            <a href="#" title="Quick View" class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><i class="fa fa-search"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="jb-product_content">
-                                        <div class="product-desc_info">
-                                            <div class="manufacturer">
-                                                <a href="#">Studio Design</a>
-                                            </div>
-                                            <h6>
-                                                <a class="product-name" href="single-product.html">SanaFuel Wireless
-                                                    Over-Ear...</a>
-                                            </h6>
-                                            <div class="rating-box">
-                                                <ul>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                </ul>
-                                            </div>
-                                            <div class="price-box">
-                                                <span class="new-price">$31.21</span>
-                                            </div>
-                                        </div>
-                                        <div class="add-actions">
-                                            <ul>
-                                                <li>
-                                                    <a class="jb-wishlist_link" href="wishlist.html"><i class="fa fa-heart"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a class="jb-add_cart" href="cart.html"><i class="icon_cart_alt"></i>Add to cart</a>
-                                                </li>
-                                                <li>
-                                                    <a class="jb-sp_link" href="single-product.html"><i class="fa fa-copy"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <!-- Begin JB's Slide Item Area -->
-                                    <div class="jb-slide-item">
-                                        <div class="jb-single_product">
-                                            <div class="product-img">
-                                                <a href="single-product.html">
-                                                    <img src="./src/image/product/medium-size/1-12.jpg" alt="Ảnh sản phẩm" />
-                                                </a>
-                                                <span class="sticker">New</span>
-                                                <div>
-                                                    <a href="#" title="Quick View" class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><i class="fa fa-search"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="jb-product_content">
-                                                <div class="product-desc_info">
-                                                    <div class="manufacturer">
-                                                        <a href="#">Studio Design</a>
-                                                    </div>
-                                                    <h6>
-                                                        <a class="product-name" href="single-product.html">Chamcham
-                                                            15.6" AMD A9-9420,...</a>
-                                                    </h6>
-                                                    <div class="rating-box">
-                                                        <ul>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="price-box">
-                                                        <span class="old-price">$11.90</span>
-                                                        <span class="new-price">$10.47</span>
-                                                    </div>
-                                                </div>
-                                                <div class="add-actions">
+                                        <div class="jb-product_content">
+                                            <div class="product-desc_info">
+                                                <h6>
+                                                    <a class="product-name" href="index.php?act=prodetail&idpro=<?= $pro['id_pro'] ?>"><?= $pro['name_pro'] ?></a>
+                                                </h6>
+                                                <div class="rating-box">
                                                     <ul>
-                                                        <li>
-                                                            <a class="jb-wishlist_link" href="wishlist.html"><i class="fa fa-heart"></i></a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="jb-add_cart" href="cart.html"><i class="icon_cart_alt"></i>Add to
-                                                                cart</a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="jb-sp_link" href="single-product.html"><i class="fa fa-copy"></i></a>
-                                                        </li>
+                                                        <li><i class="fa fa-star"></i></li>
+                                                        <li><i class="fa fa-star"></i></li>
+                                                        <li><i class="fa fa-star"></i></li>
+                                                        <li><i class="fa fa-star"></i></li>
+                                                        <li><i class="fa fa-star"></i></li>
                                                     </ul>
                                                 </div>
+                                                <div class="price-box">
+                                                    <?php if ($pro['discount'] <= 0) { ?>
+                                                        <span class="new-price"><?= number_format($pro['price']) ?>₫</span>
+                                                    <?php } else { ?>
+                                                        <span class="new-price"><?= number_format(($pro['price']) - (($pro['price']) * ($pro['discount']) / 100)) ?>₫</span>
+                                                        <span class="old-price"><?= number_format($pro['price']) ?>₫</span>
+                                                    <?php } ?>
+                                                </div>
+                                            </div>
+                                            <div class="actions-add">
+                                                <form action="index.php?act=addtocart" method="post">
+                                                    <ul>
+                                                        <li>
+                                                            <a class="jb-wishlist_link" href="#"><i class="fa fa-heart"></i></a>
+                                                        </li>
+                                                        <input type="hidden" name="id_pro" value="<?php echo $pro['id_pro'] ?>">
+                                                        <input type="hidden" name="name_pro" value="<?php echo $pro['name_pro'] ?>">
+                                                        <input type="hidden" name="img_pro" value="<?php echo $pro['img_pro'] ?>">
+                                                        <input type="hidden" name="price" value="<?php echo $pro['price'] ?>">
+                                                        <li>
+                                                            <input type="submit" class="addtocart" name="addtocart" value="Thêm vào giỏ">
+                                                        </li>
+                                                        <li>
+                                                            <a class="jb-sp_link" href="#"><i class="fa fa-copy"></i></a>
+                                                        </li>
+                                                    </ul>
+                                                </form>
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- JB's Slide Item Area End Here -->
                                 </div>
-                            </div>
-                            <!-- JB's Slide Item Area End Here -->
+                            <?php } ?>
+                            
+                            <!-- End sản phẩm bán chạy -->
                         </div>
                     </div>
 

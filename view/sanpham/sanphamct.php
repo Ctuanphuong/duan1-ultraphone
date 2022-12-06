@@ -20,7 +20,7 @@
                 <div class="col-lg-5 col-md-5">
                     <div class="sp-images">
                         <div class="sp-largeimages sp-imagezoom">
-                            <div class="sp-singleimage" data-src="image/product/large-size/5.jpg">
+                            <div class="sp-singleimage">
                                 <img src="admin/uploads/<?= $one_pro['img_pro']; ?>" alt="UltraPhone Product">
                             </div>
                         </div>
@@ -40,15 +40,7 @@
                             <span class="reference">Lượt xem: <?= $one_pro['view'] ?></span>
                         </div>
 
-                        <div class="rating-box">
-                            <ul>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                            </ul>
-                        </div>
+                        
                         <div class="price-box">
                             <?php if ($one_pro['discount'] <= 0) { ?>
                                 <span class="new-price">
@@ -89,40 +81,8 @@
                                     </div>
                                 </div>
                             </div>
-                        </form>
-                        <div class="jb-social_link jb-link_share">
-                            <span>Chia sẻ</span>
-                            <ul>
-                                <li class="facebook">
-                                    <a href="https://www.facebook.com/" data-bs-toggle="tooltip" target="_blank" title="Facebook">
-                                        <i class="fab fa-facebook"></i>
-                                    </a>
-                                </li>
-                                <li class="twitter">
-                                    <a href="https://twitter.com/" data-bs-toggle="tooltip" target="_blank" title="Twitter">
-                                        <i class="fab fa-twitter-square"></i>
-                                    </a>
-                                </li>
-                                <li class="youtube">
-                                    <a href="https://www.youtube.com/" data-bs-toggle="tooltip" target="_blank" title="Youtube">
-                                        <i class="fab fa-youtube"></i>
-                                    </a>
-                                </li>
-                                <li class="google-plus">
-                                    <a href="https://www.plus.google.com/discover" data-bs-toggle="tooltip" target="_blank" title="Google Plus">
-                                        <i class="fab fa-google-plus"></i>
-                                    </a>
-                                </li>
-                                <li class="instagram">
-                                    <a href="https://rss.com/" data-bs-toggle="tooltip" target="_blank" title="Instagram">
-                                        <i class="fab fa-instagram"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                            <div class="wishlist-link_share"><a href="#"><i class="fa fa-heart"></i> Thêm vào
-                                    danh sách yêu thích</a>
-                            </div>
-                        </div>
+
+
                         <div class="block-reassurance">
                             <ul>
                                 <li><i class="fas fa-check-square"></i>Bảo hành chính hãng</li>

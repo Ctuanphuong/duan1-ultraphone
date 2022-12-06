@@ -28,6 +28,13 @@ function loadall_pro($kyw = "", $idcate = 0)
     $listpro= pdo_query($sql);
     return $listpro;
 }
+// show sản phẩm bán chạy
+function loadall_pro_best()
+{
+    $sql = "SELECT a.*, COUNT(*) FROM product a INNER JOIN cart b on a.id_pro = b.id_pro INNER JOIN bill c ON b.id_bill = c.id_bill WHERE c.status_pay = 1 GROUP BY a.name_pro ORDER BY `COUNT(*)` DESC";
+    $listpro= pdo_query($sql);
+    return $listpro;
+}
 // show 8 sản phẩm nổi bật được xem nhiều nhất
 function loadall_pro_noibat()
 {
