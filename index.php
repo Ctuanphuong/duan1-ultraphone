@@ -312,12 +312,12 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                     }
                     function validate_email($email)
                     {
-                        return filter_var($email, FILTER_VALIDATE_EMAIL);
+                        return preg_match('/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*.(\.[a-z]{2,4})$/',$email);
                     }
-                    if (!validate_email($mai)) {
+                    if (validate_mobile($phone) == 0) {
                         $_SESSION['errorMessage'] = "Email không hợp lệ !";
                         $check_error = 1;
-                    }
+                    } 
                     if (validate_mobile($phone) == 0) {
                         $_SESSION['errorMessage'] = "Số điện thoại không đúng định dạng !";
                         $check_error = 1;
