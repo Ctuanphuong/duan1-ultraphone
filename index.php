@@ -429,6 +429,22 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
 
             include "view/giohang/viewbill.php";
             break;
+                //Giới thiệu
+            case 'introduce':
+                include "view/gioithieu.php";
+                break;
+                //Liên hệ
+            case 'contact':
+                if (isset($_POST['btn_contact']) && ($_POST['btn_contact'])) {
+                    $name = $_POST['name'];
+                    $email = $_POST['email'];
+                    $phone = $_POST['phone'];
+                    $contennt = $_POST['contennt'];
+                    question($name, $email, $phone, $contennt);
+                    echo '<script>alert("Gửi câu hỏi thành công !")</script>';
+                }
+                include "view/lienhe.php";
+                break;
         default:
             include "view/content.php";
             break;
