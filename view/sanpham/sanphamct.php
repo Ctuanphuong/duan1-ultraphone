@@ -40,7 +40,7 @@
                             <span class="reference">Lượt xem: <?= $one_pro['view'] ?></span>
                         </div>
 
-                        
+
                         <div class="price-box">
                             <?php if ($one_pro['discount'] <= 0) { ?>
                                 <span class="new-price">
@@ -83,13 +83,13 @@
                             </div>
 
 
-                        <div class="block-reassurance">
-                            <ul>
-                                <li><i class="fas fa-check-square"></i>Bảo hành chính hãng</li>
-                                <li><i class="fa fa-truck"></i>Giao hàng nhanh chóng</li>
-                                <li><i class="fas fa-sync-alt"></i>Chế độ đổi trả trong vòng 12 tháng</li>
-                            </ul>
-                        </div>
+                            <div class="block-reassurance">
+                                <ul>
+                                    <li><i class="fas fa-check-square"></i>Bảo hành chính hãng</li>
+                                    <li><i class="fa fa-truck"></i>Giao hàng nhanh chóng</li>
+                                    <li><i class="fas fa-sync-alt"></i>Chế độ đổi trả trong vòng 12 tháng</li>
+                                </ul>
+                            </div>
                     </div>
                 </div>
             </div>
@@ -128,6 +128,7 @@
                     <div id="reviews" class="tab-pane" role="tabpanel">
                         <!-- jquery bình luận -->
                         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+                        <?php if(isset($_SESSION['user'])){ ?>
                         <script>
                             $(document).ready(function() {
                                 $("#comment").load("./view/binhluan/formbinhluan.php", {
@@ -135,6 +136,11 @@
                                 });
                             });
                         </script>
+                        <?php }else {?>
+                            <div>
+                                <p style="color: red">Vui lòng đăng nhập để bình luận !</p>
+                            </div>
+                        <?php } ?>
                         <div id="comment"></div>
                     </div>
                 </div>
@@ -170,15 +176,6 @@
                                         <h6><a class="product-name" href="index.php?act=prodetail&idpro=<?php echo $pro['id_pro'] ?>">
                                                 <?php echo $pro['name_pro']; ?>
                                             </a></h6>
-                                        <div class="rating-box">
-                                            <ul>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                            </ul>
-                                        </div>
                                         <div class="price-box">
                                             <span class="new-price">
                                                 <?php echo number_format($pro['price']); ?>₫
