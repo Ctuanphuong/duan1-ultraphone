@@ -27,27 +27,26 @@ $listcmt = loadall_comment($idpro);
         <?php foreach ($listcmt as $cmt) : extract($cmt); ?>
             <div class="comment_details same-stuff">
                 <span class="user-id"><?= $full_name ?> (<?= $user_name ?>)</span>
-                <div class="rating-box">
-                    <ul>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                    </ul>
-                </div>
                 <em class="user-comment"><?= $content ?></em>
                 <em><?= $comment_date ?></em>
             </div>
         <?php endforeach ?>
         <!-- Form bình luận-->
+       
         <div class="comment-btn-area mt-3">
+        <?php if(isset($_SESSION['user'])){ ?>
             <form action="<?= $_SERVER['PHP_SELF']; ?>" method="post">
                 <textarea name="content_cmt" class="area-cmt" cols="60" rows="3" placeholder="Nhập bình luận của bạn" required></textarea> <br>
                 <input type="hidden" name="idpro" value="<?= $idpro ?>">
                 <input type="submit" name="btn_cmt" class="ip-cmt" value="Gửi">
             </form>
+            <?php }else {?>
+                            <div>
+                                <p class="alert alert-primary fs-6">Vui lòng đăng nhập để bình luận !</p>
+                            </div>
+                        <?php } ?>
         </div>
+        
         <!-- End bình luận -->
         <?php
         if (isset($_POST['btn_cmt']) && $_POST['btn_cmt']) {

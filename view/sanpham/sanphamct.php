@@ -128,7 +128,6 @@
                     <div id="reviews" class="tab-pane" role="tabpanel">
                         <!-- jquery bình luận -->
                         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-                        <?php if(isset($_SESSION['user'])){ ?>
                         <script>
                             $(document).ready(function() {
                                 $("#comment").load("./view/binhluan/formbinhluan.php", {
@@ -136,11 +135,6 @@
                                 });
                             });
                         </script>
-                        <?php }else {?>
-                            <div>
-                                <p style="color: red">Vui lòng đăng nhập để bình luận !</p>
-                            </div>
-                        <?php } ?>
                         <div id="comment"></div>
                     </div>
                 </div>
@@ -149,6 +143,71 @@
     </div>
 </div>
 <!-- End phần mô tả chi tiết và đánh giá-->
+
+<!-- Phần các sản phẩm cùng loại nhưng hidden vì ko fix được nữa đành phải coi là thẻ ảo, phần div bên dưới mới là show ra =))))-->
+<div class="jb-product-slider_area sp-product-slider_area" hidden>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section_title-2">
+                    <h4>Các sản phẩm cùng loại</h4>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="jb-product_slider">
+                    <?php foreach ($similar_pro as $pro) { ?>
+                        <!-- Sản phẩm -->
+                        <div class="jb-slide-item">
+                            <div class="jb-single_product">
+                                <div class="product-img">
+                                    <a href="index.php?act=prodetail&idpro=<?php echo $pro['id_pro']; ?>">
+                                        <img src="admin/uploads/<?php echo $pro['img_pro']; ?>" alt="UltraPhone Product">
+                                    </a>
+                                    <span class="sticker">New</span>
+                                </div>
+                                <div class="jb-product_content">
+                                    <div class="product-desc_info">
+                                        <h6><a class="product-name" href="index.php?act=prodetail&idpro=<?php echo $pro['id_pro'] ?>">
+                                                <?php echo $pro['name_pro']; ?>
+                                            </a></h6>
+                                        <div class="price-box">
+                                            <span class="new-price">
+                                                <?php echo number_format($pro['price']); ?>₫
+                                            </span>
+                                            <!-- <del class="new-price"><?php echo number_format($pro['price']); ?>₫</del> -->
+                                        </div>
+                                    </div>
+                                    <div class="actions-add">
+                                        <form action="index.php?act=addtocart" method="post">
+                                            <ul>
+                                                <li>
+                                                    <a class="jb-wishlist_link" href="#"><i class="fa fa-heart"></i></a>
+                                                </li>
+                                                <input type="hidden" name="id_pro" value="<?php echo $pro['id_pro'] ?>">
+                                                <input type="hidden" name="name_pro" value="<?php echo $pro['name_pro'] ?>">
+                                                <input type="hidden" name="img_pro" value="<?php echo $pro['img_pro'] ?>">
+                                                <input type="hidden" name="price" value="<?php echo $pro['price'] ?>">
+                                                <li>
+                                                    <input type="submit" class="addtocart" name="addtocart" value="Thêm vào giỏ">
+                                                </li>
+                                                <li>
+                                                    <a class="jb-sp_link" href="#"><i class="fa fa-copy"></i></a>
+                                                </li>
+                                            </ul>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <?php } ?>
+                    <!-- End sản phẩm -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End phần các sản phẩm cùng loại -->
 
 <!-- Phần các sản phẩm cùng loại -->
 <div class="jb-product-slider_area sp-product-slider_area">
