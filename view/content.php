@@ -173,15 +173,7 @@
                                                 <h6>
                                                     <a class="product-name" href="index.php?act=prodetail&idpro=<?php echo $pro['id_pro'] ?>"><?php echo $pro['name_pro'] ?></a>
                                                 </h6>
-                                                <div class="rating-box">
-                                                    <ul>
-                                                        <li><i class="fa fa-star"></i></li>
-                                                        <li><i class="fa fa-star"></i></li>
-                                                        <li><i class="fa fa-star"></i></li>
-                                                        <li><i class="fa fa-star"></i></li>
-                                                        <li><i class="fa fa-star"></i></li>
-                                                    </ul>
-                                                </div>
+                                             
                                                 <div class="price-box">
                                                     <?php if ($pro['discount'] <= 0) { ?>
                                                         <span class="new-price"><?= number_format($pro['price']) ?>₫</span>
@@ -196,9 +188,7 @@
                                             <div class="actions-add">
                                                 <form action="index.php?act=addtocart" method="post">
                                                     <ul>
-                                                        <li>
-                                                            <a class="jb-wishlist_link" href="#"><i class="fa fa-heart"></i></a>
-                                                        </li>
+                                                        
                                                         <input type="hidden" name="id_pro" value="<?php echo $pro['id_pro'] ?>">
                                                         <input type="hidden" name="name_pro" value="<?php echo $pro['name_pro'] ?>">
                                                         <input type="hidden" name="img_pro" value="<?php echo $pro['img_pro'] ?>">
@@ -206,9 +196,7 @@
                                                         <li>
                                                             <input type="submit" class="addtocart" name="addtocart" value="Thêm vào giỏ">
                                                         </li>
-                                                        <li>
-                                                            <a class="jb-sp_link" href="#"><i class="fa fa-copy"></i></a>
-                                                        </li>
+                                                      
                                                     </ul>
                                                 </form>
                                             </div>
@@ -245,15 +233,7 @@
                                                 <h6>
                                                     <a class="product-name" href="index.php?act=prodetail&idpro=<?= $pro['id_pro'] ?>"><?= $pro['name_pro'] ?></a>
                                                 </h6>
-                                                <div class="rating-box">
-                                                    <ul>
-                                                        <li><i class="fa fa-star"></i></li>
-                                                        <li><i class="fa fa-star"></i></li>
-                                                        <li><i class="fa fa-star"></i></li>
-                                                        <li><i class="fa fa-star"></i></li>
-                                                        <li><i class="fa fa-star"></i></li>
-                                                    </ul>
-                                                </div>
+                                               
                                                 <div class="price-box">
                                                     <?php if ($pro['discount'] <= 0) { ?>
                                                         <span class="new-price"><?= number_format($pro['price']) ?>₫</span>
@@ -266,9 +246,7 @@
                                             <div class="actions-add">
                                                 <form action="index.php?act=addtocart" method="post">
                                                     <ul>
-                                                        <li>
-                                                            <a class="jb-wishlist_link" href="#"><i class="fa fa-heart"></i></a>
-                                                        </li>
+                                                       
                                                         <input type="hidden" name="id_pro" value="<?php echo $pro['id_pro'] ?>">
                                                         <input type="hidden" name="name_pro" value="<?php echo $pro['name_pro'] ?>">
                                                         <input type="hidden" name="img_pro" value="<?php echo $pro['img_pro'] ?>">
@@ -276,9 +254,7 @@
                                                         <li>
                                                             <input type="submit" class="addtocart" name="addtocart" value="Thêm vào giỏ">
                                                         </li>
-                                                        <li>
-                                                            <a class="jb-sp_link" href="#"><i class="fa fa-copy"></i></a>
-                                                        </li>
+                                                     
                                                     </ul>
                                                 </form>
                                             </div>
@@ -317,15 +293,7 @@
                                                 <h6>
                                                     <a class="product-name" href="index.php?act=prodetail&idpro=<?= $pro['id_pro'] ?>"><?= $pro['name_pro'] ?></a>
                                                 </h6>
-                                                <div class="rating-box">
-                                                    <ul>
-                                                        <li><i class="fa fa-star"></i></li>
-                                                        <li><i class="fa fa-star"></i></li>
-                                                        <li><i class="fa fa-star"></i></li>
-                                                        <li><i class="fa fa-star"></i></li>
-                                                        <li><i class="fa fa-star"></i></li>
-                                                    </ul>
-                                                </div>
+                                             
                                                 <div class="price-box">
                                                     <?php if ($pro['discount'] <= 0) { ?>
                                                         <span class="new-price"><?= number_format($pro['price']) ?>₫</span>
@@ -338,9 +306,7 @@
                                             <div class="actions-add">
                                                 <form action="index.php?act=addtocart" method="post">
                                                     <ul>
-                                                        <li>
-                                                            <a class="jb-wishlist_link" href="#"><i class="fa fa-heart"></i></a>
-                                                        </li>
+                                                        
                                                         <input type="hidden" name="id_pro" value="<?php echo $pro['id_pro'] ?>">
                                                         <input type="hidden" name="name_pro" value="<?php echo $pro['name_pro'] ?>">
                                                         <input type="hidden" name="img_pro" value="<?php echo $pro['img_pro'] ?>">
@@ -348,9 +314,7 @@
                                                         <li>
                                                             <input type="submit" class="addtocart" name="addtocart" value="Thêm vào giỏ">
                                                         </li>
-                                                        <li>
-                                                            <a class="jb-sp_link" href="#"><i class="fa fa-copy"></i></a>
-                                                        </li>
+                                                      
                                                     </ul>
                                                 </form>
                                             </div>

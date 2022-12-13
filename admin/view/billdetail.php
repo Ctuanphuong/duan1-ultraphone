@@ -30,7 +30,7 @@ if (is_array($one_bill)) {
                     <p>Số điện thoại: 0<?= $phone ?></p>
                     <p>Ngày đặt: <?= $order_date ?>
                     </p>
-                    <p>Thành tiền: <span class="text-danger fw-bold">
+                    <p>Thành tiền: <span class="text-dark font-weight-bold">
                             <?= number_format($total_amount) ?>₫
                         </span></p>
                     <p>Phương thức thanh toán:
@@ -44,7 +44,7 @@ if (is_array($one_bill)) {
                                                                 echo "Không tìm thấy phương thức thanh toán";
                                                             } ?></span>
                     </p>
-                    <p>Trạng thái: <span class="text-warning fw-bold"><?php if ($status == 0) {
+                    <p>Trạng thái đơn hàng: <span class="text-warning fw-bold"><?php if ($status == 0) {
                                                                             echo "Đơn hàng mới";
                                                                         } else if ($status == 1) {
                                                                             echo "Đang xử lý";
@@ -52,11 +52,22 @@ if (is_array($one_bill)) {
                                                                             echo "Đang giao hàng";
                                                                         } else if ($status == 3) {
                                                                             echo "Đã giao hàng";
-                                                                        } else {
+                                                                        } 
+                                                                        else if ($status == 4) {
+                                                                            echo "Đã hủy";
+                                                                        } 
+                                                                        else {
                                                                             echo "Lỗi trạng thái";
                                                                         } ?>
                         </span>
                     </p>
+                    <p>Trạng thái thanh toán: <?php if ($status_pay == 0) {
+                                                    echo '<span class="text-danger">Chưa thanh toán</span>';
+                                                } else if ($status_pay == 1) {
+                                                    echo '<span class="text-success">Đã thanh toán</span>';
+                                                } else {
+                                                    echo "Không tìm thấy phương thức thanh toán";
+                                                }  ?></p>
                 </div>
             </div>
 

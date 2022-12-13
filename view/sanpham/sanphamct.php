@@ -120,8 +120,6 @@
                             </p>
                         </div>
                     </div>
-
-
                     <!-- End phần mô tả chỉ tiết -->
 
                     <!-- Phần đánh giá, bình luận -->

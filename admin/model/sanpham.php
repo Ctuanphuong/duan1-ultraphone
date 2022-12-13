@@ -7,9 +7,9 @@ function loadall_pro($idcate = 0)
 {
     $sql = "SELECT * FROM product WHERE 1";
     if ($idcate > 0) {
-        $sql .= " AND idcate = '" . $idcate . "' ";
+        $sql .=" AND idcate = '" . $idcate . "'";
     }
-    $sql .= " ORDER BY id_pro desc";
+    $sql .=" ORDER BY id_pro DESC";
     $listpro = pdo_query($sql);
     return $listpro;
 }

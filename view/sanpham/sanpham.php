@@ -170,16 +170,6 @@
                                                                     <?php echo $pro['name_pro'] ?>
                                                                 </a>
                                                             </h6>
-
-                                                            <div class="rating-box">
-                                                                <ul>
-                                                                    <li><i class="fa fa-star"></i></li>
-                                                                    <li><i class="fa fa-star"></i></li>
-                                                                    <li><i class="fa fa-star"></i></li>
-                                                                    <li><i class="fa fa-star"></i></li>
-                                                                    <li><i class="fa fa-star"></i></li>
-                                                                </ul>
-                                                            </div>
                                                             <div class="price-box">
                                                                 <?php if ($pro['discount'] <= 0) { ?>
                                                                     <span class="new-price">
@@ -201,9 +191,7 @@
                                                         <div class="actions-add">
                                                             <form action="index.php?act=addtocart" method="post">
                                                                 <ul>
-                                                                    <li>
-                                                                        <a class="jb-wishlist_link" href="#"><i class="fa fa-heart"></i></a>
-                                                                    </li>
+                                                                   
                                                                     <input type="hidden" name="id_pro" value="<?php echo $pro['id_pro'] ?>">
                                                                     <input type="hidden" name="name_pro" value="<?php echo $pro['name_pro'] ?>">
                                                                     <input type="hidden" name="img_pro" value="<?php echo $pro['img_pro'] ?>">
@@ -211,9 +199,7 @@
                                                                     <li>
                                                                         <input type="submit" class="addtocart" name="addtocart" value="Thêm vào giỏ">
                                                                     </li>
-                                                                    <li>
-                                                                        <a class="jb-sp_link" href="#"><i class="fa fa-copy"></i></a>
-                                                                    </li>
+                                                                
                                                                 </ul>
                                                             </form>
                                                         </div>
@@ -226,7 +212,7 @@
 
                                     <!-- JB's Slide Item Area End Here -->
                                 </div>
-                                <div class="row">
+                                <!-- <div class="row">
                                     <div class="col-lg-12">
                                         <div class="paginatoin-area">
                                             <div class="row">
@@ -261,7 +247,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                             <div id="list-view" class="tab-pane fade shop-product-list_view" role="tabpanel">
                                 <div class="row g-0">
@@ -280,7 +266,7 @@
                                                     <div class="jb-product_content">
                                                         <div class="product-desc_info">
                                                             <h6><a class="product-name" href="index.php?act=prodetail&idpro=<?= $pro['id_pro'] ?>"><?= $pro['name_pro'] ?></a></h6>
-                                                            <div class="rating-box">
+                                                            <!-- <div class="rating-box">
                                                                 <ul>
                                                                     <li><i class="fa fa-star"></i></li>
                                                                     <li><i class="fa fa-star"></i></li>
@@ -288,7 +274,7 @@
                                                                     <li><i class="fa fa-star"></i></li>
                                                                     <li><i class="fa fa-star"></i></li>
                                                                 </ul>
-                                                            </div>
+                                                            </div> -->
                                                             <div class="product-desc">
                                                                 <p><?= $pro['short_des'] ?></p>
                                                             </div>
@@ -304,9 +290,9 @@
                                                         <div class="actions-add-2">
                                                             <form action="index.php?act=addtocart" method="post">
                                                                 <ul>
-                                                                    <li>
+                                                                    <!-- <li>
                                                                         <a class="jb-wishlist_link" href="#"><i class="fa fa-heart"></i></a>
-                                                                    </li>
+                                                                    </li> -->
                                                                     <input type="hidden" name="id_pro" value="<?php echo $pro['id_pro'] ?>">
                                                                     <input type="hidden" name="name_pro" value="<?php echo $pro['name_pro'] ?>">
                                                                     <input type="hidden" name="img_pro" value="<?php echo $pro['img_pro'] ?>">
@@ -314,9 +300,9 @@
                                                                     <li>
                                                                         <input type="submit" class="addtocart" name="addtocart" value="Thêm vào giỏ">
                                                                     </li>
-                                                                    <li>
+                                                                    <!-- <li>
                                                                         <a class="jb-sp_link" href="#"><i class="fa fa-copy"></i></a>
-                                                                    </li>
+                                                                    </li> -->
                                                                 </ul>
                                                             </form>
                                                         </div>
@@ -326,7 +312,7 @@
                                         <?php } ?>
 
                                     </div>
-                                    <div class="col-lg-12">
+                                    <!-- <div class="col-lg-12">
                                         <div class="paginatoin-area">
                                             <div class="row">
                                                 <div class="col-lg-6 col-md-6 col-sm-6">
@@ -359,7 +345,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>
