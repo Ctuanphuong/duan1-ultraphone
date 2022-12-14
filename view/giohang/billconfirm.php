@@ -23,7 +23,8 @@
          <div class="card-body">
              <li class="font-weight-normal">Mã đơn hàng: <span class="fw-bold">UTP-<?= $id_bill ?></span></li>
              <li class="font-weight-normal">Thời gian đặt hàng: <span class="fw-bold"><?= $order_date ?></span></li>
-             <li class="font-weight-normal">Tổng thành tiền: <span class="fw-bold"><?= number_format($total_amount) ?>₫</span></li>
+             <li class="font-weight-normal">Tổng thành tiền: <span
+                     class="fw-bold"><?= number_format($total_amount) ?>₫</span></li>
              <li class="font-weight-normal">Trạng thái: <span class="fw-bold"><?php if ($status_pay == 1) {
                                                                                     echo "Đã thanh toán";
                                                                                 } else {
@@ -39,15 +40,18 @@
              <div class="card-body">
                  <div class="wrap-infocart mar-t5">
                      <span>Tài khoản người dùng: </span>
-                     <input name="user_name" type="text" class="ip-cart ml-60 fw-bold" value="<?= $user_name ?>" disabled />
+                     <input name="user_name" type="text" class="ip-cart ml-60 fw-bold" value="<?= $user_name ?>"
+                         disabled />
                  </div>
                  <div class="wrap-infocart mar-t5">
                      <span>Họ tên người đặt: </span>
-                     <input name="full_name" type="text" class="ip-cart ml-91 fw-bold" value="<?= $full_name ?>" readonly />
+                     <input name="full_name" type="text" class="ip-cart ml-91 fw-bold" value="<?= $full_name ?>"
+                         readonly />
                  </div>
                  <div class="wrap-infocart mar-t5">
                      <span>Địa chỉ: </span>
-                     <input name="address" type="text" class="ip-cart ml-158 fw-bold" value="<?= $address ?>" readonly />
+                     <input name="address" type="text" class="ip-cart ml-158 fw-bold" value="<?= $address ?>"
+                         readonly />
                  </div>
                  <div class="wrap-infocart mar-t5">
                      <span>Email: </span>
@@ -85,7 +89,8 @@
                          <div class="table-content table-responsive">
                              <?php cart_detail($cart_detail); ?>
                              <div class="wrap-btn-order mt-4">
-                                 <a href="index.php?act=product" class="btn btn-secondary text-white">Xem thêm sản phẩm <i class="fa-solid fa-magnifying-glass"></i></a>
+                                 <a href="index.php?act=product" class="btn btn-secondary text-white">Xem thêm sản phẩm
+                                     <i class="fa-solid fa-magnifying-glass"></i></a>
                              </div>
      </form>
      </div>

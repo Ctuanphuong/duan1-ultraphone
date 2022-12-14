@@ -23,6 +23,22 @@ $listcmt = loadall_comment($idpro);
 </head>
 
 <body>
+<?php
+        if (isset($_POST['btn_cmt']) && $_POST['btn_cmt']) {
+            $content = $_POST['content_cmt'];
+            $idpro = $_POST['idpro'];
+            $id_user = $_SESSION['user']['id_user'];
+            $user_name = $_SESSION['user']['user_name'];
+            $full_name = $_SESSION['user']['full_name'];
+            $comment_date = date("m/d/Y h:i:sa");
+            if ($content == null) {
+                echo '<script>alert("không được để trống !")</script>';
+            } else {
+                insert_comment($content, $id_user, $user_name, $full_name, $idpro, $comment_date);
+                header("Location: " . $_SERVER['HTTP_REFERER']);
+            }
+        }
+        ?>
     <div class="product_comments_block">
         <?php foreach ($listcmt as $cmt) : extract($cmt); ?>
             <div class="comment_details same-stuff">
@@ -48,22 +64,6 @@ $listcmt = loadall_comment($idpro);
         </div>
         
         <!-- End bình luận -->
-        <?php
-        if (isset($_POST['btn_cmt']) && $_POST['btn_cmt']) {
-            $content = $_POST['content_cmt'];
-            $idpro = $_POST['idpro'];
-            $id_user = $_SESSION['user']['id_user'];
-            $user_name = $_SESSION['user']['user_name'];
-            $full_name = $_SESSION['user']['full_name'];
-            $comment_date = date("m/d/Y h:i:sa");
-            if ($content == null) {
-                echo '<script>alert("không được để trống !")</script>';
-            } else {
-                insert_comment($content, $id_user, $user_name, $full_name, $idpro, $comment_date);
-                header("Location: " . $_SERVER['HTTP_REFERER']);
-            }
-        }
-        ?>
     </div>
     <script src="./src/js/plugins.min.js"></script>
     <script src="./src/js/ajax-mail.js"></script>
