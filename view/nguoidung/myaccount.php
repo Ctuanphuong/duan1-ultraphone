@@ -142,7 +142,7 @@
                                         </div>
                                         <div class="single-input">
                                             <label for="account-details-email">Số điện thoại</label>
-                                            <input type="text" name="phone_user" id="account-details-email" value="<?= $_SESSION['user']['phone_user'] ?>" placeholder="Nhập số điện thoại nhận hàng của bạn">
+                                            <input type="number" name="phone_user" id="account-details-email" value="<?= $_SESSION['user']['phone_user'] ?>" placeholder="Nhập số điện thoại nhận hàng của bạn">
                                         </div>
                                         <!-- <div class="single-input">
                                             <label for="account-details-oldpass">Mật khẩu hiện tại (Để trống nếu không

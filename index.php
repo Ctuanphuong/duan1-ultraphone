@@ -83,8 +83,9 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 $email_user = $_POST['email_user'];
                 $password = $_POST['password'];
                 register($user_name, $full_name, $email_user, $password);
+               
+                header("Location: index.php?act=login");
                 echo '<script>alert("Đăng ký tài khoản thành công! Vui lòng đăng nhập")</script>';
-                include "view/nguoidung/login.php";
             }
             include "view/nguoidung/register.php";
             break;
